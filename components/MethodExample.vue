@@ -1,0 +1,68 @@
+<template>
+  <div class="method-example">
+    <div :id="methodId"></div>
+  </div>
+</template>
+
+<script>
+import Vue from 'vue';
+
+export default {
+  computed: {
+    methodId() {
+      return this.method.path.split('/').join('');
+    }
+  },
+  props: {
+    method: Object
+  },
+  mounted() {
+    let DynamicContent = Vue.extend({
+      template: `<div class="method-example__body">${this.method.example}</div>`,
+      methods: {
+        // formats date to YYYY-MM-DD HH:MM
+        formatDate(date) {
+          return date.getFullYear().toString() + "-"+((date.getMonth()+1).toString().length==2?(date.getMonth()+1).toString():"0"+(date.getMonth()+1).toString())+"-"+(date.getDate().toString().length==2?date.getDate().toString():"0"+date.getDate().toString())+" "+(date.getHours().toString().length==2?date.getHours().toString():"0"+date.getHours().toString())+":"+((parseInt(date.getMinutes()/5)*5).toString().length==2?(parseInt(date.getMinutes()/5)*5).toString():"0"+(parseInt(date.getMinutes()/5)*5).toString())
+        }
+      }
+    })
+    new DynamicContent({ el: `#${this.methodId}`, store: this.$store, parent: this })
+  }
+}
+</script>
+
+<style lang="scss">
+.method-example {
+  background: #2b3133;
+  border-top: 1px solid #272b2d;
+  color: #dde4e8;
+  flex: 1;
+
+  table {
+    width: 100%;
+    border: 1px solid #33373a;
+    border-collapse: collapse;
+    th, td {
+      border: 1px solid #33373a;
+      padding: 7px;
+      font-size: 13px;
+      text-align: left;
+    }
+    thead tr {
+      background: #2b3133;
+    }
+    tbody {
+      tr:nth-child(odd) {
+        background: #33373a;
+      }
+      tr:nth-child(even) {
+        background: #2b3133;
+      }
+    }
+  }
+}
+
+.method-example__body {
+  padding: 40px 40px 20px;
+}
+</style>

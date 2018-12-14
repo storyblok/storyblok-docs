@@ -1,66 +1,37 @@
 <template>
-  <section class="container">
-    <div>
-      <logo/>
-      <h1 class="title">
-        stratumstaticdoc
-      </h1>
-      <h2 class="subtitle">
-        API documentation setup
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
-      </div>
-    </div>
-  </section>
+  <div class="methods">
+    <MethodArea :key=method.path v-for="method in methods" :method=method></MethodArea>
+  </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import MethodArea from '@/components/MethodArea'
 
 export default {
+  name: 'method',
+  computed: {
+    methods() {
+      return this.$store.state.ordered
+    }
+  },
   components: {
-    Logo
+    MethodArea
+  },
+  mounted() {
+    this.$nextTick( () => {
+      let areas = document.querySelectorAll('.method-area')
+      let observer = new IntersectionObserver((changes) => {
+        changes.forEach(change => {
+          if(change.isIntersecting || change.intersectionRatio > 0.4) {
+            this.$store.commit('SET_ACTIVE_MENU_PATH', change.target.id)
+            history.pushState({}, null, `#${change.target.id}`)
+          }
+        })
+      }, {
+          threshold: 0.4
+      })
+      areas.forEach(area => observer.observe(area))
+    }, 0)
   }
-}
+ }
 </script>
-
-<style>
-
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>

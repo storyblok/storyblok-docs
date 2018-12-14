@@ -33,6 +33,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~plugins/inMarkdownComponents.js', ssr: false }
   ],
 
   /*
@@ -57,7 +58,7 @@ module.exports = {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-      
+      config.resolve.alias['vue'] = 'vue/dist/vue.common'
     }
   }
 }

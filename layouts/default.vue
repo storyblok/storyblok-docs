@@ -1,55 +1,78 @@
 <template>
-  <div>
-    <nuxt/>
+  <div class="docs">
+    <SvgSprite/>
+    <TopHeader/>
+    <SideMenu/>
+    <main class="main">
+      <nuxt/>
+    </main>
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
+<script>
+import SvgSprite from '@/components/SvgSprite';
+import SideMenu from '@/components/SideMenu';
+import TopHeader from '@/components/TopHeader';
+
+export default {
+  components: {
+    SideMenu,
+    TopHeader,
+    SvgSprite
+  },
+  mounted() {
+    if (typeof window.localStorage !== 'undefined' && typeof window.localStorage.codelang !== 'undefined') {
+      this.$store.commit('SET_CODELANG', window.localStorage.codelang)
+    }
+  }
+}
+</script>
+
+
+<style lang="scss">
+body {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #fff;
+  color: #4c555a;
+  font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
+  font-weight: 500;
+  line-height: 26px;
+  text-transform: none;
+  margin: 0;
+  padding: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
+h1, h2, h3, h4, h5 {
+  font-family: "Titillium Web", Helvetica, Arial, sans-serif;
 }
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
+  
+a {
+  color: #4c555a;
   text-decoration: none;
-  padding: 10px 30px;
+  font-size: 14px;
+  
+  &:hover {
+    color: #09b3af;
+  }
 }
 
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
+h2 {
+  font-size: 1.2em;
 }
 
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
+.docs {
+  display:flex;
+
+  & > .main {
+    margin-left: 220px;
+    width: calc(100vw - 220px);
+  }
 }
 
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
 </style>
