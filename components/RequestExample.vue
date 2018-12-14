@@ -3,130 +3,70 @@
 </template>
 
 <script>
-import marked from 'marked'
-import Prism from 'prismjs/components/prism-core'
-import 'prismjs/components/prism-bash'
-import 'prismjs/components/prism-json'
-import 'prismjs/components/prism-clike'
-import 'prismjs/components/prism-markup'
-import 'prismjs/components/prism-markup-templating'
-import 'prismjs/components/prism-php'
-import 'prismjs/components/prism-java'
-import 'prismjs/components/prism-csharp'
-import 'prismjs/components/prism-swift'
-import 'prismjs/components/prism-javascript'
-
-marked.setOptions({
-  highlight: (code, lang) => {
-		return Prism.highlight(code, Prism.languages[lang], lang)
-	}
-})
-
-
-// needed to stop Prism to automatically highlight everything that is already highlighted:
-// https://github.com/PrismJS/prism/issues/765#issuecomment-139043403
-// https://github.com/PrismJS/prism/pull/1087#issuecomment-274952728
-if (window.Prism) {
-  document.removeEventListener('DOMContentLoaded', Prism.highlightAll)
-} else {
-  window.Prism = { manual: true }
-}
+import marked from '@/plugins/markedWithPrism'
+import RequestLanguages from '@/components/requests/RequestLanguages'
 
 export default {
   data() {
     return {
-      base: 'https://api.storyblok.com/v1'
-    }
-  },
-  computed: {
-    type() {
-      return this.$store.state.codelang 
+      base: 'https://api.storyblok.com/v1',
+      code: {
+        javascript: '',
+        bash: '',
+        php: '',
+        java: '',
+        csharp: '',
+        swift: ''
+      }
     }
   },
   props: {
     url: String
   },
+  computed: {
+    propsData() {
+      return { 
+        url: this.url,
+        path: this.getPathFromUrl(),
+        params: this.getParamsAsJson()
+      }
+    },
+    type() {
+      return this.$store.state.codelang 
+    }
+  },
   methods: {
     applyFormat(url) {
-      // eslint-disable-next-line
-      let code = '```' + this.type + '\n'
-
-      switch (this.type) {
-        case 'bash':
-          code += `curl "${url}" -X GET \\
-  -H "Accept: application/json" \\
-  -H "Content-Type: application/json"`
-        break
-        case 'javascript':
-          code += `// use the universal js client to perform the request
-Storyblok.get('${this.getPathFromUrl()}', ${this.getParamsAsJson()})
-  .then(response => {
-    console.log(response)
-  }).catch(error => { 
-    console.log(error)
-  })
-`
-        break
-        case 'php':
-          code += `<?php
-
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "${url}",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}`
-        break
-        case 'java':
-          code += `HttpResponse<String> response = Unirest.get("${url}")
-  .asString();`
-        break
-        case 'csharp':
-          code += `var client = new RestClient("${url}");
-var request = new RestRequest(Method.GET);
-IRestResponse response = client.Execute(request);`
-        break
-        case 'swift':
-          code += `import Foundation
-
-let request = NSMutableURLRequest(url: NSURL(string: "${url}")! as URL,
-                    cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-request.httpMethod = "GET"
-
-let session = URLSession.shared
-let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-  if (error != nil) {
-    print(error)
-  } else {
-    let httpResponse = response as? HTTPURLResponse
-    print(httpResponse)
-  }
-})
-
-dataTask.resume()`
-        break
+      if(this.code[this.type].length != 0) {
+        return this.code[this.type]
       }
 
+      let code = '```' + this.type + '\n'
+      switch (this.type) {
+        case 'bash':
+          code += new RequestLanguages.bash({ propsData: this.propsData }).rendered
+        break
+        case 'javascript':
+          code += new RequestLanguages.javascript({ propsData: this.propsData }).rendered
+        break
+        case 'php':
+          code += new RequestLanguages.php({ propsData: this.propsData }).rendered
+        break
+        case 'java':
+          code += new RequestLanguages.java({ propsData: this.propsData }).rendered
+        break
+        case 'csharp':
+          code += new RequestLanguages.csharp({ propsData: this.propsData }).rendered
+        break
+        case 'swift':
+          code += new RequestLanguages.swift({ propsData: this.propsData }).rendered
+        break
+      }
       code += '\n```'
 
-      return marked(code)
+      this.code[this.type] = marked(code)
+
+      return this.code[this.type]
     },
     getQueryParameterFromUrl(name) {
       if (typeof URLSearchParams !== 'undefined') {
@@ -191,7 +131,7 @@ dataTask.resume()`
           }
       }
       delete params.token 
-      return JSON.stringify(params, null, 2)
+      return params
     }
   }
 }
