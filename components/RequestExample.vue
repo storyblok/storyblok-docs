@@ -96,7 +96,7 @@ export default {
 
       let assign = (obj, keyPath, value) => {
         let lastKeyIndex = keyPath.length - 1
-        for (let i = 0 i < lastKeyIndex ++i) {
+        for (let i = 0; i < lastKeyIndex; ++i) {
           let key = keyPath[i]
           if (!(key in obj)) obj[key] = {}
           obj = obj[key]
