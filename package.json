@@ -5,7 +5,7 @@
   "author": "Dominik Angerer",
   "private": true,
   "scripts": {
-    "dev": "nuxt",
+    "dev": "nuxt & node docgen.js",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate"
