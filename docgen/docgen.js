@@ -26,16 +26,15 @@ const Docgen = {
   init: () => {
     mkdirSync(config.parsedContentDir, { recursive: true })
     Docgen.generateAllDirectory()
-    watch(config.originContentDir, { recursive: true }, this.fileEvent)
+    watch(config.originContentDir, { recursive: true }, Docgen.fileEvent)
   },
 
   fileEvent: (evt, updatedFile) => {
     if (evt == 'remove') {
-      unlink(updatedFile.replace(config.originContentDir, config.parsedContentDir).replace('.md', '.json'), (err) => {
+      unlink(Docgen.getOutputFilePath(updatedFile), (err) => {
         if (err) throw err
       })
-    }
-    else {
+    } else {
       Docgen.generate(updatedFile)
     }
   },
@@ -48,7 +47,7 @@ const Docgen = {
     }
     
     readFile(source, { encoding: 'utf8' }, (err, data) => {
-      let path = '/' + source.replace(config.parsedContentDir, '').replace('.json', '')
+      let path = Docgen.getRelativeFilePath(source)
      
       contents[path] = JSON.parse(data)
   
@@ -115,11 +114,23 @@ const Docgen = {
     }
   },
 
+  getDirectoryPath(file) {
+    return file.substring(0, file.lastIndexOf('/')).replace(config.baseDir, config.docgenDir)
+  },
+
+  getOutputFilePath(file) {
+    return file.replace(config.baseDir, config.docgenDir).replace('.md', '.json')
+  },
+
+  getRelativeFilePath(file) {
+    return '/' + file.replace(config.originContentDir, '').replace('.md', '').replace(config.parsedContentDir, '').replace('.json', '')
+  },
+
   generate: (source) => {
     readFile(source, { encoding: 'utf8' }, (err, originData) => {
       if (err) throw err
   
-      let dir = source.substring(0, source.lastIndexOf('/')).replace(__dirname, config.docgenDir)
+      let dir = Docgen.getDirectoryPath(source)
       mkdir(dir, { recursive: true }, (err) => {
   
         let originContent = frontmatter(originData)
@@ -131,7 +142,7 @@ const Docgen = {
         let content = marked(area[0] || '')
         let example = marked(area[1] || '')
         
-        let path = '/' + source.replace(config.originContentDir, '').replace('.md', '')
+        let path = Docgen.getRelativeFilePath(source)
   
         let data = {
           path: path,
@@ -144,8 +155,7 @@ const Docgen = {
           data.title = marked(originDataAttributes.title).replace('<p>', '').replace('</p>', '')
         }
         
-        let out = source.replace('.md', '.json').replace(__dirname, config.docgenDir)
-  
+        let out = Docgen.getOutputFilePath(source)
         writeFile(out, JSON.stringify(data), (err) => {
           if (err) throw err
           Docgen.updateCollections(out)
