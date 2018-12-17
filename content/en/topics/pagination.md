@@ -14,7 +14,7 @@ To allow a calculation of how many pages are available you can access the `Total
 | Query Parameter     | Description          |
 |---------------------|----------------------|
 | `page` | Default: `1`. Increase this to receive the next page of content entries |
-| `per_page` | Default: `25`, Max: `100`. Defines the number of content entries you will receive per page |
+| `per_page` | Default: `25`, Max for Stories: `100`, Max for Datasource Entries: `1000` . Defines the number of content entries you will receive per page |
 
 ;examplearea
 
