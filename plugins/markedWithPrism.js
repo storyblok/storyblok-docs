@@ -10,6 +10,7 @@ import 'prismjs/components/prism-java'
 import 'prismjs/components/prism-csharp'
 import 'prismjs/components/prism-swift'
 import 'prismjs/components/prism-javascript'
+import 'prismjs/components/prism-ruby'
 
 marked.setOptions({
   highlight: (code, lang) => {
