@@ -1,8 +1,8 @@
 {
-  "name": "stratumstaticdoc",
+  "name": "storyblok-content-delivery-api-doc",
   "version": "1.0.0",
   "description": "API documentation setup",
-  "author": "Dominik Angerer",
+  "author": "Dominik Angerer <da@storyblok.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt & node docgen/docgen.js",
