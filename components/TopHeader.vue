@@ -1,7 +1,9 @@
 <template>
   <div class="top-header">
-    <div class="top-header__submenu"></div>
-    <div class="top-header__content"></div>
+    <div class="top-header__submenu">
+    </div>
+    <div class="top-header__content">
+    </div>
     <div class="top-header__example">
       <CodeNavigation/>
     </div>

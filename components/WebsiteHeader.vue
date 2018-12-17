@@ -12,7 +12,7 @@ export default {
 
 <style lang="scss">
 .website-header {
-  height: 132px;
+  height: 80px;
   background: #09b3af;
 }
 </style>
