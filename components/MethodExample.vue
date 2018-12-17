@@ -23,7 +23,8 @@ export default {
       return !this.loaded && this.containsDymanic
     },
     containsDymanic() {
-      return this.method.example.indexOf(`RequestExample`) >= 0
+      return this.method.example.indexOf(`RequestExample`) >= 0 ||
+             this.method.example.indexOf(`v-`) >= 0
     }
   },
   props: {
