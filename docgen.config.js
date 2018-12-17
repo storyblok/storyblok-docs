@@ -5,6 +5,7 @@ module.exports = {
   combinedContentFile: `${__dirname}/.docgen/content.json`,
   orderedContentFile: `${__dirname}/.docgen/ordered.json`,
   menuContentFile: `${__dirname}/.docgen/menu.json`,
+  splitString: ';examplearea',
   languages: ['en', 'de'],
   ignoreFiles: [ '.DS_Store' ],  
 }

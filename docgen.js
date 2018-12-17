@@ -109,7 +109,7 @@ const markdownTransformer = (source) => {
       let originDataBody = originContent.body
       let originDataAttributes = originContent.attributes
       
-      let area = originDataBody.split(';examplearea')
+      let area = originDataBody.split(config.splitString)
 
       let content = marked(area[0] || '')
       let example = marked(area[1] || '')
