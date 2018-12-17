@@ -56,12 +56,13 @@ h1, h2, h3, h4, h5 {
 }
   
 a {
-  color: #4c555a;
+  color: #09b3af;
   text-decoration: none;
   font-size: 14px;
+  font-weight: bold;
   
   &:hover {
-    color: #09b3af;
+    text-decoration: underline;
   }
 }
 

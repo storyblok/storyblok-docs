@@ -82,6 +82,8 @@ $side-bar-width: 220px;
     display: inline-block;
     padding: 1px 0px;
     width: 100%;
+    font-weight: normal;
+    color: #4c555a;
 
     &.active {
       color: #09b3af;

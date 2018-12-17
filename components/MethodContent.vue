@@ -48,6 +48,7 @@ export default {
       }
     }
   }
+
   .method-content__title {
     font-family: inherit;
     font-size: inherit;
@@ -58,7 +59,10 @@ export default {
     }
       
     &:hover, &:focus {
+      text-decoration: none;
+
       .icon {
+        padding-left: 5px;
         display: inline-block
       }
     }
