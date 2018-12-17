@@ -70,7 +70,6 @@ h2 {
 }
 
 .docs {
-  display: flex;
   position: relative;
 }
 

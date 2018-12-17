@@ -1,7 +1,9 @@
 <template>
   <div class="top-header">
-    <div class="top-header__submenu"></div>
-    <div class="top-header__content"></div>
+    <div class="top-header__submenu">
+    </div>
+    <div class="top-header__content">
+    </div>
     <div class="top-header__example">
       <ul>
         <li>
@@ -45,7 +47,7 @@ $side-bar-width: 220px;
 $top-header-height: 60px;
 
 .top-header {
-  position: absolute;
+  position: sticky;
   top: 0px;
   width: 100%;
   display: flex;
@@ -54,15 +56,7 @@ $top-header-height: 60px;
 
 .top-header__submenu {
   min-width: $side-bar-width;
-  height: $top-header-height;
-  background: #fafcfc;
-  border-bottom: 1px solid #efefef;
-  img {
-    padding-top: 10px;
-    padding-left: 20px;
-    height: 47px;
-    max-width: $side-bar-width;
-  }
+  height: 0px;
 }
 
 .top-header__content {
@@ -71,9 +65,8 @@ $top-header-height: 60px;
 }
 
 .top-header__example {
-  width: calc(100vw - 220px);
+  width: calc(100vw - 224px);
   height: $top-header-height;
-
   background: #242729;
   color: #d0d4d7;
 

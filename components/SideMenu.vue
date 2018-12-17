@@ -63,15 +63,18 @@ export default {
 
 <style lang="scss">
 $side-bar-width: 220px;
+$top-header-height: 60px;
 
 .side-menu {
-  position: fixed;
+  position: sticky;
+  top: $top-header-height;
   width: $side-bar-width;
   background: #fafcfc;
   border-right: 1px solid #efefef;
   color: #939da3;
   height: 100vh;
   overflow-y: scroll;
+  float: left;
 
   a {
     display: inline-block;
@@ -90,7 +93,7 @@ $side-bar-width: 220px;
   }
 
   nav {
-    padding: 70px 0px 20px 0px;
+    padding: 20px 0px 20px 0px;
   }
 }
 
