@@ -23,10 +23,6 @@ export default {
 <style lang="scss">
 .method-area {
   display:flex;
-
-  img {
-    max-width: 100%;
-  }
   
   & > * {
     padding: 0px 0px 50px 0px;

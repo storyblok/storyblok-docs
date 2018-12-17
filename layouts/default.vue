@@ -54,7 +54,11 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: "Titillium Web", Helvetica, Arial, sans-serif;
 }
-  
+
+img {
+  max-width: 100%;
+} 
+
 a {
   color: #09b3af;
   text-decoration: none;
