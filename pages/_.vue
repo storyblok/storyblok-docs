@@ -23,8 +23,6 @@ export default {
     store.commit('SET_MENU', { language: language, menu: menuResponse.data })
 
     store.commit('SET_LANGUAGE', { language: language })
-
-    return { loaded: true }
   }
  }
 </script>
