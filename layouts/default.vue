@@ -1,19 +1,24 @@
 <template>
-  <div class="docs">
-    <SvgSprite/>
-    <TopHeader/>
-    <SideMenu/>
-    <nuxt/>
+  <div>
+    <WebsiteHeader/>
+    <div class="docs">
+      <SvgSprite/>
+      <TopHeader/>
+      <SideMenu/>
+      <nuxt/>
+    </div>
   </div>
 </template>
 
 <script>
-import SvgSprite from '@/components/SvgSprite';
-import SideMenu from '@/components/SideMenu';
-import TopHeader from '@/components/TopHeader';
+import SvgSprite from '@/components/SvgSprite'
+import SideMenu from '@/components/SideMenu'
+import TopHeader from '@/components/TopHeader'
+import WebsiteHeader from '@/components/WebsiteHeader'
 
 export default {
   components: {
+    WebsiteHeader,
     SideMenu,
     TopHeader,
     SvgSprite
@@ -65,12 +70,8 @@ h2 {
 }
 
 .docs {
-  display:flex;
-
-  & > .main {
-    margin-left: 220px;
-    width: calc(100vw - 220px);
-  }
+  display: flex;
+  position: relative;
 }
 
 </style>

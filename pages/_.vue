@@ -26,3 +26,10 @@ export default {
   }
  }
 </script>
+
+<style>
+.main {
+  margin-left: 220px;
+  width: calc(100vw - 220px);
+}
+</style>

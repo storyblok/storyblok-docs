@@ -1,8 +1,6 @@
 <template>
   <div class="top-header">
-    <div class="top-header__submenu">
-      <img src="https://a.storyblok.com/f/39898/x/aa0dc897ff/storyblok-logo.svg" alt="Logo">
-    </div>
+    <div class="top-header__submenu"></div>
     <div class="top-header__content"></div>
     <div class="top-header__example">
       <ul>
@@ -47,7 +45,7 @@ $side-bar-width: 220px;
 $top-header-height: 60px;
 
 .top-header {
-  position: fixed;
+  position: absolute;
   top: 0px;
   width: 100%;
   display: flex;
