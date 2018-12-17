@@ -1,6 +1,9 @@
 const pkg = require('./package')
 
 module.exports = {
+  env: {
+    baseURL: (process.env.NODE_ENV === 'production' ? window.location : 'http://localhost:3000')
+  },
   mode: 'universal',
 
   /*
@@ -40,8 +43,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    
   ],
   /*
   ** Axios module configuration

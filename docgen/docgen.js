@@ -24,7 +24,12 @@ const contents = {}
 
 const Docgen = {
   init: () => {
-    mkdirSync(config.parsedContentDir, { recursive: true })
+    for (let index = 0, max = config.languages.length; index < max; index++) {
+      let language = config.languages[index]
+      contents[language] = {}
+    }
+
+    mkdirSync(config.docgenDir, { recursive: true })
     Docgen.generateAllDirectory()
     watch(config.originContentDir, { recursive: true }, Docgen.fileEvent)
   },
@@ -47,50 +52,71 @@ const Docgen = {
     }
     
     readFile(source, { encoding: 'utf8' }, (err, data) => {
-      let path = Docgen.getRelativeFilePath(source)
-     
-      contents[path] = JSON.parse(data)
-  
-      let ordered = Object.values(contents).sort((a, b) => {
-        if (a.attributes.position < b.attributes.position) return -1
-        if (a.attributes.position > b.attributes.position) return 1
-        return 0
-      })
-  
-      writeFile(config.combinedContentFile, JSON.stringify(contents), (err) => {
-        if (err) throw err
-      })
-  
-      let menu = []
-      let latestStartpage = null
-  
-      for (let index = 0, max = ordered.length; index < max; index++) {
-        const element = JSON.parse(JSON.stringify(ordered[index]));
-        delete element.example
-        delete element.content
-        delete element.origin
-        if (latestStartpage == null) {
-          latestStartpage = element
-          latestStartpage.children = []
-        } else if (typeof element.attributes !== 'undefined' && element.attributes.startpage) {
-          menu.push(latestStartpage)
-          latestStartpage = element
-          latestStartpage.children = []
-        } else {
-          latestStartpage.children.push(element)
-        }
-        if (index + 1 >= max) {
-          menu.push(latestStartpage)
-        }
+      let path = Docgen.getLanguageRelativeFilePath(source)
+      let lang = Docgen.getLanguagePathFromFile(source)
+      
+      contents[lang][path] = JSON.parse(data)
+
+      for (let index = 0, max = config.languages.length; index < max; index++) {
+        let language = config.languages[index]
+        
+        Docgen.generateCombined(contents, language)
+        Docgen.generateMenu(contents, language)
+        Docgen.generateOrdered(contents, language)
+      }    
+    })
+  },
+
+  generateCombined: (contents, language) => {
+    writeFile(Docgen.getLanguageOutputFile(config.combinedContentFile, language), JSON.stringify(contents[language]), (err) => {
+      if (err) throw err
+    })
+  },
+
+  generateOrdered: (contents, language) => {
+    let ordered = Docgen.orderContents(contents[language])
+
+    writeFile(Docgen.getLanguageOutputFile(config.orderedContentFile, language), JSON.stringify(ordered, null, 2), (err) => {
+      if (err) throw err
+    })
+  },
+
+  generateMenu: (contents, language) => {
+    let ordered = Docgen.orderContents(contents[language])
+
+    let menu = []
+    let latestStartpage = null
+
+    for (let index = 0, max = ordered.length; index < max; index++) {
+      const element = JSON.parse(JSON.stringify(ordered[index]));
+      delete element.example
+      delete element.content
+      delete element.origin
+      if (latestStartpage == null) {
+        latestStartpage = element
+        latestStartpage.children = []
+      } else if (typeof element.attributes !== 'undefined' && element.attributes.startpage) {
+        menu.push(latestStartpage)
+        latestStartpage = element
+        latestStartpage.children = []
+      } else {
+        latestStartpage.children.push(element)
       }
-  
-      writeFile(config.menuContentFile, JSON.stringify(menu, null, 2), (err) => {
-        if (err) throw err
-      })
-  
-      writeFile(config.orderedContentFile, JSON.stringify(ordered, null, 2), (err) => {
-        if (err) throw err
-      })
+      if (index + 1 >= max) {
+        menu.push(latestStartpage)
+      }
+    }
+
+    writeFile(Docgen.getLanguageOutputFile(config.menuContentFile, language), JSON.stringify(menu, null, 2), (err) => {
+      if (err) throw err
+    })
+  },
+
+  orderContents: (contents) => {
+    return Object.values(contents).sort((a, b) => {
+      if (a.attributes.position < b.attributes.position) return -1
+      if (a.attributes.position > b.attributes.position) return 1
+      return 0
     })
   },
 
@@ -123,7 +149,19 @@ const Docgen = {
   },
 
   getRelativeFilePath(file) {
-    return '/' + file.replace(config.originContentDir, '').replace('.md', '').replace(config.parsedContentDir, '').replace('.json', '')
+    return '/' + file.replace(config.originContentDir, '').replace('.md', '').replace(config.docgenDir, '').replace('.json', '').replace('content/', '')
+  },
+
+  getLanguageRelativeFilePath(file) {
+    return Docgen.getRelativeFilePath(file).replace(Docgen.getLanguagePathFromFile(file) + '/', '')
+  },
+
+  getLanguagePathFromFile(file) {
+    return Docgen.getRelativeFilePath(file).split('/')[1]
+  },
+
+  getLanguageOutputFile(file, language) {
+    return file.replace('{lang}', language)
   },
 
   stripParagraphWrapper(markdown) { 
@@ -146,9 +184,12 @@ const Docgen = {
         let content = marked(area[0] || '')
         let example = marked(area[1] || '')
         
-        let path = Docgen.getRelativeFilePath(source)
+        let fullPath = Docgen.getRelativeFilePath(source)
+        let path = Docgen.getLanguageRelativeFilePath(source)
+
   
         let data = {
+          fullPath: fullPath,
           path: path,
           attributes: originDataAttributes,
           content: content,

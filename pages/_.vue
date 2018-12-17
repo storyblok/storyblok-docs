@@ -14,7 +14,7 @@ export default {
     Methods
   },
   async asyncData ({ store, params }) {
-    let language = params.lang
+    let language = params.pathMatch.length === 0 ? 'en' : params.pathMatch.split('/')[0]
 
     let orderedResponse = await axios.get(`http://localhost:3000/ordered.${language}.json`)
     let menuResponse = await axios.get(`http://localhost:3000/menu.${language}.json`)
