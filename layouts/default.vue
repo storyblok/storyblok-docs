@@ -3,9 +3,7 @@
     <SvgSprite/>
     <TopHeader/>
     <SideMenu/>
-    <main class="main">
-      <nuxt/>
-    </main>
+    <nuxt/>
   </div>
 </template>
 

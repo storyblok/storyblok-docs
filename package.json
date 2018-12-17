@@ -11,12 +11,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.0.0",
+    "axios": "^0.18.0",
     "cross-env": "^5.2.0",
     "marked": "^0.5.2",
     "nuxt": "^2.0.0",
-    "prismjs": "^1.15.0",
-    "prismjs-components-loader": "^3.0.1"
+    "prismjs": "^1.15.0"
   },
   "devDependencies": {
     "front-matter": "^3.0.1",
@@ -24,7 +23,8 @@
     "node-sass": "^4.11.0",
     "node-watch": "^0.5.9",
     "nodemon": "^1.11.0",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "prismjs-components-loader": "^3.0.1"
   },
   "vue": {
     "runtimeCompiler": true

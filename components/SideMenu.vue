@@ -24,7 +24,7 @@
 export default {
   computed: {
     menu() {
-      return this.$store.state.menu
+      return this.$store.state.content[this.$store.state.language].menu
     }
   },
   methods: {
