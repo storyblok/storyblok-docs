@@ -126,6 +126,10 @@ const Docgen = {
     return '/' + file.replace(config.originContentDir, '').replace('.md', '').replace(config.parsedContentDir, '').replace('.json', '')
   },
 
+  stripParagraphWrapper(markdown) { 
+    return markdown.replace('<p>', '').replace('</p>\n', '')
+  },
+
   generate: (source) => {
     readFile(source, { encoding: 'utf8' }, (err, originData) => {
       if (err) throw err
@@ -152,7 +156,7 @@ const Docgen = {
         }
   
         if (typeof originDataAttributes.title !== 'undefined') {
-          data.title = marked(originDataAttributes.title).replace('<p>', '').replace('</p>', '')
+          data.title = Docgen.stripParagraphWrapper(marked(originDataAttributes.title))
         }
         
         let out = Docgen.getOutputFilePath(source)
