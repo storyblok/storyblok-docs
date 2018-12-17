@@ -24,6 +24,9 @@
         <li>
           <a href="#" :class="{ active: $store.state.codelang == 'swift' }" @click.prevent="switchCodeLang('swift')">Swift</a>
         </li>
+        <li>
+          <a href="#" :class="{ active: $store.state.codelang == 'ruby' }" @click.prevent="switchCodeLang('ruby')">Ruby</a>
+        </li>
       </ul>
     </div>
   </div>

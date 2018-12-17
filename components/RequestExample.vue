@@ -16,7 +16,8 @@ export default {
         php: '',
         java: '',
         csharp: '',
-        swift: ''
+        swift: '',
+        ruby: ''
       }
     }
   },

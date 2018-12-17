@@ -6,6 +6,7 @@ import RequestPhp from '@/components/requests/RequestPhp'
 import RequestJava from '@/components/requests/RequestJava'
 import RequestCsharp from '@/components/requests/RequestCsharp'
 import RequestSwift from '@/components/requests/RequestSwift'
+import RequestRuby from '@/components/requests/RequestRuby'
 
 export default {
   javascript: Vue.extend(RequestJavaScript),
@@ -13,6 +14,7 @@ export default {
   php: Vue.extend(RequestPhp),
   java: Vue.extend(RequestJava),
   csharp: Vue.extend(RequestCsharp),
-  swift: Vue.extend(RequestSwift)
+  swift: Vue.extend(RequestSwift),
+  ruby: Vue.extend(RequestRuby),
 }
 </script>
