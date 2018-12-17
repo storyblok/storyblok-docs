@@ -29,6 +29,9 @@ marked.setOptions(markedOptions)
 const contents = {}
 
 const updateCombinedContents = (source) => {
+  if (source.indexOf('.DS_Store') >= 0) {
+    return
+  }
   readFile(source, { encoding: 'utf8' }, (err, data) => {
     let path = '/' + source.replace(parsedContentDir, '').replace('.json', '')
    
