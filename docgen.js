@@ -4,22 +4,17 @@ const marked = require('marked')
 const frontmatter = require('front-matter')
 
 const prism = require('prismjs')
-const loadLanguages = require('prismjs/components/')
+const loadCodeLanguages = require('prismjs/components/')
 
 const { resolve } = require('path')
 const { readdir, stat } = require('fs').promises
 const { mkdirSync, readFile, writeFile, mkdir, unlink } = require('fs')
 
 // Configuration
-const originContentDir = `${__dirname}/content/`
-const docgenDir = `${__dirname}/.docgen`
-const parsedContentDir = `${docgenDir}/content/`
-const combinedContentFile = `${docgenDir}/content.json`
-const orderedContentFile = `${docgenDir}/ordered.json`
-const menuContentFile = `${docgenDir}/menu.json`
+const config = require('./docgen.config.js')
 const markedOptions = {
   highlight: function (code, lang) {
-    loadLanguages([lang])
+    loadCodeLanguages([lang])
 		return prism.highlight(code, prism.languages[lang], lang)
 	}
 }
@@ -29,11 +24,14 @@ marked.setOptions(markedOptions)
 const contents = {}
 
 const updateCombinedContents = (source) => {
-  if (source.indexOf('.DS_Store') >= 0) {
-    return
+  for (let index = 0, max = config.ignoreFiles.length; index < max; index++) {
+    if (source.indexOf(config.ignoreFiles[index]) >= 0) {
+      return
+    }
   }
+  
   readFile(source, { encoding: 'utf8' }, (err, data) => {
-    let path = '/' + source.replace(parsedContentDir, '').replace('.json', '')
+    let path = '/' + source.replace(config.parsedContentDir, '').replace('.json', '')
    
     contents[path] = JSON.parse(data)
 
@@ -43,7 +41,7 @@ const updateCombinedContents = (source) => {
       return 0
     })
 
-    writeFile(combinedContentFile, JSON.stringify(contents), (err) => {
+    writeFile(config.combinedContentFile, JSON.stringify(contents), (err) => {
       if (err) throw err
     })
 
@@ -70,11 +68,11 @@ const updateCombinedContents = (source) => {
       }
     }
 
-    writeFile(menuContentFile, JSON.stringify(menu, null, 2), (err) => {
+    writeFile(config.menuContentFile, JSON.stringify(menu, null, 2), (err) => {
       if (err) throw err
     })
 
-    writeFile(orderedContentFile, JSON.stringify(ordered, null, 2), (err) => {
+    writeFile(config.orderedContentFile, JSON.stringify(ordered, null, 2), (err) => {
       if (err) throw err
     })
   })
@@ -82,7 +80,7 @@ const updateCombinedContents = (source) => {
 
 const transformAllContents = () => {    
   (async () => {
-    for await (const f of getFiles(originContentDir)) {
+    for await (const f of getFiles(config.originContentDir)) {
       markdownTransformer(f)
     }
   })()
@@ -104,7 +102,7 @@ const markdownTransformer = (source) => {
   readFile(source, { encoding: 'utf8' }, (err, originData) => {
     if (err) throw err
 
-    let dir = source.substring(0, source.lastIndexOf('/')).replace(__dirname, docgenDir)
+    let dir = source.substring(0, source.lastIndexOf('/')).replace(__dirname, config.docgenDir)
     mkdir(dir, { recursive: true }, (err) => {
 
       let originContent = frontmatter(originData)
@@ -116,7 +114,7 @@ const markdownTransformer = (source) => {
       let content = marked(area[0] || '')
       let example = marked(area[1] || '')
       
-      let path = '/' + source.replace(originContentDir, '').replace('.md', '')
+      let path = '/' + source.replace(config.originContentDir, '').replace('.md', '')
 
       let data = {
         path: path,
@@ -129,7 +127,7 @@ const markdownTransformer = (source) => {
         data.title = marked(originDataAttributes.title).replace('<p>', '').replace('</p>', '')
       }
       
-      let out = source.replace('.md', '.json').replace(__dirname, docgenDir)
+      let out = source.replace('.md', '.json').replace(__dirname, config.docgenDir)
 
       writeFile(out, JSON.stringify(data), (err) => {
         if (err) throw err
@@ -139,13 +137,13 @@ const markdownTransformer = (source) => {
   })
 }
 
-mkdirSync(parsedContentDir, { recursive: true })
+mkdirSync(config.parsedContentDir, { recursive: true })
 
 transformAllContents()
 
-watch(originContentDir, { recursive: true }, (evt, updatedFile) => {
+watch(config.originContentDir, { recursive: true }, (evt, updatedFile) => {
   if (evt == 'remove') {
-    unlink(updatedFile.replace(originContentDir, parsedContentDir).replace('.md', '.json'), (err) => {
+    unlink(updatedFile.replace(config.originContentDir, config.parsedContentDir).replace('.md', '.json'), (err) => {
       if (err) throw err
     })
   }
