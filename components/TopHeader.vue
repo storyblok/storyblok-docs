@@ -1,43 +1,19 @@
 <template>
   <div class="top-header">
-    <div class="top-header__submenu">
-    </div>
-    <div class="top-header__content">
-    </div>
+    <div class="top-header__submenu"></div>
+    <div class="top-header__content"></div>
     <div class="top-header__example">
-      <ul>
-        <li>
-          <a href="#" :class="{ active: $store.state.codelang == 'bash' }" @click.prevent="switchCodeLang('bash')">curl</a>
-        </li>
-        <li>
-          <a href="#" :class="{ active: $store.state.codelang == 'javascript' }" @click.prevent="switchCodeLang('javascript')">JavaScript</a>
-        </li>
-        <li>
-          <a href="#" :class="{ active: $store.state.codelang == 'php' }" @click.prevent="switchCodeLang('php')">PHP</a>
-        </li>
-        <li>
-          <a href="#" :class="{ active: $store.state.codelang == 'java' }" @click.prevent="switchCodeLang('java')">Java</a>
-        </li>
-        <li>
-          <a href="#" :class="{ active: $store.state.codelang == 'csharp' }" @click.prevent="switchCodeLang('csharp')">C#</a>
-        </li>
-        <li>
-          <a href="#" :class="{ active: $store.state.codelang == 'swift' }" @click.prevent="switchCodeLang('swift')">Swift</a>
-        </li>
-        <li>
-          <a href="#" :class="{ active: $store.state.codelang == 'ruby' }" @click.prevent="switchCodeLang('ruby')">Ruby</a>
-        </li>
-      </ul>
+      <CodeNavigation/>
     </div>
   </div>
 </template>
 
 <script>
+import CodeNavigation from '@/components/CodeNavigation'
+
 export default {
-  methods: {
-    switchCodeLang(code) {
-      this.$store.commit('SET_CODELANG', code)
-    }
+  components: {
+    CodeNavigation
   }
 }
 </script>
@@ -69,16 +45,7 @@ $top-header-height: 60px;
   height: $top-header-height;
   background: #242729;
   color: #d0d4d7;
-
-  ul {
-    list-style: none;
-    padding: 0px;
-    margin: 0px;
-    
-    li {
-      display: inline-block;
-    }
-  }
+  overflow-x: scroll;
 
   a {
     display: inline-block;

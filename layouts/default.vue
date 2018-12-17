@@ -4,7 +4,7 @@
     <div class="docs">
       <SvgSprite/>
       <TopHeader/>
-      <SideMenu/>
+      <SidebarNavigation/>
       <nuxt/>
     </div>
   </div>
@@ -12,14 +12,14 @@
 
 <script>
 import SvgSprite from '@/components/SvgSprite'
-import SideMenu from '@/components/SideMenu'
+import SidebarNavigation from '@/components/SidebarNavigation'
 import TopHeader from '@/components/TopHeader'
 import WebsiteHeader from '@/components/WebsiteHeader'
 
 export default {
   components: {
     WebsiteHeader,
-    SideMenu,
+    SidebarNavigation,
     TopHeader,
     SvgSprite
   },
