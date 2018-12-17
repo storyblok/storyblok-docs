@@ -12,7 +12,7 @@ const createStore = () => {
         }
       },
       activeMenuPath: '',
-      language: 'en',
+      language: process.env.defaultLanguage,
       codelang: 'bash'
     },
     mutations: {

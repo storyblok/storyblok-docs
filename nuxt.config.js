@@ -2,7 +2,8 @@ const pkg = require('./package')
 
 module.exports = {
   env: {
-    baseURL: (process.env.NODE_ENV === 'production' ? window.location : 'http://localhost:3000')
+    baseURL: (process.env.NODE_ENV === 'production' ? window.location : 'http://localhost:3000'),
+    defaultLanguage: 'en'
   },
   mode: 'universal',
 
@@ -43,7 +44,7 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-    
+
   ],
   /*
   ** Axios module configuration
