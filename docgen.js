@@ -12,11 +12,11 @@ const { mkdirSync, readFile, writeFile, mkdir, unlink } = require('fs')
 
 // Configuration
 const originContentDir = `${__dirname}/content/`
-const stratumDir = `${__dirname}/.stratum`
-const parsedContentDir = `${stratumDir}/content/`
-const combinedContentFile = `${stratumDir}/content.json`
-const orderedContentFile = `${stratumDir}/ordered.json`
-const menuContentFile = `${stratumDir}/menu.json`
+const docgenDir = `${__dirname}/.docgen`
+const parsedContentDir = `${docgenDir}/content/`
+const combinedContentFile = `${docgenDir}/content.json`
+const orderedContentFile = `${docgenDir}/ordered.json`
+const menuContentFile = `${docgenDir}/menu.json`
 const markedOptions = {
   highlight: function (code, lang) {
     loadLanguages([lang])
@@ -104,7 +104,7 @@ const markdownTransformer = (source) => {
   readFile(source, { encoding: 'utf8' }, (err, originData) => {
     if (err) throw err
 
-    let dir = source.substring(0, source.lastIndexOf('/')).replace(__dirname, stratumDir)
+    let dir = source.substring(0, source.lastIndexOf('/')).replace(__dirname, docgenDir)
     mkdir(dir, { recursive: true }, (err) => {
 
       let originContent = frontmatter(originData)
@@ -129,7 +129,7 @@ const markdownTransformer = (source) => {
         data.title = marked(originDataAttributes.title).replace('<p>', '').replace('</p>', '')
       }
       
-      let out = source.replace('.md', '.json').replace(__dirname, stratumDir)
+      let out = source.replace('.md', '.json').replace(__dirname, docgenDir)
 
       writeFile(out, JSON.stringify(data), (err) => {
         if (err) throw err

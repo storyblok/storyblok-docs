@@ -1,6 +1,6 @@
 import Vuex from 'vuex'
-import ordered from '~/.stratum/ordered.json'
-import menu from '~/.stratum/menu.json'
+import ordered from '~/.docgen/ordered.json'
+import menu from '~/.docgen/menu.json'
 
 const createStore = () => {
   return new Vuex.Store({
