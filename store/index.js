@@ -1,13 +1,18 @@
 import Vuex from 'vuex'
-import ordered from '~/.docgen/ordered.json'
-import menu from '~/.docgen/menu.json'
+import ordered from '~/static/ordered.en.json'
+import menu from '~/static/menu.en.json'
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      ordered,
-      menu,
+      content: {
+        en: {
+          ordered: ordered,
+          menu: menu,
+        }
+      },
       activeMenuPath: '',
+      language: 'en',
       codelang: 'bash'
     },
     mutations: {
@@ -17,10 +22,22 @@ const createStore = () => {
       },
       SET_ACTIVE_MENU_PATH(state, activeMenuPath) {
         state.activeMenuPath = activeMenuPath
+      },
+      SET_ORDERED(state, { language, ordered }) {
+        if (typeof state.content[language] == 'undefined') {
+          state.content[language] = {} 
+        }
+        state.content[language].ordered = ordered
+      },
+      SET_MENU(state, { language, menu }) {
+        if (typeof state.content[language] == 'undefined') {
+          state.content[language] = {} 
+        }
+        state.content[language].menu = menu
+      },
+      SET_LANGUAGE(state, { language }) {
+        state.language = language
       }
-    },
-    actions: {
-      
     }
   })
 }
