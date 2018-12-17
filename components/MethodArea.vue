@@ -29,16 +29,18 @@ export default {
   }
   
   & > * {
-    padding: 25px 0 50px;
+    padding: 0px 0px 50px 0px;
     width: 50%;
   }
 
   a {
     color: #09b3af;
-    font-weight: bold;
     text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    
     &:hover {
-      color: #4c555a;
+      text-decoration: underline;
     }
   }
 }

@@ -1,9 +1,12 @@
 <template>
   <div class="method-example">
-    <div class="method-example__body" v-if=!loaded>
+    <div class="method-example__body" v-if=fakeVisible>
       <FakeItem/>
     </div>
-    <div :id="methodId"></div>
+    <div :id="methodId" v-if=containsDymanic></div>
+    <div class="method-example__body" v-else>
+      <div v-html=method.example></div>
+    </div>
   </div>
 </template>
 
@@ -15,6 +18,12 @@ export default {
   computed: {
     methodId() {
       return this.method.path.split('/').join('');
+    },
+    fakeVisible() {
+      return !this.loaded && this.containsDymanic
+    },
+    containsDymanic() {
+      return this.method.example.indexOf(`RequestExample`) >= 0
     }
   },
   props: {
@@ -30,19 +39,21 @@ export default {
     FakeItem
   },
   mounted() {
-    let DynamicContent = Vue.extend({
-      template: `<div class="method-example__body">${this.method.example}</div>`,
-      methods: {
-        // formats date to YYYY-MM-DD HH:MM
-        formatDate(date) {
-          return date.getFullYear().toString() + "-"+((date.getMonth()+1).toString().length==2?(date.getMonth()+1).toString():"0"+(date.getMonth()+1).toString())+"-"+(date.getDate().toString().length==2?date.getDate().toString():"0"+date.getDate().toString())+" "+(date.getHours().toString().length==2?date.getHours().toString():"0"+date.getHours().toString())+":"+((parseInt(date.getMinutes()/5)*5).toString().length==2?(parseInt(date.getMinutes()/5)*5).toString():"0"+(parseInt(date.getMinutes()/5)*5).toString())
+    if(this.containsDymanic) {
+      let DynamicContent = Vue.extend({
+        template: `<div class="method-example__body">${this.method.example}</div>`,
+        methods: {
+          // formats date to YYYY-MM-DD HH:MM
+          formatDate(date) {
+            return date.getFullYear().toString() + "-"+((date.getMonth()+1).toString().length==2?(date.getMonth()+1).toString():"0"+(date.getMonth()+1).toString())+"-"+(date.getDate().toString().length==2?date.getDate().toString():"0"+date.getDate().toString())+" "+(date.getHours().toString().length==2?date.getHours().toString():"0"+date.getHours().toString())+":"+((parseInt(date.getMinutes()/5)*5).toString().length==2?(parseInt(date.getMinutes()/5)*5).toString():"0"+(parseInt(date.getMinutes()/5)*5).toString())
+          }
+        },
+        mounted() {
+          this.$parent.loaded = true
         }
-      },
-      mounted() {
-        this.$parent.loaded = true
-      }
-    })
-    this.childInstance = new DynamicContent({ el: `#${this.methodId}`, store: this.$store, parent: this })
+      })
+      this.childInstance = new DynamicContent({ el: `#${this.methodId}`, store: this.$store, parent: this })
+    }
   }
 }
 </script>

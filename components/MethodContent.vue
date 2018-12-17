@@ -1,8 +1,8 @@
 <template>
   <div class="method-content">
     <div class="method-content__body">
-      <h1><a :href="'#' + method.path"><span v-html=method.title></span><SvgIcon icon="link"/></a></h1>
-      <div v-html="method.content"></div>
+      <h1><a class="method-content__title" :href="'#' + method.path"><span v-html=method.title></span><SvgIcon icon="link"/></a></h1>
+      <div  v-html="method.content"></div>
     </div>
   </div>
 </template>
@@ -48,11 +48,7 @@ export default {
       }
     }
   }
-}
-.method-content__body {
-  padding: 40px 40px 20px;
-
-  h1 a {
+  .method-content__title {
     font-family: inherit;
     font-size: inherit;
     color: inherit;
@@ -66,6 +62,10 @@ export default {
         display: inline-block
       }
     }
+  }
+
+  .method-content__body {
+    padding: 40px 40px 20px;
   }
 }
 </style>
