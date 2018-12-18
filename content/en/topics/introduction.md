@@ -1,6 +1,6 @@
 ---
 category: Topics
-title: Content Delivery API Reference
+title: API Reference
 sidebarTitle: Introduction
 startpage: true
 position: 10
