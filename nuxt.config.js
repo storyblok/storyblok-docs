@@ -50,7 +50,8 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/inMarkdownComponents.js', ssr: false }
+    { src: '~plugins/inMarkdownComponents.js', ssr: false },
+    { src: '~/plugins/intersectionObserverPolyfill.js', ssr: false }
   ],
 
   /*

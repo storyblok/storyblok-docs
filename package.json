@@ -13,6 +13,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "cross-env": "^5.2.0",
+    "intersection-observer": "^0.5.1",
     "marked": "^0.5.2",
     "nuxt": "^2.0.0",
     "prismjs": "^1.15.0"

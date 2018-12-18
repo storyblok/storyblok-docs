@@ -1,0 +1,1 @@
+import IntersectionObserver from 'intersection-observer'
