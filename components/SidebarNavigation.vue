@@ -66,10 +66,10 @@ $side-bar-width: 220px;
 
 .side-menu {
   position: sticky;
-  top: 0px;
+  top: 60px;
   float: left;
 
-  margin-top: -60px;
+  margin-top: 0px;
 
   width: $side-bar-width;
   background: #fafcfc;

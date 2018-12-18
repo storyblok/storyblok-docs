@@ -30,6 +30,7 @@ export default {
 <style>
 .main {
   margin-left: 220px;
+  margin-top: -60px;
   width: calc(100vw - 220px);
 }
 </style>

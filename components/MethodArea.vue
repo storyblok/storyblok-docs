@@ -23,10 +23,10 @@ export default {
 <style lang="scss">
 .method-area {
   display:flex;
-  
+
   & > * {
-    padding: 0px 0px 50px 0px;
-    width: 50%;
+    padding: 50px 0px 50px 0px;
+    min-width: 50%;
   }
 }
 </style>

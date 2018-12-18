@@ -1,7 +1,7 @@
 <template>
   <div class="method-content">
     <div class="method-content__body">
-      <h1><a class="method-content__title" :href="'#' + method.path"><span v-html=method.title></span><SvgIcon icon="link"/></a></h1>
+      <h2><a class="method-content__title" :href="'#' + method.path"><span v-html=method.title></span><SvgIcon icon="link"/></a></h2>
       <div  v-html="method.content"></div>
     </div>
   </div>
@@ -51,7 +51,7 @@ export default {
 
   .method-content__title {
     font-family: inherit;
-    font-size: inherit;
+    font-size: 1.3em;
     color: inherit;
 
     .icon {
