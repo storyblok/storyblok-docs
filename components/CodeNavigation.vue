@@ -1,15 +1,21 @@
 <template>
-  <ul class="code-navigation">
-    <li :key=codeLang.key v-for="codeLang in codeLanguages">
-      <a href="#" :class="{ active: $store.state.codelang == codeLang.key }" @click.prevent="switchCodeLang(codeLang.key)">{{codeLang.name}}</a>
-    </li>
-  </ul>
+  <div>
+    <ul class="code-navigation">
+      <li :key=codeLang.key v-for="codeLang in codeLanguages">
+        <a href="#" :class="{ active: $store.state.codelang == codeLang.key }" @click.prevent="switchCodeLang(codeLang.key)">{{codeLang.name}}</a>
+      </li>
+    </ul>
+    <select class="code-navigation-select" v-model="selectedCodeLang"> 
+      <option :value=codeLang.key :key=codeLang.key v-for="codeLang in codeLanguages">{{codeLang.name}}</option>
+    </select>
+  </div>
 </template>
 
 <script>
 export default {
   data() {
     return {
+      selectedCodeLang: '',
       codeLanguages: [
         {
           key: 'bash',
@@ -42,9 +48,17 @@ export default {
       ]
     }
   },
+  created() {
+    this.selectedCodeLang = this.$store.state.codelang
+  },
   methods: {
     switchCodeLang(code) {
       this.$store.commit('SET_CODELANG', code)
+    }
+  },
+  watch: {
+    selectedCodeLang(val) {
+      this.switchCodeLang(val)
     }
   }
 }
@@ -60,5 +74,14 @@ export default {
   li {
     display: inline-block;
   }
+  
+    display: none;
+  @media screen and (min-width: 1320px) {
+  }
 }
+
+.code-navigation-select {
+  display: block;
+}
+
 </style>

@@ -23,7 +23,8 @@ export default {
 <style lang="scss">
 .method-content {
   border-top: 1px solid #f1f4f7;
-
+  padding: 50px 0px 50px 0px;
+  
   table {
     width: 100%;
     border-collapse: collapse;

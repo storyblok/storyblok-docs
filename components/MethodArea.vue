@@ -21,12 +21,14 @@ export default {
 </script>
 
 <style lang="scss">
-.method-area {
-  display:flex;
+@media screen and (min-width: 1000px) {
+  .method-area {
+    display:flex;
 
-  & > * {
-    padding: 50px 0px 50px 0px;
-    min-width: 50%;
+    & > * {
+      padding: 50px 0px 50px 0px;
+      min-width: 50%;
+    }
   }
 }
 </style>
