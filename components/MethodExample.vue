@@ -68,6 +68,8 @@ export default {
 
   table {
     width: 100%;
+    display: block;
+    overflow-x: scroll;
     border: 1px solid #33373a;
     border-collapse: collapse;
     th, td {

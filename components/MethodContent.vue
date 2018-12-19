@@ -24,8 +24,10 @@ export default {
 .method-content {
   border-top: 1px solid #f1f4f7;
   padding: 50px 0px 50px 0px;
-  
+
   table {
+    display: block;
+    overflow-x: scroll;
     width: 100%;
     border-collapse: collapse;
     & + table {
