@@ -1,23 +1,16 @@
 <template>
-  <div>
-    <ul class="code-navigation">
-      <li :key=codeLang.key v-for="codeLang in codeLanguages">
-        <a href="#" :class="{ active: $store.state.codelang == codeLang.key }" @click.prevent="switchCodeLang(codeLang.key)">{{codeLang.name}}</a>
-      </li>
-    </ul>
-    <select class="code-navigation-select" v-model="selectedCodeLang"> 
-      <option :value=codeLang.key :key=codeLang.key v-for="codeLang in codeLanguages">{{codeLang.name}}</option>
-    </select>
-  </div>
+  <ul class="code-navigation">
+    <li :key=codeLang.key v-for="codeLang in codeLanguages">
+      <a href="#" :class="{ active: $store.state.codelang == codeLang.key }" @click.prevent="switchCodeLang(codeLang.key)">{{codeLang.name}}</a>
+    </li>
+  </ul>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      selectedCodeLang: '',
-      codeLanguages: [
-        {
+      codeLanguages: [{
           key: 'bash',
           name: 'curl'
         },
@@ -48,17 +41,9 @@ export default {
       ]
     }
   },
-  created() {
-    this.selectedCodeLang = this.$store.state.codelang
-  },
   methods: {
     switchCodeLang(code) {
       this.$store.commit('SET_CODELANG', code)
-    }
-  },
-  watch: {
-    selectedCodeLang(val) {
-      this.switchCodeLang(val)
     }
   }
 }
@@ -66,22 +51,36 @@ export default {
 
 <style lang="scss">
 .code-navigation {
+  background: #272b2d;
   white-space: nowrap;
   list-style: none;
-  padding: 0px;
+  padding: 0px 0px 0px 10px;
   margin: 0px;
   
   li {
     display: inline-block;
   }
-  
-    display: none;
-  @media screen and (min-width: 1320px) {
-  }
-}
 
-.code-navigation-select {
-  display: block;
+  a {
+    display: inline-block;
+    color: #d0d4d7;
+    text-decoration: none;
+    margin-right: 10px;
+    line-height: 60px;
+
+    &.active {
+      color: #09b3af;
+    }
+
+    padding: 0px 5px;
+
+    @media screen and (min-width: 580px) {
+      padding: 0px 5px;
+    }
+    @media screen and (min-width: 1000px) {
+      padding: 0px 10px;
+    }
+  }
 }
 
 </style>

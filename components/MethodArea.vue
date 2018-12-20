@@ -1,5 +1,5 @@
 <template>
-  <section class="method-area" :id="method.path">
+  <section class="method" :id="method.path">
     <MethodContent :method="method"/>
     <MethodExample :method="method"/>
   </section>
@@ -22,11 +22,10 @@ export default {
 
 <style lang="scss">
 @media screen and (min-width: 1000px) {
-  .method-area {
+  .method {
     display:flex;
 
-    & > * {
-      padding: 50px 0px 50px 0px;
+    .method-content, .method-example {
       min-width: 50%;
     }
   }

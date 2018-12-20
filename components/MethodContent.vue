@@ -23,7 +23,6 @@ export default {
 <style lang="scss">
 .method-content {
   border-top: 1px solid #f1f4f7;
-  padding: 50px 0px 50px 0px;
 
   table {
     display: block;
@@ -70,9 +69,9 @@ export default {
       }
     }
   }
+}
 
-  .method-content__body {
-    padding: 40px 40px 20px;
-  }
+.method-content__body {
+  padding: 80px 40px 20px 40px;
 }
 </style>

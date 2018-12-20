@@ -14,7 +14,7 @@ The requests in the right sidebar are designed to work as is. The sample request
 
 ;examplearea
 
-# API Libraries
+## API Libraries
 
 Official libraries for the Storyblok Content Delivery API are [available in several languages](https://www.storyblok.com/getting-started). Community-supported libraries are also available for additional languages.
 

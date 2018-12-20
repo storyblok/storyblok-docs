@@ -1,12 +1,10 @@
 <template>
-  <div>
+  <div class="docs">
+    <SvgSprite/>
     <WebsiteHeader/>
-    <div class="docs">
-      <SvgSprite/>
-      <TopHeader/>
-      <SidebarNavigation/>
-      <nuxt/>
-    </div>
+    <TopHeader/>
+    <SidebarNavigation/>
+    <nuxt/>
   </div>
 </template>
 

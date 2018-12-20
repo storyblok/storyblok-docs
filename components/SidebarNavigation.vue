@@ -2,16 +2,16 @@
   <aside class="side-menu">
     <nav>
       <ul class="side-menu__list">
-        <li :key=toId(method) v-for="(method, index) in menu">
+        <li :key=method.path v-for="(method, index) in menu">
             
           <div class="side-menu__category" :class="{ 'side-menu__category--first': index == 0 }" 
             v-if="isCategoryVisible(index,method)">{{method.attributes.category}}</div>
     
-          <a :href="toId(method)" :class="{ 'active': isMenuItemActive(method), 'child-active': isChildActive(method) }">{{formatTitle(method)}}</a>
+          <a :href="toId(method)" :class="{ 'active': isMenuItemActive(method), 'child-active': isChildActive(method) }">{{title(method)}}</a>
           
           <ul class="side-menu__children" v-if="method.children.length > 0">
-            <li :key=toId(child) v-for="child in method.children">
-              <a :href=toId(child) :class="{ 'active': isMenuItemActive(child) }">{{formatTitle(child)}}</a>
+            <li :key=child.path v-for="child in method.children">
+              <a :href=toId(child) :class="{ 'active': isMenuItemActive(child) }">{{title(child)}}</a>
             </li>
           </ul>
         </li>
@@ -35,6 +35,7 @@ export default {
       if (index > 0) {
         return this.menu[index - 1].attributes.category != method.attributes.category
       }
+      return false
     },
     isChildActive(method) {
       let active = false
@@ -52,9 +53,9 @@ export default {
       return this.$store.state.activeMenuPath == method.path
     },
     toId(method){
-      return '#' + method.path
+      return `#${method.path}`
     },
-    formatTitle(method) {
+    title(method) {
       return method.attributes.sidebarTitle||method.attributes.title 
     }
   }
@@ -68,6 +69,7 @@ $side-bar-width: 220px;
   position: sticky;
   top: 60px;
   float: left;
+  display: none;
 
   margin-top: 0px;
 
@@ -125,5 +127,11 @@ $side-bar-width: 220px;
   padding-left: 10px;
   padding-bottom: 10px;
   list-style: none;
+}
+
+@media screen and (min-width: 1320px) {
+  .side-menu {
+    display: block;
+  }
 }
 </style>

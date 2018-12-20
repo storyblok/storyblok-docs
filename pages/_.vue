@@ -27,10 +27,10 @@ export default {
  }
 </script>
 
-<style>
+<style lang="scss">
 .main {
-  margin-left: 220px;
-  margin-top: -60px;
-  width: calc(100vw - 220px);
+  @media screen and (min-width: 1320px) {
+    margin-left: 220px;
+  }
 }
 </style>

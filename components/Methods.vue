@@ -18,8 +18,8 @@ export default {
     MethodArea
   },
   mounted() {
-    this.$nextTick( () => {
-      let areas = document.querySelectorAll('.method-area')
+    this.$nextTick(() => {
+      let areas = document.querySelectorAll('.method')
       let observer = new IntersectionObserver((changes) => {
         changes.forEach(change => {
           if(change.isIntersecting || change.intersectionRatio > 0.4) {

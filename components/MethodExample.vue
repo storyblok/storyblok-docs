@@ -93,7 +93,7 @@ export default {
 }
 
 .method-example__body {
-  padding: 20px 40px 20px 40px;
+  padding: 80px 40px 70px 40px;
 }
 
 </style>
