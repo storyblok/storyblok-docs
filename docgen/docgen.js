@@ -1,5 +1,4 @@
 const watch = require('node-watch')
-const concat = require('json-concat')
 const frontmatter = require('front-matter')
 
 const { resolve } = require('path')
@@ -22,6 +21,44 @@ marked.setOptions(markedOptions)
 const config = require('../docgen.config.js')
 const contents = {}
 
+const FileHelper = {
+  getFilesFromDirectory: async function* (dir) {
+    const subdirs = await readdir(dir)
+    for (const subdir of subdirs) {
+      const res = resolve(dir, subdir)
+      if ((await stat(res)).isDirectory()) {
+        yield* FileHelper.getFilesFromDirectory(res)
+      } else {
+        yield res
+      }
+    }
+  },
+
+  getDirectoryPath(file) {
+    return file.substring(0, file.lastIndexOf('/')).replace(config.baseDir, config.docgenDir)
+  },
+
+  getOutputFilePath(file) {
+    return file.replace(config.baseDir, config.docgenDir).replace('.md', '.json')
+  },
+
+  getRelativeFilePath(file) {
+    return '/' + file.replace(config.originContentDir, '').replace('.md', '').replace(config.docgenDir, '').replace('.json', '').replace('content/', '')
+  },
+
+  getLanguageRelativeFilePath(file) {
+    return FileHelper.getRelativeFilePath(file).replace(FileHelper.getLanguagePathFromFile(file) + '/', '')
+  },
+
+  getLanguagePathFromFile(file) {
+    return FileHelper.getRelativeFilePath(file).split('/')[1]
+  },
+
+  getLanguageOutputFile(file, language) {
+    return file.replace('{lang}', language)
+  }
+}
+
 const Docgen = {
   init: () => {
     for (let index = 0, max = config.languages.length; index < max; index++) {
@@ -30,13 +67,13 @@ const Docgen = {
     }
 
     mkdirSync(config.docgenDir, { recursive: true })
-    Docgen.generateAllDirectory()
+    Docgen.generateAll()
     watch(config.originContentDir, { recursive: true }, Docgen.fileEvent)
   },
 
   fileEvent: (evt, updatedFile) => {
     if (evt == 'remove') {
-      unlink(Docgen.getOutputFilePath(updatedFile), (err) => {
+      unlink(FileHelper.getOutputFilePath(updatedFile), (err) => {
         if (err) throw err
       })
     } else {
@@ -52,8 +89,8 @@ const Docgen = {
     }
     
     readFile(source, { encoding: 'utf8' }, (err, data) => {
-      let path = Docgen.getLanguageRelativeFilePath(source)
-      let lang = Docgen.getLanguagePathFromFile(source)
+      let path = FileHelper.getLanguageRelativeFilePath(source)
+      let lang = FileHelper.getLanguagePathFromFile(source)
       
       contents[lang][path] = JSON.parse(data)
 
@@ -68,7 +105,7 @@ const Docgen = {
   },
 
   generateCombined: (contents, language) => {
-    writeFile(Docgen.getLanguageOutputFile(config.combinedContentFile, language), JSON.stringify(contents[language]), (err) => {
+    writeFile(FileHelper.getLanguageOutputFile(config.combinedContentFile, language), JSON.stringify(contents[language]), (err) => {
       if (err) throw err
     })
   },
@@ -76,7 +113,7 @@ const Docgen = {
   generateOrdered: (contents, language) => {
     let ordered = Docgen.orderContents(contents[language])
 
-    writeFile(Docgen.getLanguageOutputFile(config.orderedContentFile, language), JSON.stringify(ordered, null, 2), (err) => {
+    writeFile(FileHelper.getLanguageOutputFile(config.orderedContentFile, language), JSON.stringify(ordered, null, 2), (err) => {
       if (err) throw err
     })
   },
@@ -125,7 +162,7 @@ const Docgen = {
       }
     }
 
-    writeFile(Docgen.getLanguageOutputFile(config.menuContentFile, language), JSON.stringify(menu, null, 2), (err) => {
+    writeFile(FileHelper.getLanguageOutputFile(config.menuContentFile, language), JSON.stringify(menu, null, 2), (err) => {
       if (err) throw err
     })
   },
@@ -138,48 +175,12 @@ const Docgen = {
     })
   },
 
-  generateAllDirectory: () => {
+  generateAll: () => {
     (async () => {
-      for await (const f of Docgen.getFilesFromDirectory(config.originContentDir)) {
+      for await (const f of FileHelper.getFilesFromDirectory(config.originContentDir)) {
         Docgen.generate(f)
       }
     })()
-  },
-  
-  getFilesFromDirectory: async function* (dir) {
-    const subdirs = await readdir(dir)
-    for (const subdir of subdirs) {
-      const res = resolve(dir, subdir)
-      if ((await stat(res)).isDirectory()) {
-        yield* Docgen.getFilesFromDirectory(res)
-      } else {
-        yield res
-      }
-    }
-  },
-
-  getDirectoryPath(file) {
-    return file.substring(0, file.lastIndexOf('/')).replace(config.baseDir, config.docgenDir)
-  },
-
-  getOutputFilePath(file) {
-    return file.replace(config.baseDir, config.docgenDir).replace('.md', '.json')
-  },
-
-  getRelativeFilePath(file) {
-    return '/' + file.replace(config.originContentDir, '').replace('.md', '').replace(config.docgenDir, '').replace('.json', '').replace('content/', '')
-  },
-
-  getLanguageRelativeFilePath(file) {
-    return Docgen.getRelativeFilePath(file).replace(Docgen.getLanguagePathFromFile(file) + '/', '')
-  },
-
-  getLanguagePathFromFile(file) {
-    return Docgen.getRelativeFilePath(file).split('/')[1]
-  },
-
-  getLanguageOutputFile(file, language) {
-    return file.replace('{lang}', language)
   },
 
   stripParagraphWrapper(markdown) { 
@@ -190,7 +191,7 @@ const Docgen = {
     readFile(source, { encoding: 'utf8' }, (err, originData) => {
       if (err) throw err
   
-      let dir = Docgen.getDirectoryPath(source)
+      let dir = FileHelper.getDirectoryPath(source)
       mkdir(dir, { recursive: true }, (err) => {
   
         let originContent = frontmatter(originData)
@@ -202,8 +203,8 @@ const Docgen = {
         let content = marked(area[0] || '')
         let example = marked(area[1] || '')
         
-        let fullPath = Docgen.getRelativeFilePath(source)
-        let path = Docgen.getLanguageRelativeFilePath(source)
+        let fullPath = FileHelper.getRelativeFilePath(source)
+        let path = FileHelper.getLanguageRelativeFilePath(source)
 
   
         let data = {
@@ -218,7 +219,7 @@ const Docgen = {
           data.title = Docgen.stripParagraphWrapper(marked(originDataAttributes.title))
         }
         
-        let out = Docgen.getOutputFilePath(source)
+        let out = FileHelper.getOutputFilePath(source)
         writeFile(out, JSON.stringify(data), (err) => {
           if (err) throw err
           Docgen.updateCollections(out)

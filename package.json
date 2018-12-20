@@ -20,12 +20,11 @@
   },
   "devDependencies": {
     "front-matter": "^3.0.1",
-    "json-concat": "0.0.1",
     "node-sass": "^4.11.0",
     "node-watch": "^0.5.9",
     "nodemon": "^1.11.0",
-    "sass-loader": "^7.1.0",
-    "prismjs-components-loader": "^3.0.1"
+    "prismjs-components-loader": "^3.0.1",
+    "sass-loader": "^7.1.0"
   },
   "vue": {
     "runtimeCompiler": true
