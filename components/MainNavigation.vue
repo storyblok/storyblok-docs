@@ -57,5 +57,10 @@ export default {
   font-size: inherit;
   background: #33373a;
   color: #dde4e8;
+  display: inline-block;
+
+  @media screen and (min-width: 1320px) {
+    display:none;
+  }
 }
 </style>

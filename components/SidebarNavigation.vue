@@ -69,16 +69,18 @@ $side-bar-width: 220px;
   position: sticky;
   top: 60px;
   float: left;
-  display: none;
-
   margin-top: 0px;
-
   width: $side-bar-width;
   background: #fafcfc;
   border-right: 1px solid #efefef;
   color: #939da3;
   height: 100vh;
   overflow-y: scroll;
+
+  display: none;
+  @media screen and (min-width: 1320px) {
+    display: block;
+  }
 
   a {
     display: inline-block;
@@ -127,11 +129,5 @@ $side-bar-width: 220px;
   padding-left: 10px;
   padding-bottom: 10px;
   list-style: none;
-}
-
-@media screen and (min-width: 1320px) {
-  .side-menu {
-    display: block;
-  }
 }
 </style>
