@@ -1,23 +1,22 @@
 <template>
-  <aside class="side-menu">
-    <nav>
-      <ul class="side-menu__list">
-        <li :key=method.path v-for="(method, index) in menu">
-            
-          <div class="side-menu__category" :class="{ 'side-menu__category--first': index == 0 }" 
-            v-if="isCategoryVisible(index,method)">{{method.attributes.category}}</div>
-    
-          <a :href="toId(method)" :class="{ 'active': isMenuItemActive(method), 'child-active': isChildActive(method) }">{{title(method)}}</a>
-          
-          <ul class="side-menu__children" v-if="method.children.length > 0">
-            <li :key=child.path v-for="child in method.children">
-              <a :href=toId(child) :class="{ 'active': isMenuItemActive(child) }">{{title(child)}}</a>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </aside>
+  <nav class="side-menu">
+    <ul class="side-menu__categories">
+      <li :key=category.category v-for="(category, index) in menu">
+        <div class="side-menu__category" :class="{ 'side-menu__category--first': index == 0 }">{{category.category}}</div>
+        <ul class="side-menu__items">
+          <li :key=method.path v-for="method in category.items">
+            <a :href="toId(method)" :class="{ 'active': isMenuItemActive(method), 'child-active': isChildActive(method) }">{{title(method)}}</a>
+        
+            <ul class="side-menu__children" v-if="method.children.length > 0">
+              <li :key=child.path v-for="child in method.children">
+                <a :href=toId(child) :class="{ 'active': isMenuItemActive(child) }">{{title(child)}}</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script>
@@ -100,17 +99,22 @@ $side-bar-width: 220px;
     }
   }
 
-  nav {
-    padding: 20px 0px 20px 0px;
-  }
+  padding: 20px 0px 20px 0px;
+  overflow-y: scroll;
 }
 
-.side-menu__list {
+.side-menu__categories {
   list-style: none;
   display: block;
   margin: 0;
   padding: 0px 20px 0px 20px;
-  overflow-y: scroll;
+}
+
+.side-menu__items {
+  list-style: none;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .side-menu__category {

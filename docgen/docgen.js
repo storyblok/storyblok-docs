@@ -84,26 +84,44 @@ const Docgen = {
   generateMenu: (contents, language) => {
     let ordered = Docgen.orderContents(contents[language])
 
-    let menu = []
     let latestStartpage = null
+    let categories = {}
 
     for (let index = 0, max = ordered.length; index < max; index++) {
       const element = JSON.parse(JSON.stringify(ordered[index]));
       delete element.example
       delete element.content
       delete element.origin
+
+      let isChild = false
+      // group by startpage
       if (latestStartpage == null) {
         latestStartpage = element
         latestStartpage.children = []
       } else if (typeof element.attributes !== 'undefined' && element.attributes.startpage) {
-        menu.push(latestStartpage)
         latestStartpage = element
         latestStartpage.children = []
       } else {
+        isChild = true
         latestStartpage.children.push(element)
       }
-      if (index + 1 >= max) {
-        menu.push(latestStartpage)
+      
+      // categories
+      if (!isChild) { 
+        if (typeof categories[element.attributes.category] !== 'undefined') { 
+          categories[element.attributes.category].push(element)   
+        } else {
+          categories[element.attributes.category] = []
+          categories[element.attributes.category].push(element)        
+        }
+      }
+    }
+
+    let menu = []
+    for (const key in categories) {
+      if (categories.hasOwnProperty(key)) {
+        const category = categories[key];
+        menu.push({ category: key, items: category })
       }
     }
 

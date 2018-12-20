@@ -1,6 +1,11 @@
 <template>
   <select name="main-navigation" class="main-navigation" @change="navigate" v-model="selected">
-    <option :value=method.path :key=method.path v-for="method in menu">{{title(method)}}</option>
+    <optgroup :key=category.path v-for="category in menu" :label="category.category">
+      <template v-for="method in category.items">
+        <option :value=method.path :key=method.path>{{title(method)}}</option>
+        <option :value=child.path :key=child.path v-for="child in method.children">{{title(child)}}</option>
+      </template>
+    </optgroup>
   </select>
 </template>
 
@@ -8,15 +13,7 @@
 export default {
   computed: {
     menu() {
-      let menu = []
-      this.$store.state.content[this.$store.state.language].menu.forEach(method => {
-        menu.push(method)
-        method.children.forEach(child => {
-          child.child = true
-          menu.push(child)
-        })        
-      })
-      return menu
+      return this.$store.state.content[this.$store.state.language].menu
     },
     activeMenuPath() {
       return this.$store.state.activeMenuPath
@@ -24,7 +21,7 @@ export default {
   },
   data() {
     return {
-      selected: ''
+      selected: this.activeMenuPath
     }
   },
   created() {
