@@ -1,5 +1,5 @@
 <template>
-  <div class="fake-item">
+  <div class="request-placeholder">
     <h1></h1>
     <p></p>
     <p></p>
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
-.fake-item {
+.request-placeholder {
   padding-top: 10px;
 
   h1, p {

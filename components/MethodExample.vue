@@ -1,25 +1,23 @@
 <template>
   <div class="method-example">
-    <div class="method-example__body" v-if=fakeVisible>
-      <FakeItem/>
-    </div>
-    <div :id="methodId" v-if=containsDymanic></div>
-    <div class="method-example__body" v-else>
-      <div v-html=method.example></div>
+    <div class="method-example__body">
+      <RequestPlaceholder v-if=isPlaceholderVisible />
+      <div :id="methodId" v-if=containsDymanic></div>
+      <div v-html=method.example v-else></div>
     </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import FakeItem from '@/components/FakeItem'
+import RequestPlaceholder from '@/components/requests/RequestPlaceholder'
 
 export default {
   computed: {
     methodId() {
       return this.method.path.split('/').join('');
     },
-    fakeVisible() {
+    isPlaceholderVisible() {
       return !this.loaded && this.containsDymanic
     },
     containsDymanic() {
@@ -37,12 +35,12 @@ export default {
     }
   },
   components: {
-    FakeItem
+    RequestPlaceholder
   },
   mounted() {
     if(this.containsDymanic) {
       let DynamicContent = Vue.extend({
-        template: `<div class="method-example__body">${this.method.example}</div>`,
+        template: `<div>${this.method.example}</div>`,
         methods: {
           // formats date to YYYY-MM-DD HH:MM
           formatDate(date) {
