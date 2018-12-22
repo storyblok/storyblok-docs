@@ -59,8 +59,8 @@ export default {
 
 <style lang="scss">
 .method-example {
-  background: #2b3133;
-  border-top: 1px solid #272b2d;
+  background: #303644;
+  border-top: 1px solid #252a35;
   color: #dde4e8;
   flex: 1;
 
@@ -68,23 +68,23 @@ export default {
     width: 100%;
     display: block;
     overflow-x: scroll;
-    border: 1px solid #33373a;
+    border: 1px solid #252a35;
     border-collapse: collapse;
     th, td {
-      border: 1px solid #33373a;
+      border: 1px solid #252a35;
       padding: 7px;
       font-size: 13px;
       text-align: left;
     }
     thead tr {
-      background: #2b3133;
+      background: #303644;
     }
     tbody {
       tr:nth-child(odd) {
-        background: #33373a;
+        background: #252a35;
       }
       tr:nth-child(even) {
-        background: #2b3133;
+        background: #303644;
       }
     }
   }

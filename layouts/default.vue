@@ -75,7 +75,7 @@ a {
 
 pre {
     padding: 20px 20px;
-    background: #272b2d;
+    background: #252a35;
     border-radius: 5px;
     overflow-x: scroll;
   }
@@ -110,7 +110,7 @@ pre[class*="language-"] {
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
-  background: #272b2d;
+  background: #252a35;
 }
 
 /* Inline code */

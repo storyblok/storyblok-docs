@@ -42,7 +42,7 @@ export default {
   }
 
   pre {
-    background: #272b2d;
+    background: #252a35;
     height: 40px;
     code {
       padding: 20px 20px;

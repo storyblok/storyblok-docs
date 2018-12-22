@@ -48,11 +48,11 @@ export default {
 .main-navigation {
   appearance: none;
   border-radius: 0;
-  border: 1px solid #272b2d;
+  border: 1px solid #252a35;
   padding: 5px 5px;
   margin: 15px;
   font-size: inherit;
-  background: #33373a;
+  background: #252a35;
   color: #dde4e8;
   display: inline-block;
 
