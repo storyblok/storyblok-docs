@@ -93,7 +93,7 @@ export default {
     padding-left: 40px;
   }
   
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1050px) {
     width: calc(50vw - 220px);
   }
 
@@ -106,7 +106,7 @@ export default {
   flex-grow: 1;
   text-align: center;
   
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 1050px) {
     text-align: left;
   }
 }

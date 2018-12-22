@@ -50,7 +50,7 @@ export default {
   border-radius: 0;
   border: 1px solid $brand-background-dark;
   padding: 5px 5px;
-  margin: 15px;
+  margin: 10px;
   font-size: inherit;
   background: $brand-background-dark;
   color: $example-text-color;
