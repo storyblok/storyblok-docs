@@ -51,7 +51,7 @@ export default {
 
 <style lang="scss">
 .code-navigation {
-  background: $brand-background-dark;
+  background: $example-background-secondary;
   white-space: nowrap;
   list-style: none;
   padding: 0px 0px 0px 10px;
@@ -63,13 +63,14 @@ export default {
 
   a {
     display: inline-block;
-    color: #d0d4d7;
+    color: $example-text-color;
     text-decoration: none;
     margin-right: 10px;
-    line-height: 60px;
+    line-height: $top-header-height;
+    border-bottom: 3px solid $example-background-secondary;
 
     &.active {
-      color: $brand-highlight;
+      border-bottom: 3px solid #09b3af;
     }
 
     padding: 0px 5px;

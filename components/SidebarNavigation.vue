@@ -64,7 +64,7 @@ export default {
 <style lang="scss">
 .side-menu {
   position: sticky;
-  top: 60px;
+  top: $top-header-height;
   float: left;
   margin-top: 0px;
   width: $side-bar-width;
