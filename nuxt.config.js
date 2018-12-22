@@ -58,7 +58,9 @@ module.exports = {
   ** Nuxt.js modules
   */
   modules: [
-
+    ['nuxt-sass-resources-loader', [
+      '@/assets/_variables.scss',
+    ]],
   ],
   /*
   ** Axios module configuration

@@ -51,7 +51,7 @@ export default {
 
 <style lang="scss">
 .code-navigation {
-  background: #252a35;
+  background: $brand-background-dark;
   white-space: nowrap;
   list-style: none;
   padding: 0px 0px 0px 10px;

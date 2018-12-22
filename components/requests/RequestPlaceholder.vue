@@ -42,7 +42,7 @@ export default {
   }
 
   pre {
-    background: #252a35;
+    background: $brand-background-dark;
     height: 40px;
     code {
       padding: 20px 20px;

@@ -29,7 +29,7 @@ $side-bar-width: 220px;
 $top-header-height: 60px;
 
 .top-header {
-  background: #303644;
+  background: $brand-background;
   color: #dde4e8;
   position: sticky;
   top: 0px;
