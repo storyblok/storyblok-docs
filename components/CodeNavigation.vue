@@ -69,7 +69,7 @@ export default {
     line-height: 60px;
 
     &.active {
-      color: #09b3af;
+      color: $brand-highlight;
     }
 
     padding: 0px 5px;

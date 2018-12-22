@@ -53,7 +53,7 @@ export default {
   margin: 15px;
   font-size: inherit;
   background: $brand-background-dark;
-  color: #dde4e8;
+  color: $example-text-color;
   display: inline-block;
 
   @media screen and (min-width: 1320px) {

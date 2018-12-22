@@ -35,8 +35,8 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  background: #fff;
-  color: #4c555a;
+  background: $content-background;
+  color: $content-text-color;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
@@ -62,7 +62,7 @@ img {
 } 
 
 a {
-  color: #09b3af;
+  color: $brand-highlight;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
@@ -82,7 +82,7 @@ pre {
 
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #f8f8f2;
+  color: $brand-background-light;
   text-shadow: 0px 1px rgba(0,0,0,0.3);
   font-family: Consolas, Monaco, 'Andale Mono', monospace;
   direction: ltr;

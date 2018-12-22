@@ -13,7 +13,7 @@ export default {
 <style lang="scss">
 .website-header {
   height: 25px;
-  background: #09b3af;
+  background: $brand-highlight;
 }
 </style>
 

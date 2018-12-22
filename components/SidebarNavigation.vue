@@ -68,9 +68,9 @@ export default {
   float: left;
   margin-top: 0px;
   width: $side-bar-width;
-  background: #f5f6f7;
-  border-right: 1px solid #efefef;
-  color: #939da3;
+  background: $sidebar-background;
+  border-right: 1px solid $sidebar-border-color;
+  color: $sidebar-text-color;
   height: 100vh;
   overflow-y: scroll;
 
@@ -84,10 +84,10 @@ export default {
     padding: 1px 0px;
     width: 100%;
     font-weight: normal;
-    color: #4c555a;
+    color: $sidebar-link-color; 
 
     &.active {
-      color: #09b3af;
+      color: $brand-highlight;
       font-weight: bold;
     }
 
