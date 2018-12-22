@@ -70,7 +70,7 @@ $side-bar-width: 220px;
   float: left;
   margin-top: 0px;
   width: $side-bar-width;
-  background: #fafcfc;
+  background: #f5f6f7;
   border-right: 1px solid #efefef;
   color: #939da3;
   height: 100vh;

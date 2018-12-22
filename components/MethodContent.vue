@@ -33,7 +33,7 @@ export default {
       margin-top: 20px;
     }
     th, td {
-      border: 1px solid #f0f4f7;
+      border: 1px solid #f5f6f7;
       padding: 7px;
       font-size: 15px;
       text-align: left;
@@ -43,7 +43,7 @@ export default {
     }
     tbody {
       tr:nth-child(odd) {
-        background: #f0f4f7;
+        background: #f5f6f7;
       }
       tr:nth-child(even) {
         background: #fff;
