@@ -62,8 +62,6 @@ export default {
 </script>
 
 <style lang="scss">
-$side-bar-width: 220px;
-
 .side-menu {
   position: sticky;
   top: 60px;

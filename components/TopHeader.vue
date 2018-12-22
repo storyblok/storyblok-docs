@@ -25,9 +25,6 @@ export default {
 </script>
 
 <style lang="scss">
-$side-bar-width: 220px;
-$top-header-height: 60px;
-
 .top-header {
   background: $brand-background;
   color: #dde4e8;

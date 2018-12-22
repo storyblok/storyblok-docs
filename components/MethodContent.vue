@@ -22,7 +22,8 @@ export default {
 
 <style lang="scss">
 .method-content {
-  border-top: 1px solid $brand-background-light;
+  color: $content-text-color;
+  border-top: 1px solid $content-background-secondary;
 
   table {
     display: block;
@@ -33,20 +34,20 @@ export default {
       margin-top: 20px;
     }
     th, td {
-      border: 1px solid $brand-background-light;
+      border: 1px solid $content-background-secondary;
       padding: 7px;
       font-size: 15px;
       text-align: left;
     }
     thead tr {
-      background: #fff;
+      background: $content-background;
     }
     tbody {
       tr:nth-child(odd) {
-        background: $brand-background-light;
+        background: $content-background-secondary;
       }
       tr:nth-child(even) {
-        background: #fff;
+        background: $content-background;
       }
     }
   }

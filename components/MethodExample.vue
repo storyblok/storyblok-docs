@@ -59,32 +59,33 @@ export default {
 
 <style lang="scss">
 .method-example {
-  background: $brand-background;
-  border-top: 1px solid $brand-background-dark;
-  color: #dde4e8;
+  color: $example-text-color;
+  
+  background: $example-background;
+  border-top: 1px solid $example-background-secondary;
   flex: 1;
 
   table {
     width: 100%;
     display: block;
     overflow-x: scroll;
-    border: 1px solid $brand-background-dark;
+    border: 1px solid $example-background-secondary;
     border-collapse: collapse;
     th, td {
-      border: 1px solid $brand-background-dark;
+      border: 1px solid $example-background-secondary;
       padding: 7px;
       font-size: 13px;
       text-align: left;
     }
     thead tr {
-      background: $brand-background;
+      background: $example-background;
     }
     tbody {
       tr:nth-child(odd) {
-        background: $brand-background-dark;
+        background: $example-background-secondary;
       }
       tr:nth-child(even) {
-        background: $brand-background;
+        background: $example-background;
       }
     }
   }
