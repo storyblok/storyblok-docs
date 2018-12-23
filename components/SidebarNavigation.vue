@@ -64,9 +64,9 @@ export default {
 <style lang="scss">
 .side-menu {
   position: sticky;
-  top: $top-header-height;
+  top: 0px;
   float: left;
-  margin-top: 0px;
+  margin-top: $top-header-height * -1;
   width: $side-bar-width;
   background: $sidebar-background;
   border-right: 1px solid $sidebar-border-color;
@@ -119,7 +119,7 @@ export default {
   padding-top: 20px;
   font-size: 14px;
   text-transform: uppercase;
-  font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+  font-family: $brand-font;
 
   &.side-menu__category--first {
     padding-top: 0px;

@@ -30,6 +30,7 @@ export default {
 
 <style lang="scss">
 .main {
+  margin-top: $top-header-height * -1;
   @media screen and (min-width: 1320px) {
     margin-left: 220px;
   }

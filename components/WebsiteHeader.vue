@@ -1,6 +1,6 @@
 <template>
   <div class="website-header">
-
+    <img src="~/static/test.jpg" alt="">
   </div>
 </template>
 
@@ -12,7 +12,6 @@ export default {
 
 <style lang="scss">
 .website-header {
-  height: 25px;
   background: $brand-highlight;
 }
 </style>

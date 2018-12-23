@@ -50,7 +50,7 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Titillium Web", Helvetica, Arial, sans-serif;
+  font-family: $brand-font;
 }
 
 h2 {

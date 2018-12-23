@@ -66,7 +66,7 @@ export default {
     color: $example-text-color;
     text-decoration: none;
     margin-right: 10px;
-    line-height: $top-header-height;
+    line-height: $top-header-height - 3px;
     border-bottom: 3px solid $example-background-secondary;
 
     &.active {

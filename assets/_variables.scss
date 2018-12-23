@@ -1,7 +1,8 @@
 $brand-highlight: #09b3af;
-$brand-background: #3b4253;
-$brand-background-dark: #303644;
+$brand-background: lighten(#192540, 4%);
+$brand-background-dark: #192540;
 $brand-background-light: #f5f6f7;
+$brand-font: 'Raleway', Helvetica, sans-serif;
 
 $content-background: #ffffff;
 $content-background-secondary: $brand-background-light;
