@@ -1,9 +1,9 @@
 const watch = require('node-watch')
 const frontmatter = require('front-matter')
 
-const { resolve } = require('path')
+const { resolve, join } = require('path')
 const { readdir, stat } = require('fs').promises
-const { mkdirSync, readFile, writeFile, mkdir, unlink } = require('fs')
+const { mkdirSync, readFile, writeFile, mkdir, unlink, readdirSync, statSync } = require('fs')
 
 const marked = require('marked')
 const prism = require('prismjs')
@@ -38,7 +38,7 @@ const FileHelper = {
     return file.substring(0, file.lastIndexOf('/')).replace(config.baseDir, config.docgenDir)
   },
 
-  getOutputFilePath(file) {
+  getCacheFilePath(file) {
     return file.replace(config.baseDir, config.docgenDir).replace('.md', '.json')
   },
 
@@ -47,24 +47,46 @@ const FileHelper = {
   },
 
   getLanguageRelativeFilePath(file) {
-    return FileHelper.getRelativeFilePath(file).replace(FileHelper.getLanguagePathFromFile(file) + '/', '')
+    let parts = FileHelper.getRelativeFilePath(file).split('/')
+    return parts.slice(3, parts.length).join('/')
   },
 
-  getLanguagePathFromFile(file) {
+  getLanguageFromFile(file) {
+    return FileHelper.getRelativeFilePath(file).split('/')[2]
+  },
+
+  getOutputFilePath(file, language, origin) {
+    return file.replace('{lang}', language).replace('{origin}', origin)
+  },
+
+  getOriginFromFile(file) {
     return FileHelper.getRelativeFilePath(file).split('/')[1]
   },
 
-  getLanguageOutputFile(file, language) {
-    return file.replace('{lang}', language)
+  getDirectories(p) {
+    return readdirSync(p).filter(f => statSync(join(p, f)).isDirectory())
+  },
+
+  isIgnoreFile(source) {
+    let toIgnore = false
+    for (let index = 0, max = config.ignoreFiles.length; index < max; index++) {
+      if (source.indexOf(config.ignoreFiles[index]) > -1) {
+        toIgnore = true
+        return toIgnore
+      }
+    }
+    return toIgnore
   }
 }
 
 const Docgen = {
   init: () => {
-    for (let index = 0, max = config.languages.length; index < max; index++) {
-      let language = config.languages[index]
-      contents[language] = {}
-    }
+    FileHelper.getDirectories(config.originContentDir).forEach(origin => {
+      contents[origin] = {}
+      FileHelper.getDirectories(join(config.originContentDir, origin)).forEach(lang => {
+        contents[origin][lang] = {}
+      })
+    })
 
     mkdirSync(config.docgenDir, { recursive: true })
     Docgen.generateAll()
@@ -73,53 +95,48 @@ const Docgen = {
 
   fileEvent: (evt, updatedFile) => {
     if (evt == 'remove') {
-      unlink(FileHelper.getOutputFilePath(updatedFile), (err) => {
+      unlink(FileHelper.getCacheFilePath(updatedFile), (err) => {
         if (err) throw err
       })
     } else {
-      Docgen.generate(updatedFile)
+      FileHelper.isIgnoreFile(updatedFile) ? false : Docgen.generate(updatedFile)
     }
   },
 
   updateCollections: (source) => {
-    for (let index = 0, max = config.ignoreFiles.length; index < max; index++) {
-      if (source.indexOf(config.ignoreFiles[index]) >= 0) {
-        return
-      }
+    if (FileHelper.isIgnoreFile(source)) {
+      return 
     }
-    
+
     readFile(source, { encoding: 'utf8' }, (err, data) => {
       let path = FileHelper.getLanguageRelativeFilePath(source)
-      let lang = FileHelper.getLanguagePathFromFile(source)
-      
-      contents[lang][path] = JSON.parse(data)
+      let lang = FileHelper.getLanguageFromFile(source)
+      let origin = FileHelper.getOriginFromFile(source)
 
-      for (let index = 0, max = config.languages.length; index < max; index++) {
-        let language = config.languages[index]
-        
-        Docgen.generateCombined(contents, language)
-        Docgen.generateMenu(contents, language)
-        Docgen.generateOrdered(contents, language)
-      }    
+      contents[origin][lang][path] = JSON.parse(data)
+
+      // Docgen.generateCombined(contents, lang, origin)
+      Docgen.generateMenu(contents, lang, origin)
+      Docgen.generateOrdered(contents, lang, origin)
     })
   },
 
-  generateCombined: (contents, language) => {
-    writeFile(FileHelper.getLanguageOutputFile(config.combinedContentFile, language), JSON.stringify(contents[language]), (err) => {
+  generateCombined: (contents, language, origin) => {
+    writeFile(FileHelper.getOutputFilePath(config.combinedContentFile, language, origin), JSON.stringify(contents[origin][language]), (err) => {
       if (err) throw err
     })
   },
 
-  generateOrdered: (contents, language) => {
-    let ordered = Docgen.orderContents(contents[language])
+  generateOrdered: (contents, language, origin) => {
+    let ordered = Docgen.orderContents(contents[origin][language])
 
-    writeFile(FileHelper.getLanguageOutputFile(config.orderedContentFile, language), JSON.stringify(ordered, null, 2), (err) => {
+    writeFile(FileHelper.getOutputFilePath(config.orderedContentFile, language, origin), JSON.stringify(ordered, null, 2), (err) => {
       if (err) throw err
     })
   },
 
-  generateMenu: (contents, language) => {
-    let ordered = Docgen.orderContents(contents[language])
+  generateMenu: (contents, language, origin) => {
+    let ordered = Docgen.orderContents(contents[origin][language])
 
     let latestStartpage = null
     let categories = {}
@@ -162,7 +179,7 @@ const Docgen = {
       }
     }
 
-    writeFile(FileHelper.getLanguageOutputFile(config.menuContentFile, language), JSON.stringify(menu, null, 2), (err) => {
+    writeFile(FileHelper.getOutputFilePath(config.menuContentFile, language, origin), JSON.stringify(menu, null, 2), (err) => {
       if (err) throw err
     })
   },
@@ -188,6 +205,9 @@ const Docgen = {
   },
 
   generate: (source) => {
+    if (FileHelper.isIgnoreFile(source)) {
+      return 
+    }
     readFile(source, { encoding: 'utf8' }, (err, originData) => {
       if (err) throw err
   
@@ -205,11 +225,14 @@ const Docgen = {
         
         let fullPath = FileHelper.getRelativeFilePath(source)
         let path = FileHelper.getLanguageRelativeFilePath(source)
+        let origin = FileHelper.getOriginFromFile(source)
+        let lang = FileHelper.getLanguageFromFile(source)
 
-  
         let data = {
           fullPath: fullPath,
           path: path,
+          lang: lang,
+          origin: origin,
           attributes: originDataAttributes,
           content: content,
           example: example
@@ -219,7 +242,7 @@ const Docgen = {
           data.title = Docgen.stripParagraphWrapper(marked(originDataAttributes.title))
         }
         
-        let out = FileHelper.getOutputFilePath(source)
+        let out = FileHelper.getCacheFilePath(source)
         writeFile(out, JSON.stringify(data), (err) => {
           if (err) throw err
           Docgen.updateCollections(out)

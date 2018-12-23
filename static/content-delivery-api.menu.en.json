@@ -1,0 +1,578 @@
+[
+  {
+    "category": "Topics",
+    "items": [
+      {
+        "fullPath": "/content-delivery-api/en/topics/introduction",
+        "path": "topics/introduction",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "API Reference",
+          "sidebarTitle": "Introduction",
+          "startpage": true,
+          "position": 10
+        },
+        "title": "API Reference",
+        "children": []
+      },
+      {
+        "fullPath": "/content-delivery-api/en/topics/authentication",
+        "path": "topics/authentication",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Authentication",
+          "startpage": true,
+          "position": 20
+        },
+        "title": "Authentication",
+        "children": []
+      },
+      {
+        "fullPath": "/content-delivery-api/en/topics/errors",
+        "path": "topics/errors",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Errors",
+          "startpage": true,
+          "position": 30
+        },
+        "title": "Errors",
+        "children": []
+      },
+      {
+        "fullPath": "/content-delivery-api/en/topics/cache-invalidation",
+        "path": "topics/cache-invalidation",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Cache Invalidation",
+          "startpage": true,
+          "position": 40
+        },
+        "title": "Cache Invalidation",
+        "children": []
+      },
+      {
+        "fullPath": "/content-delivery-api/en/topics/pagination",
+        "path": "topics/pagination",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Pagination",
+          "startpage": true,
+          "position": 50
+        },
+        "title": "Pagination",
+        "children": []
+      }
+    ]
+  },
+  {
+    "category": "Core Resources",
+    "items": [
+      {
+        "fullPath": "/content-delivery-api/en/core-resources/stories/stories",
+        "path": "core-resources/stories/stories",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Stories",
+          "startpage": true,
+          "position": 100
+        },
+        "title": "Stories",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/stories/the-story-object",
+            "path": "core-resources/stories/the-story-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Story Object",
+              "position": 110
+            },
+            "title": "The Story Object"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/stories/retrieve-one-story",
+            "path": "core-resources/stories/retrieve-one-story",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve one Story",
+              "position": 120
+            },
+            "title": "Retrieve one Story"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/stories/retrieve-multiple-stories",
+            "path": "core-resources/stories/retrieve-multiple-stories",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve Multiple Stories",
+              "position": 130
+            },
+            "title": "Retrieve Multiple Stories"
+          }
+        ]
+      },
+      {
+        "fullPath": "/content-delivery-api/en/core-resources/spaces/spaces",
+        "path": "core-resources/spaces/spaces",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Spaces",
+          "startpage": true,
+          "position": 200
+        },
+        "title": "Spaces",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/spaces/the-space-object",
+            "path": "core-resources/spaces/the-space-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Space Object",
+              "position": 210
+            },
+            "title": "The Space Object"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/spaces/retrieve-current-space",
+            "path": "core-resources/spaces/retrieve-current-space",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve Current Space",
+              "position": 220
+            },
+            "title": "Retrieve Current Space"
+          }
+        ]
+      },
+      {
+        "fullPath": "/content-delivery-api/en/core-resources/datasource-entries/datasource-entries",
+        "path": "core-resources/datasource-entries/datasource-entries",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Datasource Entries",
+          "startpage": true,
+          "position": 300
+        },
+        "title": "Datasource Entries",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/datasource-entries/the-datasource-entry-object",
+            "path": "core-resources/datasource-entries/the-datasource-entry-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Datasource Entry Object",
+              "position": 310
+            },
+            "title": "The Datasource Entry Object"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/datasource-entries/retrieve-multiple-datasource-entries",
+            "path": "core-resources/datasource-entries/retrieve-multiple-datasource-entries",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve Multiple Datasource Entries",
+              "position": 320
+            },
+            "title": "Retrieve Multiple Datasource Entries"
+          }
+        ]
+      },
+      {
+        "fullPath": "/content-delivery-api/en/core-resources/links/links",
+        "path": "core-resources/links/links",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Links",
+          "startpage": true,
+          "position": 400
+        },
+        "title": "Links",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/links/the-links-object",
+            "path": "core-resources/links/the-links-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Links Object",
+              "position": 410
+            },
+            "title": "The Links Object"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/links/the-link-object",
+            "path": "core-resources/links/the-link-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Link Object",
+              "position": 420
+            },
+            "title": "The Link Object"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/links/retrieve-all-links",
+            "path": "core-resources/links/retrieve-all-links",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve All Links",
+              "position": 430
+            },
+            "title": "Retrieve All Links"
+          }
+        ]
+      },
+      {
+        "fullPath": "/content-delivery-api/en/core-resources/tags/tags",
+        "path": "core-resources/tags/tags",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Tags",
+          "startpage": true,
+          "position": 500
+        },
+        "title": "Tags",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/tags/the-tag-object",
+            "path": "core-resources/tags/the-tag-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Tag Object",
+              "position": 510
+            },
+            "title": "The Tag Object"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/core-resources/tags/retrieve-all-tags",
+            "path": "core-resources/tags/retrieve-all-tags",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve All Tags",
+              "position": 520
+            },
+            "title": "Retrieve All Tags"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Filter Queries",
+    "items": [
+      {
+        "fullPath": "/content-delivery-api/en/filter-queries/overview",
+        "path": "filter-queries/overview",
+        "lang": "en",
+        "attributes": {
+          "category": "Filter Queries",
+          "title": "Filter Queries",
+          "sidebarTitle": "Operations",
+          "showChildren": true,
+          "startpage": true,
+          "position": 1000
+        },
+        "title": "Filter Queries",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/filter-queries/operation-in",
+            "path": "filter-queries/operation-in",
+            "lang": "en",
+            "attributes": {
+              "category": "Filter Queries",
+              "title": "Operation: `in`",
+              "sidebarTitle": "in",
+              "position": 1010
+            },
+            "title": "Operation: <code>in</code>"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/filter-queries/operation-in-array",
+            "path": "filter-queries/operation-in-array",
+            "lang": "en",
+            "attributes": {
+              "category": "Filter Queries",
+              "title": "Operation: `in_array`",
+              "sidebarTitle": "in_array",
+              "position": 1020
+            },
+            "title": "Operation: <code>in_array</code>"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/filter-queries/operation-all-in-array",
+            "path": "filter-queries/operation-all-in-array",
+            "lang": "en",
+            "attributes": {
+              "category": "Filter Queries",
+              "title": "Operation: `all_in_array`",
+              "sidebarTitle": "all_in_array",
+              "position": 1030
+            },
+            "title": "Operation: <code>all_in_array</code>"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/filter-queries/operation-gt-date",
+            "path": "filter-queries/operation-gt-date",
+            "lang": "en",
+            "attributes": {
+              "category": "Filter Queries",
+              "title": "Operation: `gt-date`",
+              "sidebarTitle": "gt-date",
+              "position": 1040
+            },
+            "title": "Operation: <code>gt-date</code>"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/filter-queries/operation-lt-date",
+            "path": "filter-queries/operation-lt-date",
+            "lang": "en",
+            "attributes": {
+              "category": "Filter Queries",
+              "title": "Operation: `lt-date`",
+              "sidebarTitle": "lt-date",
+              "position": 1050
+            },
+            "title": "Operation: <code>lt-date</code>"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/filter-queries/operation-gt-num",
+            "path": "filter-queries/operation-gt-num",
+            "lang": "en",
+            "attributes": {
+              "category": "Filter Queries",
+              "title": "Operation: `gt-num`",
+              "sidebarTitle": "gt-num",
+              "position": 1060
+            },
+            "title": "Operation: <code>gt-num</code>"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/filter-queries/operation-lt-num",
+            "path": "filter-queries/operation-lt-num",
+            "lang": "en",
+            "attributes": {
+              "category": "Filter Queries",
+              "title": "Operation: `lt-num`",
+              "sidebarTitle": "lt-num",
+              "position": 1070
+            },
+            "title": "Operation: <code>lt-num</code>"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "category": "Examples",
+    "items": [
+      {
+        "fullPath": "/content-delivery-api/en/examples/starts-with/starts-with",
+        "path": "examples/starts-with/starts-with",
+        "lang": "en",
+        "attributes": {
+          "category": "Examples",
+          "title": "Starts With Examples",
+          "startpage": true,
+          "position": 10100
+        },
+        "title": "Starts With Examples",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/examples/starts-with/entries-in-folder",
+            "path": "examples/starts-with/entries-in-folder",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Entries in folder xx",
+              "position": 10110
+            },
+            "title": "Entries in folder xx"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/examples/starts-with/draft-entries-in-folder",
+            "path": "examples/starts-with/draft-entries-in-folder",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Draft version of entries in folder xx",
+              "position": 10111
+            },
+            "title": "Draft version of entries in folder xx"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/examples/starts-with/entries-of-language-xx",
+            "path": "examples/starts-with/entries-of-language-xx",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Entries of language xx",
+              "position": 10120
+            },
+            "title": "Entries of language xx"
+          }
+        ]
+      },
+      {
+        "fullPath": "/content-delivery-api/en/examples/filtering/filters",
+        "path": "examples/filtering/filters",
+        "lang": "en",
+        "attributes": {
+          "category": "Examples",
+          "title": "Filter Examples",
+          "startpage": true,
+          "position": 10200
+        },
+        "title": "Filter Examples",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/examples/filtering/filter-entries-by-boolean-value",
+            "path": "examples/filtering/filter-entries-by-boolean-value",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Filter entries by boolean value",
+              "position": 10220
+            },
+            "title": "Filter entries by boolean value"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/examples/filtering/entries-between-two-numbers",
+            "path": "examples/filtering/entries-between-two-numbers",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Entries between two numbers",
+              "position": 10230
+            },
+            "title": "Entries between two numbers"
+          }
+        ]
+      },
+      {
+        "fullPath": "/content-delivery-api/en/examples/ordering/order",
+        "path": "examples/ordering/order",
+        "lang": "en",
+        "attributes": {
+          "category": "Examples",
+          "title": "Ordering / Sorting",
+          "startpage": true,
+          "position": 10400
+        },
+        "title": "Ordering / Sorting",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/examples/ordering/sort-by-admin-interface",
+            "path": "examples/ordering/sort-by-admin-interface",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Sort by admin interface",
+              "position": 10410
+            },
+            "title": "Sort by admin interface"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/examples/ordering/sort-by-content-attribute",
+            "path": "examples/ordering/sort-by-content-attribute",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Sort by content attribute",
+              "position": 10410
+            },
+            "title": "Sort by content attribute"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/examples/ordering/sort-by-story-property",
+            "path": "examples/ordering/sort-by-story-property",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Sort by story object property",
+              "position": 10410
+            },
+            "title": "Sort by story object property"
+          }
+        ]
+      },
+      {
+        "fullPath": "/content-delivery-api/en/examples/useful/useful",
+        "path": "examples/useful/useful",
+        "lang": "en",
+        "attributes": {
+          "category": "Examples",
+          "title": "Useful",
+          "startpage": true,
+          "position": 11000
+        },
+        "title": "Useful",
+        "children": [
+          {
+            "fullPath": "/content-delivery-api/en/examples/useful/load-latest-cache-version-timestamp",
+            "path": "examples/useful/load-latest-cache-version-timestamp",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Load latest CV timestamp",
+              "position": 11010
+            },
+            "title": "Load latest CV timestamp"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/examples/useful/load-draft-version",
+            "path": "examples/useful/load-draft-version",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Load draft version",
+              "position": 11020
+            },
+            "title": "Load draft version"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/examples/useful/resolve-relationships",
+            "path": "examples/useful/resolve-relationships",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Load with resolved relationships",
+              "position": 11030
+            },
+            "title": "Load with resolved relationships"
+          },
+          {
+            "fullPath": "/content-delivery-api/en/examples/useful/load-without-startpage",
+            "path": "examples/useful/load-without-startpage",
+            "lang": "en",
+            "attributes": {
+              "category": "Examples",
+              "title": "Load without startpage",
+              "position": 11040
+            },
+            "title": "Load without startpage"
+          }
+        ]
+      }
+    ]
+  }
+]

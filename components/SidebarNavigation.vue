@@ -71,7 +71,7 @@ export default {
   background: $sidebar-background;
   border-right: 1px solid $sidebar-border-color;
   color: $sidebar-text-color;
-  height: 100vh;
+  min-height: 100vh;
   overflow-y: scroll;
 
   display: none;

@@ -1,16 +1,9 @@
 import Vuex from 'vuex'
-import ordered from '~/static/ordered.en.json'
-import menu from '~/static/menu.en.json'
 
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      content: {
-        en: {
-          ordered: ordered,
-          menu: menu,
-        }
-      },
+      content: { },
       activeMenuPath: '',
       language: process.env.defaultLanguage,
       codelang: 'bash'

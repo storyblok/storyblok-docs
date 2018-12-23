@@ -3,7 +3,8 @@ const pkg = require('./package')
 module.exports = {
   env: {
     baseURL: (process.env.NODE_ENV === 'production' ? window.location : 'http://localhost:3000'),
-    defaultLanguage: 'en'
+    defaultLanguage: 'en',
+    defaultOrigin: 'content-delivery-api'
   },
   mode: 'universal',
 
