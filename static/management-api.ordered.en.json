@@ -1,0 +1,93 @@
+[
+  {
+    "fullPath": "/management-api/en/topics/introduction",
+    "path": "topics/introduction",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Topics",
+      "title": "Management API Reference",
+      "sidebarTitle": "Introduction",
+      "startpage": true,
+      "position": 10
+    },
+    "content": "<p>The Storyblok Management API is organized around REST. Our API has predictable, resource-oriented URLs, and uses HTTP response codes to indicate API errors. We use built-in HTTP features, like HTTP query parameters and HTTP verbs, which are understood by off-the-shelf HTTP clients. We support cross-origin resource sharing, allowing you to interact securely with our API from a client-side web application (though you should never expose your secret API key in any public website&#39;s client-side code). JSON is returned by all API responses, including errors, although our API libraries convert responses to appropriate language-specific objects.</p>\n<p>The requests in the right sidebar are designed to work as is. The sample requests can be performed using your own API Authentication Token that you can obtain from your profile <a href=\"http://app.storyblok.com/#!/me/account\">in the Storyblok application</a>. </p>\n",
+    "example": "<h2 id=\"api-libraries\">API Libraries</h2>\n<p>Official libraries for the Storyblok Management API are <a href=\"https://www.storyblok.com/getting-started\">available in several languages</a>. Community-supported libraries are also available for additional languages.</p>\n<p>Base URL</p>\n<pre><code class=\"language-bash\">https://mapi.storyblok.com</code></pre>\n",
+    "title": "Management API Reference"
+  },
+  {
+    "fullPath": "/management-api/en/topics/use-cases",
+    "path": "topics/use-cases",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Topics",
+      "title": "Use Cases",
+      "startpage": true,
+      "position": 20
+    },
+    "content": "<p>The Management API should not be use to consume your information as it does not utilize our global CDN for your requests and can result in higher latencies. Please make sure to use the Content Delivery API instead.</p>\n",
+    "example": "<table>\n<thead>\n<tr>\n<th>Use Case</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Migration from your current data storage / CMS</td>\n</tr>\n<tr>\n<td>Integration with 3rd party applications</td>\n</tr>\n<tr>\n<td>Import and Export automation</td>\n</tr>\n<tr>\n<td>Automatic translation workflows</td>\n</tr>\n<tr>\n<td>Component versioning</td>\n</tr>\n<tr>\n<td>Whitelabel integrations</td>\n</tr>\n</tbody></table>\n",
+    "title": "Use Cases"
+  },
+  {
+    "fullPath": "/management-api/en/topics/authentication",
+    "path": "topics/authentication",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Topics",
+      "title": "Authentication",
+      "startpage": true,
+      "position": 30
+    },
+    "content": "<p>Authenticate your account by including your personal access token in API requests. The easiest way to get started is to create an OAuth2 token using the Storyblok app. Go to the <a href=\"https://app.storyblok.com/#!/me/account\">My Account section</a> at app.storyblok.com and click on “Generate new token”.</p>\n<p>Your personal access token will grant anyone how obtains it with access to all associated spaces for your account, so make sure to never expose it on the client side or commit it in your source code. Use strategies like environment variables to secure your personal access token. If you have exposed your personal access token, make sure to delete it immediately from the <a href=\"https://app.storyblok.com/#!/me/account\">My Account section</a>.</p>\n<p>Using an OAuth2 token, a username and password doesn’t need to be permanently stored and you can revoke access at any time.</p>\n",
+    "example": "<p>Example Request</p>\n<div v-if=\"$store.state.codelang == 'bash'\">\n\n<pre><code class=\"language-bash\"><span class=\"token function\">curl</span> -H <span class=\"token string\">\"Authorization: YOUR_OAUTH_TOKEN\"</span> https://mapi.storyblok.com/</code></pre>\n</div>\n<div v-if=\"$store.state.codelang == 'javascript'\">\n\n<pre><code class=\"language-javascript\"><span class=\"token comment\">// npm install storyblok-js-client</span>\n<span class=\"token keyword\">const</span> StoryblokClient <span class=\"token operator\">=</span> <span class=\"token function\">require</span><span class=\"token punctuation\">(</span><span class=\"token string\">'storyblok-js-client'</span><span class=\"token punctuation\">)</span>\n\n<span class=\"token comment\">// Initialize the client with the oauth token</span>\n<span class=\"token keyword\">let</span> Storyblok <span class=\"token operator\">=</span> <span class=\"token keyword\">new</span> <span class=\"token class-name\">StoryblokClient</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">{</span>\n  oauthToken<span class=\"token punctuation\">:</span> <span class=\"token string\">'YOUR_OAUTH_TOKEN'</span>\n<span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span></code></pre>\n</div> \n",
+    "title": "Authentication"
+  },
+  {
+    "fullPath": "/management-api/en/topics/errors",
+    "path": "topics/errors",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Topics",
+      "title": "Errors",
+      "startpage": true,
+      "position": 40
+    },
+    "content": "<p>Storyblok uses conventional HTTP response codes to indicate the success or failure of an API request. In general: Codes in the <code>2xx</code> range indicate success. Codes in the <code>4xx</code> range indicate an error that failed given the information provided (e.g., a required parameter was omitted, a charge failed, content entry was not published but version requested was set to published, etc.). Codes in the <code>5xx</code> range indicate an error with Storyblok&#39;s servers (these are rare).</p>\n<p>Some <code>4xx</code> errors that could be handled programmatically (e.g., content entry was not found) include an error code that briefly explains the error reported.</p>\n",
+    "example": "<p>Http Status Code Summary</p>\n<table>\n<thead>\n<tr>\n<th>Code</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>200 - OK</td>\n<td>Everything worked as expected.</td>\n</tr>\n<tr>\n<td>400 - Bad Request</td>\n<td>Wrong format was sent (eg. XML instead of JSON).</td>\n</tr>\n<tr>\n<td>401 - Unauthorized</td>\n<td>No valid API key provided.</td>\n</tr>\n<tr>\n<td>404 - Not Found</td>\n<td>The requested resource doesn&#39;t exist (perhaps due to not yet published content entries).</td>\n</tr>\n<tr>\n<td>422 - Unprocessable Entity</td>\n<td>The request was unacceptable, often due to missing a required parameter.</td>\n</tr>\n<tr>\n<td>429 - Too Many Requests</td>\n<td>Too many requests hit the API too quickly. We recommend an exponential backoff of your requests.</td>\n</tr>\n<tr>\n<td>500, 502, 503, 504 - Server Errors</td>\n<td>Something went wrong on Storyblok&#39;s end. (These are rare.)</td>\n</tr>\n</tbody></table>\n",
+    "title": "Errors"
+  },
+  {
+    "fullPath": "/management-api/en/topics/rate-limit",
+    "path": "topics/rate-limit",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Topics",
+      "title": "Rate Limit",
+      "startpage": true,
+      "position": 50
+    },
+    "content": "<p>The management api is rate limited to 3 requests per second for users on the free plan and 6 requests per second for other users.</p>\n",
+    "example": "<table>\n<thead>\n<tr>\n<th>Plan</th>\n<th>Rate Limit</th>\n</tr>\n</thead>\n<tbody><tr>\n<td>Free</td>\n<td>3 per second</td>\n</tr>\n<tr>\n<td>Basic</td>\n<td>6 per second</td>\n</tr>\n<tr>\n<td>Advanced</td>\n<td>6 per second</td>\n</tr>\n<tr>\n<td>Premium</td>\n<td>6 per second</td>\n</tr>\n<tr>\n<td>Enterprise</td>\n<td>Custom</td>\n</tr>\n</tbody></table>\n",
+    "title": "Rate Limit"
+  },
+  {
+    "fullPath": "/management-api/en/topics/pagination",
+    "path": "topics/pagination",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Topics",
+      "title": "Pagination",
+      "startpage": true,
+      "position": 60
+    },
+    "content": "<p>All top-level API resources have support for bulk fetches via &quot;list&quot; API methods. For instance, you can list <code>stories</code> and <code>datasource_entries</code>. These list API methods share a common structure, taking these two parameters: <code>page</code>, <code>per_page</code>.</p>\n<p>The default <code>per_page</code> is set to <code>25</code> entries per page. You can increase this number to receive up to <code>100</code> entries per page. To go through different pages you can utilize the <code>page</code> parameter. The <code>page</code> parameter is a numeric value and uses <code>1</code> as default.</p>\n<p>To allow a calculation of how many pages are available you can access the <code>Total</code> response header that you will receive after you made your first request. Access it and divide it with your <code>per_page</code> parameter to receive the highest possible page, otherwise you will receive an empty array as result.</p>\n<table>\n<thead>\n<tr>\n<th>Query Parameter</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>page</code></td>\n<td>Default: <code>1</code>. Increase this to receive the next page of content entries</td>\n</tr>\n<tr>\n<td><code>per_page</code></td>\n<td>Default: <code>25</code>, Max for Stories: <code>100</code>, Max for Datasource Entries: <code>1000</code> . Defines the number of content entries you will receive per page</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<pre><code class=\"language-bash\">https://api.storyblok.com/v1/spaces/<span class=\"token punctuation\">(</span>:space_id<span class=\"token punctuation\">)</span>/stories/?per_page<span class=\"token operator\">=</span>2<span class=\"token operator\">&amp;</span>page<span class=\"token operator\">=</span>1</code></pre>\n<p>Example Response</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"stories\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span>\n    <span class=\"token punctuation\">{</span> ... <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token punctuation\">{</span> ... <span class=\"token punctuation\">}</span>\n  <span class=\"token punctuation\">]</span>\n<span class=\"token punctuation\">}</span></code></pre>\n<p>Example Response Headers</p>\n<pre><code class=\"language-bash\">status: 200\nper-page: 2\ntotal: 3\n<span class=\"token punctuation\">..</span>.</code></pre>\n",
+    "title": "Pagination"
+  }
+]

@@ -25,8 +25,11 @@ export default {
   color: $content-text-color;
   border-top: 1px solid $content-background-secondary;
 
+  a {
+    font-size: inherit;
+  }
+
   table {
-    display: block;
     overflow-x: scroll;
     width: 100%;
     border-collapse: collapse;

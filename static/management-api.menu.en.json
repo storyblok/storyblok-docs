@@ -1,0 +1,86 @@
+[
+  {
+    "category": "Topics",
+    "items": [
+      {
+        "fullPath": "/management-api/en/topics/introduction",
+        "path": "topics/introduction",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Management API Reference",
+          "sidebarTitle": "Introduction",
+          "startpage": true,
+          "position": 10
+        },
+        "title": "Management API Reference",
+        "children": []
+      },
+      {
+        "fullPath": "/management-api/en/topics/use-cases",
+        "path": "topics/use-cases",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Use Cases",
+          "startpage": true,
+          "position": 20
+        },
+        "title": "Use Cases",
+        "children": []
+      },
+      {
+        "fullPath": "/management-api/en/topics/authentication",
+        "path": "topics/authentication",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Authentication",
+          "startpage": true,
+          "position": 30
+        },
+        "title": "Authentication",
+        "children": []
+      },
+      {
+        "fullPath": "/management-api/en/topics/errors",
+        "path": "topics/errors",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Errors",
+          "startpage": true,
+          "position": 40
+        },
+        "title": "Errors",
+        "children": []
+      },
+      {
+        "fullPath": "/management-api/en/topics/rate-limit",
+        "path": "topics/rate-limit",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Rate Limit",
+          "startpage": true,
+          "position": 50
+        },
+        "title": "Rate Limit",
+        "children": []
+      },
+      {
+        "fullPath": "/management-api/en/topics/pagination",
+        "path": "topics/pagination",
+        "lang": "en",
+        "attributes": {
+          "category": "Topics",
+          "title": "Pagination",
+          "startpage": true,
+          "position": 60
+        },
+        "title": "Pagination",
+        "children": []
+      }
+    ]
+  }
+]

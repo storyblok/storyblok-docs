@@ -65,9 +65,12 @@ export default {
   border-top: 1px solid $example-background-secondary;
   flex: 1;
 
+  a {
+    font-size: inherit;
+  }
+
   table {
     width: 100%;
-    display: block;
     overflow-x: scroll;
     border: 1px solid $example-background-secondary;
     border-collapse: collapse;

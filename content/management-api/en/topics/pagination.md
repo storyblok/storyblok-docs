@@ -2,7 +2,7 @@
 category: Topics
 title: Pagination
 startpage: true
-position: 50
+position: 60
 ---
 
 All top-level API resources have support for bulk fetches via "list" API methods. For instance, you can list `stories` and `datasource_entries`. These list API methods share a common structure, taking these two parameters: `page`, `per_page`.
@@ -20,7 +20,9 @@ To allow a calculation of how many pages are available you can access the `Total
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?per_page=2&page=1&starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+```bash
+https://api.storyblok.com/v1/spaces/(:space_id)/stories/?per_page=2&page=1
+```
 
 Example Response
 
