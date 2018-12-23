@@ -44,14 +44,7 @@ Example Object
     // group id defines the referenced alternates
     "group_id": "fb33b858-277f-4690-81fb-e0a080bd39ac",
     // resolved alternates by group_id
-    "alternates": [{
-      "id": 307936,
-      "name": "My third post",
-      "slug": "my-third-post",
-      "full_slug": "en/posts/my-third-post",
-      "is_folder": false,
-      "parent_id": 307933
-    }],
+    "alternates": [],
     "sort_by_date": null,
     "tag_list": [],
     "is_folder": false,
@@ -75,17 +68,12 @@ Example Object
       "disble_fe_editor": true,
       "uuid": "dcfcc350-e63e-4232-8dcb-ba4b8e70799d"
     },
-    "full_slug": "de/posts/my-third-post", // automatically generated
-    // resolved full_slug
+    "full_slug": "posts/my-third-post", // automatically generated
+    // resolved full_slug parts
     "breadcrumbs": [{
-      "id": 369681,
-      "name": "de",
-      "parent_id": 0,
-      "disble_fe_editor": false
-    }, {
       "id": 369683,
       "name": "Posts",
-      "parent_id": 369681,
+      "parent_id": 0,
       "disble_fe_editor": true
     }],
     "published": false,

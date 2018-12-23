@@ -82,5 +82,35 @@
         "children": []
       }
     ]
+  },
+  {
+    "category": "Core Resources",
+    "items": [
+      {
+        "fullPath": "/management-api/en/core-resources/stories/stories",
+        "path": "core-resources/stories/stories",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Stories",
+          "startpage": true,
+          "position": 100
+        },
+        "title": "Stories",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/stories/the-story-object",
+            "path": "core-resources/stories/the-story-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Story Object",
+              "position": 110
+            },
+            "title": "The Story Object"
+          }
+        ]
+      }
+    ]
   }
 ]
