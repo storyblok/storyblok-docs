@@ -110,6 +110,381 @@
             "title": "The Story Object"
           }
         ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/components/components",
+        "path": "core-resources/components/components",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Components",
+          "startpage": true,
+          "position": 200
+        },
+        "title": "Components",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/components/the-component-object",
+            "path": "core-resources/components/the-component-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Component Object",
+              "position": 210
+            },
+            "title": "The Component Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/assets/assets",
+        "path": "core-resources/assets/assets",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Assets",
+          "startpage": true,
+          "position": 300
+        },
+        "title": "Assets",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/assets/the-asset-object",
+            "path": "core-resources/assets/the-asset-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Asset Object",
+              "position": 310
+            },
+            "title": "The Asset Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/asset-folders/asset-folders",
+        "path": "core-resources/asset-folders/asset-folders",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Asset Folders",
+          "startpage": true,
+          "position": 400
+        },
+        "title": "Asset Folders",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/asset-folders/the-asset-folder-object",
+            "path": "core-resources/asset-folders/the-asset-folder-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Asset Folder Object",
+              "position": 410
+            },
+            "title": "The Asset Folder Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/datasources/datasources",
+        "path": "core-resources/datasources/datasources",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Datasources",
+          "startpage": true,
+          "position": 600
+        },
+        "title": "Datasources",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/datasources/the-datasource-object",
+            "path": "core-resources/datasources/the-datasource-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Datasource Object",
+              "position": 610
+            },
+            "title": "The Datasource Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/datasource-entries/datasource-entries",
+        "path": "core-resources/datasource-entries/datasource-entries",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Datasource Entries",
+          "startpage": true,
+          "position": 700
+        },
+        "title": "Datasource Entries",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/datasource-entries/the-datasource-entry-object",
+            "path": "core-resources/datasource-entries/the-datasource-entry-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Datasource Object",
+              "position": 710
+            },
+            "title": "The Datasource Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/spaces/spaces",
+        "path": "core-resources/spaces/spaces",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Spaces",
+          "startpage": true,
+          "position": 800
+        },
+        "title": "Spaces",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/spaces/the-space-object",
+            "path": "core-resources/spaces/the-space-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Space Object",
+              "position": 810
+            },
+            "title": "The Space Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/space-roles/space-roles",
+        "path": "core-resources/space-roles/space-roles",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Space Roles",
+          "startpage": true,
+          "position": 900
+        },
+        "title": "Space Roles",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/space-roles/the-space-role-object",
+            "path": "core-resources/space-roles/the-space-role-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Space Role Object",
+              "position": 910
+            },
+            "title": "The Space Role Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/tasks/tasks",
+        "path": "core-resources/tasks/tasks",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Tasks",
+          "startpage": true,
+          "position": 1000
+        },
+        "title": "Tasks",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/tasks/the-task-object",
+            "path": "core-resources/tasks/the-task-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Task Object",
+              "position": 1010
+            },
+            "title": "The Task Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/versions/versions",
+        "path": "core-resources/versions/versions",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Versions",
+          "startpage": true,
+          "position": 1100
+        },
+        "title": "Versions",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/versions/the-version-object",
+            "path": "core-resources/versions/the-version-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Version Object",
+              "position": 1110
+            },
+            "title": "The Version Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/approvals/approvals",
+        "path": "core-resources/approvals/approvals",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Approvals",
+          "startpage": true,
+          "position": 1200
+        },
+        "title": "Approvals",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/approvals/the-approval-object",
+            "path": "core-resources/approvals/the-approval-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Approval Object",
+              "position": 1210
+            },
+            "title": "The Approval Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/branches/branches",
+        "path": "core-resources/branches/branches",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Branches",
+          "startpage": true,
+          "position": 1300
+        },
+        "title": "Branches",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/branches/the-branch-object",
+            "path": "core-resources/branches/the-branch-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Branch Object",
+              "position": 1310
+            },
+            "title": "The Branch Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/activities/activities",
+        "path": "core-resources/activities/activities",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Activities",
+          "startpage": true,
+          "position": 1400
+        },
+        "title": "Activities",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/activities/the-activity-object",
+            "path": "core-resources/activities/the-activity-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Activity Object",
+              "position": 1410
+            },
+            "title": "The Activity Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/collaborators/collaborators",
+        "path": "core-resources/collaborators/collaborators",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Collaborators",
+          "startpage": true,
+          "position": 1500
+        },
+        "title": "Collaborators",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/collaborators/the-collaborator-object",
+            "path": "core-resources/collaborators/the-collaborator-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Collaborator Object",
+              "position": 1510
+            },
+            "title": "The Collaborator Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/deployments/deployments",
+        "path": "core-resources/deployments/deployments",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Collaborators",
+          "startpage": true,
+          "position": 1600
+        },
+        "title": "Collaborators",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/deployments/the-deployment-object",
+            "path": "core-resources/deployments/the-deployment-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Deployment Object",
+              "position": 1610
+            },
+            "title": "The Deployment Object"
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/presets/presets",
+        "path": "core-resources/presets/presets",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Presets",
+          "startpage": true,
+          "position": 1700
+        },
+        "title": "Presets",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/presets/the-preset-object",
+            "path": "core-resources/presets/the-preset-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Preset Object",
+              "position": 1710
+            },
+            "title": "The Preset Object"
+          }
+        ]
       }
     ]
   }

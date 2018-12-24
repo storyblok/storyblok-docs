@@ -4,7 +4,7 @@
 
 <script>
 import marked from '@/plugins/markedWithPrism'
-import RequestLanguages from '@/components/requests/RequestLanguages'
+import GetRequests from '@/components/requests/GetRequests'
 
 export default {
   data() {
@@ -22,7 +22,8 @@ export default {
     }
   },
   props: {
-    url: String
+    url: String,
+    httpMethod: String
   },
   computed: {
     propsData() {
@@ -47,7 +48,16 @@ export default {
       }
 
       let code = '```' + this.type + '\n'
-      code += new RequestLanguages[this.type]({ propsData: this.propsData }).rendered
+
+      switch(httpMethod) {
+        case 'POST':
+
+        break;
+        default:
+          code += new GetRequests[this.type]({ propsData: this.propsData }).rendered
+        break;
+      }
+      
       code += '\n```'
 
       this.code[this.type] = marked(code)

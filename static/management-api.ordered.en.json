@@ -118,5 +118,440 @@
     "content": "<p>This is an object representing your content entry. One Story object can be of a specific type, so called content types and is able to contain components. You define the fields and nestability of your content types to achieve your content structure. You can use this object to build up your entities when migrating or importing content.</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric id</td>\n</tr>\n<tr>\n<td><code>uuid</code></td>\n<td>Generated uuid string</td>\n</tr>\n<tr>\n<td><code>name</code></td>\n<td>Given name</td>\n</tr>\n<tr>\n<td><code>slug</code></td>\n<td>Given slug / path</td>\n</tr>\n<tr>\n<td><code>created_at</code></td>\n<td>Creation date (automatically)</td>\n</tr>\n<tr>\n<td><code>published_at</code></td>\n<td>Latest publishing date (automatically)</td>\n</tr>\n<tr>\n<td><code>first_published_at</code></td>\n<td>First publishing date (automatically)</td>\n</tr>\n<tr>\n<td><code>full_slug</code></td>\n<td>Combined slug with all parent folders</td>\n</tr>\n<tr>\n<td><code>release_id</code></td>\n<td>Id of your content stage (default: null)</td>\n</tr>\n<tr>\n<td><code>lang</code></td>\n<td>Defined language (default: &quot;default&quot;)</td>\n</tr>\n<tr>\n<td><code>content</code></td>\n<td>Your defined custom content body object</td>\n</tr>\n<tr>\n<td><code>position</code></td>\n<td>Position in folder</td>\n</tr>\n<tr>\n<td><code>is_startpage</code></td>\n<td>Is startpage of current folder (true/false)</td>\n</tr>\n<tr>\n<td><code>parent_id</code></td>\n<td>Parent folder id</td>\n</tr>\n<tr>\n<td><code>group_id</code></td>\n<td>Alternates group id (uuid string)</td>\n</tr>\n<tr>\n<td><code>alternates</code></td>\n<td>Array of alternate objects</td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Object </p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"story\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">369689</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"uuid\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"039508c6-e9fa-42b5-b952-c7d96ab6099d\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"My third post\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"slug\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"my-third-post\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"created_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-10-29T10:27:52.802Z\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"updated_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-10-30T12:24:07.499Z\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"published_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-08-07T09:40:13.802Z\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"first_published_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-08-07T09:40:13.802Z\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"imported_at\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    // group id defines the referenced alternates\n    <span class=\"token property\">\"group_id\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"fb33b858-277f-4690-81fb-e0a080bd39ac\"</span><span class=\"token punctuation\">,</span>\n    // resolved alternates by group_id\n    <span class=\"token property\">\"alternates\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"sort_by_date\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"tag_list\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"is_folder\"</span><span class=\"token operator\">:</span> <span class=\"token boolean\">false</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"content\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n      <span class=\"token property\">\"_uid\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"98cccd01-f807-4494-996d-c6b0de2045a5\"</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"component\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"your_content_type\"</span>\n      // and fields you define yourself are in here\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"publish_at\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"expire_at\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"path\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"default_root\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"disble_fe_editor\"</span><span class=\"token operator\">:</span> <span class=\"token boolean\">false</span><span class=\"token punctuation\">,</span>\n    // parent folder id\n    <span class=\"token property\">\"parent_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">369683</span><span class=\"token punctuation\">,</span>\n    // resolved parent folder information\n    <span class=\"token property\">\"parent\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n      <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">369683</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"slug\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"posts\"</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Posts\"</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"disble_fe_editor\"</span><span class=\"token operator\">:</span> <span class=\"token boolean\">true</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"uuid\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"dcfcc350-e63e-4232-8dcb-ba4b8e70799d\"</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"full_slug\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"posts/my-third-post\"</span><span class=\"token punctuation\">,</span> // automatically generated\n    // resolved full_slug parts\n    <span class=\"token property\">\"breadcrumbs\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token punctuation\">{</span>\n      <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">369683</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Posts\"</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"parent_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">0</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"disble_fe_editor\"</span><span class=\"token operator\">:</span> <span class=\"token boolean\">true</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"published\"</span><span class=\"token operator\">:</span> <span class=\"token boolean\">false</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"unpublished_changes\"</span><span class=\"token operator\">:</span> <span class=\"token boolean\">true</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"is_startpage\"</span><span class=\"token operator\">:</span> <span class=\"token boolean\">false</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"meta_data\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"pinned\"</span><span class=\"token operator\">:</span> <span class=\"token boolean\">false</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"preview_token\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n      <span class=\"token property\">\"token\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"279395174a25be38b702f9ec90d08a960e1a5a84\"</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"timestamp\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"1545530576\"</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"last_author\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n      <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">39821</span><span class=\"token punctuation\">,</span>\n      <span class=\"token property\">\"userid\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"storyblok\"</span>\n    <span class=\"token punctuation\">}</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Story Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/components/components",
+    "path": "core-resources/components/components",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Components",
+      "startpage": true,
+      "position": 200
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/components/:component_id</code></pre>\n",
+    "title": "Components"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/components/the-component-object",
+    "path": "core-resources/components/the-component-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Component Object",
+      "position": 210
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Component Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/assets/assets",
+    "path": "core-resources/assets/assets",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Assets",
+      "startpage": true,
+      "position": 300
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/assets/:asset_id</code></pre>\n",
+    "title": "Assets"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/assets/the-asset-object",
+    "path": "core-resources/assets/the-asset-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Asset Object",
+      "position": 310
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Asset Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/asset-folders/asset-folders",
+    "path": "core-resources/asset-folders/asset-folders",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Asset Folders",
+      "startpage": true,
+      "position": 400
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/asset_folders/:asset_folder_id</code></pre>\n",
+    "title": "Asset Folders"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/asset-folders/the-asset-folder-object",
+    "path": "core-resources/asset-folders/the-asset-folder-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Asset Folder Object",
+      "position": 410
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">41</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Commerce\"</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"parent_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
+    "title": "The Asset Folder Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/datasources/datasources",
+    "path": "core-resources/datasources/datasources",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Datasources",
+      "startpage": true,
+      "position": 600
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/datasources/:datasource_id</code></pre>\n",
+    "title": "Datasources"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/datasources/the-datasource-object",
+    "path": "core-resources/datasources/the-datasource-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Datasource Object",
+      "position": 610
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Datasource Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/datasource-entries/datasource-entries",
+    "path": "core-resources/datasource-entries/datasource-entries",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Datasource Entries",
+      "startpage": true,
+      "position": 700
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/datasource_entries/:datasource_entry_id</code></pre>\n",
+    "title": "Datasource Entries"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/datasource-entries/the-datasource-entry-object",
+    "path": "core-resources/datasource-entries/the-datasource-entry-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Datasource Object",
+      "position": 710
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Datasource Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/spaces/spaces",
+    "path": "core-resources/spaces/spaces",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Spaces",
+      "startpage": true,
+      "position": 800
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id</code></pre>\n",
+    "title": "Spaces"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/spaces/the-space-object",
+    "path": "core-resources/spaces/the-space-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Space Object",
+      "position": 810
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Space Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/space-roles/space-roles",
+    "path": "core-resources/space-roles/space-roles",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Space Roles",
+      "startpage": true,
+      "position": 900
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/space_roles/:space_role_id</code></pre>\n",
+    "title": "Space Roles"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/space-roles/the-space-role-object",
+    "path": "core-resources/space-roles/the-space-role-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Space Role Object",
+      "position": 910
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Space Role Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/tasks/tasks",
+    "path": "core-resources/tasks/tasks",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Tasks",
+      "startpage": true,
+      "position": 1000
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/tasks/:task_id</code></pre>\n",
+    "title": "Tasks"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/tasks/the-task-object",
+    "path": "core-resources/tasks/the-task-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Task Object",
+      "position": 1010
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Task Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/versions/versions",
+    "path": "core-resources/versions/versions",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Versions",
+      "startpage": true,
+      "position": 1100
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/versions/:version_id</code></pre>\n",
+    "title": "Versions"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/versions/the-version-object",
+    "path": "core-resources/versions/the-version-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Version Object",
+      "position": 1110
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Version Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/approvals/approvals",
+    "path": "core-resources/approvals/approvals",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Approvals",
+      "startpage": true,
+      "position": 1200
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/approvals/:approval_id</code></pre>\n",
+    "title": "Approvals"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/approvals/the-approval-object",
+    "path": "core-resources/approvals/the-approval-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Approval Object",
+      "position": 1210
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Approval Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/branches/branches",
+    "path": "core-resources/branches/branches",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Branches",
+      "startpage": true,
+      "position": 1300
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/branches/:branch_id</code></pre>\n",
+    "title": "Branches"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/branches/the-branch-object",
+    "path": "core-resources/branches/the-branch-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Branch Object",
+      "position": 1310
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Branch Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/activities/activities",
+    "path": "core-resources/activities/activities",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Activities",
+      "startpage": true,
+      "position": 1400
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/activities/:activity_id</code></pre>\n",
+    "title": "Activities"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/activities/the-activity-object",
+    "path": "core-resources/activities/the-activity-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Activity Object",
+      "position": 1410
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Activity Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/collaborators/collaborators",
+    "path": "core-resources/collaborators/collaborators",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Collaborators",
+      "startpage": true,
+      "position": 1500
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/collaborators/:collaborator_id</code></pre>\n",
+    "title": "Collaborators"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/collaborators/the-collaborator-object",
+    "path": "core-resources/collaborators/the-collaborator-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Collaborator Object",
+      "position": 1510
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Collaborator Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/deployments/deployments",
+    "path": "core-resources/deployments/deployments",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Collaborators",
+      "startpage": true,
+      "position": 1600
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/deployments/:deployment_id</code></pre>\n",
+    "title": "Collaborators"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/deployments/the-deployment-object",
+    "path": "core-resources/deployments/the-deployment-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Deployment Object",
+      "position": 1610
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Deployment Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/presets/presets",
+    "path": "core-resources/presets/presets",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Presets",
+      "startpage": true,
+      "position": 1700
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/presets/:preset_id</code></pre>\n",
+    "title": "Presets"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/presets/the-preset-object",
+    "path": "core-resources/presets/the-preset-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Preset Object",
+      "position": 1710
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Object</p>\n",
+    "title": "The Preset Object"
   }
 ]
