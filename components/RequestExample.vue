@@ -4,7 +4,7 @@
 
 <script>
 import marked from '@/plugins/markedWithPrism'
-import GetRequests from '@/components/requests/GetRequests'
+import RequestTypes from '@/components/requests/RequestTypes'
 
 export default {
   data() {
@@ -23,12 +23,15 @@ export default {
   },
   props: {
     url: String,
-    httpMethod: String
+    httpMethod: String,
+    oauthToken: String
   },
   computed: {
     propsData() {
       return {
         url: this.url,
+        httpMethod: this.httpMethod,
+        oauthToken: this.oauthToken,
         path: this.getPathFromUrl(),
         params: this.getParamsAsJson()
       }
@@ -48,16 +51,7 @@ export default {
       }
 
       let code = '```' + this.type + '\n'
-
-      switch(httpMethod) {
-        case 'POST':
-
-        break;
-        default:
-          code += new GetRequests[this.type]({ propsData: this.propsData }).rendered
-        break;
-      }
-      
+      code += new RequestTypes[this.type]({ propsData: this.propsData }).rendered
       code += '\n```'
 
       this.code[this.type] = marked(code)

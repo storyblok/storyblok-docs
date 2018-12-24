@@ -2,6 +2,8 @@
 export default {
   props: {
     url: String,
+    httpMethod: String,
+    oauthToken: String,
     path: String,
     params: Object
   },
