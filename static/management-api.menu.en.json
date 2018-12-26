@@ -229,10 +229,10 @@
             "lang": "en",
             "attributes": {
               "category": "Core Resources",
-              "title": "The Datasource Object",
+              "title": "The Datasource Entry Object",
               "position": 710
             },
-            "title": "The Datasource Object"
+            "title": "The Datasource Entry Object"
           }
         ]
       },

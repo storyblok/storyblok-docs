@@ -25,6 +25,8 @@ This is an object representing your content entry. One Story object can be of a 
 | `group_id`            | Alternates group id (uuid string) | 
 | `alternates`          | Array of alternate objects | 
 
+// TODO: document all properties
+
 ;examplearea
 
 Example Object 

@@ -5,7 +5,7 @@ startpage: true
 position: 1500
 ---
 
-// TODO: Documentation
+A collaborator is a person who is an explicit member of your project. As an owner of a space, you can choose between different roles or define your own advanced rights (space roles) and permissions.
 
 ;examplearea
 
