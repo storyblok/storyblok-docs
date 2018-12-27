@@ -1,6 +1,6 @@
 ---
 category: Core Resources
-title: Collaborators
+title: Deployments
 startpage: true
 position: 1600
 ---

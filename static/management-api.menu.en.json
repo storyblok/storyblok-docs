@@ -442,11 +442,11 @@
         "lang": "en",
         "attributes": {
           "category": "Core Resources",
-          "title": "Collaborators",
+          "title": "Deployments",
           "startpage": true,
           "position": 1600
         },
-        "title": "Collaborators",
+        "title": "Deployments",
         "children": [
           {
             "fullPath": "/management-api/en/core-resources/deployments/the-deployment-object",
