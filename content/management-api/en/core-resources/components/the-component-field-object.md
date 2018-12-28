@@ -20,27 +20,6 @@ Not every property will be used for every field type; some may only effect speci
 | `rtl` | Boolean; Enable global RTL for this field |
 | `no_translate` | Boolean; Should be excluded in translation export |
 
-### Possible field types
-
-| Field Type | Description |
-|---|---|
-| `bloks` | Blocks |
-| `text` | Text |
-| `textarea` | Textarea |
-| `markdown` | Markdown |
-| `number` | Number |
-| `datetime` | Date/Time |
-| `boolean` | Boolean |
-| `options` | Multi-Options |
-| `option` | Single-Option |
-| `image` | Image |
-| `file` | File |
-| `multiasset` | Multi-Assets |
-| `multilink` | Link |
-| `section` | Group |
-| `commerce` | Commerce |
-| `custom` | Plugin |
-
 ;examplearea
 
 Example Object

@@ -144,6 +144,17 @@
               "position": 220
             },
             "title": "The Component Field"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/components/possible-field-types",
+            "path": "core-resources/components/possible-field-types",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Possible field types",
+              "position": 220
+            },
+            "title": "Possible field types"
           }
         ]
       },
