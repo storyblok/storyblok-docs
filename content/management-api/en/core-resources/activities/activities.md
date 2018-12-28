@@ -5,7 +5,7 @@ startpage: true
 position: 1400
 ---
 
-// TODO: Documentation
+Activities are created on update, create and delete actions in Storyblok for all major resources like stories, components, or space.
 
 ;examplearea
 

@@ -10,6 +10,7 @@ export default {
   data() {
     return {
       base: 'https://api.storyblok.com/v1',
+      management_base: 'https://mapi.storyblok.com',
       code: {
         javascript: '',
         bash: '',
@@ -36,27 +37,27 @@ export default {
         params: this.getParamsAsJson()
       }
     },
-    type() {
+    codelang() {
       return this.$store.state.codelang
     }
   },
   methods: {
     applyFormat(url) {
-      if (typeof this.code[this.type] === 'undefined') {
+      if (typeof this.code[this.codelang] === 'undefined') {
         return `Can't handle that technology.`
       }
 
-      if (this.code[this.type].length != 0) {
-        return this.code[this.type]
+      if (this.code[this.codelang].length != 0) {
+        return this.code[this.codelang]
       }
 
-      let code = '```' + this.type + '\n'
-      code += new RequestTypes[this.type]({ propsData: this.propsData }).rendered
+      let code = '```' + this.codelang + '\n'
+      code += new RequestTypes[this.codelang]({ propsData: this.propsData }).rendered
       code += '\n```'
 
-      this.code[this.type] = marked(code)
+      this.code[this.codelang] = marked(code)
 
-      return this.code[this.type]
+      return this.code[this.codelang]
     },
     getQueryParameterFromUrl(name) {
       if (typeof URLSearchParams !== 'undefined') {
@@ -74,10 +75,17 @@ export default {
       return decodeURIComponent(results[2].replace(/\+/g, ' '))
     },
     getPathFromUrl() {
-      let url = this.url.replace(this.base, '')
-      return url.substring(url.indexOf('/') + 1, url.indexOf('?'))
+      let url = this.url
+      if(url.indexOf(this.management_base) >= 0) url = url.replace(this.management_base, '')
+      if(url.indexOf(this.base) >= 0) url = url.replace(this.base, '')
+      if(this.url.indexOf('?') <= 0) {
+        return url.substring(url.indexOf('/') + 1, url.length)
+      } else {
+        return url.substring(url.indexOf('/') + 1, url.indexOf('?'))
+      }
     },
     getParamsAsJson() {
+      if(this.url.indexOf('?') <= 0) return {}
       let query = this.url.substring(this.url.indexOf('?') + 1)
 
       let re = /([^&=]+)=?([^&]*)/g
