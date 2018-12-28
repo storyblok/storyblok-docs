@@ -391,7 +391,7 @@
       "startpage": true,
       "position": 1200
     },
-    "content": "<p>// TODO: Documentation</p>\n",
+    "content": "<p>Triggers a approval message for a specific content entry. It allows you to send an approval request to another collaborator of the space.</p>\n",
     "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/approvals/:approval_id</code></pre>\n",
     "title": "Approvals"
   },
