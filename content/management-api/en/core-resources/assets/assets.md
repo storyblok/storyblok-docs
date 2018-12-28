@@ -5,7 +5,7 @@ startpage: true
 position: 300
 ---
 
-// TODO: Documentation
+Assets like images, videos and documents are kept in the CDN as long as possible and will rarely hit the origin server. Each asset object references one of those uploaded images, videos and documents.
 
 ;examplearea
 

@@ -4,7 +4,11 @@ title: The Asset Folder Object
 position: 410
 ---
 
-// TODO: Documentation
+| Property | Description |
+|---|---|
+| `id` | Numeric Unique ID |
+| `name` | Display name of your asset folder |
+| `parent_id` | Parent asset folder id |
 
 ;examplearea
 
@@ -12,8 +16,10 @@ Example Object
  
 ```json
 {
-  "id": 41,
-  "name": "Commerce",
-  "parent_id": null
+  "asset_folder": {
+    "id": 41,
+    "name": "Commerce",
+    "parent_id": null
+  }
 }
 ```

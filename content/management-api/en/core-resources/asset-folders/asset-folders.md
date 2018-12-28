@@ -5,7 +5,7 @@ startpage: true
 position: 400
 ---
 
-// TODO: Documentation
+Asset folder allow you to group your assets. Besides the overall root folder you can define nested folder structures.
 
 ;examplearea
 

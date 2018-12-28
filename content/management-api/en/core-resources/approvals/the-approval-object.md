@@ -8,4 +8,13 @@ position: 1210
 
 ;examplearea
 
-Object
+Example Object
+
+```json
+{
+  "approval": {
+    "story_id": 1066,
+    "approver_id": 1028
+  }
+}
+```

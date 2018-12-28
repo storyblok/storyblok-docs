@@ -159,7 +159,7 @@
       "startpage": true,
       "position": 300
     },
-    "content": "<p>// TODO: Documentation</p>\n",
+    "content": "<p>Assets like images, videos and documents are kept in the CDN as long as possible and will rarely hit the origin server. Each asset object references one of those uploaded images, videos and documents.</p>\n",
     "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/assets/:asset_id</code></pre>\n",
     "title": "Assets"
   },
@@ -173,8 +173,8 @@
       "title": "The Asset Object",
       "position": 310
     },
-    "content": "<p>// TODO: Documentation</p>\n",
-    "example": "<p>Object</p>\n",
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>filename</code></td>\n<td>Full path of the asset, including the file name</td>\n</tr>\n<tr>\n<td><code>space_id</code></td>\n<td>Space ID in which the asset is connected</td>\n</tr>\n<tr>\n<td><code>created_at</code></td>\n<td>Date and time when the asset was uploaded</td>\n</tr>\n<tr>\n<td><code>updated_at</code></td>\n<td>Date and time when the asset was last updated</td>\n</tr>\n<tr>\n<td><code>deleted_at</code></td>\n<td>Date and time when the asset was deleted</td>\n</tr>\n<tr>\n<td><code>file</code></td>\n<td>File Object</td>\n</tr>\n<tr>\n<td><code>asset_folder_id</code></td>\n<td>Id of the folder containing this asset</td>\n</tr>\n<tr>\n<td><code>short_filename</code></td>\n<td>Prepared field which contains the file name for sorting</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">14</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"filename\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"/f/TESTSPACEID/voluptas_expedita.jpg\"</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"space_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">616</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"created_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-11-10T15:33:00.578Z\"</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"updated_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-11-10T15:33:00.578Z\"</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"file\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"url\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span>\n  <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"asset_folder_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"deleted_at\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"short_filename\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Asset Object"
   },
   {
@@ -188,7 +188,7 @@
       "startpage": true,
       "position": 400
     },
-    "content": "<p>// TODO: Documentation</p>\n",
+    "content": "<p>Asset folder allow you to group your assets. Besides the overall root folder you can define nested folder structures.</p>\n",
     "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/asset_folders/:asset_folder_id</code></pre>\n",
     "title": "Asset Folders"
   },
@@ -202,8 +202,8 @@
       "title": "The Asset Folder Object",
       "position": 410
     },
-    "content": "<p>// TODO: Documentation</p>\n",
-    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">41</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Commerce\"</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"parent_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>name</code></td>\n<td>Display name of your asset folder</td>\n</tr>\n<tr>\n<td><code>parent_id</code></td>\n<td>Parent asset folder id</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"asset_folder\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">41</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Commerce\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"parent_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Asset Folder Object"
   },
   {
@@ -406,7 +406,7 @@
       "position": 1210
     },
     "content": "<p>// TODO: Documentation</p>\n",
-    "example": "<p>Object</p>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"approval\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"story_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1066</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"approver_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1028</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Approval Object"
   },
   {
@@ -463,8 +463,8 @@
       "title": "The Activity Object",
       "position": 1410
     },
-    "content": "<p>// TODO: Documentation</p>\n",
-    "example": "<p>Object</p>\n",
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>trackable_id</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>trackable_type</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>owner_id</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>owner_type</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>key</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>parameters</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>recipient_id</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>recipient_type</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>created_at</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>updated_at</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>space_id</code></td>\n<td></td>\n</tr>\n</tbody></table>\n<p>// TODO: Document properties</p>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"activity\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">5405</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"trackable_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"trackable_type\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"owner_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"owner_type\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"key\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"parameters\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"recipient_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"recipient_type\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"created_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-11-10T15:32:58.649Z\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"updated_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-11-10T15:32:58.649Z\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"space_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">606</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Activity Object"
   },
   {
