@@ -24,6 +24,7 @@ export default {
   props: {
     url: String,
     httpMethod: String,
+    requestObject: Object,
     oauthToken: String
   },
   computed: {
@@ -32,6 +33,7 @@ export default {
         url: this.url,
         httpMethod: this.httpMethod,
         oauthToken: this.oauthToken,
+        requestObject: this.requestObject,
         path: this.getPathFromUrl(),
         params: this.getParamsAsJson()
       }
