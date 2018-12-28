@@ -9,8 +9,7 @@ import RequestTypes from '@/components/requests/RequestTypes'
 export default {
   data() {
     return {
-      base: 'https://api.storyblok.com/v1',
-      management_base: 'https://mapi.storyblok.com',
+      bases: ['https://api.storyblok.com/v1', 'https://mapi.storyblok.com'],
       code: {
         javascript: '',
         bash: '',
@@ -76,8 +75,10 @@ export default {
     },
     getPathFromUrl() {
       let url = this.url
-      if(url.indexOf(this.management_base) >= 0) url = url.replace(this.management_base, '')
-      if(url.indexOf(this.base) >= 0) url = url.replace(this.base, '')
+      for (let index = 0, max = this.bases.length; index < max; index++) {
+        const base = this.bases[index];
+        url = url.replace(base, '')
+      }
       if(this.url.indexOf('?') <= 0) {
         return url.substring(url.indexOf('/') + 1, url.length)
       } else {
