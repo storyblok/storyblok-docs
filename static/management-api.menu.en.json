@@ -133,6 +133,17 @@
               "position": 210
             },
             "title": "The Component Object"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/components/the-component-field-object",
+            "path": "core-resources/components/the-component-field-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Component Field",
+              "position": 220
+            },
+            "title": "The Component Field"
           }
         ]
       },
