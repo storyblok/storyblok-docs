@@ -419,9 +419,37 @@
       "title": "The Approval Object",
       "position": 1210
     },
-    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>story_id</code></td>\n<td>ID of content entry that should be approved</td>\n</tr>\n<tr>\n<td><code>approver_id</code></td>\n<td>ID of the User that should be the approver</td>\n</tr>\n</tbody></table>\n",
-    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"approval\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"story_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1066</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"approver_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1028</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>status</code></td>\n<td>Status of approval</td>\n</tr>\n<tr>\n<td><code>story_id</code></td>\n<td>ID of content entry that should be approved</td>\n</tr>\n<tr>\n<td><code>approver_id</code></td>\n<td>ID of the User that should be the approver</td>\n</tr>\n</tbody></table>\n<p>// TODO: Document possible status</p>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"approval\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">11</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"status\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"pending\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"story_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1066</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"approver_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1028</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Approval Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/approvals/create-approval",
+    "path": "core-resources/approvals/create-approval",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Create Approval",
+      "position": 1220
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>story_id</code></td>\n<td>ID of content entry that should be approved</td>\n</tr>\n<tr>\n<td><code>approver_id</code></td>\n<td>ID of the User that should be the approver</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"approval\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"story_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1066</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"approver_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1028</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n<p>Example Request</p>\n<p>// TODO: Example POST Request</p>\n<p>Example Response Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"approval\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">11</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"status\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"pending\"</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
+    "title": "Create Approval"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/approvals/create-release-approval",
+    "path": "core-resources/approvals/create-release-approval",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Create Release Approval",
+      "position": 1230
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>story_id</code></td>\n<td>ID of content entry that should be approved</td>\n</tr>\n<tr>\n<td><code>approver_id</code></td>\n<td>ID of the User that should be the approver</td>\n</tr>\n<tr>\n<td><code>release_id</code></td>\n<td>ID of the release that should be approved</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"approval\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"story_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1067</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"approver_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1030</span>\n  <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"release_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">16</span>\n<span class=\"token punctuation\">}</span></code></pre>\n<p>Example Request</p>\n<p>// TODO: Example POST Request</p>\n<p>Example Response Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"approval\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">12</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"status\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"pending\"</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
+    "title": "Create Release Approval"
   },
   {
     "fullPath": "/management-api/en/core-resources/branches/branches",

@@ -369,6 +369,28 @@
               "position": 1210
             },
             "title": "The Approval Object"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/approvals/create-approval",
+            "path": "core-resources/approvals/create-approval",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Create Approval",
+              "position": 1220
+            },
+            "title": "Create Approval"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/approvals/create-release-approval",
+            "path": "core-resources/approvals/create-release-approval",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Create Release Approval",
+              "position": 1230
+            },
+            "title": "Create Release Approval"
           }
         ]
       },
