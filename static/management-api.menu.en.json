@@ -152,6 +152,17 @@
               "position": 150
             },
             "title": "Internationalization for Stories"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/stories/publish-a-story",
+            "path": "core-resources/stories/publish-a-story",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Publish a Story",
+              "position": 160
+            },
+            "title": "Publish a Story"
           }
         ]
       },

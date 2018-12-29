@@ -144,7 +144,7 @@
       "position": 130
     },
     "content": "<p>Can be used to build migrations, updates if you changed your component structure, or if you only need to do a bulk action on all your content items. </p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>story</code></td>\n<td>Your full story object</td>\n</tr>\n<tr>\n<td><code>force_update</code></td>\n<td>If &#39;1&#39; it will overwrite a locked story</td>\n</tr>\n</tbody></table>\n",
-    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/\" httpMethod=\"PUT\" :requestObject='{\"story\":{\"name\":\"Story Name\",\"slug\":\"story-name\",\"content\":{\"component\":\"page\",\"body\":[]}},\"force_update\": 1}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/stories/the-story-object\">story object</a> as response.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/2141\" httpMethod=\"PUT\" :requestObject='{\"story\":{\"name\":\"Story Name\",\"slug\":\"story-name\",\"id\":2141,\"content\":{\"component\":\"page\",\"body\":[]}},\"force_update\": 1}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/stories/the-story-object\">story object</a> as response.</p>\n",
     "title": "Update a Story"
   },
   {
@@ -174,6 +174,20 @@
     "content": "<p>If you use our field level translations functionality, you can provide the values for the translations/languages within the same content object by appending <code>__i18n__</code> followed by the language code. Make sure to have the component field option <code>translateable</code> to <code>true</code>.</p>\n<p>Get a <a href=\"https://gist.github.com/DominikAngerer/f685f2c988171faef3fb6c2ffff4c78c\">full list of our languages codes</a> on Github.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/\" httpMethod=\"POST\" :requestObject='{\"story\":{\"name\":\"My First Article\",\"slug\":\"first-post\",\"content\":{\"component\":\"post\",\"headline\":\"This is awesome!\",\"headline__i18n__de\":\"Das ist toll!\"}},\"publish\":1}'></RequestExample></p>\n",
     "title": "Internationalization for Stories"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/stories/publish-a-story",
+    "path": "core-resources/stories/publish-a-story",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Publish a Story",
+      "position": 160
+    },
+    "content": "<p>Publishing a story besides using the <code>publish</code> property via creation, can be done by using a GET request for each story you want to publish.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/2141/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n",
+    "title": "Publish a Story"
   },
   {
     "fullPath": "/management-api/en/core-resources/components/components",
