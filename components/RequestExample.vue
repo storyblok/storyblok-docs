@@ -35,7 +35,7 @@ export default {
         oauthToken: this.oauthToken,
         requestObject: this.requestObject,
         path: this.getPathFromUrl(),
-        params: this.getParamsAsJson()
+        queryParams: this.getQueryParamsAsJson()
       }
     },
     codelang() {
@@ -87,7 +87,7 @@ export default {
         return url.substring(url.indexOf('/') + 1, url.indexOf('?'))
       }
     },
-    getParamsAsJson() {
+    getQueryParamsAsJson() {
       if(this.url.indexOf('?') <= 0) return {}
       let query = this.url.substring(this.url.indexOf('?') + 1)
 

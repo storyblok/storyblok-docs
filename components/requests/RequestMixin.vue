@@ -6,11 +6,11 @@ export default {
     httpMethod: String,
     oauthToken: String,
     path: String,
-    params: Object
+    queryParams: Object
   },
   computed: {
-    paramsAsJson() {
-      return JSON.stringify(this.params, null, 2)
+    queryParamsAsJson() {
+      return JSON.stringify(this.queryParams, null, 2)
     },
     rendered() {
       return `${this.path}`
