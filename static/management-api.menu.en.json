@@ -141,6 +141,17 @@
               "position": 140
             },
             "title": "Delete a Story"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/stories/internationalization-for-stories",
+            "path": "core-resources/stories/internationalization-for-stories",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Internationalization for Stories",
+              "position": 150
+            },
+            "title": "Internationalization for Stories"
           }
         ]
       },
@@ -614,6 +625,12 @@
           {
             "fullPath": "/management-api/en/core-resources/components/delete-component.m",
             "path": "core-resources/components/delete-component.m",
+            "lang": "en",
+            "attributes": {}
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/stories/internationali",
+            "path": "core-resources/stories/internationali",
             "lang": "en",
             "attributes": {}
           }

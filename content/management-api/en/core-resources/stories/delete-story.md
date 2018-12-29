@@ -4,7 +4,7 @@ title: Delete a Story
 position: 140
 ---
 
-// TODO: Document
+Delete a content entry by using its numeric id.
 
 ;examplearea
 

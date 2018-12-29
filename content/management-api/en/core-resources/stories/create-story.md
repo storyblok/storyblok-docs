@@ -16,24 +16,6 @@ You can set most of the fields that are available in the story object, below we 
 
 ;examplearea
 
-Example Request Object
-
-```json
-{
-  "story": {
-    "name": "Story Name",
-    "slug": "story-name",
-    "content": {
-      // your content type
-      "component": "root",
-      // your fields
-      "body": []
-    }
-  },
-  "publish": 1
-}
-```
-
 Example Request
 
 <RequestExample url="https://mapi.storyblok.com/v1/spaces/606/stories/" httpMethod="POST" :requestObject='{"story":{"name":"Story Name","slug":"story-name","content":{"component":"page","body":[]}},"publish":1}'></RequestExample>

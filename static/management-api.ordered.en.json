@@ -130,7 +130,7 @@
       "position": 120
     },
     "content": "<p>You can set most of the fields that are available in the story object, below we only list the properties in the example and possible required fields. Stories are not published by default. If you want to create a published Story add the parameter <code>publish</code> with the value <code>1</code>. </p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>story[name]</code> (required)</td>\n<td>Name of the story</td>\n</tr>\n<tr>\n<td><code>story[slug]</code> (required)</td>\n<td>Slug to identify the story (can not include <code>/</code>, create stories with <code>is_folder</code> and required path segments and <code>parent_id</code> link instead)</td>\n</tr>\n<tr>\n<td><code>story[content]</code></td>\n<td>Object structure for your content</td>\n</tr>\n<tr>\n<td><code>story[default_root]</code> (required*)</td>\n<td>Default content type/root component. (*Required if a folder story)</td>\n</tr>\n<tr>\n<td><code>publish</code></td>\n<td>Should story be published immediately (set 1 to publish)</td>\n</tr>\n</tbody></table>\n",
-    "example": "<p>Example Request Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"story\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Story Name\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"slug\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"story-name\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"content\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n      // your content type\n      <span class=\"token property\">\"component\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"root\"</span><span class=\"token punctuation\">,</span>\n      // your fields\n      <span class=\"token property\">\"body\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span><span class=\"token punctuation\">]</span>\n    <span class=\"token punctuation\">}</span>\n  <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"publish\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1</span>\n<span class=\"token punctuation\">}</span></code></pre>\n<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/\" httpMethod=\"POST\" :requestObject='{\"story\":{\"name\":\"Story Name\",\"slug\":\"story-name\",\"content\":{\"component\":\"page\",\"body\":[]}},\"publish\":1}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/stories/the-story-object\">story object</a> as response.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/\" httpMethod=\"POST\" :requestObject='{\"story\":{\"name\":\"Story Name\",\"slug\":\"story-name\",\"content\":{\"component\":\"page\",\"body\":[]}},\"publish\":1}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/stories/the-story-object\">story object</a> as response.</p>\n",
     "title": "Create a Story"
   },
   {
@@ -143,8 +143,8 @@
       "title": "Update a Story",
       "position": 130
     },
-    "content": "<p>// TODO: Document</p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>force_update</code></td>\n<td>If &#39;1&#39; it will overwrite a locked story</td>\n</tr>\n</tbody></table>\n",
-    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/\" httpMethod=\"PUT\" :requestObject='{\"story\":{\"name\":\"Story Name\",\"slug\":\"story-name\",\"content\":{\"component\":\"page\",\"body\":[]}},\"publish\":1, \"force_update\": 1}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/stories/the-story-object\">story object</a> as response</p>\n",
+    "content": "<p>Can be used to build migrations, updates if you changed your component structure, or if you only need to do a bulk action on all your content items. </p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>story</code></td>\n<td>Your full story object</td>\n</tr>\n<tr>\n<td><code>force_update</code></td>\n<td>If &#39;1&#39; it will overwrite a locked story</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/\" httpMethod=\"PUT\" :requestObject='{\"story\":{\"name\":\"Story Name\",\"slug\":\"story-name\",\"content\":{\"component\":\"page\",\"body\":[]}},\"force_update\": 1}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/stories/the-story-object\">story object</a> as response.</p>\n",
     "title": "Update a Story"
   },
   {
@@ -157,9 +157,23 @@
       "title": "Delete a Story",
       "position": 140
     },
-    "content": "<p>// TODO: Document</p>\n",
+    "content": "<p>Delete a content entry by using its numeric id.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/2141\" httpMethod=\"DELETE\"></RequestExample></p>\n",
     "title": "Delete a Story"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/stories/internationalization-for-stories",
+    "path": "core-resources/stories/internationalization-for-stories",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Internationalization for Stories",
+      "position": 150
+    },
+    "content": "<p>If you use our field level translations functionality, you can provide the values for the translations/languages within the same content object by appending <code>__i18n__</code> followed by the language code. Make sure to have the component field option <code>translateable</code> to <code>true</code>.</p>\n<p>Get a <a href=\"https://gist.github.com/DominikAngerer/f685f2c988171faef3fb6c2ffff4c78c\">full list of our languages codes</a> on Github.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/\" httpMethod=\"POST\" :requestObject='{\"story\":{\"name\":\"My First Article\",\"slug\":\"first-post\",\"content\":{\"component\":\"post\",\"headline\":\"This is awesome!\",\"headline__i18n__de\":\"Das ist toll!\"}},\"publish\":1}'></RequestExample></p>\n",
+    "title": "Internationalization for Stories"
   },
   {
     "fullPath": "/management-api/en/core-resources/components/components",
@@ -720,6 +734,15 @@
   {
     "fullPath": "/management-api/en/core-resources/components/delete-component.m",
     "path": "core-resources/components/delete-component.m",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {},
+    "content": "",
+    "example": ""
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/stories/internationali",
+    "path": "core-resources/stories/internationali",
     "lang": "en",
     "origin": "management-api",
     "attributes": {},
