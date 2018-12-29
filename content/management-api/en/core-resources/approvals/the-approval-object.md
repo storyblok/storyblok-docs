@@ -11,8 +11,6 @@ position: 1210
 | `story_id` | ID of content entry that should be approved |
 | `approver_id` | ID of the User that should be the approver |
 
-// TODO: Document possible status
-
 ;examplearea
 
 Example Object
