@@ -1,7 +1,7 @@
 ---
 category: Core Resources
 title: Possible field types
-position: 220
+position: 230
 ---
 
 | Field Type | Description |

@@ -38,4 +38,4 @@ Example Request
 
 <RequestExample url="https://mapi.storyblok.com/v1/spaces/606/stories/" httpMethod="POST" :requestObject='{"story":{"name":"Story Name","slug":"story-name","content":{"component":"page","body":[]}},"publish":1}'></RequestExample>
 
-You will receive a fully loaded [story object](#core-resources/stories/the-story-object) as response
+You will receive a fully loaded [story object](#core-resources/stories/the-story-object) as response.

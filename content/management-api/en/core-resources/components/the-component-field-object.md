@@ -20,6 +20,8 @@ Not every property will be used for every field type; some may only effect speci
 | `rtl` | Boolean; Enable global RTL for this field |
 | `no_translate` | Boolean; Should be excluded in translation export |
 
+// TODO: Add other options
+
 ;examplearea
 
 Example Object
