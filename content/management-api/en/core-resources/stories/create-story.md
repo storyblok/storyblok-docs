@@ -14,6 +14,14 @@ You can set most of the fields that are available in the story object, below we 
 | `story[default_root]` (required*) | Default content type/root component. (*Required if a folder story) |
 | `publish` | Should story be published immediately (set 1 to publish) |
 
+You can save any data in the `story[content]` attribute, and use it in the editor, as long as you follow this rules:
+
+- The `story[content]` property needs to be an object at the root level
+- Every object inside needs to have the property `"component":"your_components_name"`
+- Only nest components using arrays, except you want to build a custom field type
+
+This let’s you import data and define the schema of your components afterwards in the interface where necessary.
+
 ;examplearea
 
 Example Request
