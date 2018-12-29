@@ -9,19 +9,19 @@ export default {
         case 'POST':
           return  `// use the universal js client to perform the request
 Storyblok.post('${this.path}', ${JSON.stringify(this.requestObject, null, 2)}).then(response => {
-    console.log(response)
-  }).catch(error => { 
-    console.log(error)
-  })`;
+  console.log(response)
+}).catch(error => { 
+  console.log(error)
+})`;
         break;
         default:
           return `// use the universal js client to perform the request
-Storyblok.get('${this.path}', ${this.queryParamsAsJson})
-  .then(response => {
-    console.log(response)
-  }).catch(error => { 
-    console.log(error)
-  })`;
+Storyblok.get('${this.path}', ${JSON.stringify(this.queryParams, null, 2)})
+.then(response => {
+  console.log(response)
+}).catch(error => { 
+  console.log(error)
+})`;
           break;
       }
     }

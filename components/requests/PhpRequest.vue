@@ -1,35 +1,53 @@
 <script>
-import RequestMixin from '@/components/requests/RequestMixin'
+import RequestMixin from "@/components/requests/RequestMixin"
 
 export default {
   mixins: [RequestMixin],
-  computed: {
+  computed: {
     rendered() {
-      return `<?php
+      switch (this.httpMethod) {
+        case "POST":
+          return `<?php
 
-$curl = curl_init();
+$request = new HttpRequest();
+$request->setUrl('${this.urlWithoutParams}');
+$request->setMethod(HTTP_METH_POST);
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "${this.url}",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(),
+$request->setHeaders(array(
+  'Content-Type' => 'application/json'
+  'Authorization' => 'YOUR_OAUTH_TOKEN'
 ));
 
-$response = curl_exec($curl);
-$err = curl_error($curl);
+$request->setBody('${JSON.stringify(this.requestObject, null, 2)}');
 
-curl_close($curl);
+try {
+  $response = $request->send();
 
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
 }`
+          break;
+        default:
+          let queryParams = this.queryParams
+          queryParams['token'] = 'YOUR_TOKEN'
+          return `<?php
+
+$request = new HttpRequest();
+$request->setUrl('${this.urlWithoutParams}');
+$request->setMethod(HTTP_METH_GET);
+
+$request->setQueryData(array(${JSON.stringify(queryParams, null, 2)}));
+
+try {
+  $response = $request->send();
+
+  echo $response->getBody();
+} catch (HttpException $ex) {
+  echo $ex;
+}`
+          break
+      }
     }
   }
 }

@@ -26,7 +26,7 @@ Example Request Object
 
 Example Request
 
-// TODO: Example POST Request
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/approvals/" httpMethod="POST" :requestObject='{"approval": {"story_id": 1066,"approver_id": 1028}, "release_id": 16}'></RequestExample>
 
 Example Response Object
 
