@@ -18,7 +18,7 @@ Example Object
 {
   "asset_folder": {
     "id": 41,
-    "name": "Commerce",
+    "name": "Header Images",
     "parent_id": null
   }
 }

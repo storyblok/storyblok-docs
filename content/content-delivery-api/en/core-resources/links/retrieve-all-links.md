@@ -12,6 +12,8 @@ Returns the links object containing all links of one space. Use the `version` pa
 | `starts_with` | Filter by `full_slug`. Can be used to retrieve all links form a specific folder. Examples: `starts_with=de/beitraege`, `starts_with=en/posts` | 
 | `version` | Default: `published`. Possible values: `draft`, `published` |
 
+Attention: This API endpoint is not paged.
+
 ;examplearea
 
 Endpoint

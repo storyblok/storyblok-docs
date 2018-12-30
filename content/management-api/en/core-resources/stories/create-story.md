@@ -11,7 +11,7 @@ You can set most of the fields that are available in the story object, below we 
 | `story[name]` (required) | Name of the story |
 | `story[slug]` (required) | Slug to identify the story (can not include `/`, create stories with `is_folder` and required path segments and `parent_id` link instead) |
 | `story[content]` | Object structure for your content |
-| `story[default_root]` (required*) | Default content type/root component. (*Required if a folder story) |
+| `story[default_root]` (required*) | Default content type/root component. (*Required if `is_folder` is `true`) |
 | `publish` | Should story be published immediately (set 1 to publish) |
 
 You can save any data in the `story[content]` attribute, and use it in the editor, as long as you follow this rules:
