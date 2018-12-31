@@ -9,9 +9,9 @@ position: 310
 | `id` | Numeric Unique ID |
 | `filename` | Full path of the asset, including the file name |
 | `space_id` | Space ID in which the asset is connected |
-| `created_at` | Date and time when the asset was uploaded |
-| `updated_at` | Date and time when the asset was last updated |
-| `deleted_at` | Date and time when the asset was deleted |
+| `created_at` | Creation date (Format: `YYYY-mm-dd HH:MM`) |
+| `updated_at` | Latest update date (Format: `YYYY-mm-dd HH:MM`) |
+| `deleted_at` | Deleted date (Format: `YYYY-mm-dd HH:MM`) |
 | `file` | File Object |
 | `asset_folder_id` | Id of the folder containing this asset |
 | `short_filename` | Prepared field which contains the file name for sorting |

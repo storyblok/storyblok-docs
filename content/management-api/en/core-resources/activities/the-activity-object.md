@@ -15,8 +15,8 @@ position: 1410
 | `parameters` |  |
 | `recipient_id` |  |
 | `recipient_type` |  |
-| `created_at` |  |
-| `updated_at` |  |
+| `created_at` | Creation date (Format: `YYYY-mm-dd HH:MM`) |
+| `updated_at` | Latest update date (Format: `YYYY-mm-dd HH:MM`) |
 | `space_id` |  |
 
 // TODO: Document properties

@@ -15,7 +15,6 @@ position: 1010
 | `last_response` | Last execution response log |
 | `lambda_code` | Beta: Lambda function code |
 
-
 ;examplearea
 
 Example Object

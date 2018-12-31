@@ -9,7 +9,7 @@ position: 210
 | `id` | Numeric Unique ID |
 | `name` | Technical name used for `component` property in entries |
 | `display_name` | Name that will be used in the editor interface |
-| `created_at` | Creation date (automatically) |
+| `created_at` | Creation date (Format: `YYYY-mm-dd HH:MM`) |
 | `image` | URL to the preview image, if uploaded |
 | `preview` | Define the field that should be used for preview in the interface |
 | `is_root` | Component should be usable as a Content Type |

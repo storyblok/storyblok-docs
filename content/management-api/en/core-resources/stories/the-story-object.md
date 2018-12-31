@@ -12,9 +12,9 @@ This is an object representing your content entry. One Story object can be of a 
 | `uuid`                | Generated uuid string | 
 | `name`                | Given name  | 
 | `slug`                | Given slug / path | 
-| `created_at`          | Creation date (automatically) | 
-| `published_at`        | Latest publishing date (automatically) | 
-| `first_published_at`  | First publishing date (automatically) | 
+| `created_at`          | Creation date (Format: `YYYY-mm-dd HH:MM`) | 
+| `published_at`        | Latest publishing date (Format: `YYYY-mm-dd HH:MM`) | 
+| `first_published_at`  | First publishing date (Format: `YYYY-mm-dd HH:MM`) | 
 | `full_slug`           | Combined slug with all parent folders | 
 | `release_id`          | Id of your content stage (default: null) | 
 | `lang`                | Defined language (default: "default") | 
