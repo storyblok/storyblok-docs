@@ -21,15 +21,16 @@ Example Object
 ```json
 {
   "preset": {
-    "id": 18,
+    "id": 1814,
     "name": "Teaser with filled headline",
     "preset": {
       // fields of the component filled with content
       "headline": "This is a default value for the preset!",
+      ...
     },
     "component_id": 62,
-    "space_id": 672,
-    "image": "//a.storyblok.com/f/672/...",
+    "space_id": 606,
+    "image": "//a.storyblok.com/f/606/...",
     "created_at": "2018-11-10T15:33:16.726Z",
     "updated_at": "2018-11-10T15:33:16.726Z"
   }

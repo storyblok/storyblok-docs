@@ -746,7 +746,49 @@
       "position": 1710
     },
     "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric ID of your preset</td>\n</tr>\n<tr>\n<td><code>name</code></td>\n<td>Given name of your preset</td>\n</tr>\n<tr>\n<td><code>preset[preset]</code></td>\n<td>Object with the fields you want to save in the preset</td>\n</tr>\n<tr>\n<td><code>component_id</code></td>\n<td>ID of the component the preset should be connected</td>\n</tr>\n<tr>\n<td><code>image</code></td>\n<td>Screenshot or other preview image for your editor; Default: <code>null</code></td>\n</tr>\n<tr>\n<td><code>created_at</code></td>\n<td>Creation date (Format: <code>YYYY-mm-dd HH:MM</code>)</td>\n</tr>\n<tr>\n<td><code>updated_at</code></td>\n<td>Latest update date (Format: <code>YYYY-mm-dd HH:MM</code>)</td>\n</tr>\n</tbody></table>\n",
-    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"preset\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">18</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Teaser with filled headline\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"preset\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n      // fields of the component filled with content\n      <span class=\"token property\">\"headline\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"This is a default value for the preset!\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"component_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">62</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"space_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">672</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"image\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"//a.storyblok.com/f/672/...\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"created_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-11-10T15:33:16.726Z\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"updated_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-11-10T15:33:16.726Z\"</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"preset\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">1814</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Teaser with filled headline\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"preset\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n      // fields of the component filled with content\n      <span class=\"token property\">\"headline\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"This is a default value for the preset!\"</span><span class=\"token punctuation\">,</span>\n      ...\n    <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"component_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">62</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"space_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">606</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"image\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"//a.storyblok.com/f/606/...\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"created_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-11-10T15:33:16.726Z\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"updated_at\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"2018-11-10T15:33:16.726Z\"</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Preset Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/presets/create-preset",
+    "path": "core-resources/presets/create-preset",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Create a Preset",
+      "position": 1720
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>preset</code></td>\n<td>Your full preset object</td>\n</tr>\n<tr>\n<td><code>preset[name]</code></td>\n<td>Name is <strong>required</strong></td>\n</tr>\n<tr>\n<td><code>preset[component_id]</code></td>\n<td>Use numeric component id for referencing</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/presets/\" httpMethod=\"POST\" :requestObject='{\"preset\":{\"name\":\"Teaser with filled headline\",\"preset\":{\"headline\":\"This is a default value for the preset!\"},\"component_id\":62}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/presets/the-preset-object\">preset object</a> as response.</p>\n",
+    "title": "Create a Preset"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/presets/update-preset",
+    "path": "core-resources/presets/update-preset",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Update a Preset",
+      "position": 1730
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>preset</code></td>\n<td>Your full preset object</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/presets/1814\" httpMethod=\"PUT\" :requestObject='{\"preset\":{\"id\":1814,\"name\":\"Teaser with headline and image\",\"preset\":{\"headline\":\"This is a default value for the preset!\",\"image\":\"//a.storyblok.com/f/606/...\"},\"component_id\":62}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/presets/the-preset-object\">preset object</a> as response.</p>\n",
+    "title": "Update a Preset"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/presets/delete-preset",
+    "path": "core-resources/presets/delete-preset",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Delete a Preset",
+      "position": 1740
+    },
+    "content": "<p>Delete a preset by using its numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/presets/1814\" httpMethod=\"DELETE\"></RequestExample></p>\n",
+    "title": "Delete a Preset"
   }
 ]

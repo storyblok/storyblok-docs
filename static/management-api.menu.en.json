@@ -634,6 +634,39 @@
               "position": 1710
             },
             "title": "The Preset Object"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/presets/create-preset",
+            "path": "core-resources/presets/create-preset",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Create a Preset",
+              "position": 1720
+            },
+            "title": "Create a Preset"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/presets/update-preset",
+            "path": "core-resources/presets/update-preset",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Update a Preset",
+              "position": 1730
+            },
+            "title": "Update a Preset"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/presets/delete-preset",
+            "path": "core-resources/presets/delete-preset",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Delete a Preset",
+              "position": 1740
+            },
+            "title": "Delete a Preset"
           }
         ]
       }
