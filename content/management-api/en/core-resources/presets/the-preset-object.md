@@ -9,10 +9,10 @@ position: 1710
 | `id` | Numeric ID of your preset |
 | `name` | Given name of your preset |
 | `preset[preset]` | Object with the fields you want to save in the preset |
-| `last_execution` | Date and time of last execution (Format: `YYYY-mm-dd HH:MM`) |
-| `webhook_url` | URL of webhook that should be called when tasks is being executed |
-| `last_response` | Last execution response log |
-| `lambda_code` | Beta: Lambda function code |
+| `component_id` | ID of the component the preset should be connected |
+| `image` | Screenshot or other preview image for your editor; Default: `null` |
+| `created_at` | Creation date (Format: `YYYY-mm-dd HH:MM`) |
+| `updated_at` | Latest update date (Format: `YYYY-mm-dd HH:MM`) |
 
 ;examplearea
 
@@ -29,9 +29,9 @@ Example Object
     },
     "component_id": 62,
     "space_id": 672,
+    "image": "//a.storyblok.com/f/672/...",
     "created_at": "2018-11-10T15:33:16.726Z",
-    "updated_at": "2018-11-10T15:33:16.726Z",
-    "image": "//a.storyblok.com/f/672/..."
+    "updated_at": "2018-11-10T15:33:16.726Z"
   }
 }
 ```
