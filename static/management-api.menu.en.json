@@ -234,17 +234,6 @@
             "title": "Possible field types"
           },
           {
-            "fullPath": "/management-api/en/core-resources/components/retrieve-one-component",
-            "path": "core-resources/components/retrieve-one-component",
-            "lang": "en",
-            "attributes": {
-              "category": "Core Resources",
-              "title": "Retrieve one Component",
-              "position": 240
-            },
-            "title": "Retrieve one Component"
-          },
-          {
             "fullPath": "/management-api/en/core-resources/assets/retrieve-one-asset",
             "path": "core-resources/assets/retrieve-one-asset",
             "lang": "en",
@@ -256,8 +245,19 @@
             "title": "Retrieve one Asset"
           },
           {
-            "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
-            "path": "core-resources/components/retrieve-multiple-components",
+            "fullPath": "/management-api/en/core-resources/components/retrieve-one-component",
+            "path": "core-resources/components/retrieve-one-component",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve one Component",
+              "position": 240
+            },
+            "title": "Retrieve one Component"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/assets/retrieve-multiple-assets",
+            "path": "core-resources/assets/retrieve-multiple-assets",
             "lang": "en",
             "attributes": {
               "category": "Core Resources",
@@ -267,8 +267,8 @@
             "title": "Retrieve multiple Components"
           },
           {
-            "fullPath": "/management-api/en/core-resources/assets/retrieve-multiple-assets",
-            "path": "core-resources/assets/retrieve-multiple-assets",
+            "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
+            "path": "core-resources/components/retrieve-multiple-components",
             "lang": "en",
             "attributes": {
               "category": "Core Resources",
@@ -644,31 +644,6 @@
               "position": 1430
             },
             "title": "Retrieve multiple Activities"
-          }
-        ]
-      },
-      {
-        "fullPath": "/management-api/en/core-resources/collaborators/collaborators",
-        "path": "core-resources/collaborators/collaborators",
-        "lang": "en",
-        "attributes": {
-          "category": "Core Resources",
-          "title": "Collaborators",
-          "startpage": true,
-          "position": 1500
-        },
-        "title": "Collaborators",
-        "children": [
-          {
-            "fullPath": "/management-api/en/core-resources/collaborators/the-collaborator-object",
-            "path": "core-resources/collaborators/the-collaborator-object",
-            "lang": "en",
-            "attributes": {
-              "category": "Core Resources",
-              "title": "The Collaborator Object",
-              "position": 1510
-            },
-            "title": "The Collaborator Object"
           }
         ]
       },

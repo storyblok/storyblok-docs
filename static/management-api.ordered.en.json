@@ -275,20 +275,6 @@
     "title": "Possible field types"
   },
   {
-    "fullPath": "/management-api/en/core-resources/components/retrieve-one-component",
-    "path": "core-resources/components/retrieve-one-component",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {
-      "category": "Core Resources",
-      "title": "Retrieve one Component",
-      "position": 240
-    },
-    "content": "<p>Returns a single, fully loaded component object by providing a specific numeric id.</p>\n",
-    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/4123\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/components/the-component-object\">component object</a> as response.</p>\n",
-    "title": "Retrieve one Component"
-  },
-  {
     "fullPath": "/management-api/en/core-resources/assets/retrieve-one-asset",
     "path": "core-resources/assets/retrieve-one-asset",
     "lang": "en",
@@ -303,18 +289,18 @@
     "title": "Retrieve one Asset"
   },
   {
-    "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
-    "path": "core-resources/components/retrieve-multiple-components",
+    "fullPath": "/management-api/en/core-resources/components/retrieve-one-component",
+    "path": "core-resources/components/retrieve-one-component",
     "lang": "en",
     "origin": "management-api",
     "attributes": {
       "category": "Core Resources",
-      "title": "Retrieve multiple Components",
-      "position": 250
+      "title": "Retrieve one Component",
+      "position": 240
     },
-    "content": "<p>Returns an array of component objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
-    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/components/the-component-object\">component objects</a> as response.</p>\n",
-    "title": "Retrieve multiple Components"
+    "content": "<p>Returns a single, fully loaded component object by providing a specific numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/4123\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/components/the-component-object\">component object</a> as response.</p>\n",
+    "title": "Retrieve one Component"
   },
   {
     "fullPath": "/management-api/en/core-resources/assets/retrieve-multiple-assets",
@@ -328,6 +314,20 @@
     },
     "content": "<p>Returns an array of asset objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/assets/the-asset-object\">asset objects</a> as response.</p>\n",
+    "title": "Retrieve multiple Components"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
+    "path": "core-resources/components/retrieve-multiple-components",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve multiple Components",
+      "position": 250
+    },
+    "content": "<p>Returns an array of component objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/components/the-component-object\">component objects</a> as response.</p>\n",
     "title": "Retrieve multiple Components"
   },
   {
@@ -772,35 +772,6 @@
     "content": "<p>Returns an array of activity objects. Can be filtered on date ranges and is <a href=\"#topics/pagination\">paged</a>.</p>\n<table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>created_at_gte</code></td>\n<td>Activity creation date is greater than <code>YYYY-MM-DD</code></td>\n</tr>\n<tr>\n<td><code>created_at_lte</code></td>\n<td>Activity creation date is lower than <code>YYYY-MM-DD</code></td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/activities/?created_at_gte=2018-12-14&created_at_lte=2018-12-18\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/activities/the-activity-object\">activity objects</a> as response.</p>\n",
     "title": "Retrieve multiple Activities"
-  },
-  {
-    "fullPath": "/management-api/en/core-resources/collaborators/collaborators",
-    "path": "core-resources/collaborators/collaborators",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {
-      "category": "Core Resources",
-      "title": "Collaborators",
-      "startpage": true,
-      "position": 1500
-    },
-    "content": "<p>A collaborator is one seat in your space, so a person who is an explicit member of your project. As an owner of a space, you can choose between different roles or define your own advanced rights (space roles) and permissions for your collaborators.</p>\n",
-    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/collaborators/:collaborator_id</code></pre>\n",
-    "title": "Collaborators"
-  },
-  {
-    "fullPath": "/management-api/en/core-resources/collaborators/the-collaborator-object",
-    "path": "core-resources/collaborators/the-collaborator-object",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {
-      "category": "Core Resources",
-      "title": "The Collaborator Object",
-      "position": 1510
-    },
-    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>role</code></td>\n<td>Role of the user (<code>admin</code>, <code>editor</code>, <code>advanced</code>)</td>\n</tr>\n<tr>\n<td><code>permissions</code></td>\n<td>List of permissions in space</td>\n</tr>\n<tr>\n<td><code>field_permissions</code></td>\n<td>List of field permissions in space</td>\n</tr>\n<tr>\n<td><code>space_role_id</code></td>\n<td>Connected space role identifier</td>\n</tr>\n<tr>\n<td><code>user</code></td>\n<td>Resolved User object</td>\n</tr>\n<tr>\n<td><code>space_role</code></td>\n<td>Resolved Space Role object</td>\n</tr>\n</tbody></table>\n",
-    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"collaborator\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">285</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"role\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"editor\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"permissions\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span> <span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"allowed_path\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"field_permissions\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"space_role_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"user\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span> ... <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"space_role\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span> ... <span class=\"token punctuation\">}</span> \n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
-    "title": "The Collaborator Object"
   },
   {
     "fullPath": "/management-api/en/core-resources/presets/presets",
