@@ -16,7 +16,7 @@ Not every property will be used for every field type; some may only effect speci
 | `regex` | Client Regex validation for the field |
 | `description` | Description shown in the editor interface |
 | `default_value` | Default value for the field; Can be an escaped JSON object |
-| `can_sync` | Advanced usage to sync with field in preview |
+| `can_sync` | Advanced usage to sync with field in preview; Default: false |
 | `preview_field` | Is used as instance preview field below component name in bloks types |
 | `no_translate` | Boolean; Should be excluded in translation export |
 | `rtl` | Boolean; Enable global RTL for this field <br>Only for type: *markdown*, *text*, *textarea* |
