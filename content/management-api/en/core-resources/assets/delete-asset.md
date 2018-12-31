@@ -1,7 +1,7 @@
 ---
 category: Core Resources
 title: Delete an Asset
-position: 350
+position: 370
 ---
 
 Delete an asset by using its numeric id.

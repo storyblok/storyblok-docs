@@ -289,6 +289,20 @@
     "title": "Retrieve one Component"
   },
   {
+    "fullPath": "/management-api/en/core-resources/assets/retrieve-one-asset",
+    "path": "core-resources/assets/retrieve-one-asset",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve one Asset",
+      "position": 240
+    },
+    "content": "<p>Returns a single asset object by providing a specific numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/14\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an <a href=\"#core-resources/assets/the-asset-object\">asset object</a> as response.</p>\n",
+    "title": "Retrieve one Asset"
+  },
+  {
     "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
     "path": "core-resources/components/retrieve-multiple-components",
     "lang": "en",
@@ -300,6 +314,20 @@
     },
     "content": "<p>Returns an array of component objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/components/the-component-object\">component objects</a> as response.</p>\n",
+    "title": "Retrieve multiple Components"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/assets/retrieve-multiple-assets",
+    "path": "core-resources/assets/retrieve-multiple-assets",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve multiple Components",
+      "position": 250
+    },
+    "content": "<p>Returns an array of asset objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/assets/the-asset-object\">asset objects</a> as response.</p>\n",
     "title": "Retrieve multiple Components"
   },
   {
@@ -395,7 +423,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Upload Asset",
-      "position": 340
+      "position": 360
     },
     "content": "<p>Uploading assets in Storyblok is a two step process. First you need to sign the asset you want to upload. Then you need to post the image as form data to our Amazon S3 bucket. Uploaded files will have parameterized names; Every dot <code>&quot;.&quot;</code> (except the last one) will be replaced with underscore <code>&quot;_&quot;</code>; </p>\n<p>Here you can find an example <a href=\"https://github.com/onefriendaday/storyblok-file-upload-example\">using Node.js on Github</a>.</p>\n",
     "example": "<p>1) Start by requesting a signed upload URL and parameter </p>\n<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/\" httpMethod=\"POST\" :requestObject='{\"filename\":\"your_file.jpg\",\"size\":\"400x500\"}'></RequestExample></p>\n<p>2) Use the received signed response object to upload your file (example uses Node.js): </p>\n<pre><code class=\"language-javascript\"><span class=\"token keyword\">const</span> FormData <span class=\"token operator\">=</span> <span class=\"token function\">require</span><span class=\"token punctuation\">(</span><span class=\"token string\">'form-data'</span><span class=\"token punctuation\">)</span>\n<span class=\"token keyword\">const</span> fs <span class=\"token operator\">=</span> <span class=\"token function\">require</span><span class=\"token punctuation\">(</span><span class=\"token string\">'fs'</span><span class=\"token punctuation\">)</span>\n\n<span class=\"token keyword\">const</span> file <span class=\"token operator\">=</span> <span class=\"token string\">'/path_to/your_file.jpg'</span>\n<span class=\"token keyword\">const</span> <span class=\"token function-variable function\">fileUpload</span> <span class=\"token operator\">=</span> <span class=\"token punctuation\">(</span>signed_response_object<span class=\"token punctuation\">,</span> success<span class=\"token punctuation\">,</span> failed<span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span>\n  <span class=\"token keyword\">let</span> form <span class=\"token operator\">=</span> <span class=\"token keyword\">new</span> <span class=\"token class-name\">FormData</span><span class=\"token punctuation\">(</span><span class=\"token punctuation\">)</span>\n  <span class=\"token comment\">// apply all fields from the signed response object to the second request</span>\n  <span class=\"token keyword\">for</span> <span class=\"token punctuation\">(</span><span class=\"token keyword\">let</span> key <span class=\"token keyword\">in</span> signed_response_object<span class=\"token punctuation\">.</span>fields<span class=\"token punctuation\">)</span> <span class=\"token punctuation\">{</span>\n    form<span class=\"token punctuation\">.</span><span class=\"token function\">append</span><span class=\"token punctuation\">(</span>key<span class=\"token punctuation\">,</span> signed_response_object<span class=\"token punctuation\">.</span>fields<span class=\"token punctuation\">[</span>key<span class=\"token punctuation\">]</span><span class=\"token punctuation\">)</span>\n  <span class=\"token punctuation\">}</span>\n  <span class=\"token comment\">// also append the file read stream</span>\n  form<span class=\"token punctuation\">.</span><span class=\"token function\">append</span><span class=\"token punctuation\">(</span><span class=\"token string\">'file'</span><span class=\"token punctuation\">,</span> fs<span class=\"token punctuation\">.</span><span class=\"token function\">createReadStream</span><span class=\"token punctuation\">(</span>file<span class=\"token punctuation\">)</span><span class=\"token punctuation\">)</span>\n  <span class=\"token comment\">// submit your form</span>\n  form<span class=\"token punctuation\">.</span><span class=\"token function\">submit</span><span class=\"token punctuation\">(</span>signed_response_object<span class=\"token punctuation\">.</span>post_url<span class=\"token punctuation\">,</span> <span class=\"token punctuation\">(</span>err<span class=\"token punctuation\">,</span> res<span class=\"token punctuation\">)</span> <span class=\"token operator\">=></span> <span class=\"token punctuation\">{</span>\n    <span class=\"token keyword\">if</span> <span class=\"token punctuation\">(</span>err<span class=\"token punctuation\">)</span> <span class=\"token keyword\">throw</span> err\n    console<span class=\"token punctuation\">.</span><span class=\"token function\">log</span><span class=\"token punctuation\">(</span><span class=\"token string\">'https://a.storyblok.com/'</span> <span class=\"token operator\">+</span> signed_response_object<span class=\"token punctuation\">.</span>fields<span class=\"token punctuation\">.</span>key <span class=\"token operator\">+</span> <span class=\"token string\">' uploaded!'</span><span class=\"token punctuation\">)</span>\n  <span class=\"token punctuation\">}</span><span class=\"token punctuation\">)</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
@@ -409,7 +437,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Delete an Asset",
-      "position": 350
+      "position": 370
     },
     "content": "<p>Delete an asset by using its numeric id.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/14\" httpMethod=\"DELETE\"></RequestExample></p>\n",

@@ -245,8 +245,30 @@
             "title": "Retrieve one Component"
           },
           {
+            "fullPath": "/management-api/en/core-resources/assets/retrieve-one-asset",
+            "path": "core-resources/assets/retrieve-one-asset",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve one Asset",
+              "position": 240
+            },
+            "title": "Retrieve one Asset"
+          },
+          {
             "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
             "path": "core-resources/components/retrieve-multiple-components",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve multiple Components",
+              "position": 250
+            },
+            "title": "Retrieve multiple Components"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/assets/retrieve-multiple-assets",
+            "path": "core-resources/assets/retrieve-multiple-assets",
             "lang": "en",
             "attributes": {
               "category": "Core Resources",
@@ -331,7 +353,7 @@
             "attributes": {
               "category": "Core Resources",
               "title": "Upload Asset",
-              "position": 340
+              "position": 360
             },
             "title": "Upload Asset"
           },
@@ -342,7 +364,7 @@
             "attributes": {
               "category": "Core Resources",
               "title": "Delete an Asset",
-              "position": 350
+              "position": 370
             },
             "title": "Delete an Asset"
           }

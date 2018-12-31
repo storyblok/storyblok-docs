@@ -1,7 +1,7 @@
 ---
 category: Core Resources
 title: Upload Asset
-position: 340
+position: 360
 ---
 
 Uploading assets in Storyblok is a two step process. First you need to sign the asset you want to upload. Then you need to post the image as form data to our Amazon S3 bucket. Uploaded files will have parameterized names; Every dot `"."` (except the last one) will be replaced with underscore `"_"`; 
