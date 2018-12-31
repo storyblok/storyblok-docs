@@ -290,6 +290,17 @@
               "position": 340
             },
             "title": "Upload Asset"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/assets/delete-asset",
+            "path": "core-resources/assets/delete-asset",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Delete a Task",
+              "position": 350
+            },
+            "title": "Delete a Task"
           }
         ]
       },

@@ -346,6 +346,20 @@
     "title": "Upload Asset"
   },
   {
+    "fullPath": "/management-api/en/core-resources/assets/delete-asset",
+    "path": "core-resources/assets/delete-asset",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Delete a Task",
+      "position": 350
+    },
+    "content": "<p>Delete an asset by using its numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/14\" httpMethod=\"DELETE\"></RequestExample></p>\n",
+    "title": "Delete a Task"
+  },
+  {
     "fullPath": "/management-api/en/core-resources/asset-folders/asset-folders",
     "path": "core-resources/asset-folders/asset-folders",
     "lang": "en",
