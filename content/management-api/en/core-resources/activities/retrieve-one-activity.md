@@ -1,6 +1,6 @@
 ---
 category: Core Resources
-title: Retrieve One Activity
+title: Retrieve one Activity
 position: 1420
 ---
 

@@ -549,16 +549,10 @@
             "lang": "en",
             "attributes": {
               "category": "Core Resources",
-              "title": "Retrieve One Activity",
+              "title": "Retrieve one Activity",
               "position": 1420
             },
-            "title": "Retrieve One Activity"
-          },
-          {
-            "fullPath": "/management-api/en/core-resources/assets/update-asset",
-            "path": "core-resources/assets/update-asset",
-            "lang": "en",
-            "attributes": {}
+            "title": "Retrieve one Activity"
           }
         ]
       },

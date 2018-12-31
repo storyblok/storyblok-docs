@@ -653,21 +653,12 @@
     "origin": "management-api",
     "attributes": {
       "category": "Core Resources",
-      "title": "Retrieve One Activity",
+      "title": "Retrieve one Activity",
       "position": 1420
     },
     "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>trackable_id</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>trackable_type</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>owner_id</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>owner_type</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>key</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>parameters</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>recipient_id</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>recipient_type</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>created_at</code></td>\n<td>Creation date (Format: <code>YYYY-mm-dd HH:MM</code>)</td>\n</tr>\n<tr>\n<td><code>updated_at</code></td>\n<td>Latest update date (Format: <code>YYYY-mm-dd HH:MM</code>)</td>\n</tr>\n<tr>\n<td><code>space_id</code></td>\n<td></td>\n</tr>\n</tbody></table>\n<p>// TODO: Document properties</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/activities/5405\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/activities/the-activity-object\">activity object</a> as response.</p>\n",
-    "title": "Retrieve One Activity"
-  },
-  {
-    "fullPath": "/management-api/en/core-resources/assets/update-asset",
-    "path": "core-resources/assets/update-asset",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {},
-    "content": "",
-    "example": ""
+    "title": "Retrieve one Activity"
   },
   {
     "fullPath": "/management-api/en/core-resources/space-roles/space-roles",
