@@ -1,6 +1,6 @@
 ---
 category: Core Resources
-title: Delete a Asset
+title: Delete an Asset
 position: 350
 ---
 
