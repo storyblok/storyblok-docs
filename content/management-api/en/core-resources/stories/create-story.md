@@ -8,8 +8,9 @@ You can set most of the fields that are available in the story object, below we 
 
 | Property | Description |
 |---|---|
-| `story[name]` (required) | Name of the story |
-| `story[slug]` (required) | Slug to identify the story (can not include `/`, create stories with `is_folder` and required path segments and `parent_id` link instead) |
+| `story` | Your full [story object](#core-resources/stories/the-story-object) |
+| `story[name]` | Name of the story is **required** |
+| `story[slug]` | Slug is **required**; Used to identify the story (can not include `/`create stories with `is_folder` and required path segments and `parent_id` link instead) |
 | `story[content]` | Object structure for your content |
 | `story[default_root]` (required*) | Default content type/root component. (*Required if `is_folder` is `true`) |
 | `publish` | Should story be published immediately (set 1 to publish) |

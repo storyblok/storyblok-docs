@@ -6,9 +6,8 @@ position: 1020
 
 | Property | Description |
 |---|---|
-| `task` | Your full task object |
+| `task` | Your full [task object](#core-resources/stories/the-story-object) |
 | `task[name]`  | Name is **required** |
-
 
 ;examplearea
 

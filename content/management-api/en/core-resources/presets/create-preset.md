@@ -6,7 +6,7 @@ position: 1720
 
 | Property | Description |
 |---|---|
-| `preset` | Your full preset object |
+| `preset` | Your full [preset object](#core-resources/presets/the-preset-object) |
 | `preset[name]`  | Name is **required** |
 | `preset[component_id]`  | Use numeric component id for referencing |
 

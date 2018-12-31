@@ -6,7 +6,7 @@ position: 1730
 
 | Property | Description |
 |---|---|
-| `preset` | Your full preset object |
+| `preset` | Your full [preset object](#core-resources/presets/the-preset-object) |
 
 ;examplearea
 

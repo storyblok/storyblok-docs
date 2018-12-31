@@ -8,7 +8,7 @@ Can be used to build migrations, updates if you changed your component structure
 
 | Property | Description |
 |---|---|
-| `story` | Your full story object |
+| `story` | Your full [story object](#core-resources/stories/the-story-object) |
 | `force_update` | If '1' it will overwrite a locked story |
 
 ;examplearea

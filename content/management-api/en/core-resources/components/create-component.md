@@ -8,7 +8,8 @@ You can set most of the fields that are available in the component object, below
 
 | Property | Description |
 |---|---|
-| `component[name]` | T he component name is **required** |
+| `component` | Your full [component object](#core-resources/components/the-component-object) |
+| `component[name]` | The component name is **required** |
 
 ;examplearea
 
