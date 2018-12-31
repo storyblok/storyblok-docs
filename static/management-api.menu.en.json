@@ -270,13 +270,24 @@
             "title": "The Asset Object"
           },
           {
+            "fullPath": "/management-api/en/core-resources/assets/signed-response-object",
+            "path": "core-resources/assets/signed-response-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Signed Response Object",
+              "position": 330
+            },
+            "title": "Signed Response Object"
+          },
+          {
             "fullPath": "/management-api/en/core-resources/assets/upload-asset",
             "path": "core-resources/assets/upload-asset",
             "lang": "en",
             "attributes": {
               "category": "Core Resources",
               "title": "Upload Asset",
-              "position": 320
+              "position": 340
             },
             "title": "Upload Asset"
           }
