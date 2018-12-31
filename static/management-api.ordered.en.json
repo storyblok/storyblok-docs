@@ -476,6 +476,21 @@
     "title": "The Space Object"
   },
   {
+    "fullPath": "/management-api/en/core-resources/space-roles/space-roles",
+    "path": "core-resources/space-roles/space-roles",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Space Roles",
+      "startpage": true,
+      "position": 900
+    },
+    "content": "<p>// TODO: Documentation</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/space_roles/:space_role_id</code></pre>\n",
+    "title": "Space Roles"
+  },
+  {
     "fullPath": "/management-api/en/core-resources/space-roles/the-space-role-object",
     "path": "core-resources/space-roles/the-space-role-object",
     "lang": "en",
@@ -659,21 +674,6 @@
     "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>trackable_id</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>trackable_type</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>owner_id</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>owner_type</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>key</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>parameters</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>recipient_id</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>recipient_type</code></td>\n<td></td>\n</tr>\n<tr>\n<td><code>created_at</code></td>\n<td>Creation date (Format: <code>YYYY-mm-dd HH:MM</code>)</td>\n</tr>\n<tr>\n<td><code>updated_at</code></td>\n<td>Latest update date (Format: <code>YYYY-mm-dd HH:MM</code>)</td>\n</tr>\n<tr>\n<td><code>space_id</code></td>\n<td></td>\n</tr>\n</tbody></table>\n<p>// TODO: Document properties</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/activities/5405\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/activities/the-activity-object\">activity object</a> as response.</p>\n",
     "title": "Retrieve one Activity"
-  },
-  {
-    "fullPath": "/management-api/en/core-resources/space-roles/space-roles",
-    "path": "core-resources/space-roles/space-roles",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {
-      "category": "Core Resources",
-      "title": "Space Roles",
-      "startpage": true,
-      "position": 900
-    },
-    "content": "<p>// TODO: Documentation</p>\n",
-    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/space_roles/:space_role_id</code></pre>\n",
-    "title": "Space Roles"
   },
   {
     "fullPath": "/management-api/en/core-resources/collaborators/collaborators",

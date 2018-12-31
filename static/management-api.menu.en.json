@@ -401,7 +401,21 @@
               "position": 810
             },
             "title": "The Space Object"
-          },
+          }
+        ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/space-roles/space-roles",
+        "path": "core-resources/space-roles/space-roles",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Space Roles",
+          "startpage": true,
+          "position": 900
+        },
+        "title": "Space Roles",
+        "children": [
           {
             "fullPath": "/management-api/en/core-resources/space-roles/the-space-role-object",
             "path": "core-resources/space-roles/the-space-role-object",
@@ -555,19 +569,6 @@
             "title": "Retrieve one Activity"
           }
         ]
-      },
-      {
-        "fullPath": "/management-api/en/core-resources/space-roles/space-roles",
-        "path": "core-resources/space-roles/space-roles",
-        "lang": "en",
-        "attributes": {
-          "category": "Core Resources",
-          "title": "Space Roles",
-          "startpage": true,
-          "position": 900
-        },
-        "title": "Space Roles",
-        "children": []
       },
       {
         "fullPath": "/management-api/en/core-resources/collaborators/collaborators",
