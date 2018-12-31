@@ -34,7 +34,7 @@ Not every property will be used for every field type; some may only effect speci
 | `image_width` | Define width in px or width ratio if `keep_image_size` is enabled; Only type: *image* |
 | `image_height` | Define height in px or height ratio if `keep_image_size` is enabled; Only type: *image* |
 | `asset_folder_id` | Default asset folder numeric id to store uploaded image of that field; Only type: *image* |
-| `add_https` | Prepends `https:` to stop usage of relative protocol `//a.storyblok` ; Only type: *image*, *file* |
+| `add_https` | Prepends `https:` to stop usage of relative protocol `//a.storyblok`; Only type: *image*, *file* |
 | `restrict_components` | Activate restriction nestable component option; Default: false; Only type: *bloks* |
 | `maximum` | Maximum amount of added bloks in this blok field; Only type: *bloks* |
 | `restrict_content_types` | Activate restriction content type option; Only type: *multilink* |
