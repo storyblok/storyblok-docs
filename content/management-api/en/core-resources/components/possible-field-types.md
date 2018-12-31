@@ -27,7 +27,7 @@ position: 230
 Example Object
 
 ```json
-"field_name": {
+"field_key": {
   ...
   "type": "text", // <-- field type
   ...
