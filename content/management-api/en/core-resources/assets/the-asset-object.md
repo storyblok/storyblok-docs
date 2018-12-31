@@ -23,7 +23,7 @@ Example Object
 ```json
 {
   "id": 14,
-  "filename": "/f/TESTSPACEID/voluptas_expedita.jpg",
+  "filename": "/f/616/SIZE/UNIQUEIDENTIFIER/your_filename.jpg",
   "space_id": 616,
   "created_at": "2018-11-10T15:33:00.578Z",
   "updated_at": "2018-11-10T15:33:00.578Z",

@@ -86,7 +86,7 @@ export default {
     font-weight: normal;
     color: $sidebar-link-color; 
 
-    &.active {
+    &.active, &.child-active {
       color: $brand-highlight;
       font-weight: bold;
     }

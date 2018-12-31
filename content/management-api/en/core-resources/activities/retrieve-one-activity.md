@@ -25,7 +25,7 @@ position: 1420
 
 Example Request
 
-<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/activities/5405"></RequestExample>
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/activities/5405" httpMethod="GETOAUTH"></RequestExample>
 
 Example Response
 

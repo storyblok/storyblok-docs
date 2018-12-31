@@ -268,6 +268,17 @@
               "position": 310
             },
             "title": "The Asset Object"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/assets/upload-asset",
+            "path": "core-resources/assets/upload-asset",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Upload Asset",
+              "position": 320
+            },
+            "title": "Upload Asset"
           }
         ]
       },
@@ -368,21 +379,7 @@
               "position": 810
             },
             "title": "The Space Object"
-          }
-        ]
-      },
-      {
-        "fullPath": "/management-api/en/core-resources/space-roles/space-roles",
-        "path": "core-resources/space-roles/space-roles",
-        "lang": "en",
-        "attributes": {
-          "category": "Core Resources",
-          "title": "Space Roles",
-          "startpage": true,
-          "position": 900
-        },
-        "title": "Space Roles",
-        "children": [
+          },
           {
             "fullPath": "/management-api/en/core-resources/space-roles/the-space-role-object",
             "path": "core-resources/space-roles/the-space-role-object",
@@ -502,31 +499,6 @@
         ]
       },
       {
-        "fullPath": "/management-api/en/core-resources/branches/branches",
-        "path": "core-resources/branches/branches",
-        "lang": "en",
-        "attributes": {
-          "category": "Core Resources",
-          "title": "Branches",
-          "startpage": true,
-          "position": 1300
-        },
-        "title": "Branches",
-        "children": [
-          {
-            "fullPath": "/management-api/en/core-resources/branches/the-branch-object",
-            "path": "core-resources/branches/the-branch-object",
-            "lang": "en",
-            "attributes": {
-              "category": "Core Resources",
-              "title": "The Branch Object",
-              "position": 1310
-            },
-            "title": "The Branch Object"
-          }
-        ]
-      },
-      {
         "fullPath": "/management-api/en/core-resources/activities/activities",
         "path": "core-resources/activities/activities",
         "lang": "en",
@@ -559,8 +531,27 @@
               "position": 1420
             },
             "title": "Retrieve One Activity"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/assets/update-asset",
+            "path": "core-resources/assets/update-asset",
+            "lang": "en",
+            "attributes": {}
           }
         ]
+      },
+      {
+        "fullPath": "/management-api/en/core-resources/space-roles/space-roles",
+        "path": "core-resources/space-roles/space-roles",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Space Roles",
+          "startpage": true,
+          "position": 900
+        },
+        "title": "Space Roles",
+        "children": []
       },
       {
         "fullPath": "/management-api/en/core-resources/collaborators/collaborators",
@@ -584,31 +575,6 @@
               "position": 1510
             },
             "title": "The Collaborator Object"
-          }
-        ]
-      },
-      {
-        "fullPath": "/management-api/en/core-resources/deployments/deployments",
-        "path": "core-resources/deployments/deployments",
-        "lang": "en",
-        "attributes": {
-          "category": "Core Resources",
-          "title": "Deployments",
-          "startpage": true,
-          "position": 1600
-        },
-        "title": "Deployments",
-        "children": [
-          {
-            "fullPath": "/management-api/en/core-resources/deployments/the-deployment-object",
-            "path": "core-resources/deployments/the-deployment-object",
-            "lang": "en",
-            "attributes": {
-              "category": "Core Resources",
-              "title": "The Deployment Object",
-              "position": 1610
-            },
-            "title": "The Deployment Object"
           }
         ]
       },
