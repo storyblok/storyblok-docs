@@ -4,22 +4,7 @@ title: Retrieve one Activity
 position: 1420
 ---
 
-| Property | Description |
-|---|---|
-| `id` | Numeric Unique ID |
-| `trackable_id` | |
-| `trackable_type` |  |
-| `owner_id` |  |
-| `owner_type` |  |
-| `key` |  |
-| `parameters` |  |
-| `recipient_id` |  |
-| `recipient_type` |  |
-| `created_at` | Creation date (Format: `YYYY-mm-dd HH:MM`) |
-| `updated_at` | Latest update date (Format: `YYYY-mm-dd HH:MM`) |
-| `space_id` |  |
-
-// TODO: Document properties
+Returns a single activity object with a specific numeric id.
 
 ;examplearea
 

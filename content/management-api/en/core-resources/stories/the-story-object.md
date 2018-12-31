@@ -11,21 +11,37 @@ This is an object representing your content entry. One Story object can be of a 
 | `id`                  | Numeric id | 
 | `uuid`                | Generated uuid string | 
 | `name`                | Given name  | 
-| `slug`                | Given slug / path | 
-| `created_at`          | Creation date (Format: `YYYY-mm-dd HH:MM`) | 
-| `published_at`        | Latest publishing date (Format: `YYYY-mm-dd HH:MM`) | 
-| `first_published_at`  | First publishing date (Format: `YYYY-mm-dd HH:MM`) | 
-| `full_slug`           | Combined slug with all parent folders | 
+| `slug`                | Given slug / path part |
+| `full_slug`           | Combined parent folder and current slug | 
+| `path`                | Given real path, used in the preview editor | 
+| `content`             | Your defined custom content object | 
 | `release_id`          | Id of your content stage (default: null) | 
 | `lang`                | Defined language (default: "default") | 
-| `content`             | Your defined custom content body object | 
+| `published`           | Is story published (true/false) |
+| `unpublished_changes` | Story has unpublished changes; saved but not published (true/false) |
 | `position`            | Position in folder | 
 | `is_startpage`        | Is startpage of current folder (true/false) | 
-| `parent_id`           | Parent folder id | 
+| `is_folder`           | Is story a folder (true/false) | 
+| `default_root`        | Component name which will be used as default content type for this folders entries |
+| `disble_fe_editor`    | Is side by side editor disabled for all entries in folder (true/false) |
+| `parent_id`           | Parent story/folder numeric id | 
+| `parent`              | Essential parent information as object (resolved from `parent_id`) | 
 | `group_id`            | Alternates group id (uuid string) | 
-| `alternates`          | Array of alternate objects | 
-
-// TODO: document all properties
+| `alternates`          | Array of resolved alternate essential objects | 
+| `tag_list`            | Array of Tags (string only) | 
+| `breadcrumbs`         | Array of resolved parent essential objects (one per path segment) |
+| `sort_by_date`        | Legacy: Additional sorting date field (Format: `YYYY-mm-dd`) | 
+| `meta_data`           | JSON to add meta data that is not setting the story status to unpublished changes. Example: User ratings.  |
+| `pinned`              | To pin the story in the toolbar |
+| `preview_token[token]` | Token passed to the editor as preview parameter to allow editmode verification |
+| `preview_token[timestamp]` | Timestamp passed to the editor as preview parameter to allow editmode verification |
+| `last_author[id]`     | Last author user object numeric id |
+| `last_author[userid]` | Last author userid/username |
+| `created_at`          | Creation date (Format: `YYYY-mm-dd HH:MM`) | 
+| `updated_at`          | Latest update date (Format: `YYYY-mm-dd HH:MM`) | 
+| `published_at`        | Latest publishing date (Format: `YYYY-mm-dd HH:MM`) | 
+| `first_published_at`  | First publishing date (Format: `YYYY-mm-dd HH:MM`) | 
+| `imported_at`         | Latest import date (Format: `YYYY-mm-dd HH:MM`) | 
 
 ;examplearea
 
@@ -55,8 +71,6 @@ Example Object
       "component": "your_content_type"
       // and fields you define yourself are in here
     },
-    "publish_at": null,
-    "expire_at": null,
     "path": null,
     "default_root": null,
     "disble_fe_editor": false,

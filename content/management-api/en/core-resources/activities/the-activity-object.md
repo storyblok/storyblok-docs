@@ -7,19 +7,17 @@ position: 1410
 | Property | Description |
 |---|---|
 | `id` | Numeric Unique ID |
-| `trackable_id` | |
-| `trackable_type` |  |
-| `owner_id` |  |
-| `owner_type` |  |
-| `key` |  |
-| `parameters` |  |
-| `recipient_id` |  |
-| `recipient_type` |  |
+| `trackable_id` | Id of reference object that was changes |
+| `trackable_type` | Type of the referenced object |
+| `owner_id` | Id of User that created the object |
+| `owner_type` | Default: "User" |
+| `key` | Key defined by type.action (eg: story.create, story.update, component.create) |
+| `parameters` | Additional parameter passed; Default: null |
+| `recipient_id` | Default: null  |
+| `recipient_type` | Default: null  |
 | `created_at` | Creation date (Format: `YYYY-mm-dd HH:MM`) |
 | `updated_at` | Latest update date (Format: `YYYY-mm-dd HH:MM`) |
-| `space_id` |  |
-
-// TODO: Document properties
+| `space_id` | Space ID reference |
 
 ;examplearea
 

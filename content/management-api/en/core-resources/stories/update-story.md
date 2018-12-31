@@ -1,7 +1,7 @@
 ---
 category: Core Resources
 title: Update a Story
-position: 130
+position: 150
 ---
 
 Can be used to build migrations, updates if you changed your component structure, or if you only need to do a bulk action on all your content items. 

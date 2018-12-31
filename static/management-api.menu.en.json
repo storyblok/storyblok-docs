@@ -110,13 +110,35 @@
             "title": "The Story Object"
           },
           {
+            "fullPath": "/management-api/en/core-resources/stories/retrieve-one-story",
+            "path": "core-resources/stories/retrieve-one-story",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve one Story",
+              "position": 120
+            },
+            "title": "Retrieve one Story"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/stories/retrieve-multiple-stories",
+            "path": "core-resources/stories/retrieve-multiple-stories",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve multiple Stories",
+              "position": 130
+            },
+            "title": "Retrieve multiple Stories"
+          },
+          {
             "fullPath": "/management-api/en/core-resources/stories/create-story",
             "path": "core-resources/stories/create-story",
             "lang": "en",
             "attributes": {
               "category": "Core Resources",
               "title": "Create a Story",
-              "position": 120
+              "position": 140
             },
             "title": "Create a Story"
           },
@@ -127,7 +149,7 @@
             "attributes": {
               "category": "Core Resources",
               "title": "Update a Story",
-              "position": 130
+              "position": 150
             },
             "title": "Update a Story"
           },
@@ -138,7 +160,7 @@
             "attributes": {
               "category": "Core Resources",
               "title": "Delete a Story",
-              "position": 140
+              "position": 160
             },
             "title": "Delete a Story"
           },
@@ -149,7 +171,7 @@
             "attributes": {
               "category": "Core Resources",
               "title": "Internationalization for Stories",
-              "position": 150
+              "position": 170
             },
             "title": "Internationalization for Stories"
           },
@@ -160,7 +182,7 @@
             "attributes": {
               "category": "Core Resources",
               "title": "Publish a Story",
-              "position": 160
+              "position": 180
             },
             "title": "Publish a Story"
           }
@@ -567,6 +589,17 @@
               "position": 1420
             },
             "title": "Retrieve one Activity"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/activities/retrieve-multiple-activities",
+            "path": "core-resources/activities/retrieve-multiple-activities",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve multiple Activities",
+              "position": 1430
+            },
+            "title": "Retrieve multiple Activities"
           }
         ]
       },

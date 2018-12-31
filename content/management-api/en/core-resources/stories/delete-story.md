@@ -1,7 +1,7 @@
 ---
 category: Core Resources
 title: Delete a Story
-position: 140
+position: 160
 ---
 
 Delete a content entry by using its numeric id.
