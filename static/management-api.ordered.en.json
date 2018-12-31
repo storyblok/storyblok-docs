@@ -256,7 +256,7 @@
       "title": "Create a Component",
       "position": 240
     },
-    "content": "<p>You can set most of the fields that are available in the component object, below we only list the properties in the example and possible required fields. </p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>name</code></td>\n<td>Required; ID of content entry that should be approved</td>\n</tr>\n</tbody></table>\n",
+    "content": "<p>You can set most of the fields that are available in the component object, below we only list the properties in the example and possible required fields. </p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>component[name]</code></td>\n<td>T he component name is <strong>required</strong></td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/656/components/\" httpMethod=\"POST\" :requestObject='{\"component\":{\"name\":\"teaser\",\"display_name\":\"Teaser\",\"schema\":{\"title\":{\"type\":\"text\",\"pos\":0},\"image\":{\"type\":\"image\",\"pos\":1}},\"is_root\":false,\"is_nestable\":true}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/components/the-component-object\">component object</a> as response.</p>\n",
     "title": "Create a Component"
   },
@@ -473,7 +473,7 @@
       "startpage": true,
       "position": 1000
     },
-    "content": "<p>// TODO: Documentation</p>\n",
+    "content": "<p>You can create a Tasks that editor can press to send requests to one of your custom endpoints to either trigger a build for production or other common use-cases like product syncs or other publishing tasks. Future updates will also bring scheduled and timed tasks so you can handle all your tasks at one place.</p>\n<p>The payload Storyblok will send to your webhook url:</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"task\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">214</span><span class=\"token punctuation\">,</span> \n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"My Task Name\"</span>\n  <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span> \n  <span class=\"token property\">\"space_id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">606</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/tasks/:task_id</code></pre>\n",
     "title": "Tasks"
   },
@@ -487,9 +487,51 @@
       "title": "The Task Object",
       "position": 1010
     },
-    "content": "<p>// TODO: Documentation</p>\n",
-    "example": "<p>Object</p>\n",
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric ID of your task</td>\n</tr>\n<tr>\n<td><code>name</code></td>\n<td>Given name of your task</td>\n</tr>\n<tr>\n<td><code>description</code></td>\n<td>A brief description of your task for your editors</td>\n</tr>\n<tr>\n<td><code>task_type</code></td>\n<td>Default: <code>webhook</code>; Currently available: <code>webhook</code></td>\n</tr>\n<tr>\n<td><code>last_execution</code></td>\n<td>Date and time of last execution (Format: <code>YYYY-mm-dd HH:MM</code>)</td>\n</tr>\n<tr>\n<td><code>webhook_url</code></td>\n<td>URL of webhook that should be called when tasks is being executed</td>\n</tr>\n<tr>\n<td><code>last_response</code></td>\n<td>Last execution response log</td>\n</tr>\n<tr>\n<td><code>lambda_code</code></td>\n<td>Beta: Lambda function code</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"task\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">124</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"My Task Name\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"description\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"task_type\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"webhook\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"last_execution\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"lambda_code\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"last_response\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"webhook_url\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"https://www.storyblok.com\"</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Task Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/tasks/create-task",
+    "path": "core-resources/tasks/create-task",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Create a Task",
+      "position": 1020
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>task</code></td>\n<td>Your full task object</td>\n</tr>\n<tr>\n<td><code>task[name]</code></td>\n<td>Name is <strong>required</strong></td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/tasks/\" httpMethod=\"POST\" :requestObject='{\"task\":{\"name\":\"My Task Name\",\"task_type\":\"webhook\",\"webhook_url\":\"https://www.storyblok.com\"}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/tasks/the-task-object\">task object</a> as response.</p>\n",
+    "title": "Create a Task"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/tasks/update-task",
+    "path": "core-resources/tasks/update-task",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Update a Task",
+      "position": 1030
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>task</code></td>\n<td>Your full task object</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/tasks/124\" httpMethod=\"PUT\" :requestObject='{\"task\":{\"name\":\"My Updated Task Name\",\"task_type\":\"webhook\",\"webhook_url\":\"https://www.storyblok.com\"}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/tasks/the-task-object\">task object</a> as response.</p>\n",
+    "title": "Update a Task"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/tasks/delete-taks",
+    "path": "core-resources/tasks/delete-taks",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Delete a Task",
+      "position": 1040
+    },
+    "content": "<p>Delete a task by using its numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/tasks/124\" httpMethod=\"DELETE\"></RequestExample></p>\n",
+    "title": "Delete a Task"
   },
   {
     "fullPath": "/management-api/en/core-resources/versions/versions",

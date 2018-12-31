@@ -418,6 +418,39 @@
               "position": 1010
             },
             "title": "The Task Object"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/tasks/create-task",
+            "path": "core-resources/tasks/create-task",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Create a Task",
+              "position": 1020
+            },
+            "title": "Create a Task"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/tasks/update-task",
+            "path": "core-resources/tasks/update-task",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Update a Task",
+              "position": 1030
+            },
+            "title": "Update a Task"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/tasks/delete-taks",
+            "path": "core-resources/tasks/delete-taks",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Delete a Task",
+              "position": 1040
+            },
+            "title": "Delete a Task"
           }
         ]
       },

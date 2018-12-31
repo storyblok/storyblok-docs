@@ -8,7 +8,7 @@ You can set most of the fields that are available in the component object, below
 
 | Property | Description |
 |---|---|
-| `name` | Required; ID of content entry that should be approved |
+| `component[name]` | T he component name is **required** |
 
 ;examplearea
 
