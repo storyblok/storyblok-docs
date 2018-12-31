@@ -24,10 +24,10 @@ $ npm run generate
 
 ## Todo
 
-### General
-
-
 - Code Example (POST, PUT, DELETE, GET, GETOAUTH) for all techs
+- Optimizations (Lazyload Components?)
+- Website Header as soon as Ready
+- Github "Helpful Yes/No"
 - Management API Doc:
   - Asset Folders
     - Retrieve one Asset Folder
