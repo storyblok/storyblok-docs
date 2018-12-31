@@ -735,32 +735,5 @@
     "content": "<p>// TODO: Documentation</p>\n",
     "example": "<p>Object</p>\n",
     "title": "The Preset Object"
-  },
-  {
-    "fullPath": "/management-api/en/core-resources/activities/get-activities",
-    "path": "core-resources/activities/get-activities",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {},
-    "content": "",
-    "example": ""
-  },
-  {
-    "fullPath": "/management-api/en/core-resources/components/delete-component.m",
-    "path": "core-resources/components/delete-component.m",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {},
-    "content": "",
-    "example": ""
-  },
-  {
-    "fullPath": "/management-api/en/core-resources/stories/internationali",
-    "path": "core-resources/stories/internationali",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {},
-    "content": "",
-    "example": ""
   }
 ]

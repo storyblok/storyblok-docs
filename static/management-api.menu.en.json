@@ -626,24 +626,6 @@
               "position": 1710
             },
             "title": "The Preset Object"
-          },
-          {
-            "fullPath": "/management-api/en/core-resources/activities/get-activities",
-            "path": "core-resources/activities/get-activities",
-            "lang": "en",
-            "attributes": {}
-          },
-          {
-            "fullPath": "/management-api/en/core-resources/components/delete-component.m",
-            "path": "core-resources/components/delete-component.m",
-            "lang": "en",
-            "attributes": {}
-          },
-          {
-            "fullPath": "/management-api/en/core-resources/stories/internationali",
-            "path": "core-resources/stories/internationali",
-            "lang": "en",
-            "attributes": {}
           }
         ]
       }
