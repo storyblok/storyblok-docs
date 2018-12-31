@@ -143,7 +143,7 @@
       "title": "Retrieve multiple Stories",
       "position": 130
     },
-    "content": "<p>Returns an array of story objects <em>without</em> <code>content</code>. Can be filtered on date ranges and is <a href=\"#topics/pagination\">paged</a>.</p>\n<table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>page</code></td>\n<td>Current page of stories</td>\n</tr>\n<tr>\n<td><code>contain_component</code></td>\n<td>Filters by component in all levels of the content. Allows comma separated value for multiple components</td>\n</tr>\n<tr>\n<td><code>search_term</code></td>\n<td>Filter by a term using full text search</td>\n</tr>\n<tr>\n<td><code>sort_by</code></td>\n<td>Sort entries by specific attribute and order with <code>content.YOUR_FIELD:asc</code> and <code>content.YOUR_FIELD:desc</code>. Possible values are all root attributes of the entry (<em>position</em> and <em>parent_position</em> are special invisible attributes) and all fields of your content type inside <code>content</code> with a dot as seperator. Example: &#39;position:asc&#39;, &#39;parent_position:asc&#39;, &#39;content.your_custom_field:asc&#39;, &#39;created_at:desc&#39;</td>\n</tr>\n<tr>\n<td><code>pinned</code></td>\n<td>Filter by pinned stories if &#39;1&#39;</td>\n</tr>\n<tr>\n<td><code>excluding_ids</code></td>\n<td>Exclude stories by ids (comma separated) from result</td>\n</tr>\n<tr>\n<td><code>by_ids</code></td>\n<td>Filter by ids (comma separated)</td>\n</tr>\n<tr>\n<td><code>by_uuids</code></td>\n<td>Filter by uuids (comma separated)</td>\n</tr>\n<tr>\n<td><code>with_tag</code></td>\n<td>Filter by tag</td>\n</tr>\n<tr>\n<td><code>folder_only</code></td>\n<td>Filter by folders only</td>\n</tr>\n<tr>\n<td><code>story_only</code></td>\n<td>Filter by stories only</td>\n</tr>\n<tr>\n<td><code>with_parent</code></td>\n<td>Filter by parent id</td>\n</tr>\n<tr>\n<td><code>with_slug</code></td>\n<td>Filter by exact slug</td>\n</tr>\n<tr>\n<td><code>starts_with</code></td>\n<td>Filter stories starting with a specific slug</td>\n</tr>\n<tr>\n<td><code>in_trash</code></td>\n<td>Filter by items in the trash folder</td>\n</tr>\n<tr>\n<td><code>search</code></td>\n<td>Filter by search term</td>\n</tr>\n<tr>\n<td><code>filter_query</code></td>\n<td>Filter by specific attribute(s) of your content type. See <a href=\"/content-delivery-api/#filter-queries/overview\">content delivery api documentation</a>.</td>\n</tr>\n</tbody></table>\n",
+    "content": "<p>Returns an array of story objects <em>without</em> <code>content</code>. Can be filtered with the parameters below and is <a href=\"#topics/pagination\">paged</a>.</p>\n<table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>page</code></td>\n<td>Current page of stories</td>\n</tr>\n<tr>\n<td><code>contain_component</code></td>\n<td>Filters by component in all levels of the content. Allows comma separated value for multiple components</td>\n</tr>\n<tr>\n<td><code>search_term</code></td>\n<td>Filter by a term using full text search</td>\n</tr>\n<tr>\n<td><code>sort_by</code></td>\n<td>Sort entries by specific attribute and order with <code>content.YOUR_FIELD:asc</code> and <code>content.YOUR_FIELD:desc</code>. Possible values are all root attributes of the entry (<em>position</em> and <em>parent_position</em> are special invisible attributes) and all fields of your content type inside <code>content</code> with a dot as seperator. Example: &#39;position:asc&#39;, &#39;parent_position:asc&#39;, &#39;content.your_custom_field:asc&#39;, &#39;created_at:desc&#39;</td>\n</tr>\n<tr>\n<td><code>pinned</code></td>\n<td>Filter by pinned stories if &#39;1&#39;</td>\n</tr>\n<tr>\n<td><code>excluding_ids</code></td>\n<td>Exclude stories by ids (comma separated) from result</td>\n</tr>\n<tr>\n<td><code>by_ids</code></td>\n<td>Filter by ids (comma separated)</td>\n</tr>\n<tr>\n<td><code>by_uuids</code></td>\n<td>Filter by uuids (comma separated)</td>\n</tr>\n<tr>\n<td><code>with_tag</code></td>\n<td>Filter by tag</td>\n</tr>\n<tr>\n<td><code>folder_only</code></td>\n<td>Filter by folders only</td>\n</tr>\n<tr>\n<td><code>story_only</code></td>\n<td>Filter by stories only</td>\n</tr>\n<tr>\n<td><code>with_parent</code></td>\n<td>Filter by parent id</td>\n</tr>\n<tr>\n<td><code>with_slug</code></td>\n<td>Filter by exact slug</td>\n</tr>\n<tr>\n<td><code>starts_with</code></td>\n<td>Filter stories starting with a specific slug</td>\n</tr>\n<tr>\n<td><code>in_trash</code></td>\n<td>Filter by items in the trash folder</td>\n</tr>\n<tr>\n<td><code>search</code></td>\n<td>Filter by search term</td>\n</tr>\n<tr>\n<td><code>filter_query</code></td>\n<td>Filter by specific attribute(s) of your content type. See <a href=\"/content-delivery-api/#filter-queries/overview\">content delivery api documentation</a>.</td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>Example Request with <code>search_term</code></p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/?search_term=My%20fulltext%20search\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>Example Request with <code>by_uuids</code></p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/stories/?by_uuids=fb3afwa58-277f-4690-81fb-e0a080bd39ac,81fb81fb-e9fa-42b5-b952-c7d96ab6099d\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/stories/the-story-object\">story objects</a> <em>without</em> <code>content</code> as response.</p>\n",
     "title": "Retrieve multiple Stories"
   },
@@ -275,6 +275,34 @@
     "title": "Possible field types"
   },
   {
+    "fullPath": "/management-api/en/core-resources/components/retrieve-one-component",
+    "path": "core-resources/components/retrieve-one-component",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve one Component",
+      "position": 240
+    },
+    "content": "<p>Returns a single, fully loaded component object by providing a specific numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/4123\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/components/the-component-object\">component object</a> as response.</p>\n",
+    "title": "Retrieve one Component"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
+    "path": "core-resources/components/retrieve-multiple-components",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve multiple Components",
+      "position": 250
+    },
+    "content": "<p>Returns an array of component objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/components/the-component-object\">component objects</a> as response.</p>\n",
+    "title": "Retrieve multiple Components"
+  },
+  {
     "fullPath": "/management-api/en/core-resources/components/create-component",
     "path": "core-resources/components/create-component",
     "lang": "en",
@@ -282,7 +310,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Create a Component",
-      "position": 240
+      "position": 260
     },
     "content": "<p>You can set most of the fields that are available in the component object, below we only list the properties in the example and possible required fields. </p>\n<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>component</code></td>\n<td>Your full <a href=\"#core-resources/components/the-component-object\">component object</a></td>\n</tr>\n<tr>\n<td><code>component[name]</code></td>\n<td>The component name is <strong>required</strong></td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/656/components/\" httpMethod=\"POST\" :requestObject='{\"component\":{\"name\":\"teaser\",\"display_name\":\"Teaser\",\"schema\":{\"title\":{\"type\":\"text\",\"pos\":0},\"image\":{\"type\":\"image\",\"pos\":1}},\"is_root\":false,\"is_nestable\":true}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/components/the-component-object\">component object</a> as response.</p>\n",
@@ -296,7 +324,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Update a Component",
-      "position": 250
+      "position": 270
     },
     "content": "<p>Send the component object with updated values to our backend using the PUT method. An update on component will not take over already inserted values, make sure to also update your stories that contain this component.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/656/components/4123\" httpMethod=\"PUT\" :requestObject='{\"component\":{\"name\":\"teaser\",\"id\":4123,\"display_name\":\"Teaser Updated\",\"schema\":{\"title\":{\"type\":\"text\",\"pos\":0},\"image\":{\"type\":\"image\",\"pos\":1},\"description\":{\"type\":\"textarea\",\"pos\":2}},\"is_root\":false,\"is_nestable\":true}}'></RequestExample></p>\n<p>You will receive a fully loaded, updated <a href=\"#core-resources/components/the-component-object\">component object</a> as response.</p>\n",
@@ -310,7 +338,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Delete a Component",
-      "position": 260
+      "position": 280
     },
     "content": "<p>Delete any component you might like. Already used components will still stay in place but will show up with no schema definition so your inserted values won&#39;t be removed. You can use the update stories to migrate your content to other or new components.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/4123\" httpMethod=\"DELETE\"></RequestExample></p>\n",

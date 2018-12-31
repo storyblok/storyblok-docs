@@ -1,7 +1,7 @@
 ---
 category: Core Resources
 title: Update a Component
-position: 250
+position: 270
 ---
 
 Send the component object with updated values to our backend using the PUT method. An update on component will not take over already inserted values, make sure to also update your stories that contain this component.

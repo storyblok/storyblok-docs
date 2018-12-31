@@ -234,13 +234,35 @@
             "title": "Possible field types"
           },
           {
+            "fullPath": "/management-api/en/core-resources/components/retrieve-one-component",
+            "path": "core-resources/components/retrieve-one-component",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve one Component",
+              "position": 240
+            },
+            "title": "Retrieve one Component"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
+            "path": "core-resources/components/retrieve-multiple-components",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve multiple Components",
+              "position": 250
+            },
+            "title": "Retrieve multiple Components"
+          },
+          {
             "fullPath": "/management-api/en/core-resources/components/create-component",
             "path": "core-resources/components/create-component",
             "lang": "en",
             "attributes": {
               "category": "Core Resources",
               "title": "Create a Component",
-              "position": 240
+              "position": 260
             },
             "title": "Create a Component"
           },
@@ -251,7 +273,7 @@
             "attributes": {
               "category": "Core Resources",
               "title": "Update a Component",
-              "position": 250
+              "position": 270
             },
             "title": "Update a Component"
           },
@@ -262,7 +284,7 @@
             "attributes": {
               "category": "Core Resources",
               "title": "Delete a Component",
-              "position": 260
+              "position": 280
             },
             "title": "Delete a Component"
           }

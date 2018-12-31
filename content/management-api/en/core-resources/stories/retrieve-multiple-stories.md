@@ -4,7 +4,7 @@ title: Retrieve multiple Stories
 position: 130
 ---
 
-Returns an array of story objects *without* `content`. Can be filtered on date ranges and is [paged](#topics/pagination).
+Returns an array of story objects *without* `content`. Can be filtered with the parameters below and is [paged](#topics/pagination).
 
 | Parameter | Description |
 |----|----|
