@@ -648,6 +648,31 @@
         ]
       },
       {
+        "fullPath": "/management-api/en/core-resources/collaborators/collaborators",
+        "path": "core-resources/collaborators/collaborators",
+        "lang": "en",
+        "attributes": {
+          "category": "Core Resources",
+          "title": "Collaborators",
+          "startpage": true,
+          "position": 1500
+        },
+        "title": "Collaborators",
+        "children": [
+          {
+            "fullPath": "/management-api/en/core-resources/collaborators/the-collaborator-object",
+            "path": "core-resources/collaborators/the-collaborator-object",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "The Collaborator Object",
+              "position": 1510
+            },
+            "title": "The Collaborator Object"
+          }
+        ]
+      },
+      {
         "fullPath": "/management-api/en/core-resources/presets/presets",
         "path": "core-resources/presets/presets",
         "lang": "en",

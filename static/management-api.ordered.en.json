@@ -774,6 +774,35 @@
     "title": "Retrieve multiple Activities"
   },
   {
+    "fullPath": "/management-api/en/core-resources/collaborators/collaborators",
+    "path": "core-resources/collaborators/collaborators",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Collaborators",
+      "startpage": true,
+      "position": 1500
+    },
+    "content": "<p>A collaborator is one seat in your space, so a person who is an explicit member of your project. As an owner of a space, you can choose between different roles or define your own advanced rights (space roles) and permissions for your collaborators.</p>\n",
+    "example": "<p>Endpoint</p>\n<pre><code class=\"language-bash\">GET /v1/spaces/:space_id/collaborators/:collaborator_id</code></pre>\n",
+    "title": "Collaborators"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/collaborators/the-collaborator-object",
+    "path": "core-resources/collaborators/the-collaborator-object",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "The Collaborator Object",
+      "position": 1510
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>role</code></td>\n<td>Role of the user (<code>admin</code>, <code>editor</code>, <code>advanced</code>)</td>\n</tr>\n<tr>\n<td><code>permissions</code></td>\n<td>List of permissions in space</td>\n</tr>\n<tr>\n<td><code>field_permissions</code></td>\n<td>List of field permissions in space</td>\n</tr>\n<tr>\n<td><code>space_role_id</code></td>\n<td>Connected space role identifier</td>\n</tr>\n<tr>\n<td><code>user</code></td>\n<td>Resolved User object</td>\n</tr>\n<tr>\n<td><code>space_role</code></td>\n<td>Resolved Space Role object</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"collaborator\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">285</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"role\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"editor\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"permissions\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">[</span> <span class=\"token punctuation\">]</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"allowed_path\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"field_permissions\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"space_role_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"user\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span> ... <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"space_role\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span> ... <span class=\"token punctuation\">}</span> \n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
+    "title": "The Collaborator Object"
+  },
+  {
     "fullPath": "/management-api/en/core-resources/presets/presets",
     "path": "core-resources/presets/presets",
     "lang": "en",

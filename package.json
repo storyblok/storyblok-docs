@@ -8,7 +8,8 @@
     "dev": "nuxt & node docgen/docgen.js",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "docgen": "node docgen/docgen.js"
   },
   "dependencies": {
     "axios": "^0.18.0",
