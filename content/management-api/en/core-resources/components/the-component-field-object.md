@@ -11,8 +11,8 @@ Not every property will be used for every field type; some may only effect speci
 | `id` | Numeric Unique ID |
 | `type` | The type of your field |
 | `pos` | Position of field in component |
-| `translateable` | Boolean; Can field be translated |
-| `required` | Boolean; Is field required |
+| `translateable` | Can field be translated; Default: false |
+| `required` | Is field required; Default: false |
 | `regex` | Client Regex validation for the field |
 | `description` | Description shown in the editor interface |
 | `default_value` | Default value for the field; Can be an escaped JSON object |
