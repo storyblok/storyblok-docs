@@ -29,7 +29,7 @@ Example Object
     "display_name": "Post",
     "created_at": "2018-12-28T14:54:01.423Z",
     "schema": {
-      // definition of fields for this component
+      // definition of fields (schema) for this component
       "title": {
         "type": "text",
         "pos": 0
