@@ -13,18 +13,18 @@ export default {
 -H "Authorization: YOUR_OAUTH_TOKEN" \\
 -d ${JSON.stringify(JSON.stringify(this.requestObject))}`
         break;
-        case 'DELETE':
-        return `curl "${this.url}" \\ 
--X DELETE \\
--H "Authorization: YOUR_OAUTH_TOKEN" \\
--d ""`
-        break;
         case 'PUT':
         return `curl "${this.url}" \\ 
 -X PUT \\
 -H "Authorization: YOUR_OAUTH_TOKEN" \\
 -H "Content-Type: application/json" \\
 -d ${JSON.stringify(JSON.stringify(this.requestObject))}`
+        break;
+        case 'DELETE':
+        return `curl "${this.url}" \\ 
+-X DELETE \\
+-H "Authorization: YOUR_OAUTH_TOKEN" \\
+-d ""`
         break;
         case 'GETOAUTH':
           return `curl "${this.url}" \\
