@@ -3,7 +3,7 @@
     <div class="method-content__body">
       <h2><a class="method-content__title" :href="'#' + method.path"><span v-html=method.title></span><SvgIcon icon="link"/></a></h2>
       <div  v-html="method.content"></div>
-      <a class="method-content__github" :href="'https://github.com/storyblok/storyblok/blob/master/' + method.path + '.md'"><SvgIcon icon="github"/><span>Edit this section on GitHub</span></a>
+      <a class="method-content__github" :href="editSectionURL"><SvgIcon icon="github"/><span>Edit this section on GitHub</span></a>
     </div>
   </div>
 </template>
@@ -14,6 +14,11 @@ import SvgIcon from '@/components/SvgIcon'
 export default {
   props: {
     method: Object
+  },
+  computed: {
+    editSectionURL() {
+      return `https://github.com/storyblok/storyblok/blob/master/content/${this.$store.state.language}/${this.$store.state.origin}/${this.method.path}.md` 
+    }
   },
   components: {
     SvgIcon

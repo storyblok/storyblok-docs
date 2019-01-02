@@ -19,16 +19,14 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      let areas = document.querySelectorAll('.method')
-      let observer = new IntersectionObserver((changes) => {
-        changes.forEach(change => {
-          if(change.isIntersecting || change.intersectionRatio > 0.4) {
-            this.$store.commit('SET_ACTIVE_MENU_PATH', change.target.id)
-            history.pushState({}, null, `#${change.target.id}`)
-          }
-        })
-      }, {
-          threshold: 0.4
+      const hash = window.location.hash
+      const areas = document.querySelectorAll('.method')
+      const observer = new IntersectionObserver((changes) => {
+        if (changes[0].intersectionRatio <= 0) return;
+        
+        this.$store.commit('SET_ACTIVE_MENU_PATH', changes[0].target.id)
+        history.pushState({}, null, `#${changes[0].target.id}`)
+      
       })
       areas.forEach(area => observer.observe(area))
     }, 0)

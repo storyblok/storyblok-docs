@@ -5,6 +5,7 @@ const createStore = () => {
     state: {
       content: { },
       activeMenuPath: '',
+      origin: process.env.defaultOrigin,
       language: process.env.defaultLanguage,
       codelang: 'bash'
     },
@@ -30,6 +31,9 @@ const createStore = () => {
       },
       SET_LANGUAGE(state, { language }) {
         state.language = language
+      },
+      SET_ORIGIN(state, { origin }) {
+        state.origin = origin
       }
     }
   })
