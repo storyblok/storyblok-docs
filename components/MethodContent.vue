@@ -3,6 +3,7 @@
     <div class="method-content__body">
       <h2><a class="method-content__title" :href="'#' + method.path"><span v-html=method.title></span><SvgIcon icon="link"/></a></h2>
       <div  v-html="method.content"></div>
+      <a class="method-content__github" :href="'https://github.com/storyblok/storyblok/blob/master/' + method.path + '.md'"><SvgIcon icon="github"/><span>Edit this section on GitHub</span></a>
     </div>
   </div>
 </template>
@@ -72,6 +73,16 @@ export default {
         display: inline-block
       }
     }
+  }
+}
+
+.method-content__github {
+  display: block;
+  font-weight: normal;
+  padding: 40px 0px 0px 0px;
+  .icon {
+    margin-right: 5px;  
+    fill: $brand-highlight;
   }
 }
 

@@ -4,7 +4,7 @@ title: Entries between two numbers
 position: 10230
 ---
 
-A common filter needed for a shop content structure implementation would be a simple price range products filter. In the examples above you already saw how to write one [filter_query](#/filter-queries/overview) to receive all products that are greater or lower a specific price tag; In this example we will combine the [gt-date](#/filter-queries/operation-gt-date) and [lt-date](#/filter-queries/operation-lt-date) filters to get all products between a price range.
+A common filter needed for a shop content structure implementation would be a simple price range products filter. In the examples above you already saw how to write one [filter_query](#filter-queries/overview) to receive all products that are greater or lower a specific price tag; In this example we will combine the [gt-date](#filter-queries/operation-gt-date) and [lt-date](#filter-queries/operation-lt-date) filters to get all products between a price range.
 
 ;examplearea
 

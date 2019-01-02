@@ -24,7 +24,6 @@ $ npm run generate
 
 ## Todo
 
-- Code Example (POST, PUT, DELETE, GET, GETOAUTH) for all techs
 - Optimizations (Lazyload Components?)
 - Website Header as soon as Ready
 - Github "Helpful Yes/No"

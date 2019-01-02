@@ -7,7 +7,7 @@ position: 1040
 
 Think of it at **AFTER** a specific date. Allows you to filter fields of type `date/datetime` (Format: `YYYY-mm-dd HH:MM`). Returns all entries that are **greater** (eg. later) than the provided value.
 
-You can combined this query with the `starts_with`, [pagination](#/topics/pagination), other filter query, and query/sorting options of [Stories](#/core-resources/stories/retrieve-multiple-stories) if needed.
+You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
  
 ## Use-cases
 

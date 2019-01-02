@@ -275,20 +275,6 @@
     "title": "Possible field types"
   },
   {
-    "fullPath": "/management-api/en/core-resources/assets/retrieve-one-asset",
-    "path": "core-resources/assets/retrieve-one-asset",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {
-      "category": "Core Resources",
-      "title": "Retrieve one Asset",
-      "position": 240
-    },
-    "content": "<p>Returns a single asset object by providing a specific numeric id.</p>\n",
-    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/14\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an <a href=\"#core-resources/assets/the-asset-object\">asset object</a> as response.</p>\n",
-    "title": "Retrieve one Asset"
-  },
-  {
     "fullPath": "/management-api/en/core-resources/components/retrieve-one-component",
     "path": "core-resources/components/retrieve-one-component",
     "lang": "en",
@@ -301,20 +287,6 @@
     "content": "<p>Returns a single, fully loaded component object by providing a specific numeric id.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/4123\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/components/the-component-object\">component object</a> as response.</p>\n",
     "title": "Retrieve one Component"
-  },
-  {
-    "fullPath": "/management-api/en/core-resources/assets/retrieve-multiple-assets",
-    "path": "core-resources/assets/retrieve-multiple-assets",
-    "lang": "en",
-    "origin": "management-api",
-    "attributes": {
-      "category": "Core Resources",
-      "title": "Retrieve multiple Components",
-      "position": 250
-    },
-    "content": "<p>Returns an array of asset objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
-    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/assets/the-asset-object\">asset objects</a> as response.</p>\n",
-    "title": "Retrieve multiple Components"
   },
   {
     "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
@@ -414,6 +386,34 @@
     "content": "<p>After creating an asset entry using a POST request you will receive a response object with all information needed to finally upload your asset. The second request after the creation of the asset entry will need all information in <code>fields</code> appended to your <code>application/x-www-form-urlencoded</code> request besides the actual <code>file</code> input. See the demo on how to <a href=\"#core-resources/assets/upload-asset\">upload an asset</a>.</p>\n",
     "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"pretty_url\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"//a-example.storyblok.com/f/606/e5990a3595/your_file.jpg\"</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"public_url\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"https://s3.amazonaws.com/a-example.storyblok.com/f/606/e5990a3595/your_file.jpg\"</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"fields\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"key\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"f/606/e5990a3595/your_file.jpg\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"acl\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"public-read\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"Expires\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Sun, 10 Nov 2019 15:33:00 GMT\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"Cache-Control\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"public; max-age=31536000\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"Content-Type\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"image/jpeg\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"policy\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"eyJleHBpcmF0aW9uIjoiMjAxOC0xMS0xMFQxNTo...ei1hbGdvcml0aG0iOiJBV1M0LUhNQUM...LWFtei1kYXRlIjoiMjAxODExMTBUMTUzMzAwWiJ9XX0=\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"x-amz-credential\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"AKIAIU627EN23A/20181110/s3/aws4_request\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"x-amz-algorithm\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"AWS4-HMAC-SHA256\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"x-amz-date\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"20181110T153300Z\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"x-amz-signature\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"aaedd72b54636662b137b7648b54bdb47ee3b1dd28173313647930e625c8\"</span>\n  <span class=\"token punctuation\">}</span><span class=\"token punctuation\">,</span>\n  <span class=\"token property\">\"post_url\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"https://s3.amazonaws.com/a-example.storyblok.com\"</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "Signed Response Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/assets/retrieve-one-asset",
+    "path": "core-resources/assets/retrieve-one-asset",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve one Asset",
+      "position": 340
+    },
+    "content": "<p>Returns a single asset object by providing a specific numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/14\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an <a href=\"#core-resources/assets/the-asset-object\">asset object</a> as response.</p>\n",
+    "title": "Retrieve one Asset"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/assets/retrieve-multiple-assets",
+    "path": "core-resources/assets/retrieve-multiple-assets",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve multiple Assets",
+      "position": 350
+    },
+    "content": "<p>Returns an array of asset objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/assets/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/assets/the-asset-object\">asset objects</a> as response.</p>\n",
+    "title": "Retrieve multiple Assets"
   },
   {
     "fullPath": "/management-api/en/core-resources/assets/upload-asset",

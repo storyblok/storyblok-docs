@@ -11,15 +11,15 @@ With the filter queries you're able to filter by specific attribute(s) of your s
 
 | Operation | Description |
 |----|---------|
-| [`in`](#/filter-queries/operation-in) | Matches **one** of the values of a string value |
-| [`in_array`](#/filter-queries/operation-in-array) | Matches **any** of the values of an array value |
-| [`all_in_array`](#/filter-queries/operation-all-in-array) | Matches **all** of the values of an array value |
-| [`gt-date`](#/filter-queries/operation-gt-date) | Greater than date (Format: `YYYY-mm-dd HH:MM`) |
-| [`lt-date`](#/filter-queries/operation-lt-date) | Less than date (Format: `2018-03-03 10:00`) |
-| [`gt-num`](#/filter-queries/operation-gt-num) | Greater than numeric value |
-| [`lt-num`](#/filter-queries/operation-lt-num) | Less than numeric value |
+| [`in`](#filter-queries/operation-in) | Matches **one** of the values of a string value |
+| [`in_array`](#filter-queries/operation-in-array) | Matches **any** of the values of an array value |
+| [`all_in_array`](#filter-queries/operation-all-in-array) | Matches **all** of the values of an array value |
+| [`gt-date`](#filter-queries/operation-gt-date) | Greater than date (Format: `YYYY-mm-dd HH:MM`) |
+| [`lt-date`](#filter-queries/operation-lt-date) | Less than date (Format: `2018-03-03 10:00`) |
+| [`gt-num`](#filter-queries/operation-gt-num) | Greater than numeric value |
+| [`lt-num`](#filter-queries/operation-lt-num) | Less than numeric value |
 
-You can find one example for each filter query in the description page for each operation, and examples that combine multiple filters in the [filter examples](#/examples/filtering/filters) section.
+You can find one example for each filter query in the description page for each operation, and examples that combine multiple filters in the [filter examples](#examples/filtering/filters) section.
 
 ;examplearea
 

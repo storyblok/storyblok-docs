@@ -7,7 +7,7 @@ position: 1070
 
 Allows you to filter fields of type `number`, or custom field type with numbers in the schema. Returns all entries that are **LOWER** than the provided value.
 
-You can combined this query with the `starts_with`, [pagination](#/topics/pagination), other filter query, and query/sorting options of [Stories](#/core-resources/stories/retrieve-multiple-stories) if needed.
+You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
  
 ## Use-cases
 

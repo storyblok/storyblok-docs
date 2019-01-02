@@ -234,17 +234,6 @@
             "title": "Possible field types"
           },
           {
-            "fullPath": "/management-api/en/core-resources/assets/retrieve-one-asset",
-            "path": "core-resources/assets/retrieve-one-asset",
-            "lang": "en",
-            "attributes": {
-              "category": "Core Resources",
-              "title": "Retrieve one Asset",
-              "position": 240
-            },
-            "title": "Retrieve one Asset"
-          },
-          {
             "fullPath": "/management-api/en/core-resources/components/retrieve-one-component",
             "path": "core-resources/components/retrieve-one-component",
             "lang": "en",
@@ -254,17 +243,6 @@
               "position": 240
             },
             "title": "Retrieve one Component"
-          },
-          {
-            "fullPath": "/management-api/en/core-resources/assets/retrieve-multiple-assets",
-            "path": "core-resources/assets/retrieve-multiple-assets",
-            "lang": "en",
-            "attributes": {
-              "category": "Core Resources",
-              "title": "Retrieve multiple Components",
-              "position": 250
-            },
-            "title": "Retrieve multiple Components"
           },
           {
             "fullPath": "/management-api/en/core-resources/components/retrieve-multiple-components",
@@ -345,6 +323,28 @@
               "position": 330
             },
             "title": "Signed Response Object"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/assets/retrieve-one-asset",
+            "path": "core-resources/assets/retrieve-one-asset",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve one Asset",
+              "position": 340
+            },
+            "title": "Retrieve one Asset"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/assets/retrieve-multiple-assets",
+            "path": "core-resources/assets/retrieve-multiple-assets",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve multiple Assets",
+              "position": 350
+            },
+            "title": "Retrieve multiple Assets"
           },
           {
             "fullPath": "/management-api/en/core-resources/assets/upload-asset",
