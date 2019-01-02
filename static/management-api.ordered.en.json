@@ -340,7 +340,7 @@
       "title": "Delete a Component",
       "position": 280
     },
-    "content": "<p>Delete any component you might like. Already used components will still stay in place but will show up with no schema definition so your inserted values won&#39;t be removed. You can use the update stories to migrate your content to other or new components.</p>\n",
+    "content": "<p>Delete any component using its numeric id. Already used components will still stay in place but will show up with no schema definition so your inserted values won&#39;t be removed. You can use the update stories to migrate your content to other or new components.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/components/4123\" httpMethod=\"DELETE\"></RequestExample></p>\n",
     "title": "Delete a Component"
   },
@@ -471,6 +471,76 @@
     "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>name</code></td>\n<td>Display name of your asset folder</td>\n</tr>\n<tr>\n<td><code>parent_id</code></td>\n<td>Parent asset folder id</td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span>\n  <span class=\"token property\">\"asset_folder\"</span><span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">41</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Header Images\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"parent_id\"</span><span class=\"token operator\">:</span> <span class=\"token null\">null</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Asset Folder Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/asset-folders/retrieve-one-asset-folder",
+    "path": "core-resources/asset-folders/retrieve-one-asset-folder",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve one Asset Folder",
+      "position": 420
+    },
+    "content": "<p>Returns a single, asset folder object by providing a specific numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/asset_folders/41\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/asset-folders/the-asset-folder-object\">asset folder object</a> as response.</p>\n",
+    "title": "Retrieve one Asset Folder"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/asset-folders/retrieve-multiple-asset-folders",
+    "path": "core-resources/asset-folders/retrieve-multiple-asset-folders",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve multiple Asset Folders",
+      "position": 430
+    },
+    "content": "<p>Returns an array of asset folder objects.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/asset_folders/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/asset-folders/the-asset-folder-object\">asset folder objects</a> as response.</p>\n",
+    "title": "Retrieve multiple Asset Folders"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/asset-folders/create-asset-folder",
+    "path": "core-resources/asset-folders/create-asset-folder",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Create an Asset Folder",
+      "position": 440
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>asset_folder</code></td>\n<td>Your full <a href=\"#core-resources/asset-folders/the-asset-object\">asset folder object</a></td>\n</tr>\n<tr>\n<td><code>asset_folder[name]</code></td>\n<td>Name is <strong>required</strong></td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/asset_folders/\" httpMethod=\"POST\" :requestObject='{\"asset_folder\":{\"name\":\"Header Images\"}}'></RequestExample></p>\n<p>You will receive an <a href=\"#core-resources/asset-folders/the-asset-object\">asset folder object</a> as response.</p>\n",
+    "title": "Create an Asset Folder"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/asset-folders/update-asset-folder",
+    "path": "core-resources/asset-folders/update-asset-folder",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Update an Asset Folder",
+      "position": 450
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>asset_folder</code></td>\n<td>Your full <a href=\"#core-resources/asset-folders/the-asset-object\">asset folder object</a></td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/asset_folders/41\" httpMethod=\"PUT\" :requestObject='{\"asset_folder\":{\"id\":41,\"name\":\"Update Header Images\"}}'></RequestExample></p>\n<p>You will receive an <a href=\"#core-resources/asset-folders/the-asset-object\">asset folder object</a> as response.</p>\n",
+    "title": "Update an Asset Folder"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/asset-folders/delete-asset-folder",
+    "path": "core-resources/asset-folders/delete-asset-folder",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Delete an Asset Folder",
+      "position": 460
+    },
+    "content": "<p>Delete an asset folder by using its numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/asset_folders/41\" httpMethod=\"DELETE\"></RequestExample></p>\n",
+    "title": "Delete an Asset Folder"
   },
   {
     "fullPath": "/management-api/en/core-resources/datasources/datasources",
