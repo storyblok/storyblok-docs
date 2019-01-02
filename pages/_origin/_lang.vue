@@ -1,17 +1,25 @@
 <template>
-  <main class="main">
-    <Methods/>
-  </main>
+  <div>
+    <TopHeader/>
+    <SidebarNavigation/>
+    <main class="main">
+      <Methods/>
+    </main>
+  </div>
 </template>
 
 <script>
 import axios from 'axios'
 import Methods from '@/components/Methods'
+import SidebarNavigation from '@/components/SidebarNavigation'
+import TopHeader from '@/components/TopHeader'
 
 export default {
   name: 'page',
   components: {
-    Methods
+    Methods,
+    SidebarNavigation,
+    TopHeader,
   },
   async asyncData ({ store, params }) {
     let origin = params.origin

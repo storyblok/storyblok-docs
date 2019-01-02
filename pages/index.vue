@@ -1,6 +1,6 @@
 <template>
   <main class="main">
-    <Methods/>
+    Startpage
   </main>
 </template>
 
@@ -22,7 +22,6 @@ export default {
     
     store.commit('SET_ORDERED', { origin: origin, language: lang, ordered: orderedResponse.data })
     store.commit('SET_MENU', { origin: origin, language: lang, menu: menuResponse.data })
-
     store.commit('SET_LANGUAGE', { language: lang })
   }
  }

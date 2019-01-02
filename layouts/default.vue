@@ -2,23 +2,17 @@
   <div class="docs">
     <SvgSprite/>
     <WebsiteHeader/>
-    <TopHeader/>
-    <SidebarNavigation/>
     <nuxt/>
   </div>
 </template>
 
 <script>
 import SvgSprite from '@/components/SvgSprite'
-import SidebarNavigation from '@/components/SidebarNavigation'
-import TopHeader from '@/components/TopHeader'
 import WebsiteHeader from '@/components/WebsiteHeader'
 
 export default {
   components: {
     WebsiteHeader,
-    SidebarNavigation,
-    TopHeader,
     SvgSprite
   },
   mounted() {
