@@ -843,6 +843,20 @@
     "title": "Create Release Approval"
   },
   {
+    "fullPath": "/management-api/en/core-resources/approvals/delete-approval",
+    "path": "core-resources/approvals/delete-approval",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Delete an Approval",
+      "position": 1270
+    },
+    "content": "<p>Delete an approval by using its numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/approvals/5405\" httpMethod=\"DELETE\"></RequestExample></p>\n",
+    "title": "Delete an Approval"
+  },
+  {
     "fullPath": "/management-api/en/core-resources/activities/activities",
     "path": "core-resources/activities/activities",
     "lang": "en",

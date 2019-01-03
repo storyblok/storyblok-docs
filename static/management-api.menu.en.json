@@ -696,6 +696,17 @@
               "position": 1250
             },
             "title": "Create Release Approval"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/approvals/delete-approval",
+            "path": "core-resources/approvals/delete-approval",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Delete an Approval",
+              "position": 1270
+            },
+            "title": "Delete an Approval"
           }
         ]
       },
