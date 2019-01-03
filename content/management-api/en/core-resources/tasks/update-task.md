@@ -1,7 +1,7 @@
 ---
 category: Core Resources
 title: Update a Task
-position: 1030
+position: 1050
 ---
 
 | Property | Description |

@@ -688,6 +688,34 @@
     "title": "The Task Object"
   },
   {
+    "fullPath": "/management-api/en/core-resources/tasks/retrieve-one-task",
+    "path": "core-resources/tasks/retrieve-one-task",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve one Task",
+      "position": 1020
+    },
+    "content": "<p>Returns a single task object with a specific numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/tasks/124\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a <a href=\"#core-resources/tasks/the-task-object\">task object</a> as response.</p>\n",
+    "title": "Retrieve one Task"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/tasks/retrieve-multiple-tasks",
+    "path": "core-resources/tasks/retrieve-multiple-tasks",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve multiple Tasks",
+      "position": 1030
+    },
+    "content": "<p>Returns an array of task objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/tasks/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/tasks/the-task-object\">task objects</a> as response.</p>\n",
+    "title": "Retrieve multiple Tasks"
+  },
+  {
     "fullPath": "/management-api/en/core-resources/tasks/create-task",
     "path": "core-resources/tasks/create-task",
     "lang": "en",
@@ -695,7 +723,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Create a Task",
-      "position": 1020
+      "position": 1040
     },
     "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>task</code></td>\n<td>Your full <a href=\"#core-resources/stories/the-story-object\">task object</a></td>\n</tr>\n<tr>\n<td><code>task[name]</code></td>\n<td>Name is <strong>required</strong></td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/tasks/\" httpMethod=\"POST\" :requestObject='{\"task\":{\"name\":\"My Task Name\",\"task_type\":\"webhook\",\"webhook_url\":\"https://www.storyblok.com\"}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/tasks/the-task-object\">task object</a> as response.</p>\n",
@@ -709,7 +737,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Update a Task",
-      "position": 1030
+      "position": 1050
     },
     "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>task</code></td>\n<td>Your full task object</td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/tasks/124\" httpMethod=\"PUT\" :requestObject='{\"task\":{\"name\":\"My Updated Task Name\",\"task_type\":\"webhook\",\"webhook_url\":\"https://www.storyblok.com\"}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/tasks/the-task-object\">task object</a> as response.</p>\n",
@@ -723,7 +751,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Delete a Task",
-      "position": 1040
+      "position": 1060
     },
     "content": "<p>Delete a task by using its numeric id.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/tasks/124\" httpMethod=\"DELETE\"></RequestExample></p>\n",
@@ -902,6 +930,34 @@
     "title": "The Preset Object"
   },
   {
+    "fullPath": "/management-api/en/core-resources/presets/retrieve-one-preset",
+    "path": "core-resources/presets/retrieve-one-preset",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve one Preset",
+      "position": 1720
+    },
+    "content": "<p>Returns a single preset object with a specific numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/presets/1814\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a <a href=\"#core-resources/presets/the-preset-object\">preset object</a> as response.</p>\n",
+    "title": "Retrieve one Preset"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/presets/retrieve-multiple-presets",
+    "path": "core-resources/presets/retrieve-multiple-presets",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve multiple Presets",
+      "position": 1730
+    },
+    "content": "<p>Returns an array of preset objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/presets/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/presets/the-preset-object\">preset objects</a> as response.</p>\n",
+    "title": "Retrieve multiple Presets"
+  },
+  {
     "fullPath": "/management-api/en/core-resources/presets/create-preset",
     "path": "core-resources/presets/create-preset",
     "lang": "en",
@@ -909,7 +965,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Create a Preset",
-      "position": 1720
+      "position": 1740
     },
     "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>preset</code></td>\n<td>Your full <a href=\"#core-resources/presets/the-preset-object\">preset object</a></td>\n</tr>\n<tr>\n<td><code>preset[name]</code></td>\n<td>Name is <strong>required</strong></td>\n</tr>\n<tr>\n<td><code>preset[component_id]</code></td>\n<td>Use numeric component id for referencing</td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/presets/\" httpMethod=\"POST\" :requestObject='{\"preset\":{\"name\":\"Teaser with filled headline\",\"preset\":{\"headline\":\"This is a default value for the preset!\"},\"component_id\":62}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/presets/the-preset-object\">preset object</a> as response.</p>\n",
@@ -923,7 +979,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Update a Preset",
-      "position": 1730
+      "position": 1750
     },
     "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>preset</code></td>\n<td>Your full <a href=\"#core-resources/presets/the-preset-object\">preset object</a></td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/presets/1814\" httpMethod=\"PUT\" :requestObject='{\"preset\":{\"id\":1814,\"name\":\"Teaser with headline and image\",\"preset\":{\"headline\":\"This is a default value for the preset!\",\"image\":\"//a.storyblok.com/f/606/...\"},\"component_id\":62}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/presets/the-preset-object\">preset object</a> as response.</p>\n",
@@ -937,7 +993,7 @@
     "attributes": {
       "category": "Core Resources",
       "title": "Delete a Preset",
-      "position": 1740
+      "position": 1760
     },
     "content": "<p>Delete a preset by using its numeric id.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/presets/1814\" httpMethod=\"DELETE\"></RequestExample></p>\n",
