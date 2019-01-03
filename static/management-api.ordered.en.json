@@ -638,7 +638,7 @@
       "position": 660
     },
     "content": "<p>Delete a datasource by using its numeric id.</p>\n",
-    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/datasources/91\" httpMethod=\"DELETE\"></RequestExample></p>\n<p>You will receive a <a href=\"#core-resources/datasources/the-datasource-object\">datasource object</a> as response.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/datasources/91\" httpMethod=\"DELETE\"></RequestExample></p>\n",
     "title": "Delete a Datasource"
   },
   {
