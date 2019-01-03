@@ -654,13 +654,35 @@
             "title": "The Approval Object"
           },
           {
+            "fullPath": "/management-api/en/core-resources/approvals/retrieve-one-approval",
+            "path": "core-resources/approvals/retrieve-one-approval",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve one Approval",
+              "position": 1220
+            },
+            "title": "Retrieve one Approval"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/approvals/retrieve-multiple-approvals",
+            "path": "core-resources/approvals/retrieve-multiple-approvals",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve multiple Activities",
+              "position": 1230
+            },
+            "title": "Retrieve multiple Activities"
+          },
+          {
             "fullPath": "/management-api/en/core-resources/approvals/create-approval",
             "path": "core-resources/approvals/create-approval",
             "lang": "en",
             "attributes": {
               "category": "Core Resources",
               "title": "Create Approval",
-              "position": 1220
+              "position": 1240
             },
             "title": "Create Approval"
           },
@@ -671,7 +693,7 @@
             "attributes": {
               "category": "Core Resources",
               "title": "Create Release Approval",
-              "position": 1230
+              "position": 1250
             },
             "title": "Create Release Approval"
           }

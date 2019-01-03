@@ -1,7 +1,7 @@
 ---
 category: Core Resources
 title: Create Release Approval
-position: 1230
+position: 1250
 ---
 
 | Property | Description |
