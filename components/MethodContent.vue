@@ -60,23 +60,23 @@ export default {
       }
     }
   }
+}
 
-  .method-content__title {
-    font-family: inherit;
-    font-size: 1.3em;
-    color: inherit;
+.method-content__title {
+  font-family: inherit;
+  font-size: 1.3em;
+  color: inherit;
+
+  .icon {
+    display: none;   
+  }
+    
+  &:hover, &:focus {
+    text-decoration: none;
 
     .icon {
-      display: none;   
-    }
-      
-    &:hover, &:focus {
-      text-decoration: none;
-
-      .icon {
-        padding-left: 5px;
-        display: inline-block
-      }
+      padding-left: 5px;
+      display: inline-block
     }
   }
 }

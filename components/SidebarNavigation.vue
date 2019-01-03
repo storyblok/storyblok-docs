@@ -5,7 +5,7 @@
         <div class="side-menu__category" :class="{ 'side-menu__category--first': index == 0 }">{{category.category}}</div>
         <ul class="side-menu__items">
           <li :key=method.path v-for="method in category.items">
-            <a :href="toId(method)" :class="{ 'active': isMenuItemActive(method), 'child-active': isChildActive(method) }">{{title(method)}}</a>
+            <a :href="toId(method)" @click="navigate(method)" :class="{ 'active': isMenuItemActive(method), 'child-active': isChildActive(method) }">{{title(method)}}</a>
         
             <ul class="side-menu__children" v-if="method.children.length > 0">
               <li :key=child.path v-for="child in method.children">
@@ -56,6 +56,9 @@ export default {
     },
     title(method) {
       return method.attributes.sidebarTitle||method.attributes.title 
+    },
+    navigate(method) {
+      this.$store.commit('SET_ACTIVE_MENU_PATH', method.path)
     }
   }
 }
