@@ -19,8 +19,8 @@ Example Object
 { 
   "datasource_entry" : {
     "id": 52,
-    "name": "KEY",
-    "value": "VALUE",
+    "name": "newsletter_text",
+    "value": "Subscribe to our newsletter to make sure you don’t miss anything.",
     "datasource_id": ""
   }
 }

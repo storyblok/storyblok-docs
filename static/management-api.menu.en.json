@@ -497,6 +497,61 @@
               "position": 710
             },
             "title": "The Datasource Entry Object"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/datasource-entries/retrieve-one-datasource-entry",
+            "path": "core-resources/datasource-entries/retrieve-one-datasource-entry",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve one Datasource Entry",
+              "position": 720
+            },
+            "title": "Retrieve one Datasource Entry"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/datasource-entries/retrieve-multiple-datasource-entries",
+            "path": "core-resources/datasource-entries/retrieve-multiple-datasource-entries",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Retrieve multiple Datasource Entries",
+              "position": 730
+            },
+            "title": "Retrieve multiple Datasource Entries"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/datasource-entries/create-datasource-entry",
+            "path": "core-resources/datasource-entries/create-datasource-entry",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Create a Datasource Entry",
+              "position": 740
+            },
+            "title": "Create a Datasource Entry"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/datasource-entries/update-datasource-entry",
+            "path": "core-resources/datasource-entries/update-datasource-entry",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Update a Datasource Entry",
+              "position": 750
+            },
+            "title": "Update a Datasource Entry"
+          },
+          {
+            "fullPath": "/management-api/en/core-resources/datasource-entries/delete-datasource-entry",
+            "path": "core-resources/datasource-entries/delete-datasource-entry",
+            "lang": "en",
+            "attributes": {
+              "category": "Core Resources",
+              "title": "Delete a Datasource Entry",
+              "position": 760
+            },
+            "title": "Delete a Datasource Entry"
           }
         ]
       },

@@ -597,8 +597,78 @@
       "position": 710
     },
     "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>id</code></td>\n<td>Numeric Unique ID</td>\n</tr>\n<tr>\n<td><code>name</code></td>\n<td>The key which will be used to resolve the given value</td>\n</tr>\n<tr>\n<td><code>value</code></td>\n<td>The actual value for the provided key</td>\n</tr>\n<tr>\n<td><code>datasource_id</code></td>\n<td>Numeric ID of connected datasource</td>\n</tr>\n</tbody></table>\n",
-    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span> \n  <span class=\"token property\">\"datasource_entry\"</span> <span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">52</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"KEY\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"value\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"VALUE\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"datasource_id\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"\"</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
+    "example": "<p>Example Object</p>\n<pre><code class=\"language-json\"><span class=\"token punctuation\">{</span> \n  <span class=\"token property\">\"datasource_entry\"</span> <span class=\"token operator\">:</span> <span class=\"token punctuation\">{</span>\n    <span class=\"token property\">\"id\"</span><span class=\"token operator\">:</span> <span class=\"token number\">52</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"name\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"newsletter_text\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"value\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"Subscribe to our newsletter to make sure you don’t miss anything.\"</span><span class=\"token punctuation\">,</span>\n    <span class=\"token property\">\"datasource_id\"</span><span class=\"token operator\">:</span> <span class=\"token string\">\"\"</span>\n  <span class=\"token punctuation\">}</span>\n<span class=\"token punctuation\">}</span></code></pre>\n",
     "title": "The Datasource Entry Object"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/datasource-entries/retrieve-one-datasource-entry",
+    "path": "core-resources/datasource-entries/retrieve-one-datasource-entry",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve one Datasource Entry",
+      "position": 720
+    },
+    "content": "<p>Returns a single datasource entry object with a specific numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/datasource_entries/52\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive a <a href=\"#core-resources/datasource-entries/the-datasource-entry-object\">datasource entry object</a> as response.</p>\n",
+    "title": "Retrieve one Datasource Entry"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/datasource-entries/retrieve-multiple-datasource-entries",
+    "path": "core-resources/datasource-entries/retrieve-multiple-datasource-entries",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Retrieve multiple Datasource Entries",
+      "position": 730
+    },
+    "content": "<p>Returns an array of datasource entry objects. This endpoint is <a href=\"#topics/pagination\">paged</a> and can be filtered by a datasource id or slug. The dimension parameter allows you to have the dimension value filled with the according data.</p>\n<table>\n<thead>\n<tr>\n<th>Parameter</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>datasource_id</code></td>\n<td>Provide the numeric id of a datasource</td>\n</tr>\n<tr>\n<td><code>datasource_slug</code></td>\n<td>Provide the slug of a datasource</td>\n</tr>\n<tr>\n<td><code>dimension</code></td>\n<td>Provide dimension to receive the dimension_value filled</td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/datasource_entries/?datasource_id=124\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/datasource-entries/the-datasource-entry-object\">datasource entry objects</a> as response.</p>\n",
+    "title": "Retrieve multiple Datasource Entries"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/datasource-entries/create-datasource-entry",
+    "path": "core-resources/datasource-entries/create-datasource-entry",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Create a Datasource Entry",
+      "position": 740
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>datasource_entry</code></td>\n<td>Your full <a href=\"#core-resources/datasource-entries/the-datasource-entry-object\">datasource entry object</a></td>\n</tr>\n<tr>\n<td><code>datasource_entry[name]</code></td>\n<td>Name is <strong>required</strong></td>\n</tr>\n<tr>\n<td><code>datasource_entry[value]</code></td>\n<td>Value is <strong>required</strong></td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/datasource_entries/\" httpMethod=\"POST\" :requestObject='{\"datasource_entry\":{\"name\":\"newsletter_text\",\"value\":\"Subscribe to our newsletter to make sure you don’t miss anything.\"}}'></RequestExample></p>\n<p>You will receive a <a href=\"#core-resources/datasource-entries/the-datasource-entry-object\">datasource entry object</a> as response.</p>\n",
+    "title": "Create a Datasource Entry"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/datasource-entries/update-datasource-entry",
+    "path": "core-resources/datasource-entries/update-datasource-entry",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Update a Datasource Entry",
+      "position": 750
+    },
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>datasource_entry</code></td>\n<td>Your full <a href=\"#core-resources/datasource-entries/the-datasource-entry-object\">datasource entry object</a></td>\n</tr>\n<tr>\n<td><code>datasource_entry[name]</code></td>\n<td>Name is <strong>required</strong></td>\n</tr>\n<tr>\n<td><code>datasource_entry[value]</code></td>\n<td>Value is <strong>required</strong></td>\n</tr>\n</tbody></table>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/datasource_entries/52\" httpMethod=\"PUT\" :requestObject='{\"datasource_entry\":{\"id\":52,\"name\":\"newsletter_text\",\"value\":\"Subscribe to our updated newsletter to make sure you don’t miss anything.\"}}'></RequestExample></p>\n<p>You will receive a <a href=\"#core-resources/datasource-entries/the-datasource-entry-object\">datasource entry object</a> as response.</p>\n",
+    "title": "Update a Datasource Entry"
+  },
+  {
+    "fullPath": "/management-api/en/core-resources/datasource-entries/delete-datasource-entry",
+    "path": "core-resources/datasource-entries/delete-datasource-entry",
+    "lang": "en",
+    "origin": "management-api",
+    "attributes": {
+      "category": "Core Resources",
+      "title": "Delete a Datasource Entry",
+      "position": 760
+    },
+    "content": "<p>Delete a datasource entry by using its numeric id.</p>\n",
+    "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/datasource_entries/52\" httpMethod=\"DELETE\"></RequestExample></p>\n",
+    "title": "Delete a Datasource Entry"
   },
   {
     "fullPath": "/management-api/en/core-resources/spaces/spaces",
@@ -725,7 +795,7 @@
       "title": "Create a Task",
       "position": 1040
     },
-    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>task</code></td>\n<td>Your full <a href=\"#core-resources/stories/the-story-object\">task object</a></td>\n</tr>\n<tr>\n<td><code>task[name]</code></td>\n<td>Name is <strong>required</strong></td>\n</tr>\n</tbody></table>\n",
+    "content": "<table>\n<thead>\n<tr>\n<th>Property</th>\n<th>Description</th>\n</tr>\n</thead>\n<tbody><tr>\n<td><code>task</code></td>\n<td>Your full <a href=\"#core-resources/tasks/the-task-object\">task object</a></td>\n</tr>\n<tr>\n<td><code>task[name]</code></td>\n<td>Name is <strong>required</strong></td>\n</tr>\n</tbody></table>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/tasks/\" httpMethod=\"POST\" :requestObject='{\"task\":{\"name\":\"My Task Name\",\"task_type\":\"webhook\",\"webhook_url\":\"https://www.storyblok.com\"}}'></RequestExample></p>\n<p>You will receive a fully loaded <a href=\"#core-resources/tasks/the-task-object\">task object</a> as response.</p>\n",
     "title": "Create a Task"
   },

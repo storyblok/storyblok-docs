@@ -62,8 +62,6 @@ $request->setHeaders(array(
   'Authorization' => 'YOUR_OAUTH_TOKEN'
 ));
 
-$request->setBody('${JSON.stringify(this.requestObject, null, 2)}');
-
 try {
   $response = $request->send();
 
