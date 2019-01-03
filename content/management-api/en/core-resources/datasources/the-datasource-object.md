@@ -19,8 +19,8 @@ Example Object
 {
   "datasource": {
     "id": 91,
-    "name": "Label for German",
-    "slug": "de_label",
+    "name": "Labels for Website",
+    "slug": "labels",
     "dimensions": [
 
     ]
