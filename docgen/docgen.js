@@ -19,6 +19,14 @@ marked.setOptions(markedOptions)
 
 // Configuration
 const config = require('../docgen.config.js')
+const args = process.argv
+    .slice(2)
+    .map(arg => arg.split('='))
+    .reduce((args, [value, key]) => {
+        args[value] = key;
+        return args;
+    }, {});
+
 let contents = {}
 
 const FileHelper = {
@@ -93,7 +101,10 @@ const Docgen = {
     mkdirSync(config.docgenDir, { recursive: true })
     Docgen.generateRoutesForNuxt(routes)
     Docgen.generateAll()
-    watch(config.originContentDir, { recursive: true }, Docgen.fileEvent)
+
+    if (!!args.watch) { 
+      watch(config.originContentDir, { recursive: true }, Docgen.fileEvent)
+    }
   },
 
   fileEvent: (evt, updatedFile) => {
