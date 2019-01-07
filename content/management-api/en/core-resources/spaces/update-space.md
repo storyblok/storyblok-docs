@@ -16,11 +16,11 @@ You're only able to update the following properties of your space.
 | `space[parent_id]` | Space id of a possible parent space |
 | `space[duplicatable]` | Is the space globally duplicatable **by all users** |
 | `space[default_root]` | Default content type used for this space default: `page` | 
-| `space[options|` | Options for backup and language configurations |
-| `space[routes|` | Routes for the Storyblok Rendering Service |
+| `space[options]` | Options for backup and language configurations |
+| `space[routes]` | Routes for the Storyblok Rendering Service |
 | `space[story_published_hook]` | Published Webhook URL |
 | `space[searchblok_id]` | Searchblok id, if available |
-| `space[environments]` | Array of `name` and `location` (url) objects |
+| `space[environments]` | Array of `name`, `location` (url) objects |
 | `space[billing_address]` | Billing information used to generate your invoices for this space |
 
 ### Example Space Options
