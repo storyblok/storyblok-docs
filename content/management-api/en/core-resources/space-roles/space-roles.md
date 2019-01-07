@@ -5,7 +5,7 @@ startpage: true
 position: 900
 ---
 
-// TODO: Documentation
+Space roles are custom permission sets that can be attached to collaborators to define their roles and permissions in a specific space.
 
 ;examplearea
 
