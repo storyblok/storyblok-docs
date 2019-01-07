@@ -1,5 +1,5 @@
 <template>
-  <select name="main-navigation" class="main-navigation" @change="navigate" v-model="selected">
+  <select aria-label="Main Navigation" name="main-navigation" class="main-navigation" @change="navigate" v-model="selected">
     <optgroup :key=category.path v-for="category in menu" :label="category.category">
       <template v-for="method in category.items">
         <option :value=method.path :key=method.path>{{title(method)}}</option>
