@@ -14,18 +14,12 @@ $ npm run dev
 # generate documentation jsons from markdown
 $ npm run docgen
 
-# build for production and launch server
-$ npm run build
-$ npm start
-
 # generate static project
 $ npm run generate
 ```
 
 ## Todo
 
-- Optimizations (Get rid of included jsons on client)
-- Website Header as soon as Ready
 - Management API Doc:
   - Spaces
     - The Space Object
