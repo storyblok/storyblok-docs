@@ -9,6 +9,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 import Methods from '@/components/Methods'
 import SidebarNavigation from '@/components/SidebarNavigation'
 import TopHeader from '@/components/TopHeader'
@@ -20,15 +21,26 @@ export default {
     SidebarNavigation,
     TopHeader,
   },
-  async asyncData ({ store, params }) {
+  async fetch ({ store, params }) {
     let origin = params.origin
     let lang = typeof params.lang === 'undefined' ? process.env.defaultLanguage : params.lang
 
-    let orderedResponse = require(`@/assets/${origin}.ordered.${lang}.json`)
-    let menuResponse = require(`@/assets/${origin}.menu.${lang}.json`)
+    let ordered = null;
+    let menu = null;
+    let base = process.client ? window.location.origin : 'http://localhost:3000'
 
-    store.commit('SET_ORDERED', { origin: origin, language: lang, ordered: orderedResponse })
-    store.commit('SET_MENU', { origin: origin, language: lang, menu: menuResponse })
+    if(process.client) {
+      ordered = await axios.get(base + `/${origin}.ordered.${lang}.json`).data
+      menu = await axios.get(base + `/${origin}.menu.${lang}.json`).data
+    }
+
+    if(process.static) {
+      ordered = require(`@/static/${origin}.ordered.${lang}.json`)
+      menu = require(`@/static/${origin}.menu.${lang}.json`)
+    }
+    
+    store.commit('SET_ORDERED', { origin: origin, language: lang, ordered: ordered })
+    store.commit('SET_MENU', { origin: origin, language: lang, menu: menu })
 
     store.commit('SET_ORIGIN', { origin: origin })
     store.commit('SET_LANGUAGE', { language: lang })

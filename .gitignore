@@ -85,5 +85,8 @@ dist
 /assets/*.ordered.*
 /assets/*.menu.*
 /assets/*.content.*
+/static/*.ordered.*
+/static/*.menu.*
+/static/*.content.*
 routes.json
 

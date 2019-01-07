@@ -12,6 +12,7 @@
     "docgen": "node docgen/docgen.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "cross-env": "^5.2.0",
     "marked": "^0.5.2",
     "nuxt": "^2.0.0",
