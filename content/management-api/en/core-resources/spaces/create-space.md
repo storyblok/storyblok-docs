@@ -6,7 +6,7 @@ position: 840
 
 | Property | Description |
 |---|---|
-| `space[name]` | Name of your space |
+| `space[name]` | Name of your space; **required** |
 | `space[domain]` | Domain for your default preview url |
 | `space[story_published_hook]` | Published Webhook URL |
 | `space[searchblok_id]` | Searchblok id, if available |
