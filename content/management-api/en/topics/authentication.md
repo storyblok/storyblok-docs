@@ -13,9 +13,9 @@ Using an OAuth2 token, a username and password doesn’t need to be permanently 
 
 ;examplearea
 
-Example Request
-
 <div v-if="$store.state.codelang == 'bash'">
+
+Example Request
 
 ```bash
 curl -H "Authorization: YOUR_OAUTH_TOKEN" https://mapi.storyblok.com/
@@ -23,6 +23,8 @@ curl -H "Authorization: YOUR_OAUTH_TOKEN" https://mapi.storyblok.com/
 
 </div>
 <div v-if="$store.state.codelang == 'javascript'">
+
+Example Request
 
 ```javascript
 // npm install storyblok-js-client

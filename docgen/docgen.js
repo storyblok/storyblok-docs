@@ -19,7 +19,7 @@ marked.setOptions(markedOptions)
 
 // Configuration
 const config = require('../docgen.config.js')
-const contents = {}
+let contents = {}
 
 const FileHelper = {
   getFilesFromDirectory: async function* (dir) {
@@ -81,14 +81,17 @@ const FileHelper = {
 
 const Docgen = {
   init: () => {
+    let routes = []
     FileHelper.getDirectories(config.originContentDir).forEach(origin => {
       contents[origin] = {}
       FileHelper.getDirectories(join(config.originContentDir, origin)).forEach(lang => {
         contents[origin][lang] = {}
+        routes.push(`/${lang}/${origin}/`)
       })
     })
 
     mkdirSync(config.docgenDir, { recursive: true })
+    Docgen.generateRoutesForNuxt(routes)
     Docgen.generateAll()
     watch(config.originContentDir, { recursive: true }, Docgen.fileEvent)
   },
@@ -127,10 +130,16 @@ const Docgen = {
     })
   },
 
+  generateRoutesForNuxt: (routes) => {
+    writeFile(config.routesFile, JSON.stringify(routes), (err) => {
+      if (err) throw err
+    })
+  },
+
   generateOrdered: (contents, language, origin) => {
     let ordered = Docgen.orderContents(contents[origin][language])
 
-    writeFile(FileHelper.getOutputFilePath(config.orderedContentFile, language, origin), JSON.stringify(ordered, null, 2), (err) => {
+    writeFile(FileHelper.getOutputFilePath(config.orderedContentFile, language, origin), JSON.stringify(ordered), (err) => {
       if (err) throw err
     })
   },
@@ -179,7 +188,7 @@ const Docgen = {
       }
     }
 
-    writeFile(FileHelper.getOutputFilePath(config.menuContentFile, language, origin), JSON.stringify(menu, null, 2), (err) => {
+    writeFile(FileHelper.getOutputFilePath(config.menuContentFile, language, origin), JSON.stringify(menu), (err) => {
       if (err) throw err
     })
   },
@@ -223,13 +232,13 @@ const Docgen = {
         let content = marked(area[0] || '')
         let example = marked(area[1] || '')
         
-        let fullPath = FileHelper.getRelativeFilePath(source)
+        let contentPath = FileHelper.getRelativeFilePath(source)
         let path = FileHelper.getLanguageRelativeFilePath(source)
         let origin = FileHelper.getOriginFromFile(source)
         let lang = FileHelper.getLanguageFromFile(source)
 
         let data = {
-          fullPath: fullPath,
+          contentPath: contentPath,
           path: path,
           lang: lang,
           origin: origin,

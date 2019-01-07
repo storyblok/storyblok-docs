@@ -5,15 +5,8 @@
 </template>
 
 <script>
-import axios from 'axios'
-
 export default {
-  name: 'page',
-  components: {
-  },
-  async asyncData ({ store, params }) {
-    store.commit('SET_LANGUAGE', { language: process.env.defaultLanguage })
-  }
+  name: 'page'
  }
 </script>
 

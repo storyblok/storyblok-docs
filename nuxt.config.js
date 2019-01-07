@@ -1,11 +1,7 @@
 const pkg = require('./package')
+const routes = require('./routes')
 
 module.exports = {
-  env: {
-    baseURL: (process.env.NODE_ENV === 'production' ? window.location : 'http://localhost:3000'),
-    defaultLanguage: 'en',
-    defaultOrigin: 'content-delivery-api'
-  },
   mode: 'universal',
 
   /*
@@ -51,8 +47,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~plugins/inMarkdownComponents.js', ssr: false },
-    { src: '~/plugins/intersectionObserverPolyfill.js', ssr: false }
+    { src: '~plugins/inMarkdownComponents.js', ssr: false }
   ],
 
   /*
@@ -63,6 +58,10 @@ module.exports = {
       '@/assets/_variables.scss',
     ]],
   ],
+
+  generate: {
+    routes: routes
+  },
 
   /*
   ** Build configuration

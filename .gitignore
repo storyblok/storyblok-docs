@@ -82,6 +82,8 @@ dist
 
 # content
 /.docgen
-/static/ordered.*
-/static/menu.*
-/static/content.*
+/assets/*.ordered.*
+/assets/*.menu.*
+/assets/*.content.*
+routes.json
+

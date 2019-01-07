@@ -5,13 +5,15 @@ const createStore = () => {
     state: {
       content: { },
       activeMenuPath: '',
-      origin: process.env.defaultOrigin,
-      language: process.env.defaultLanguage,
+      origin: 'content-delivery-api',
+      language: 'en',
       codelang: 'bash'
     },
     mutations: {
       SET_CODELANG(state, codelang) {
-        window.localStorage.codelang = codelang
+        if (process.client) {
+          window.localStorage.codelang = codelang
+        }
         state.codelang = codelang
       },
       SET_ACTIVE_MENU_PATH(state, activeMenuPath) {

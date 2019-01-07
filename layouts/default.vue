@@ -14,11 +14,6 @@ export default {
   components: {
     WebsiteHeader,
     SvgSprite
-  },
-  mounted() {
-    if (typeof window.localStorage !== 'undefined' && typeof window.localStorage.codelang !== 'undefined') {
-      this.$store.commit('SET_CODELANG', window.localStorage.codelang)
-    }
   }
 }
 </script>

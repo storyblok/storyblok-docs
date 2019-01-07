@@ -18,8 +18,8 @@ export default {
     MethodArea
   },
   mounted() {
+    if(process.client) {
     this.$nextTick(() => {
-      const hash = window.location.hash
       const areas = document.querySelectorAll('.method')
       const observer = new IntersectionObserver((changes) => {
         if (changes[0].intersectionRatio <= 0) return;
@@ -30,6 +30,7 @@ export default {
       })
       areas.forEach(area => observer.observe(area))
     }, 0)
+    }
   }
  }
 </script>

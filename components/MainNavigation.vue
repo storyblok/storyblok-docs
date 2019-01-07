@@ -35,7 +35,9 @@ export default {
   methods: {
     navigate() {
       this.$store.commit('SET_ACTIVE_MENU_PATH', this.selected)
-      window.location.hash = '#' + this.selected;
+      if(process.client)  {
+        window.location.hash = '#' + this.selected;
+      }
     },
     title(method) {
       return method.attributes.sidebarTitle||method.attributes.title

@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Methods from '@/components/Methods'
 import SidebarNavigation from '@/components/SidebarNavigation'
 import TopHeader from '@/components/TopHeader'
@@ -25,11 +24,11 @@ export default {
     let origin = params.origin
     let lang = typeof params.lang === 'undefined' ? process.env.defaultLanguage : params.lang
 
-    let orderedResponse = await axios.get(`${process.env.baseURL}/${origin}.ordered.${lang}.json`)
-    let menuResponse = await axios.get(`${process.env.baseURL}/${origin}.menu.${lang}.json`)
+    let orderedResponse = require(`@/assets/${origin}.ordered.${lang}.json`)
+    let menuResponse = require(`@/assets/${origin}.menu.${lang}.json`)
 
-    store.commit('SET_ORDERED', { origin: origin, language: lang, ordered: orderedResponse.data })
-    store.commit('SET_MENU', { origin: origin, language: lang, menu: menuResponse.data })
+    store.commit('SET_ORDERED', { origin: origin, language: lang, ordered: orderedResponse })
+    store.commit('SET_MENU', { origin: origin, language: lang, menu: menuResponse })
 
     store.commit('SET_ORIGIN', { origin: origin })
     store.commit('SET_LANGUAGE', { language: lang })

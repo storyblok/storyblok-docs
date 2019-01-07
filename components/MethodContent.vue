@@ -17,7 +17,7 @@ export default {
   },
   computed: {
     editSectionURL() {
-      return `https://github.com/storyblok/storyblok/blob/master/content/${this.$store.state.language}/${this.$store.state.origin}/${this.method.path}.md` 
+      return `https://github.com/storyblok/storyblok/blob/master/content${this.method.contentPath}.md` 
     }
   },
   components: {
