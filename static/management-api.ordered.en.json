@@ -1135,7 +1135,7 @@
       "title": "Retrieve multiple Presets",
       "position": 1730
     },
-    "content": "<p>Returns an array of preset objects. This endpoint is <a href=\"#topics/pagination\">paged</a>.</p>\n",
+    "content": "<p>Returns an array of preset objects.</p>\n",
     "example": "<p>Example Request</p>\n<p><RequestExample url=\"https://mapi.storyblok.com/v1/spaces/606/presets/\" httpMethod=\"GETOAUTH\"></RequestExample></p>\n<p>You will receive an array of <a href=\"#core-resources/presets/the-preset-object\">preset objects</a> as response.</p>\n",
     "title": "Retrieve multiple Presets"
   },

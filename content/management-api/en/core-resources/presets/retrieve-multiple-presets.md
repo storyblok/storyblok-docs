@@ -4,7 +4,7 @@ title: Retrieve multiple Presets
 position: 1730
 ---
 
-Returns an array of preset objects. This endpoint is [paged](#topics/pagination).
+Returns an array of preset objects.
 
 ;examplearea
 
