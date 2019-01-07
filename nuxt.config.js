@@ -60,7 +60,23 @@ module.exports = {
   ],
 
   generate: {
-    routes: routes
+    routes: function (callback) {
+      let enrichedRoutes = []
+      routes.forEach(route => {
+        let parts = route.split('/')
+        let lang = parts[1]
+        let origin = parts[2]
+        
+        enrichedRoutes.push({
+          route: route,
+          payload: {
+            ordered: require(`${__dirname}/static/${origin}.ordered.${lang}.json`),
+            menu: require(`${__dirname}/static/${origin}.menu.${lang}.json`)
+          }
+        })
+      })
+      callback(null, enrichedRoutes)
+    }
   },
 
   /*

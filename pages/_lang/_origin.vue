@@ -21,24 +21,22 @@ export default {
     SidebarNavigation,
     TopHeader,
   },
-  async fetch ({ store, params }) {
+  async fetch ({ store, params, payload }) {
     let origin = params.origin
     let lang = typeof params.lang === 'undefined' ? process.env.defaultLanguage : params.lang
 
-    let ordered = null;
-    let menu = null;
-    let base = process.client ? window.location.origin : 'http://localhost:3000'
+    let menu = null
+    let ordered = null
 
-    if(process.client) {
+    if (payload) {
+      menu = payload.menu
+      ordered = payload.ordered
+    } else {
+      let base = process.client ? window.location.origin : 'http://localhost:3000'
       ordered = await axios.get(base + `/${origin}.ordered.${lang}.json`).data
       menu = await axios.get(base + `/${origin}.menu.${lang}.json`).data
     }
 
-    if(process.static) {
-      ordered = require(`@/static/${origin}.ordered.${lang}.json`)
-      menu = require(`@/static/${origin}.menu.${lang}.json`)
-    }
-    
     store.commit('SET_ORDERED', { origin: origin, language: lang, ordered: ordered })
     store.commit('SET_MENU', { origin: origin, language: lang, menu: menu })
 
