@@ -33,7 +33,9 @@ Example Object
     "request_count_today": 0,
     "api_requests": 1000,
     "exceeded_requests": 0,
-    "billing_address": { },
+    "billing_address": { 
+      // billing infromation
+    },
     "routes": [ ],
     "euid": null,
     "trial": true,
@@ -46,20 +48,7 @@ Example Object
     "collaborators": [ ],
     "settings": [ ],
     "owner": {
-      "userid": "ci@storyblok.com",
-      "email": "ci@storyblok.com",
-      "organization": null,
-      "username": null,
-      "use_username": false,
-      "alt_email": null,
-      "firstname": null,
-      "lastname": null,
-      "phone": null,
-      "id": 1114,
-      "login_strategy": "password",
-      "created_at": "2018-11-10T15:33:18.368Z",
-      "org_role": null,
-      "has_org": false
+      // user object
     }
   }
 }
