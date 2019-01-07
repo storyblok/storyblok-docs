@@ -24,7 +24,7 @@ $ npm run generate
 
 ## Todo
 
-- Optimizations (Lazyload Components?)
+- Optimizations (Get rid of included jsons on client)
 - Website Header as soon as Ready
 - Management API Doc:
   - Spaces
