@@ -40,6 +40,7 @@ Not every property will be used for every field type; some may only effect speci
 | `restrict_content_types` | Activate restriction content type option; <br>Only for type: *multilink* |
 | `component_whitelist` | Array of component/content type names: `["post","page","product"]`; <br>Only for type: *bloks*, *multilink* |
 | `disable_time` | Disables time selection from date picker; Default: false; <br>Only for type: *datetime* |
+| `max_length` | Set the max length of the input string; <br>Only for type: *text*, *textarea*, *markdown*|
 
 ;examplearea
 
