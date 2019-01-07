@@ -63,12 +63,6 @@ module.exports = {
       '@/assets/_variables.scss',
     ]],
   ],
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
 
   /*
   ** Build configuration
