@@ -1,6 +1,5 @@
 <template>
   <div class="website-header">
-    <img src="~/static/test.jpg" alt="">
   </div>
 </template>
 
