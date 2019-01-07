@@ -2,11 +2,11 @@
 category: Core Resources
 title: Create a Space Role
 position: 940
----. 
+---
 
 | Property | Description |
 |---|---|
-| `space_role` | Your full [component object](#core-resources/space-roles/the-space-role-object) |
+| `space_role` | Your [space role object](#core-resources/space-roles/the-space-role-object) |
 | `space_role[name]` | The space role name is **required** |
 
 ;examplearea
