@@ -2,7 +2,11 @@
   <div class="method-example">
     <div class="method-example__body">
       <RequestPlaceholder v-if=isPlaceholderVisible />
-      <div :id="methodId" v-if=containsDymanic></div>
+      <template v-if=containsDymanic>
+        <no-ssr>
+          <div :id="methodId"></div>
+        </no-ssr>
+      </template>
       <div v-html=method.example v-else></div>
     </div>
   </div>
@@ -10,7 +14,6 @@
 
 <script>
 import Vue from 'vue'
-import VueWithCompiler from "vue/dist/vue.esm"
 import RequestPlaceholder from '@/components/requests/RequestPlaceholder'
 
 export default {
@@ -40,7 +43,7 @@ export default {
   },
   mounted() {
     if(this.containsDymanic) {
-      let DynamicContent = VueWithCompiler.extend({
+      let DynamicContent = Vue.extend({
         template: `<div>${this.method.example}</div>`,
         methods: {
           // formats date to YYYY-MM-DD HH:MM

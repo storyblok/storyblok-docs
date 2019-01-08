@@ -146,5 +146,18 @@ module.exports = {
       })
       callback(null, enrichedRoutes)
     }
+  },
+
+  /*
+   ** Build configuration
+   */
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {
+      // add vue common runtime
+      config.resolve.alias['vue'] = 'vue/dist/vue.common'
+    }
   }
 }
