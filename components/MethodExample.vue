@@ -2,11 +2,7 @@
   <div class="method-example">
     <div class="method-example__body">
       <RequestPlaceholder v-if=isPlaceholderVisible />
-      <template v-if=containsDymanic>
-        <no-ssr>
-          <div :id="methodId"></div>
-        </no-ssr>
-      </template>
+      <div :id="methodId" v-if=containsDymanic></div>
       <div v-html=method.example v-else></div>
     </div>
   </div>
@@ -41,8 +37,9 @@ export default {
   components: {
     RequestPlaceholder
   },
-  mounted() {
+  created() {
     if(this.containsDymanic) {
+      let parent = this
       let DynamicContent = Vue.extend({
         template: `<div>${this.method.example}</div>`,
         methods: {
@@ -52,10 +49,10 @@ export default {
           }
         },
         mounted() {
-          this.$parent.loaded = true
+          parent.loaded = true
         }
       })
-      this.childInstance = new DynamicContent({ el: `#${this.methodId}`, store: this.$store, parent: this })
+      this.childInstance = new DynamicContent({ el: `#${this.methodId}`, store: this.$store})
     }
   }
 }
