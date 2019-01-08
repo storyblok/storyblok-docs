@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import marked from '@/plugins/markedWithPrism'
+import marked from '@/lib/markedWithPrism'
 import RequestTypes from '@/components/requests/RequestTypes'
 
 export default {

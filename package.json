@@ -1,7 +1,7 @@
 {
-  "name": "storyblok-content-delivery-api-doc",
+  "name": "storyblok-api-doc",
   "version": "1.0.0",
-  "description": "API documentation setup",
+  "description": "Documentation for Storybloks Content Delivery API and Management API",
   "author": "Dominik Angerer <da@storyblok.com>",
   "private": true,
   "scripts": {
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
     "cross-env": "^5.2.0",
     "marked": "^0.5.2",
     "nuxt": "^2.0.0",
