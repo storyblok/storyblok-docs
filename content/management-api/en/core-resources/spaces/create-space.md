@@ -18,5 +18,4 @@ Example Request
 
 <RequestExample url="https://mapi.storyblok.com/v1/spaces/" httpMethod="POST" :requestObject='{"space":{"name":"Example Space"}}'></RequestExample>
 
-
 You will receive a [space object](#core-resources/spaces/the-space-object) as response.
