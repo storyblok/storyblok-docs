@@ -37,7 +37,7 @@ export default {
   components: {
     RequestPlaceholder
   },
-  created() {
+  mounted() {
     if(this.containsDymanic) {
       let parent = this
       let DynamicContent = Vue.extend({
