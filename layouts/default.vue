@@ -20,6 +20,7 @@ export default {
     // Manually parse hashes / decide on scrollBehavior for initial page load (from SSR)
     if (this.$route.hash) {
       this.$nextTick(() => {
+        this.$store.commit('SET_ACTIVE_MENU_PATH', this.$route.hash.replace('#', ''))
         window.scrollTo(0, scrollBehavior(this.$route).y)
       })
     }
