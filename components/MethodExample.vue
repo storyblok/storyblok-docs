@@ -10,6 +10,7 @@
 
 <script>
 import Vue from 'vue'
+import VueWithCompiler from "vue/dist/vue.esm"
 import RequestPlaceholder from '@/components/requests/RequestPlaceholder'
 
 export default {
@@ -39,7 +40,7 @@ export default {
   },
   mounted() {
     if(this.containsDymanic) {
-      let DynamicContent = Vue.extend({
+      let DynamicContent = VueWithCompiler.extend({
         template: `<div>${this.method.example}</div>`,
         methods: {
           // formats date to YYYY-MM-DD HH:MM

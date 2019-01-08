@@ -2,7 +2,7 @@
   <div class="method-content">
     <div class="method-content__body">
       <h2><a class="method-content__title" :href="'#' + method.path"><span v-html=method.title></span><SvgIcon icon="link"/></a></h2>
-      <div  v-html="method.content"></div>
+      <div v-html="method.content"></div>
       <a class="method-content__github" :href="editSectionURL"><SvgIcon icon="github"/><span>Edit this section on GitHub</span></a>
     </div>
   </div>
