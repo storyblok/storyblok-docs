@@ -28,13 +28,16 @@ export default {
     let menu = null
     let ordered = null
 
-    if (payload) {
+    if (!!payload) {
       menu = payload.menu
       ordered = payload.ordered
     } else {
       let base = process.client ? window.location.origin : 'http://localhost:3000'
-      ordered = await axios.get(base + `/${origin}.ordered.${lang}.json`).data
-      menu = await axios.get(base + `/${origin}.menu.${lang}.json`).data
+      const [menuRes, orderedRes] = await Promise.all([
+        await axios.get(base + `/${origin}.menu.${lang}.json`), 
+        axios.get(base + `/${origin}.ordered.${lang}.json`)])
+      menu = menuRes.data
+      ordered = orderedRes.data
     }
 
     store.commit('SET_ORDERED', { origin: origin, language: lang, ordered: ordered })
