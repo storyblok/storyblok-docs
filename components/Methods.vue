@@ -17,7 +17,6 @@ export default {
   },
   mounted() {
     if(process.client) {
-    this.$nextTick(() => {
       const areas = document.querySelectorAll('.method')
       const observer = new IntersectionObserver((changes) => {
         let rect = changes[0].target.getBoundingClientRect()
@@ -30,7 +29,6 @@ export default {
          }
       })
       areas.forEach(area => observer.observe(area))
-    }, 0)
     }
   }
  }
