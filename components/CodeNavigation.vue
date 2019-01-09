@@ -75,7 +75,7 @@ export default {
     border-bottom: 3px solid $example-background-secondary;
 
     &.active {
-      border-bottom: 3px solid #09b3af;
+      border-bottom: 3px solid $brand-highlight;
     }
 
     padding: 0px 5px;
