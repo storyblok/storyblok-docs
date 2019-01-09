@@ -21,10 +21,8 @@
 
 <script>
 export default {
-  computed: {
-    menu() {
-      return this.$store.state.content[this.$store.state.language].menu
-    }
+  props: {
+    menu: Array
   },
   methods: {
     isCategoryVisible(index, method) {
@@ -55,7 +53,7 @@ export default {
       return `#${method.path}`
     },
     title(method) {
-      return method.attributes.sidebarTitle||method.attributes.title 
+      return method.attributes.sidebarTitle || method.attributes.title 
     },
     navigate(method) {
       this.$store.commit('SET_ACTIVE_MENU_PATH', method.path)

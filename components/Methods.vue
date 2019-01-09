@@ -9,10 +9,8 @@ import MethodArea from '@/components/MethodArea'
 
 export default {
   name: 'methods',
-  computed: {
-    methods() {
-      return this.$store.state.content[this.$store.state.language].ordered
-    }
+  props: {
+    methods: Array
   },
   components: {
     MethodArea

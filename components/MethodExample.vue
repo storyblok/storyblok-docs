@@ -15,7 +15,7 @@ import RequestPlaceholder from '@/components/requests/RequestPlaceholder'
 export default {
   computed: {
     methodId() {
-      return this.method.path.split('/').join('');
+      return this.method.path.split('/').join('') + '-example';
     },
     isPlaceholderVisible() {
       return !this.loaded && this.containsDymanic

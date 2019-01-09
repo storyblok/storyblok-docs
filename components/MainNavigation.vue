@@ -11,10 +11,10 @@
 
 <script>
 export default {
+  props: {
+    menu: Array
+  },
   computed: {
-    menu() {
-      return this.$store.state.content[this.$store.state.language].menu
-    },
     activeMenuPath() {
       return this.$store.state.activeMenuPath
     }

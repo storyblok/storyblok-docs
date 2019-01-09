@@ -1,9 +1,9 @@
 <template>
   <div>
-    <TopHeader/>
-    <SidebarNavigation/>
+    <TopHeader :menu="menu"/>
+    <SidebarNavigation :menu="menu"/>
     <main class="main">
-      <Methods/>
+      <Methods :methods="ordered"/>
     </main>
   </div>
 </template>
@@ -16,12 +16,18 @@ import TopHeader from '@/components/TopHeader'
 
 export default {
   name: 'page',
+  data() {
+    return {
+      menu: [],
+      ordered: []
+    }
+  },
   components: {
     Methods,
     SidebarNavigation,
     TopHeader,
   },
-  async fetch ({ store, params, payload }) {
+  async asyncData ({ store, params, payload }) {
     let origin = params.origin
     let lang = typeof params.lang === 'undefined' ? process.env.defaultLanguage : params.lang
 
@@ -40,11 +46,10 @@ export default {
       ordered = orderedRes.data
     }
 
-    store.commit('SET_ORDERED', { origin: origin, language: lang, ordered: ordered })
-    store.commit('SET_MENU', { origin: origin, language: lang, menu: menu })
-
-    store.commit('SET_ORIGIN', { origin: origin })
-    store.commit('SET_LANGUAGE', { language: lang })
+    return {
+      menu,
+      ordered
+    }
   }
  }
 </script>

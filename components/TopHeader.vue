@@ -2,7 +2,7 @@
   <div class="top-header">
     <div class="top-header__submenu"></div>
     <div class="top-header__content">
-      <MainNavigation/>
+      <MainNavigation :menu="menu"/>
     </div>
     <div class="top-header__example">
       <CodeNavigation/>
@@ -15,6 +15,9 @@ import CodeNavigation from '@/components/CodeNavigation'
 import MainNavigation from '@/components/MainNavigation'
 
 export default {
+  props: {
+    menu: Array
+  },
   components: {
     MainNavigation,
     CodeNavigation
