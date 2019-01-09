@@ -23,7 +23,7 @@
     "front-matter": "^3.0.1",
     "node-sass": "^4.11.0",
     "node-watch": "^0.5.9",
-    "nodemon": "^1.11.0",
+    "nodemon": "^1.18.9",
     "nuxt-sass-resources-loader": "^2.0.5",
     "prismjs-components-loader": "^3.0.1",
     "sass-loader": "^7.1.0"
