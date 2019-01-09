@@ -34,15 +34,31 @@ export default {
         return decodeURIComponent(str.replace(decodeRE, ' '))
       }
 
+      let typing = str => {
+        if (str === 'true') {
+          return true
+        } else if (str === 'false') {
+          return false
+        } else if (str === 'null') {
+          return null
+        } else if (+str === +str) {
+          return +str
+        } else {
+          return str
+        }
+      }
+
       let params = {}
       let e = re.exec(query)
       while (e) {
-        let k = decode(e[1]),
-          v = decode(e[2])
+        let k = decode(e[1])
+        let v = decode(e[2])
         if (k.substring(k.length - 2) === '[]') {
           k = k.substring(0, k.length - 2)
           (params[k] || (params[k] = [])).push(v)
-        } else params[k] = v
+        } else {
+          params[k] = typing(v)
+        }
         e = re.exec(query)
       }
 
@@ -50,7 +66,9 @@ export default {
         let lastKeyIndex = keyPath.length - 1
         for (let i = 0; i < lastKeyIndex; ++i) {
           let key = keyPath[i]
-          if (!(key in obj)) obj[key] = {}
+          if (!(key in obj)) {
+            obj[key] = {}
+          }
           obj = obj[key]
         }
         obj[keyPath[lastKeyIndex]] = value
