@@ -41,6 +41,11 @@ export default {
       ]
     }
   },
+  created() {
+    if(process.client) {
+      this.switchCodeLang(typeof window.localStorage.codelang === 'undefined' ? 'bash' : window.localStorage.codelang)
+    }
+  },
   methods: {
     switchCodeLang(code) {
       this.$store.commit('SET_CODELANG', code)
