@@ -73,7 +73,6 @@ export default {
   height: 100%;
   max-height: 100vh;
   overflow-y: scroll;
-  padding-top: $top-header-height;
 
   display: none;
   @media screen and (min-width: 1320px) {
@@ -103,7 +102,7 @@ export default {
   list-style: none;
   display: block;
   margin: 0;
-  padding: 10px 20px 20px 20px;
+  padding: 70px 20px 20px 20px;
 
 }
 

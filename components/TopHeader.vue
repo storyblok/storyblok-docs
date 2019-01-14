@@ -17,7 +17,6 @@ import CodeNavigation from '@/components/CodeNavigation'
 import MainNavigation from '@/components/MainNavigation'
 import BrandLogo from '@/components/BrandLogo'
 
-
 export default {
   props: {
     menu: Array
@@ -37,7 +36,6 @@ export default {
     background: transparent;
   }
 
-  color: #dde4e8;
   position: fixed;
   top: 0px;
   width: 100%;
@@ -48,6 +46,7 @@ export default {
 }
 
 .top-header__submenu {
+  background: $sidebar-background;
   width: 50%;
   @media screen and (min-width: 1050px) {
     width: 100%;
@@ -72,6 +71,7 @@ export default {
 
 .top-header__example {
   background: $brand-background-dark;
+  color: $example-text-color;
   flex-grow: 1;
   display: none;
   
