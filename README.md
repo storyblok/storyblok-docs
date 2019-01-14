@@ -20,6 +20,7 @@ $ npm run generate
 
 ## Todo
 
+- Finalize: http://localhost:3000/docs/management-api/#core-resources/spaces/the-space-object
 - Find a better way to parse code examples
 - Get rid of payload in HTML once generated
 - Documentation for the doc
