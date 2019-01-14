@@ -2,7 +2,7 @@
   <main class="main">
     <h1>Available Preview Routes:</h1>
     <ul>
-      <li v-for="route in routes" :key=route>
+      <li v-for="route in availableRoutes" :key=route>
         <a :href="route">{{route}}</a>
       </li>
     </ul>
@@ -10,14 +10,16 @@
 </template>
 
 <script>
+import routes from '@/routes.json'
+
 export default {
   name: 'page',
-  data() {
-    return {
-      routes: ["/en/docs/content-delivery-api/","/en/docs/management-api/"]
+  computed: {
+    availableRoutes() {
+      return routes
     }
   }
- }
+}
 </script>
 
 <style lang="scss" scoped>

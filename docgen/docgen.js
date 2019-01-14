@@ -94,7 +94,11 @@ const Docgen = {
       contents[origin] = {}
       FileHelper.getDirectories(join(config.originContentDir, origin)).forEach(lang => {
         contents[origin][lang] = {}
-        routes.push(`/${lang}/docs/${origin}/`)
+        if(lang == 'en') {
+          routes.push(`/docs/${origin}/`)          
+        } else {
+          routes.push(`/${lang}/docs/${origin}/`)
+        }
       })
     })
 
