@@ -20,9 +20,7 @@ $ npm run generate
 
 ## Todo
 
-- Management API Doc:
-  - Spaces
-    - The Space Object
-    - Duplicate a Space
-    - Delete a Space
-    - Backup a Space
+- Find a better way to parse code examples
+- Get rid of payload in HTML once generated
+- Documentation for the doc
+- Documentation for how to contribute 
