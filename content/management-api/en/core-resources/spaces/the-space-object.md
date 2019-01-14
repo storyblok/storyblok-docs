@@ -6,6 +6,37 @@ position: 810
 
 // TODO: Documentation
 
+### Example Space Options
+
+```json
+...
+"options": {
+  "branch_deployed_hook": "", // Your webhook endpoint for branch deployments
+  "s3_bucket": "storyblok-backup", // Your S3 bucket name
+  "aws_arn": "arn:aws:iam::12312412:role/StoryblokRemote49122",
+  "backup_frequency": "daily", 
+  "languages": [ { "code": "de", "name": "German" } ]
+}
+```
+
+### Example Space Billing Address
+
+```json
+...
+"billing_address": {
+  "tax_number": "ATU72706128", // Your VAT number
+  "order_number": "Your custom order number",
+  "company": "Storyblok GmbH",
+  "email": "da@storyblok.com", 
+  "name": "Ing. Dominik Angerer", 
+  "address_city": "Linz", 
+  "address_country": "Austria", 
+  "address_iso_country": "AT",
+  "address_line1": "Peter-Behrens-Platz 1", 
+  "address_zip": "4020", 
+}
+```
+
 ;examplearea
 
 Example Object
