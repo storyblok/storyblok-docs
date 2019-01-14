@@ -40,7 +40,7 @@ export default {
     } else {
       let base = process.client ? window.location.origin : 'http://localhost:3000'
       const [menuRes, orderedRes] = await Promise.all([
-        await axios.get(base + `/${origin}.menu.${lang}.json`), 
+        axios.get(base + `/${origin}.menu.${lang}.json`), 
         axios.get(base + `/${origin}.ordered.${lang}.json`)])
       menu = menuRes.data
       ordered = orderedRes.data
@@ -54,9 +54,8 @@ export default {
  }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main {
-  margin-top: $top-header-height * -1;
   @media screen and (min-width: 1320px) {
     margin-left: 220px;
   }

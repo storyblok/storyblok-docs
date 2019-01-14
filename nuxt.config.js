@@ -140,7 +140,7 @@ module.exports = {
       routes.forEach(route => {
         const parts = route.split('/')
         const lang = parts[1]
-        const origin = parts[2]
+        const origin = parts[3]
 
         enrichedRoutes.push({
           route: route,
