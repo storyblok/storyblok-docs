@@ -21,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1050px) {
   .method {
     display:flex;
 

@@ -1,19 +1,30 @@
 <template>
   <main class="main">
-    Startpage
+    <h1>Available Preview Routes:</h1>
+    <ul>
+      <li v-for="route in routes" :key=route>
+        <a :href="route">{{route}}</a>
+      </li>
+    </ul>
   </main>
 </template>
 
 <script>
 export default {
-  name: 'page'
+  name: 'page',
+  data() {
+    return {
+      routes: ["/en/docs/content-delivery-api/","/en/docs/management-api/"]
+    }
+  }
  }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .main {
-  @media screen and (min-width: 1320px) {
-    margin-left: 220px;
-  }
+  margin: 0 auto;
+  max-width: 800px;
+  padding-top: 100px;
+  padding-left: 20px;
 }
 </style>

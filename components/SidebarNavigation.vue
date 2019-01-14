@@ -64,16 +64,16 @@ export default {
 
 <style lang="scss">
 .side-menu {
-  position: sticky;
+  position: fixed;
   top: 0px;
-  float: left;
-  margin-top: $top-header-height * -1;
   width: $side-bar-width;
   background: $sidebar-background;
   border-right: 1px solid $sidebar-border-color;
   color: $sidebar-text-color;
-  min-height: 100vh;
+  height: 100%;
+  max-height: 100vh;
   overflow-y: scroll;
+  padding-top: $top-header-height;
 
   display: none;
   @media screen and (min-width: 1320px) {
@@ -96,17 +96,15 @@ export default {
     &.child-active + .side-menu__children {
       display: block;
     }
-  }
-
-  padding: 20px 0px 20px 0px;
-  overflow-y: scroll;
+  }  
 }
 
 .side-menu__categories {
   list-style: none;
   display: block;
   margin: 0;
-  padding: 0px 20px 0px 20px;
+  padding: 10px 20px 20px 20px;
+
 }
 
 .side-menu__items {

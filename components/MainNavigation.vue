@@ -50,12 +50,12 @@ export default {
 .main-navigation {
   appearance: none;
   border-radius: 0;
-  border: 1px solid $brand-background-dark;
-  padding: 5px 5px;
+  border: 1px solid $sidebar-border-color;
+  padding: 10px 5px;
   margin: 10px;
   font-size: inherit;
-  background: $brand-background-dark;
-  color: $example-text-color;
+  background: $sidebar-background;
+  color: $sidebar-text-color;
   display: inline-block;
 
   @media screen and (min-width: 1320px) {

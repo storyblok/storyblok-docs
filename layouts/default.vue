@@ -1,19 +1,16 @@
 <template>
   <div class="docs">
     <SvgSprite/>
-    <WebsiteHeader/>
     <nuxt/>
   </div>
 </template>
 
 <script>
 import SvgSprite from '@/components/SvgSprite'
-import WebsiteHeader from '@/components/WebsiteHeader'
 import { scrollBehavior } from '@/lib/route-utils'
 
 export default {
   components: {
-    WebsiteHeader,
     SvgSprite
   },
   mounted() {

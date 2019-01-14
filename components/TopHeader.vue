@@ -1,6 +1,8 @@
 <template>
   <div class="top-header">
-    <div class="top-header__submenu"></div>
+    <div class="top-header__submenu">
+      <BrandLogo/>
+    </div>
     <div class="top-header__content">
       <MainNavigation :menu="menu"/>
     </div>
@@ -13,6 +15,8 @@
 <script>
 import CodeNavigation from '@/components/CodeNavigation'
 import MainNavigation from '@/components/MainNavigation'
+import BrandLogo from '@/components/BrandLogo'
+
 
 export default {
   props: {
@@ -20,70 +24,60 @@ export default {
   },
   components: {
     MainNavigation,
-    CodeNavigation
+    CodeNavigation,
+    BrandLogo
   }
 }
 </script>
 
 <style lang="scss">
 .top-header {  
-  background: $brand-background;
+  background: $sidebar-background;
   @media screen and (min-width: 1320px) {
     background: transparent;
   }
 
   color: #dde4e8;
-  position: sticky;
+  position: fixed;
   top: 0px;
   width: 100%;
   z-index: 30;
   
-  @media screen and (min-width: 915px) {
-    display: flex;
-  }
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .top-header__submenu {
-  height: 0;
-  
-  min-width: auto;
-  float:left;
-
-  svg {
-    fill: #fff;
-    padding-top: 12px;
-    padding-left: 10px;
-  }
-
-  @media screen and (min-width: 915px) {
-    min-width: $side-bar-width;
+  width: 50%;
+  @media screen and (min-width: 1050px) {
+    width: 100%;
+    max-width: $side-bar-width;
   }
 }
 
-.top-header__content {
-  @media screen and (min-width: 480px) {
-    text-align: right;
-  }
+.top-header__content {  
+  text-align: right;
+  width:50%;
 
-  h1 {
-    font-size: 1.5em;
-    padding-left: 40px;
-  }
-  
   @media screen and (min-width: 1050px) {
     width: calc(50vw - 220px);
   }
 
   @media screen and (min-width: 1320px) {
     width: calc(50vw - 109px);
+    height: 0;
+    visibility: hidden;
   }
 }
 
 .top-header__example {
+  background: $brand-background-dark;
   flex-grow: 1;
-  text-align: center;
+  display: none;
   
   @media screen and (min-width: 1050px) {
+    display: block;
+    height: auto;
     text-align: left;
   }
 }
