@@ -28,6 +28,9 @@ export default {
     TopHeader,
   },
   async asyncData ({ store, params, payload }) {
+    const origin = params.origin
+    const lang = store.state.language
+
     let menu = null
     let ordered = null
 
@@ -37,8 +40,8 @@ export default {
     } else {
       const base = process.client ? window.location.origin : 'http://localhost:3000'
       const [menuRes, orderedRes] = await Promise.all([
-        axios.get(base + `/${params.origin}.menu.${params.lang}.json`), 
-        axios.get(base + `/${params.origin}.ordered.${params.lang}.json`)])
+        axios.get(base + `/${origin}.menu.${lang}.json`), 
+        axios.get(base + `/${origin}.ordered.${lang}.json`)])
       menu = menuRes.data
       ordered = orderedRes.data
     }
