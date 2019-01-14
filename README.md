@@ -22,6 +22,6 @@ $ npm run generate
 
 - Finalize: http://localhost:3000/docs/management-api/#core-resources/spaces/the-space-object
 - Find a better way to parse code examples
-- Get rid of payload in HTML once generated
+- Optimize client payload 
 - Documentation for the doc
 - Documentation for how to contribute 
