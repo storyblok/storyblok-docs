@@ -20,7 +20,6 @@ $ npm run generate
 
 ## Todo
 
-- Finalize: http://localhost:3000/docs/management-api/#core-resources/spaces/the-space-object
 - Find a better way to parse code examples
 - Optimize client payload 
 - Documentation for the doc
