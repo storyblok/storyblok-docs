@@ -4,7 +4,7 @@ title: The Space Object
 position: 810
 ---
 
-// TODO: Documentation
+The space object contains all information of one of your accounts spaces. Some of the properties are read only other can be managed by the API. Properties that you are able to change or use during creation can be found in the specifici sections.
 
 ### Example Space Options
 
