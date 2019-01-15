@@ -9,7 +9,7 @@ Think of it at **AFTER** a specific date. Allows you to filter fields of type `d
 
 You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
  
-## Use-cases
+## Use-cases: gt-date
 
 You can create custom dates that allow you to schedule posts, launch products and with this query see all entries that are scheduled after a specific date, schedule christmas teaser. Creating a field with the type `date` does not effect the published state of one content entry, but allows your frontend / server side implementation to query those specific entries.
 

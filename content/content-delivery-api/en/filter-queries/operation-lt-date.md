@@ -9,7 +9,7 @@ Think of it at **BEFORE** a specific date. Allows you to filter fields of type `
 
 You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
  
-## Use-cases
+## Use-cases: lt-date
 
 You can create custom dates that allow you to schedule posts, launch products, schedule christmas teaser and more. Creating a field with the type `date` does not effect the published state of one content entry, but allows your frontend / server side implementation to query all entries before a specific date (eg. today)
 

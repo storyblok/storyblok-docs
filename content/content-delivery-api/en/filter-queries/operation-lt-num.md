@@ -9,7 +9,7 @@ Allows you to filter fields of type `number`, or custom field type with numbers 
 
 You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
  
-## Use-cases
+## Use-cases: lt-num
 
 As soon as you need to query for a specific integer or float value in your content entries, this is your go to filter for lower than checks. You can build price filter for your products if your price value is in the CMS and not your PIM or any other number oriented kind of filter. 
 

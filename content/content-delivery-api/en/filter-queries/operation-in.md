@@ -7,7 +7,7 @@ position: 1010
 
 Filter your entries by checking if your custom attribute (any field inside the `content` field) has a value that is equal to one of the values provided.
 
-## Use-cases
+## Use-cases: in
 
 Get all content entries that is refered to another in a [1:N relationship](https://www.storyblok.com/tp/how-to-build-relationships-between-2-content-types) or if you want to get all entries with a specific value in one of it's fields.
 

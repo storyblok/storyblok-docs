@@ -9,7 +9,7 @@ Filter your entries by checking if your custom array attribute (any field inside
 
 You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 
-## Use-cases
+## Use-cases: all_in_array
 
 Get all content entries that is refered to others in a [N:N relationship](https://www.storyblok.com/tp/how-to-build-a-content-relationship) or if you want to get all entries with a specific value in one of it's **array fields** fields. You can combined this query with the `starts_with`, [pagination](#topics/pagination), and other query options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 

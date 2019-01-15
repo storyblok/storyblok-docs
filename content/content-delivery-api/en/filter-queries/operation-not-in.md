@@ -7,7 +7,7 @@ position: 1011
 
 Filter your entries by checking if your custom attribute (any field inside the `content` field) does not have a value that is equal to one of the values provided.
 
-## Use-cases
+## Use-cases: not_in
 
 You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 
