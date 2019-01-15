@@ -228,6 +228,16 @@ const Docgen = {
     return markdown.replace('<p>', '').replace('</p>\n', '')
   },
 
+  cleanTemplate(string) {
+    string = Docgen.replaceAll(string, '<p><RequestExample', '<RequestExample')
+    string = Docgen.replaceAll(string, '</RequestExample></p>', '</RequestExample>')
+    return string
+  },
+
+  replaceAll(target, search, replacement) {
+    return target.replace(new RegExp(search, 'g'), replacement);
+  },
+
   generate: (source) => {
     if (FileHelper.isIgnoreFile(source)) {
       return 
@@ -246,7 +256,8 @@ const Docgen = {
   
         let content = marked(area[0] || '')
         let example = marked(area[1] || '')
-        
+        example = Docgen.cleanTemplate(example)
+
         let contentPath = FileHelper.getRelativeFilePath(source)
         let path = FileHelper.getLanguageRelativeFilePath(source)
         let origin = FileHelper.getOriginFromFile(source)

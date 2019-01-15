@@ -1,10 +1,14 @@
+<template>
+  <div v-html="output('swift')"></div>
+</template>
+
 <script>
 import RequestMixin from "@/components/requests/RequestMixin";
 
 export default {
   mixins: [RequestMixin],
   computed: {
-    rendered() {
+    request() {
       switch (this.httpMethod) {
         case "POST":
         return `import Foundation

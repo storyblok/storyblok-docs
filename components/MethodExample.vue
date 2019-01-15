@@ -1,59 +1,41 @@
 <template>
   <div class="method-example">
     <div class="method-example__body">
-      <RequestPlaceholder v-if=isPlaceholderVisible />
-      <div :id="methodId" v-if=containsDymanic></div>
-      <div v-html=method.example v-else></div>
+      <component :is=exampleComponentName></component>
     </div>
   </div>
 </template>
 
 <script>
 import Vue from 'vue'
-import RequestPlaceholder from '@/components/requests/RequestPlaceholder'
+import RequestExample from '@/components/RequestExample'
 
 export default {
-  computed: {
-    methodId() {
-      return this.method.path.split('/').join('') + '-example';
-    },
-    isPlaceholderVisible() {
-      return !this.loaded && this.containsDymanic
-    },
-    containsDymanic() {
-      return this.method.example.indexOf(`RequestExample`) >= 0 ||
-             this.method.example.indexOf(`v-`) >= 0
-    }
-  },
   props: {
     method: Object
   },
-  data() {
-    return {
-      loaded: false,
-      childInstance: null
+  computed: {
+    exampleComponentName() {
+      return this.method.path.split('/').join('-') + '-example';
     }
   },
   components: {
-    RequestPlaceholder
+    RequestExample
   },
-  mounted() {
-    if(this.containsDymanic) {
-      let parent = this
-      let DynamicContent = Vue.extend({
-        template: `<div>${this.method.example}</div>`,
+  created() {
+    Vue.component(this.exampleComponentName, {
+      template: `<div>${this.method.example}</div>`,
         methods: {
-          // formats date to YYYY-MM-DD HH:MM
-          formatDate(date) {
-            return date.getFullYear().toString() + "-"+((date.getMonth()+1).toString().length==2?(date.getMonth()+1).toString():"0"+(date.getMonth()+1).toString())+"-"+(date.getDate().toString().length==2?date.getDate().toString():"0"+date.getDate().toString())+" "+(date.getHours().toString().length==2?date.getHours().toString():"0"+date.getHours().toString())+":"+((parseInt(date.getMinutes()/5)*5).toString().length==2?(parseInt(date.getMinutes()/5)*5).toString():"0"+(parseInt(date.getMinutes()/5)*5).toString())
-          }
-        },
-        mounted() {
-          parent.loaded = true
+        // formats date to YYYY-MM-DD HH:MM
+        formatDate(date) {
+          return date.getFullYear().toString() + "-"+((date.getMonth()+1).toString().length==2?(date.getMonth()+1).toString():"0"+(date.getMonth()+1).toString())+"-"+(date.getDate().toString().length==2?date.getDate().toString():"0"+date.getDate().toString())+" "+(date.getHours().toString().length==2?date.getHours().toString():"0"+date.getHours().toString())+":"+((parseInt(date.getMinutes()/5)*5).toString().length==2?(parseInt(date.getMinutes()/5)*5).toString():"0"+(parseInt(date.getMinutes()/5)*5).toString())
         }
-      })
-      this.childInstance = new DynamicContent({ el: `#${this.methodId}`, store: this.$store})
-    }
+      },
+      store: this.$store,
+      components: {
+        RequestExample
+      }
+    })
   }
 }
 </script>

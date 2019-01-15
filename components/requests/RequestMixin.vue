@@ -1,4 +1,6 @@
 <script>
+import marked from '@/lib/markedWithPrism.js'
+
 export default {
   data() {
     return {
@@ -10,11 +12,19 @@ export default {
     requestObject: Object,
     httpMethod: String
   },
-  computed: {
+  methods: {
+    output(codelang) {
+      let code = '```' + codelang + '\n'
+      code += this.request
+      code += '\n```'
+      return marked(code)
+    }
+  },
+  computed: {  
     path() {
       let url = this.url
       for (let index = 0, max = this.bases.length; index < max; index++) {
-        const base = this.bases[index];
+        let base = this.bases[index];
         url = url.replace(base, '')
       }
       if(this.url.indexOf('?') <= 0) {
@@ -93,7 +103,7 @@ export default {
       if(this.url.indexOf('?') <= 0) return this.url
       return this.url.substring(0, this.url.indexOf('?'))
     },
-    rendered() {
+    request() {
       return `${this.path}`
     }
   }

@@ -1,10 +1,15 @@
+<template>
+  <div v-html="output('php')"></div>
+</template>
+
 <script>
 import RequestMixin from "@/components/requests/RequestMixin"
 
 export default {
   mixins: [RequestMixin],
   computed: {
-    rendered() {
+    request() {
+      let queryParams = this.queryParams
       switch (this.httpMethod) {
         case "POST":
           return `<?php
@@ -71,6 +76,7 @@ try {
 }`
         break;
         case "GETOAUTH":
+          queryParams['token'] = 'YOUR_TOKEN'
           return `<?php
 
 $request = new HttpRequest();
@@ -93,7 +99,6 @@ try {
 }`
         break;
         default:
-          let queryParams = this.queryParams
           queryParams['token'] = 'YOUR_TOKEN'
           return `<?php
 

@@ -27,8 +27,5 @@
     "nuxt-sass-resources-loader": "^2.0.5",
     "prismjs-components-loader": "^3.0.1",
     "sass-loader": "^7.1.0"
-  },
-  "vue": {
-    "runtimeCompiler": true
   }
 }

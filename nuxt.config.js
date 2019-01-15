@@ -108,19 +108,6 @@ module.exports = {
   },
 
   /*
-   ** Global CSS
-   */
-  css: [],
-
-  /*
-   ** Plugins to load before mounting the App
-   */
-  plugins: [{
-    src: '~plugins/inMarkdownComponents.js',
-    ssr: false
-  }],
-
-  /*
    ** Nuxt.js modules
    */
   modules: [

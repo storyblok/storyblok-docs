@@ -20,7 +20,6 @@ $ npm run generate
 
 ## Todo
 
-- Find a better way to parse code examples
-- Optimize client payload 
+- Precompile the code example to render function during docgen
 - Documentation for the doc
 - Documentation for how to contribute 
