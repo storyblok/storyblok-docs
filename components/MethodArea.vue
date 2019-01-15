@@ -1,6 +1,6 @@
 <template>
   <section class="method" :id="method.path">
-    <MethodContent :method="method"/>
+    <MethodContent :method="method" :index="index"/>
     <MethodExample :method="method"/>
   </section>
 </template>
@@ -11,7 +11,8 @@ import MethodExample from '@/components/MethodExample';
 
 export default {
   props: {
-    method: Object
+    method: Object,
+    index: Number
   },
   components: {
     MethodContent,

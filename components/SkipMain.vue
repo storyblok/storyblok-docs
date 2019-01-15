@@ -2,7 +2,7 @@
   <a class="skip-main" href="#main">Skip to main content</a>
 </template>
 
-<style>
+<style lang="scss">
 a.skip-main {
     left:-999px;
     position:absolute;
@@ -13,19 +13,19 @@ a.skip-main {
     z-index:-999;
 }
 a.skip-main:focus, a.skip-main:active {
-    color: #fff;
-    background-color:#000;
+    color: $brand-background-light;
+    background-color: $brand-background-dark;
     left: auto;
     top: auto;
     width: 30%;
     height: auto;
     overflow:auto;
     margin: 10px 35%;
-    padding:5px;
+    padding: 5px;
     border-radius: 15px;
-    border:4px solid yellow;
-    text-align:center;
-    font-size:1.2em;
-    z-index:999;
+    border: 4px solid $brand-highlight;
+    text-align: center;
+    font-size: 1.2em;
+    z-index: 999;
 }
 </style>

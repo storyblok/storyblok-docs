@@ -1,7 +1,18 @@
 <template>
   <div class="method-content">
     <div class="method-content__body">
-      <h2><a class="method-content__title" :href="'#' + method.path"><span v-html=method.title></span><SvgIcon icon="link"/></a></h2>
+      <h1 v-if="index == 0">
+        <a class="method-content__title" id="main">
+          <span v-html=method.title></span>
+          <SvgIcon icon="link"/>
+        </a>
+      </h1>
+      <h2 v-else>
+        <a class="method-content__title" :href="'#' + method.path">
+          <span v-html=method.title></span>
+          <SvgIcon icon="link"/>
+        </a>
+      </h2>
       <div v-html="method.content"></div>
       <a class="method-content__github" :href="editSectionURL"><SvgIcon icon="github"/><span>Edit this section on GitHub</span></a>
     </div>
@@ -13,7 +24,8 @@ import SvgIcon from '@/components/SvgIcon'
 
 export default {
   props: {
-    method: Object
+    method: Object,
+    index: Number
   },
   computed: {
     editSectionURL() {
@@ -32,6 +44,7 @@ export default {
   border-top: 1px solid $content-background-secondary;
 
   a {
+    color: $content-link-color;
     font-size: inherit;
   }
 
@@ -87,7 +100,7 @@ export default {
   padding: 40px 0px 0px 0px;
   .icon {
     margin-right: 5px;  
-    fill: $brand-highlight;
+    fill: $content-link-color;
   }
 }
 

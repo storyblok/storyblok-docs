@@ -1,6 +1,6 @@
 <template>
   <div class="methods">
-    <MethodArea :key=method.path v-for="method in methods" :method=method></MethodArea>
+    <MethodArea :key=method.path v-for="(method, index) in methods" :method=method :index=index></MethodArea>
   </div>
 </template>
 
