@@ -4,16 +4,20 @@ $brand-background-dark: #192540;
 $brand-background-light: #f5f6f7;
 $brand-font: 'Raleway', Helvetica, sans-serif;
 
+$link-color: #1f2d4f;
+
 $content-background: #ffffff;
 $content-background-secondary: $brand-background-light;
+$content-link-color: $link-color;
 $content-text-color: #4c555a;
 
 $example-background: $brand-background;
 $example-background-secondary: $brand-background-dark;
+$example-link-color: $brand-highlight;
 $example-text-color: #dde4e8;
 
 $sidebar-background: $brand-background-light;
-$sidebar-link-color: $brand-background;
+$sidebar-link-color: $link-color;
 $sidebar-text-color: $content-text-color;
 $sidebar-border-color: #efefef;
 

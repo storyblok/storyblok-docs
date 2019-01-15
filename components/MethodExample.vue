@@ -49,6 +49,7 @@ export default {
   flex: 1;
 
   a {
+    color: $example-link-color;
     font-size: inherit;
   }
 

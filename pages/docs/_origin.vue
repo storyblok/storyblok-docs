@@ -18,8 +18,16 @@ export default {
   name: 'page',
   data() {
     return {
+      lang: 'en',
       menu: [],
       ordered: []
+    }
+  },
+  head() {
+    return {
+      htmlAttrs: {
+        lang: this.lang
+      }
     }
   },
   components: {
@@ -29,7 +37,7 @@ export default {
   },
   async asyncData ({ store, params, payload }) {
     const origin = params.origin
-    const lang = store.state.language
+    const lang = 'en'
 
     let menu = null
     let ordered = null
@@ -48,7 +56,8 @@ export default {
 
     return {
       menu,
-      ordered
+      ordered,
+      lang
     }
   }
  }

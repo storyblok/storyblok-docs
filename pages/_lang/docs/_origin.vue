@@ -18,8 +18,16 @@ export default {
   name: 'page',
   data() {
     return {
+      lang: 'en',
       menu: [],
       ordered: []
+    }
+  },
+  head() {
+    return {
+      htmlAttrs: {
+        lang: this.lang
+      }
     }
   },
   components: {
@@ -45,7 +53,8 @@ export default {
 
     return {
       menu,
-      ordered
+      ordered,
+      lang: params.lang
     }
   }
  }

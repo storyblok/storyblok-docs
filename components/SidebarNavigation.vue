@@ -84,10 +84,10 @@ export default {
     padding: 1px 0px;
     width: 100%;
     font-weight: normal;
-    color: $sidebar-link-color; 
+    color: $sidebar-text-color; 
 
     &.active {
-      color: $brand-highlight;
+      color: $sidebar-link-color;
       font-weight: bold;
     }
 

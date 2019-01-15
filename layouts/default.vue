@@ -1,17 +1,20 @@
 <template>
   <div class="docs">
     <SvgSprite/>
+    <SkipMain/>
     <nuxt/>
   </div>
 </template>
 
 <script>
 import SvgSprite from '@/components/SvgSprite'
+import SkipMain from '@/components/SkipMain'
 import { scrollBehavior } from '@/lib/route-utils'
 
 export default {
   components: {
-    SvgSprite
+    SvgSprite,
+    SkipMain
   },
   mounted() {
     // Manually parse hashes / decide on scrollBehavior for initial page load (from SSR)

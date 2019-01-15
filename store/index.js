@@ -4,8 +4,6 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       activeMenuPath: '',
-      origin: 'content-delivery-api',
-      language: 'en',
       codelang: 'bash'
     },
     mutations: {
