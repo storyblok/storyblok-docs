@@ -7,10 +7,10 @@ const { mkdirSync, readFile, writeFile, mkdir, unlink, readdirSync, statSync } =
 
 const marked = require('marked')
 const prism = require('prismjs')
-const loadCodeLanguages = require('prismjs/components/')
+const loadTechnologies = require('prismjs/components/')
 const markedOptions = {
   highlight: function (code, lang) {
-    loadCodeLanguages([lang])
+    loadTechnologies([lang])
 		return prism.highlight(code, prism.languages[lang], lang)
 	}
 }

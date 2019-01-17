@@ -13,7 +13,7 @@ Using an OAuth2 token, a username and password doesn’t need to be permanently 
 
 ;examplearea
 
-<div v-show="$store.state.codelang == 'bash'">
+<div v-show="$store.state.technology == 'bash'">
 
 Example Request
 
@@ -22,7 +22,7 @@ curl -H "Authorization: YOUR_OAUTH_TOKEN" https://mapi.storyblok.com/
 ```
 
 </div>
-<div v-show="$store.state.codelang == 'javascript'">
+<div v-show="$store.state.technology == 'javascript'">
 
 Example Request
 

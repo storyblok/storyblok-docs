@@ -4,14 +4,14 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       activeMenuPath: '',
-      codelang: 'bash'
+      technology: 'bash'
     },
     mutations: {
-      SET_CODELANG(state, codelang) {
+      SET_TECHNOLOGY(state, technology) {
         if (process.client) {
-          window.localStorage.codelang = codelang
+          window.localStorage.technology = technology
         }
-        state.codelang = codelang
+        state.technology = technology
       },
       SET_ACTIVE_MENU_PATH(state, activeMenuPath) {
         state.activeMenuPath = activeMenuPath

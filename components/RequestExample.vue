@@ -1,24 +1,16 @@
 <template>
   <div class="request-example">
-    <BashRequest v-show="codelang == 'bash'" v-bind=propsData></BashRequest>
-    <JavaScriptRequest v-show="codelang == 'javascript'" v-bind=propsData></JavaScriptRequest>
-    <PhpRequest v-show="codelang == 'php'" v-bind=propsData></PhpRequest>
-    <JavaRequest v-show="codelang == 'java'" v-bind=propsData></JavaRequest>
-    <CsharpRequest v-show="codelang == 'csharp'" v-bind=propsData></CsharpRequest>
-    <SwiftRequest v-show="codelang == 'swift'" v-bind=propsData></SwiftRequest>
-    <RubyRequest v-show="codelang == 'ruby'" v-bind=propsData></RubyRequest>
+    <BashRequest v-show="technology == 'bash'" v-bind=propsData></BashRequest>
+    <JavaScriptRequest v-show="technology == 'javascript'" v-bind=propsData></JavaScriptRequest>
+    <PhpRequest v-show="technology == 'php'" v-bind=propsData></PhpRequest>
+    <JavaRequest v-show="technology == 'java'" v-bind=propsData></JavaRequest>
+    <CsharpRequest v-show="technology == 'csharp'" v-bind=propsData></CsharpRequest>
+    <SwiftRequest v-show="technology == 'swift'" v-bind=propsData></SwiftRequest>
+    <RubyRequest v-show="technology == 'ruby'" v-bind=propsData></RubyRequest>
   </div>
 </template>
 
 <script>
-import BashRequest from '@/components/requests/BashRequest'
-import JavaScriptRequest from '@/components/requests/JavaScriptRequest'
-import PhpRequest from '@/components/requests/PhpRequest'
-import JavaRequest from '@/components/requests/JavaRequest'
-import CsharpRequest from '@/components/requests/CsharpRequest'
-import SwiftRequest from '@/components/requests/SwiftRequest'
-import RubyRequest from '@/components/requests/RubyRequest'
-
 export default {
   props: {
     url: String,
@@ -26,13 +18,13 @@ export default {
     requestObject: Object
   },
   components: {
-    BashRequest,
-    JavaScriptRequest,
-    PhpRequest,
-    JavaRequest,
-    CsharpRequest,
-    SwiftRequest,
-    RubyRequest
+    BashRequest: () => import('@/components/requests/BashRequest'),
+    JavaScriptRequest: () => import('@/components/requests/JavaScriptRequest'),
+    PhpRequest: () => import('@/components/requests/PhpRequest'),
+    JavaRequest: () => import('@/components/requests/JavaRequest'),
+    CsharpRequest: () => import('@/components/requests/CsharpRequest'),
+    SwiftRequest: () => import('@/components/requests/SwiftRequest'),
+    RubyRequest: () => import('@/components/requests/RubyRequest'),
   },
   computed: {
     propsData() {
@@ -42,8 +34,8 @@ export default {
         requestObject: this.requestObject
       }
     },
-    codelang() {
-      return this.$store.state.codelang
+    technology() {
+      return this.$store.state.technology
     }
   }
 }

@@ -18,7 +18,7 @@ If you're using the Content Staging (eg. Release and Schedule) feature you can a
 
 Example Request
 
-<div v-show="$store.state.codelang == 'javascript'">
+<div v-show="$store.state.technology == 'javascript'">
 
 ```javascript
 // npm install storyblok-js-client

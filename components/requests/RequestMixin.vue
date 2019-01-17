@@ -13,8 +13,8 @@ export default {
     httpMethod: String
   },
   methods: {
-    output(codelang) {
-      let code = '```' + codelang + '\n'
+    output(technology) {
+      let code = '```' + technology + '\n'
       code += this.request
       code += '\n```'
       return marked(code)

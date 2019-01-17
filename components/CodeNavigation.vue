@@ -1,7 +1,7 @@
 <template>
   <ul class="code-navigation">
-    <li :key=codeLang.key v-for="codeLang in codeLanguages">
-      <a href="#" :class="{ active: $store.state.codelang == codeLang.key }" @click.prevent="switchCodeLang(codeLang.key)">{{codeLang.name}}</a>
+    <li :key=technology.key v-for="technology in technologies">
+      <a href="#" :class="{ active: $store.state.technology == technology.key }" @click.prevent="switchTechnology(technology.key)">{{technology.name}}</a>
     </li>
   </ul>
 </template>
@@ -10,7 +10,7 @@
 export default {
   data() {
     return {
-      codeLanguages: [{
+      technologies: [{
           key: 'bash',
           name: 'curl'
         },
@@ -43,12 +43,12 @@ export default {
   },
   created() {
     if(process.client) {
-      this.switchCodeLang(typeof window.localStorage.codelang === 'undefined' ? 'bash' : window.localStorage.codelang)
+      this.switchTechnology(typeof window.localStorage.technology === 'undefined' ? 'bash' : window.localStorage.technology)
     }
   },
   methods: {
-    switchCodeLang(code) {
-      this.$store.commit('SET_CODELANG', code)
+    switchTechnology(technology) {
+      this.$store.commit('SET_TECHNOLOGY', technology)
     }
   }
 }
