@@ -228,9 +228,11 @@ const Docgen = {
     return markdown.replace('<p>', '').replace('</p>\n', '')
   },
 
-  cleanTemplate(string) {
+  prepareTemplate(string) {
     string = Docgen.replaceAll(string, '<p><RequestExample', '<RequestExample')
     string = Docgen.replaceAll(string, '</RequestExample></p>', '</RequestExample>')
+    string = Docgen.replaceAll(string, '<table>', '<div class="table"><table>')
+    string = Docgen.replaceAll(string, '</table>', '</table></div>')
     return string
   },
 
@@ -256,7 +258,8 @@ const Docgen = {
   
         let content = marked(area[0] || '')
         let example = marked(area[1] || '')
-        example = Docgen.cleanTemplate(example)
+        content = Docgen.prepareTemplate(content)
+        example = Docgen.prepareTemplate(example)
 
         let contentPath = FileHelper.getRelativeFilePath(source)
         let path = FileHelper.getLanguageRelativeFilePath(source)
