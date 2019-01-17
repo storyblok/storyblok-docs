@@ -1,6 +1,6 @@
 <template>
   <div class="method-content">
-    <div class="method-content__body">
+    <div class="method-body">
       <h1 v-if="index == 0">
         <a class="method-content__title" id="main">
           <span v-html=method.title></span>
@@ -45,21 +45,11 @@ export default {
 
   a {
     color: $content-link-color;
-    font-size: inherit;
   }
 
   table {
-    overflow-x: scroll;
-    width: 100%;
-    border-collapse: collapse;
-    & + table {
-      margin-top: 20px;
-    }
     th, td {
       border: 1px solid $content-background-secondary;
-      padding: 7px;
-      font-size: 15px;
-      text-align: left;
     }
     thead tr {
       background: $content-background;
@@ -98,13 +88,10 @@ export default {
   display: block;
   font-weight: normal;
   padding: 40px 0px 0px 0px;
+  
   .icon {
     margin-right: 5px;  
     fill: $content-link-color;
   }
-}
-
-.method-content__body {
-  padding: 80px 40px 20px 40px;
 }
 </style>

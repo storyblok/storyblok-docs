@@ -71,11 +71,12 @@ a {
 
 
 pre {
-    padding: 20px 20px;
-    background: $brand-background-dark;
-    border-radius: 5px;
-    overflow-x: scroll;
-  }
+  padding: 20px 20px;
+  background: $brand-background-dark;
+  border-radius: 5px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
 
 code[class*="language-"],
 pre[class*="language-"] {

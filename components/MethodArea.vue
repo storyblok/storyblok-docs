@@ -22,8 +22,36 @@ export default {
 </script>
 
 <style lang="scss">
-@media screen and (min-width: 1050px) {
-  .method {
+.method {
+  display: block;
+
+  .table {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    & + table {
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 7px;
+      font-size: 13px;
+      text-align: left;
+    }
+  }
+
+  a {
+    font-size: inherit;
+  }
+
+  .method-body {
+    padding: 80px 40px 70px 40px;
+  }
+
+  @media screen and (min-width: 850px) {
     display:flex;
 
     .method-content, .method-example {
@@ -31,5 +59,6 @@ export default {
     }
   }
 }
+
 </style>
 

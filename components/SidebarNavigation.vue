@@ -1,13 +1,13 @@
 <template>
-  <nav class="side-menu">
-    <ul class="side-menu__categories">
+  <nav class="side-navigation">
+    <ul class="side-navigation__categories">
       <li :key=category.category v-for="(category, index) in menu">
-        <div class="side-menu__category" :class="{ 'side-menu__category--first': index == 0 }">{{category.category}}</div>
-        <ul class="side-menu__items">
+        <div class="side-navigation__category" :class="{ 'side-navigation__category--first': index == 0 }">{{category.category}}</div>
+        <ul class="side-navigation__items">
           <li :key=method.path v-for="method in category.items">
             <a :href="toId(method)" @click="navigate(method)" :class="{ 'active': isMenuItemActive(method), 'child-active': isChildActive(method) }">{{title(method)}}</a>
         
-            <ul class="side-menu__children" v-if="method.children.length > 0">
+            <ul class="side-navigation__children" v-if="method.children.length > 0">
               <li :key=child.path v-for="child in method.children">
                 <a :href=toId(child) :class="{ 'active': isMenuItemActive(child) }">{{title(child)}}</a>
               </li>
@@ -63,7 +63,7 @@ export default {
 </script>
 
 <style lang="scss">
-.side-menu {
+.side-navigation {
   position: fixed;
   top: 0px;
   width: $side-bar-width;
@@ -72,7 +72,8 @@ export default {
   color: $sidebar-text-color;
   height: 100%;
   max-height: 100vh;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   display: none;
   @media screen and (min-width: 1320px) {
@@ -91,14 +92,14 @@ export default {
       font-weight: bold;
     }
 
-    &.active + .side-menu__children, 
-    &.child-active + .side-menu__children {
+    &.active + .side-navigation__children, 
+    &.child-active + .side-navigation__children {
       display: block;
     }
   }  
 }
 
-.side-menu__categories {
+.side-navigation__categories {
   list-style: none;
   display: block;
   margin: 0;
@@ -106,25 +107,25 @@ export default {
 
 }
 
-.side-menu__items {
+.side-navigation__items {
   list-style: none;
   display: block;
   margin: 0;
   padding: 0;
 }
 
-.side-menu__category {
+.side-navigation__category {
   padding-top: 20px;
   font-size: 14px;
   text-transform: uppercase;
   font-family: $brand-font;
 
-  &.side-menu__category--first {
+  &.side-navigation__category--first {
     padding-top: 0px;
   }
 }
 
-.side-menu__children {
+.side-navigation__children {
   display: none;
   padding-left: 10px;
   padding-bottom: 10px;
