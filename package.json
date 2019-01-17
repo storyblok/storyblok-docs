@@ -5,11 +5,11 @@
   "author": "Dominik Angerer <da@storyblok.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt & node docgen/docgen.js watch=true",
+    "dev": "nuxt & node docgen.js watch=true",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "npm run docgen && nuxt generate",
-    "docgen": "node docgen/docgen.js"
+    "docgen": "node docgen.js"
   },
   "dependencies": {
     "@nuxtjs/pwa": "^2.6.0",

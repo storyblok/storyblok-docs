@@ -1,9 +1,17 @@
 const watch = require('node-watch')
 const frontmatter = require('front-matter')
 
-const { resolve, join } = require('path')
-const { readdir, stat } = require('fs').promises
+const path = require('path')
 const fs = require('fs-extra')
+const glob = require('glob')
+
+const args = process.argv
+    .slice(2)
+    .map(arg => arg.split('='))
+    .reduce((args, [value, key]) => {
+        args[value] = key;
+        return args;
+    }, {});
 
 const marked = require('marked')
 const prism = require('prismjs')
@@ -18,30 +26,21 @@ const markedOptions = {
 marked.setOptions(markedOptions)
 
 // Configuration
-const config = require('../docgen.config.js')
-const args = process.argv
-    .slice(2)
-    .map(arg => arg.split('='))
-    .reduce((args, [value, key]) => {
-        args[value] = key;
-        return args;
-    }, {});
+const config = {
+  baseDir: `${__dirname}/`,
+  docgenDir: `${__dirname}/.docgen/`,
+  orderedContentFile: `${__dirname}/static/{origin}.ordered.{lang}.json`,
+  menuContentFile: `${__dirname}/static/{origin}.menu.{lang}.json`,
+  routesFile: `${__dirname}/routes.json`,
+  originContentDir: `${__dirname}/content/`,
+  splitString: ';examplearea',
+  ignoreFiles: [ '.DS_Store' ],
+  
+}
 
 let contents = {}
 
 const FileHelper = {
-  getFilesFromDirectory: async function* (dir) {
-    const subdirs = await readdir(dir)
-    for (const subdir of subdirs) {
-      const res = resolve(dir, subdir)
-      if ((await stat(res)).isDirectory()) {
-        yield* FileHelper.getFilesFromDirectory(res)
-      } else {
-        yield res
-      }
-    }
-  },
-
   getDirectoryPath(file) {
     return file.substring(0, file.lastIndexOf('/')).replace(config.baseDir, config.docgenDir)
   },
@@ -72,7 +71,7 @@ const FileHelper = {
   },
 
   getDirectories(p) {
-    return fs.readdirSync(p).filter(f => fs.statSync(join(p, f)).isDirectory())
+    return fs.readdirSync(p).filter(f => fs.statSync(path.join(p, f)).isDirectory())
   },
 
   isIgnoreFile(source) {
@@ -89,29 +88,17 @@ const FileHelper = {
 
 const Docgen = {
   init: () => {
-    let routes = []
-    FileHelper.getDirectories(config.originContentDir).forEach(origin => {
-      contents[origin] = {}
-      FileHelper.getDirectories(join(config.originContentDir, origin)).forEach(lang => {
-        contents[origin][lang] = {}
-        if(lang == 'en') {
-          routes.push(`/docs/api/${origin}/`)          
-        } else {
-          routes.push(`/${lang}/docs/api/${origin}/`)
-        }
-      })
-    })
+    fs.ensureDirSync(config.docgenDir)
 
-    fs.mkdirSync(config.docgenDir, { recursive: true })
-    Docgen.generateRoutesForNuxt(routes)
+    Docgen.generateRoutesForNuxt()
     Docgen.generateAll()
 
     if (!!args.watch) { 
-      watch(config.originContentDir, { recursive: true }, Docgen.fileEvent)
+      watch(config.originContentDir, { recursive: true }, Docgen.handleFileChange)
     }
   },
 
-  fileEvent: (evt, updatedFile) => {
+  handleFileChange: (evt, updatedFile) => {
     if (evt == 'remove') {
       fs.unlink(FileHelper.getCacheFilePath(updatedFile), (err) => {
         if (err) throw err
@@ -133,26 +120,32 @@ const Docgen = {
 
       contents[origin][lang][path] = JSON.parse(data)
 
-      // Docgen.generateCombined(contents, lang, origin)
       Docgen.generateMenu(contents, lang, origin)
       Docgen.generateOrdered(contents, lang, origin)
     })
   },
 
-  generateCombined: (contents, language, origin) => {
-    fs.writeFile(FileHelper.getOutputFilePath(config.combinedContentFile, language, origin), JSON.stringify(contents[origin][language]), (err) => {
-      if (err) throw err
+  generateRoutesForNuxt: () => {
+    let routes = []
+    FileHelper.getDirectories(config.originContentDir).forEach(origin => {
+      contents[origin] = {}
+      FileHelper.getDirectories(path.join(config.originContentDir, origin)).forEach(lang => {
+        contents[origin][lang] = {}
+        if(lang == 'en') {
+          routes.push(`/docs/api/${origin}/`)          
+        } else {
+          routes.push(`/${lang}/docs/api/${origin}/`)
+        }
+      })
     })
-  },
-
-  generateRoutesForNuxt: (routes) => {
+    
     fs.writeFile(config.routesFile, JSON.stringify(routes), (err) => {
       if (err) throw err
     })
   },
 
   generateOrdered: (contents, language, origin) => {
-    let ordered = Docgen.orderContents(contents[origin][language])
+    let ordered = Docgen.orderContent(contents[origin][language])
 
     fs.writeFile(FileHelper.getOutputFilePath(config.orderedContentFile, language, origin), JSON.stringify(ordered), (err) => {
       if (err) throw err
@@ -160,7 +153,7 @@ const Docgen = {
   },
 
   generateMenu: (contents, language, origin) => {
-    let ordered = Docgen.orderContents(contents[origin][language])
+    let ordered = Docgen.orderContent(contents[origin][language])
 
     let latestStartpage = null
     let categories = {}
@@ -172,6 +165,7 @@ const Docgen = {
       delete element.origin
 
       let isChild = false
+
       // group by startpage
       if (latestStartpage == null) {
         latestStartpage = element
@@ -208,8 +202,8 @@ const Docgen = {
     })
   },
 
-  orderContents: (contents) => {
-    return Object.values(contents).sort((a, b) => {
+  orderContent: (content) => {
+    return Object.values(content).sort((a, b) => {
       if (a.attributes.position < b.attributes.position) return -1
       if (a.attributes.position > b.attributes.position) return 1
       return 0
@@ -217,11 +211,11 @@ const Docgen = {
   },
 
   generateAll: () => {
-    (async () => {
-      for await (const f of FileHelper.getFilesFromDirectory(config.originContentDir)) {
-        Docgen.generate(f)
-      }
-    })()
+    glob(`${__dirname}/content/**/*.md`, (err, files) => {
+      files.forEach((file) => {
+        Docgen.generate(file)
+      })
+    })
   },
 
   stripParagraphWrapper(markdown) { 
@@ -251,35 +245,38 @@ const Docgen = {
       fs.mkdir(dir, { recursive: true }, (err) => {
   
         let originContent = frontmatter(originData)
-        let originDataBody = originContent.body
-        let originDataAttributes = originContent.attributes
+        let area = originContent.body.split(config.splitString)
+        let title = Docgen.stripParagraphWrapper(marked(originContent.attributes.title || ''))
+        let methodContent = Docgen.prepareTemplate(marked(area[0] || ''))
+        let methodExample = Docgen.prepareTemplate(marked(area[1] || ''))
+
+        // source = .../content/content-delivery/en/topics/introduction.md
         
-        let area = originDataBody.split(config.splitString)
-  
-        let content = marked(area[0] || '')
-        let example = marked(area[1] || '')
-        content = Docgen.prepareTemplate(content)
-        example = Docgen.prepareTemplate(example)
+        // content-delivery/en/topics/introduction
+        let contentPath = FileHelper.getRelativeFilePath(source) 
 
-        let contentPath = FileHelper.getRelativeFilePath(source)
-        let path = FileHelper.getLanguageRelativeFilePath(source)
+        // topics/introduction
+        let path = FileHelper.getLanguageRelativeFilePath(source) 
+
+        // content-delivery
         let origin = FileHelper.getOriginFromFile(source)
-        let lang = FileHelper.getLanguageFromFile(source)
+        
+        // en
+        let lang = FileHelper.getLanguageFromFile(source) 
 
+        // prepare data for json
         let data = {
           contentPath: contentPath,
           path: path,
           lang: lang,
           origin: origin,
-          attributes: originDataAttributes,
-          content: content,
-          example: example
-        }
-  
-        if (typeof originDataAttributes.title !== 'undefined') {
-          data.title = Docgen.stripParagraphWrapper(marked(originDataAttributes.title))
+          title:title,
+          attributes: originContent.attributes,
+          content: methodContent,
+          example: methodExample
         }
         
+        // out = .../.docgen/content-delivery/en/topics/introduction.json
         let out = FileHelper.getCacheFilePath(source)
         fs.writeFile(out, JSON.stringify(data), (err) => {
           if (err) throw err
