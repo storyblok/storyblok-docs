@@ -6,29 +6,57 @@
 
 <script>
 import MethodArea from '@/components/MethodArea'
+import throttle from 'lodash.throttle';
 
 export default {
   name: 'methods',
   props: {
     methods: Array
   },
+  data() {
+    return {
+      scheduledAnimationFrame: false,
+      lastScrollY: 0,
+      titles: []
+    }
+  },
   components: {
     MethodArea
   },
   mounted() {
     if(process.client) {
-      const areas = document.querySelectorAll('.method')
-      const observer = new IntersectionObserver((changes) => {
-        let rect = changes[0].target.getBoundingClientRect()
-        if (rect.bottom >= 0 && 
-          rect.right >= 0 && 
-          rect.top <= (window.innerHeight || document.documentElement.clientHeight) && 
-          rect.left <= (window.innerWidth || document.documentElement.clientWidth)) {
-           this.$store.commit('SET_ACTIVE_MENU_PATH', changes[0].target.id)
-           history.pushState({}, null, `#${changes[0].target.id}`)
-         }
+      this.titles = document.querySelectorAll('.method-content__title')
+      window.addEventListener('scroll', throttle(this.onScroll, 100));
+    }
+  },
+  methods: {
+    onScroll() {
+      this.lastScrollY = window.scrollY;
+      if (this.scheduledAnimationFrame){
+        return
+      }
+      this.scheduledAnimationFrame = true;
+      requestAnimationFrame(this.setActiveMenuPath);
+    },
+    setActiveMenuPath() {
+      this.titles.forEach(title => {
+        let rect = title.getBoundingClientRect()
+        let hash = title.hash.replace('#', '')
+        if (this.isInMiddleOfViewport(title) && 
+          hash != this.$store.state.activeMenuPath) {
+          this.$store.commit('SET_ACTIVE_MENU_PATH', hash)
+        }
       })
-      areas.forEach(area => observer.observe(area))
+      this.scheduledAnimationFrame = false;
+    },
+    isInMiddleOfViewport(elem) {
+      let bounding = elem.getBoundingClientRect();
+      return (
+        bounding.top >= 0 &&
+        bounding.left >= 0 &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) * (3/5) &&
+        bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+      )
     }
   }
  }

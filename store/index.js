@@ -8,10 +8,10 @@ const createStore = () => {
     },
     mutations: {
       SET_TECHNOLOGY(state, technology) {
+        state.technology = technology
         if (process.client) {
           window.localStorage.technology = technology
         }
-        state.technology = technology
       },
       SET_ACTIVE_MENU_PATH(state, activeMenuPath) {
         state.activeMenuPath = activeMenuPath

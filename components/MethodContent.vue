@@ -2,7 +2,7 @@
   <div class="method-content">
     <div class="method-body">
       <h1 v-if="index == 0">
-        <a class="method-content__title" id="main">
+        <a class="method-content__title" id="main" :href="'#' + method.path">
           <span v-html=method.title></span>
           <SvgIcon icon="link"/>
         </a>
