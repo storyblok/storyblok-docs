@@ -48,7 +48,7 @@ export default {
   }
 
   .method-body {
-    padding: 80px 40px 70px 40px;
+    padding: 80px 20px 70px 20px;
   }
 
   @media screen and (min-width: 850px) {
@@ -56,6 +56,10 @@ export default {
 
     .method-content, .method-example {
       min-width: 50%;
+    }
+
+    .method-body {
+      padding: 80px 40px 70px 40px;
     }
   }
 }
