@@ -37,7 +37,7 @@ export default {
   },
   async asyncData ({ store, params, payload }) {
     const origin = params.origin
-    const lang = 'en'
+    const lang = params.lang || 'en'
 
     let menu = null
     let ordered = null

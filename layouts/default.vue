@@ -30,7 +30,6 @@ export default {
 }
 </script>
 
-
 <style lang="scss">
 body {
   -webkit-box-sizing: border-box;
