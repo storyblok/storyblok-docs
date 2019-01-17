@@ -5,7 +5,6 @@
     </div>
     <div class="top-header__content">
       <MainNavigation :menu="menu"/>
-      <TechnologyNavigation :mobile="true"/>
     </div>
     <div class="top-header__example">
       <TechnologyNavigation/>
@@ -15,7 +14,6 @@
 
 <script>
 import TechnologyNavigation from '@/components/TechnologyNavigation'
-import MainNavigation from '@/components/MainNavigation'
 import BrandLogo from '@/components/BrandLogo'
 
 export default {
@@ -23,7 +21,7 @@ export default {
     menu: Array
   },
   components: {
-    MainNavigation,
+    MainNavigation: () => import('@/components/MainNavigation'),
     TechnologyNavigation,
     BrandLogo
   }
@@ -56,10 +54,12 @@ export default {
 }
 
 .top-header__content {  
-  text-align: right;
+  background: $brand-background-dark;
+  text-align: left;
   width:50%;
 
   @media screen and (min-width: 1050px) {
+    background: $sidebar-background;
     width: calc(50vw - 220px);
   }
 

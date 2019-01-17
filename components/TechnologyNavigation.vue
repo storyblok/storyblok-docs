@@ -1,26 +1,13 @@
 <template>
-  <div>
-    <ul class="technology-navigation" v-if="!mobile">
+    <ul class="technology-navigation">
       <li :key=technology.key v-for="technology in technologies">
         <a href="#" :class="{ active: $store.state.technology == technology.key }" @click.prevent="switchTechnology(technology.key)">{{technology.name}}</a>
       </li>
     </ul>
-    <template v-if="mobile">
-      <select aria-label="Technology Navigation" name="technology-navigation" class="technology-navigation--mobile" v-model="$store.state.technology">
-        <option :value=technology.key :key=technology.key v-for="technology in technologies">{{technology.name}}</option>
-      </select>
-    </template>
-  </div>
 </template>
 
 <script>
 export default {
-  props: {
-    mobile: {
-      type: Boolean,
-      default: false
-    }
-  },
   data() {
     return {
       technologies: [{
@@ -68,10 +55,6 @@ export default {
 </script>
 
 <style lang="scss">
-.technology-navigation--mobile {
-
-}
-
 .technology-navigation {
   background: $example-background-secondary;
   white-space: nowrap;
