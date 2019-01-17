@@ -91,5 +91,6 @@ sw.*
 /static/*.ordered.*
 /static/*.menu.*
 /static/*.content.*
+/demo
 routes.json
 
