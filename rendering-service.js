@@ -40,6 +40,8 @@ const RenderingServiceHelper = {
 {% endcase %} 
 {{endspaceless}}`
 
+        fs.ensureDirSync(path.dirname(config.routerFile))
+        
         fs.writeFile(config.routerFile, routerTemplate, (err) => {
           if (err) throw err
         })
