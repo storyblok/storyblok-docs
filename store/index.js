@@ -3,7 +3,7 @@ import Vuex from 'vuex'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      activeMenuPath: '',
+      activeMenuPath: 'topics/introduction',
       technology: 'bash'
     },
     mutations: {

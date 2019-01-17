@@ -54,12 +54,11 @@ export default {
 }
 
 .top-header__content {  
-  background: $brand-background-dark;
-  text-align: left;
+  background: $sidebar-background;
+  text-align: right;
   width:50%;
 
   @media screen and (min-width: 1050px) {
-    background: $sidebar-background;
     width: calc(50vw - 220px);
   }
 
