@@ -1,18 +1,18 @@
 {
   "name": "storyblok-api-doc",
   "version": "1.0.0",
-  "description": "Documentation for Storybloks Content Delivery API and Management API",
+  "description": "Documentation for the Storyblok Content Delivery API and Management API",
   "author": "Dominik Angerer <da@storyblok.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt & node docgen.js watch=true",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "npm run docgen && nuxt generate",
-    "docgen": "node docgen.js"
+    "generate": "node docgen.js && nuxt generate",
+    "netlify": "node docgen.js && nuxt generate && netlify deploy",
+    "full": "node docgen.js && nuxt generate && node rendering-service.js"
   },
   "dependencies": {
-    "@nuxtjs/pwa": "^2.6.0",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "cross-env": "^5.2.0",
