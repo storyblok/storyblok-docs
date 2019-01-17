@@ -80,6 +80,9 @@ dist
 # IDE
 .idea
 
+# nuxt pwa
+sw.*
+
 # content
 /.docgen
 /assets/*.ordered.*

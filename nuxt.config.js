@@ -114,6 +114,7 @@ module.exports = {
     ['nuxt-sass-resources-loader', [
       '@/assets/_variables.scss',
     ]],
+    ['@nuxtjs/pwa', { icon: false }],
   ],
 
   generate: {

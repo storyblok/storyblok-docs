@@ -12,6 +12,7 @@
     "docgen": "node docgen/docgen.js"
   },
   "dependencies": {
+    "@nuxtjs/pwa": "^2.6.0",
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "cross-env": "^5.2.0",
