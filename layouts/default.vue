@@ -9,18 +9,22 @@
 <script>
 import SvgSprite from '@/components/SvgSprite'
 import SkipMain from '@/components/SkipMain'
-import { scrollBehavior } from '@/lib/route-utils'
 
 export default {
   components: {
     SvgSprite,
     SkipMain
   },
-  mounted() {
-    // Manually parse hashes / decide on scrollBehavior for initial page load (from SSR)
-    if (this.$route.hash && process.client) {
-      this.$store.commit('SET_ACTIVE_MENU_PATH', this.$route.hash.replace('#', ''))
-      window.scrollTo(0, scrollBehavior(this.$route).y)
+  created() {
+    if (process.client) {
+      // jump to right anchor on reload
+      window.history.scrollRestoration = 'auto'
+      // Manually parse hashes / decide on scrollBehavior for initial page load (from SSR)
+      if(this.$route.hash) {
+        this.$store.commit('SET_ACTIVE_MENU_PATH', this.$route.hash.replace('#', ''))
+        let elem = document.getElementById(this.$route.hash.replace('#', ''))
+        if(typeof elem !== 'undefined') elem.scrollIntoView()
+      }
     }
   }
 }

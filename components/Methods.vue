@@ -54,7 +54,7 @@ export default {
       return (
         bounding.top >= 0 &&
         bounding.left >= 0 &&
-        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) * (3/5) &&
+        bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) * (2/5) &&
         bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
       )
     }

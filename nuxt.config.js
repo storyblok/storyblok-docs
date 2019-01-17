@@ -26,7 +26,7 @@ module.exports = {
       // needed to stop Prism to automatically highlight everything that is already highlighted:
       // https://github.com/PrismJS/prism/issues/765#issuecomment-139043403
       // https://github.com/PrismJS/prism/pull/1087#issuecomment-274952728
-      { innerHTML: "window.Prism={manual:!0};", type: 'text/javascript', charset: 'utf-8'}
+      { innerHTML: "window.Prism={manual:!0};", type: 'text/javascript', charset: 'utf-8' }
     ],
     link: [{
         rel: 'apple-touch-icon',

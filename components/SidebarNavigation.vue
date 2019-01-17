@@ -6,7 +6,6 @@
         <ul class="side-navigation__items">
           <li :key=method.path v-for="method in category.items">
             <a :href="toId(method)" @click="navigate(method)" :class="{ 'active': isMenuItemActive(method), 'child-active': isChildActive(method) }">{{title(method)}}</a>
-        
             <ul class="side-navigation__children" v-if="method.children.length > 0">
               <li :key=child.path v-for="child in method.children">
                 <a :href=toId(child) :class="{ 'active': isMenuItemActive(child) }">{{title(child)}}</a>
@@ -23,6 +22,11 @@
 export default {
   props: {
     menu: Array
+  },
+  computed: {
+    activeMenuPath() {
+      return this.$store.state.activeMenuPath
+    }
   },
   methods: {
     isCategoryVisible(index, method) {
@@ -47,7 +51,7 @@ export default {
       return active
     },
     isMenuItemActive(method) {
-      return this.$store.state.activeMenuPath == method.path
+      return this.activeMenuPath == method.path
     },
     toId(method){
       return `#${method.path}`

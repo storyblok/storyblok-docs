@@ -1,5 +1,5 @@
 <template>
-  <select aria-label="Main Navigation" name="main-navigation" class="main-navigation" @change="navigate" v-model="selected">
+  <select aria-label="Main Navigation" name="main-navigation" class="main-navigation" @change="navigate" v-model="$store.state.activeMenuPath">
     <optgroup :key=category.path v-for="category in menu" :label="category.category">
       <template v-for="method in category.items">
         <option :value=method.path :key=method.path>{{title(method)}}</option>
@@ -14,29 +14,10 @@ export default {
   props: {
     menu: Array
   },
-  computed: {
-    activeMenuPath() {
-      return this.$store.state.activeMenuPath
-    }
-  },
-  data() {
-    return {
-      selected: this.activeMenuPath
-    }
-  },
-  created() {
-    this.selected = this.activeMenuPath
-  },
-  watch: {
-    activeMenuPath(newVal) {
-      this.selected = newVal
-    }
-  },
   methods: {
     navigate() {
-      this.$store.commit('SET_ACTIVE_MENU_PATH', this.selected)
       if(process.client)  {
-        window.location.hash = '#' + this.selected;
+        window.location.hash = '#' + this.$store.state.activeMenuPath;
       }
     },
     title(method) {

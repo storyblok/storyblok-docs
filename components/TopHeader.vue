@@ -5,15 +5,16 @@
     </div>
     <div class="top-header__content">
       <MainNavigation :menu="menu"/>
+      <TechnologyNavigation :mobile="true"/>
     </div>
     <div class="top-header__example">
-      <CodeNavigation/>
+      <TechnologyNavigation/>
     </div>
   </div>
 </template>
 
 <script>
-import CodeNavigation from '@/components/CodeNavigation'
+import TechnologyNavigation from '@/components/TechnologyNavigation'
 import MainNavigation from '@/components/MainNavigation'
 import BrandLogo from '@/components/BrandLogo'
 
@@ -23,7 +24,7 @@ export default {
   },
   components: {
     MainNavigation,
-    CodeNavigation,
+    TechnologyNavigation,
     BrandLogo
   }
 }
