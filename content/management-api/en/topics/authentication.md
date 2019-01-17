@@ -31,7 +31,7 @@ Example Request
 const StoryblokClient = require('storyblok-js-client')
 
 // Initialize the client with the oauth token
-let Storyblok = new StoryblokClient({
+const Storyblok = new StoryblokClient({
   oauthToken: 'YOUR_OAUTH_TOKEN'
 })
 ```

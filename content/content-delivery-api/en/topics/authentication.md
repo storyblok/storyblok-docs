@@ -25,7 +25,7 @@ Example Request
 const StoryblokClient = require('storyblok-js-client')
 
 // init with access token
-let Storyblok = new StoryblokClient({
+const Storyblok = new StoryblokClient({
   accessToken: 'wANpEQEsMYGOwLxwXQ76Ggtt',
   cache: {
     clear: 'auto',
