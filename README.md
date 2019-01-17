@@ -20,6 +20,5 @@ $ npm run generate
 
 ## Todo
 
-- Precompile the code example to render function during docgen
 - Documentation for the doc
 - Documentation for how to contribute 
