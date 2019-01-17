@@ -3,7 +3,7 @@ const frontmatter = require('front-matter')
 
 const { resolve, join } = require('path')
 const { readdir, stat } = require('fs').promises
-const { mkdirSync, readFile, writeFile, mkdir, unlink, readdirSync, statSync } = require('fs')
+const fs = require('fs-extra')
 
 const marked = require('marked')
 const prism = require('prismjs')
@@ -72,7 +72,7 @@ const FileHelper = {
   },
 
   getDirectories(p) {
-    return readdirSync(p).filter(f => statSync(join(p, f)).isDirectory())
+    return fs.readdirSync(p).filter(f => fs.statSync(join(p, f)).isDirectory())
   },
 
   isIgnoreFile(source) {
@@ -102,7 +102,7 @@ const Docgen = {
       })
     })
 
-    mkdirSync(config.docgenDir, { recursive: true })
+    fs.mkdirSync(config.docgenDir, { recursive: true })
     Docgen.generateRoutesForNuxt(routes)
     Docgen.generateAll()
 
@@ -113,7 +113,7 @@ const Docgen = {
 
   fileEvent: (evt, updatedFile) => {
     if (evt == 'remove') {
-      unlink(FileHelper.getCacheFilePath(updatedFile), (err) => {
+      fs.unlink(FileHelper.getCacheFilePath(updatedFile), (err) => {
         if (err) throw err
       })
     } else {
@@ -126,7 +126,7 @@ const Docgen = {
       return 
     }
 
-    readFile(source, { encoding: 'utf8' }, (err, data) => {
+    fs.readFile(source, { encoding: 'utf8' }, (err, data) => {
       let path = FileHelper.getLanguageRelativeFilePath(source)
       let lang = FileHelper.getLanguageFromFile(source)
       let origin = FileHelper.getOriginFromFile(source)
@@ -140,13 +140,13 @@ const Docgen = {
   },
 
   generateCombined: (contents, language, origin) => {
-    writeFile(FileHelper.getOutputFilePath(config.combinedContentFile, language, origin), JSON.stringify(contents[origin][language]), (err) => {
+    fs.writeFile(FileHelper.getOutputFilePath(config.combinedContentFile, language, origin), JSON.stringify(contents[origin][language]), (err) => {
       if (err) throw err
     })
   },
 
   generateRoutesForNuxt: (routes) => {
-    writeFile(config.routesFile, JSON.stringify(routes), (err) => {
+    fs.writeFile(config.routesFile, JSON.stringify(routes), (err) => {
       if (err) throw err
     })
   },
@@ -154,7 +154,7 @@ const Docgen = {
   generateOrdered: (contents, language, origin) => {
     let ordered = Docgen.orderContents(contents[origin][language])
 
-    writeFile(FileHelper.getOutputFilePath(config.orderedContentFile, language, origin), JSON.stringify(ordered), (err) => {
+    fs.writeFile(FileHelper.getOutputFilePath(config.orderedContentFile, language, origin), JSON.stringify(ordered), (err) => {
       if (err) throw err
     })
   },
@@ -203,7 +203,7 @@ const Docgen = {
       }
     }
 
-    writeFile(FileHelper.getOutputFilePath(config.menuContentFile, language, origin), JSON.stringify(menu), (err) => {
+    fs.writeFile(FileHelper.getOutputFilePath(config.menuContentFile, language, origin), JSON.stringify(menu), (err) => {
       if (err) throw err
     })
   },
@@ -244,11 +244,11 @@ const Docgen = {
     if (FileHelper.isIgnoreFile(source)) {
       return 
     }
-    readFile(source, { encoding: 'utf8' }, (err, originData) => {
+    fs.readFile(source, { encoding: 'utf8' }, (err, originData) => {
       if (err) throw err
   
       let dir = FileHelper.getDirectoryPath(source)
-      mkdir(dir, { recursive: true }, (err) => {
+      fs.mkdir(dir, { recursive: true }, (err) => {
   
         let originContent = frontmatter(originData)
         let originDataBody = originContent.body
@@ -281,7 +281,7 @@ const Docgen = {
         }
         
         let out = FileHelper.getCacheFilePath(source)
-        writeFile(out, JSON.stringify(data), (err) => {
+        fs.writeFile(out, JSON.stringify(data), (err) => {
           if (err) throw err
           Docgen.updateCollections(out)
         })
