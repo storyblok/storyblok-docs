@@ -26,6 +26,13 @@ export default {
         if(typeof elem !== 'undefined') elem.scrollIntoView()
       }
     }
+  },
+  mounted() {
+    if (process.client && 'serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+      })
+    }
   }
 }
 </script>
