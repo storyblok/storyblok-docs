@@ -10,9 +10,9 @@ This is an object representing your content entry. One Story object can be of a 
 |---------------------|----------------------|
 | `id`                  | Numeric id | 
 | `uuid`                | Generated uuid string | 
-| `name`                | Given name  | 
-| `slug`                | Given slug / path | 
-| `full_slug`           | Combined slug with all parent folders | 
+| `name`                | The name you give this story | 
+| `slug`                | Gthe slug / path you give this story |
+| `full_slug`           | Combined parent folder and current slug | 
 | `created_at`          | Creation date (Format: `YYYY-mm-dd HH:MM`) | 
 | `published_at`        | Latest publishing date (Format: `YYYY-mm-dd HH:MM`) | 
 | `first_published_at`  | First publishing date (Format: `YYYY-mm-dd HH:MM`) | 

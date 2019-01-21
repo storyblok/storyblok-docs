@@ -10,8 +10,8 @@ This is an object representing your content entry. One Story object can be of a 
 |---------------------|----------------------|
 | `id`                  | Numeric id | 
 | `uuid`                | Generated uuid string | 
-| `name`                | Given name  | 
-| `slug`                | Given slug / path part |
+| `name`                | The name you give this story | 
+| `slug`                | Gthe slug / path you give this story |
 | `full_slug`           | Combined parent folder and current slug | 
 | `path`                | Given real path, used in the preview editor | 
 | `content`             | Your defined custom content object | 
@@ -27,9 +27,9 @@ This is an object representing your content entry. One Story object can be of a 
 | `parent_id`           | Parent story/folder numeric id | 
 | `parent`              | Essential parent information as object (resolved from `parent_id`) | 
 | `group_id`            | Alternates group id (uuid string) | 
-| `alternates`          | Array of resolved alternate essential objects | 
+| `alternates`          | Array of resolved subset of [link objects](#core-resources/the-link-object) | 
 | `tag_list`            | Array of Tags (string only) | 
-| `breadcrumbs`         | Array of resolved parent essential objects (one per path segment) |
+| `breadcrumbs`         | Array of resolved subset of [link objects](#core-resources/the-link-object) (one per path segment / parent) |
 | `sort_by_date`        | Legacy: Additional sorting date field (Format: `YYYY-mm-dd`) | 
 | `meta_data`           | JSON to add meta data that is not setting the story status to unpublished changes. Example: User ratings.  |
 | `pinned`              | To pin the story in the toolbar |
