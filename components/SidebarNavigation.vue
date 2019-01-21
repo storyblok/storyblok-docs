@@ -69,13 +69,13 @@ export default {
 <style lang="scss">
 .side-navigation {
   position: fixed;
-  top: 0px;
+  top: 60px;
   width: $side-bar-width;
   background: $sidebar-background;
   border-right: 1px solid $sidebar-border-color;
   color: $sidebar-text-color;
   height: 100%;
-  max-height: 100vh;
+  max-height: calc(100vh - 60px);
   overflow-y: auto;
   overflow-x: hidden;
 
@@ -107,7 +107,7 @@ export default {
   list-style: none;
   display: block;
   margin: 0;
-  padding: 70px 20px 20px 20px;
+  padding: 0px 20px 20px 20px;
 
 }
 
