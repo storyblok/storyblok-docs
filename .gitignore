@@ -93,4 +93,4 @@ sw.*
 /static/*.content.*
 /demo
 routes.json
-
+rs-config.js

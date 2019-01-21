@@ -1,14 +1,7 @@
 const path = require('path')
 const fs = require('fs-extra')
 const glob = require('glob')
-const config = {
-  assetInputFolder: `${__dirname}/dist/_nuxt`,
-  assetOutputFolder:`${__dirname}/demo/views/assets/_nuxt`,
-  contentInputFolder: `${__dirname}/dist/`,
-  contentOutputFolder: `${__dirname}/demo/views/components/gnd/`,
-  routerFile: `${__dirname}/demo/views/docs-router.liquid`,
-  spaceId: 52487
-}
+const config = require('./rs-config')
 
 const version = Date.now()
 
