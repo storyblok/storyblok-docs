@@ -62,11 +62,3 @@ export default {
   }
  }
 </script>
-
-<style lang="scss" scoped>
-.main {
-  @media screen and (min-width: 1320px) {
-    margin-left: 220px;
-  }
-}
-</style>

@@ -62,3 +62,10 @@ export default {
 }
 </script>
 
+<style lang="scss">
+.methods {
+  @media screen and (min-width: 1320px) {
+    margin-left: 220px;
+  }
+}
+</style>
