@@ -28,7 +28,7 @@ export default {
     }
   },
   mounted() {
-    if (process.client && 'serviceWorker' in navigator) {
+    if (process.client && 'serviceWorker' in navigator && window.location.origin.indexOf('localhost') < 0) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/service-worker.js')
       })
