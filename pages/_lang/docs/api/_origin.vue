@@ -27,7 +27,8 @@ export default {
     return {
       htmlAttrs: {
         lang: this.lang
-      }
+      },
+      title: `${this.ordered[0].title} - Storyblok`
     }
   },
   components: {
