@@ -18,7 +18,7 @@ let headers = [
   "Authorization": "YOUR_OAUTH_TOKEN"
 ]
 
-let postData = NSData(data: "${JSON.stringify(this.requestObject, null, 2)}".data(using: String.Encoding.utf8)!)
+let postData = NSData(data: ${JSON.stringify(JSON.stringify(this.requestObject))}.data(using: String.Encoding.utf8)!)
 
 let request = NSMutableURLRequest(url: NSURL(string: "${this.url}")! as URL,
                                         cachePolicy: .useProtocolCachePolicy,
@@ -47,7 +47,7 @@ let headers = [
   "Authorization": "YOUR_OAUTH_TOKEN"
 ]
 
-let postData = NSData(data: "${JSON.stringify(this.requestObject, null, 2)}".data(using: String.Encoding.utf8)!)
+let postData = NSData(data: ${JSON.stringify(JSON.stringify(this.requestObject))}.data(using: String.Encoding.utf8)!)
 
 let request = NSMutableURLRequest(url: NSURL(string: "${this.url}")! as URL,
                                         cachePolicy: .useProtocolCachePolicy,
