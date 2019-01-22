@@ -15,7 +15,7 @@ export default {
           return `<?php
 
 $request = new HttpRequest();
-$request->setUrl('${this.urlWithoutParams}');
+$request->setUrl("${this.urlWithoutParams}");
 $request->setMethod(HTTP_METH_POST);
 
 $request->setHeaders(array(
@@ -37,15 +37,15 @@ try {
           return `<?php
 
 $request = new HttpRequest();
-$request->setUrl('${this.urlWithoutParams}');
+$request->setUrl("${this.urlWithoutParams}");
 $request->setMethod(HTTP_METH_PUT);
 
 $request->setHeaders(array(
-  'Content-Type' => 'application/json'
-  'Authorization' => 'YOUR_OAUTH_TOKEN'
+  "Content-Type" => "application/json"
+  "Authorization" => "YOUR_OAUTH_TOKEN"
 ));
 
-$request->setBody('${JSON.stringify(this.requestObject, null, 2)}');
+$request->setBody("${JSON.stringify(this.requestObject, null, 2)}");
 
 try {
   $response = $request->send();
@@ -59,12 +59,12 @@ try {
           return `<?php
 
 $request = new HttpRequest();
-$request->setUrl('${this.urlWithoutParams}');
+$request->setUrl("${this.urlWithoutParams}");
 $request->setMethod(HTTP_METH_DELETE);
 
 $request->setHeaders(array(
-  'Content-Type' => 'application/json'
-  'Authorization' => 'YOUR_OAUTH_TOKEN'
+  "Content-Type" => "application/json"
+  "Authorization" => "YOUR_OAUTH_TOKEN"
 ));
 
 try {
@@ -80,15 +80,15 @@ try {
           return `<?php
 
 $request = new HttpRequest();
-$request->setUrl('${this.urlWithoutParams}');
+$request->setUrl("${this.urlWithoutParams}");
 $request->setMethod(HTTP_METH_GET);
 
 $request->setHeaders(array(
-  'Content-Type' => 'application/json'
-  'Authorization' => 'YOUR_OAUTH_TOKEN'
+  "Content-Type" => "application/json"
+  "Authorization" => "YOUR_OAUTH_TOKEN"
 ));
 
-$request->setQueryData(array(${JSON.stringify(queryParams, null, 2)}));
+$request->setQueryData(json_decode('${JSON.stringify(queryParams)}', true));
 
 try {
   $response = $request->send();
@@ -103,10 +103,10 @@ try {
           return `<?php
 
 $request = new HttpRequest();
-$request->setUrl('${this.urlWithoutParams}');
+$request->setUrl("${this.urlWithoutParams}");
 $request->setMethod(HTTP_METH_GET);
 
-$request->setQueryData(array(${JSON.stringify(queryParams, null, 2)}));
+$request->setQueryData(json_decode('${JSON.stringify(queryParams)}', true));
 
 try {
   $response = $request->send();
