@@ -14,106 +14,152 @@ export default {
         case "POST":
           return `<?php
 
-$request = new HttpRequest();
-$request->setUrl("${this.urlWithoutParams}");
-$request->setMethod(HTTP_METH_POST);
+$curl = curl_init();
 
-$request->setHeaders(array(
-  'Content-Type' => 'application/json'
-  'Authorization' => 'YOUR_OAUTH_TOKEN'
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "${this.url}",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "POST",
+  CURLOPT_POSTFIELDS => ${JSON.stringify(JSON.stringify(this.requestObject))},
+  CURLOPT_HTTPHEADER => array(
+    "Content-Type: application/json",
+    "Authorization: YOUR_OAUTH_TOKEN"
+  ),
 ));
 
-$request->setBody('${JSON.stringify(this.requestObject, null, 2)}');
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-try {
-  $response = $request->send();
+curl_close($curl);
 
-  echo $response->getBody();
-} catch (HttpException $ex) {
-  echo $ex;
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
 }`
           break;
         case "PUT":
           return `<?php
 
-$request = new HttpRequest();
-$request->setUrl("${this.urlWithoutParams}");
-$request->setMethod(HTTP_METH_PUT);
+$curl = curl_init();
 
-$request->setHeaders(array(
-  "Content-Type" => "application/json"
-  "Authorization" => "YOUR_OAUTH_TOKEN"
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "${this.url}",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "PUT",
+  CURLOPT_POSTFIELDS => ${JSON.stringify(JSON.stringify(this.requestObject))},
+  CURLOPT_HTTPHEADER => array(
+    "Content-Type: application/json",
+    "Authorization: YOUR_OAUTH_TOKEN"
+  ),
 ));
 
-$request->setBody("${JSON.stringify(this.requestObject, null, 2)}");
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-try {
-  $response = $request->send();
+curl_close($curl);
 
-  echo $response->getBody();
-} catch (HttpException $ex) {
-  echo $ex;
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
 }`
           break;
         case "DELETE":
           return `<?php
 
-$request = new HttpRequest();
-$request->setUrl("${this.urlWithoutParams}");
-$request->setMethod(HTTP_METH_DELETE);
+$curl = curl_init();
 
-$request->setHeaders(array(
-  "Content-Type" => "application/json"
-  "Authorization" => "YOUR_OAUTH_TOKEN"
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "${this.url}",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "DELETE",
+  CURLOPT_POSTFIELDS => ${JSON.stringify(JSON.stringify(this.requestObject))},
+  CURLOPT_HTTPHEADER => array(
+    "Content-Type: application/json",
+    "Authorization: YOUR_OAUTH_TOKEN"
+  ),
 ));
 
-try {
-  $response = $request->send();
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-  echo $response->getBody();
-} catch (HttpException $ex) {
-  echo $ex;
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
 }`
         break;
         case "GETOAUTH":
           queryParams['token'] = 'YOUR_TOKEN'
           return `<?php
 
-$request = new HttpRequest();
-$request->setUrl("${this.urlWithoutParams}");
-$request->setMethod(HTTP_METH_GET);
+$curl = curl_init();
 
-$request->setHeaders(array(
-  "Content-Type" => "application/json"
-  "Authorization" => "YOUR_OAUTH_TOKEN"
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "${this.url}",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_HTTPHEADER => array(
+    "Content-Type: application/json",
+    "Authorization: YOUR_OAUTH_TOKEN"
+  ),
 ));
 
-$request->setQueryData(json_decode('${JSON.stringify(queryParams)}', true));
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-try {
-  $response = $request->send();
+curl_close($curl);
 
-  echo $response->getBody();
-} catch (HttpException $ex) {
-  echo $ex;
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
 }`
         break;
         default:
-          queryParams['token'] = 'YOUR_TOKEN'
           return `<?php
 
-$request = new HttpRequest();
-$request->setUrl("${this.urlWithoutParams}");
-$request->setMethod(HTTP_METH_GET);
+$curl = curl_init();
 
-$request->setQueryData(json_decode('${JSON.stringify(queryParams)}', true));
+curl_setopt_array($curl, array(
+  CURLOPT_URL => "${this.url}",
+  CURLOPT_RETURNTRANSFER => true,
+  CURLOPT_ENCODING => "",
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 30,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => "GET",
+  CURLOPT_HTTPHEADER => array(),
+));
 
-try {
-  $response = $request->send();
+$response = curl_exec($curl);
+$err = curl_error($curl);
 
-  echo $response->getBody();
-} catch (HttpException $ex) {
-  echo $ex;
+curl_close($curl);
+
+if ($err) {
+  echo "cURL Error #:" . $err;
+} else {
+  echo $response;
 }`
           break
       }
