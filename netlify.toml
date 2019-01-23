@@ -1,11 +1,11 @@
 [Settings]
 
 [build]
+  publish = "empty"
+  command = "npm run generate"
 
 [context.deploy-preview]
   publish = "dist"
-  command = "npm run generate"
 
 [context.branch-deploy]
   publish = "dist"
-  command = "npm run generate"
