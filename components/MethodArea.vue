@@ -1,5 +1,5 @@
 <template>
-  <section class="method" :id="method.path">
+  <section class="method sb-indexed__section" :id="method.path">
     <MethodContent :method="method" :index="index"/>
     <MethodExample :method="method"/>
   </section>
