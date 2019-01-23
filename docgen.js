@@ -1,10 +1,18 @@
 const watch = require('node-watch')
 const frontmatter = require('front-matter')
-
 const path = require('path')
 const fs = require('fs-extra')
 const glob = require('glob')
 const config = require('./dg-config')
+const marked = require('marked')
+const prism = require('prismjs')
+const loadTechnologies = require('prismjs/components/')
+marked.setOptions({
+  highlight(code, lang) {
+    loadTechnologies([lang])
+    return prism.highlight(code, prism.languages[lang], lang)
+  }
+})
 
 const args = process.argv
     .slice(2)
@@ -14,54 +22,52 @@ const args = process.argv
         return args
     }, {})
 
-const marked = require('marked')
-const prism = require('prismjs')
-const loadTechnologies = require('prismjs/components/')
-const markedOptions = {
-  highlight(code, lang) {
-    loadTechnologies([lang])
-    return prism.highlight(code, prism.languages[lang], lang)
-  }
-}
-marked.setOptions(markedOptions)
-
 const Docgen = {
   sections: {},
 
   init: () => {
     Docgen.generateRoutes()
     Docgen.coldstart()
+    if (!!args.watch) {
+      watch(config.contentInputFolder, { filter: /\.md$/, recursive: true }, Docgen.handleFileEvent)
+    }
+  },
+    
+  /**
+   * Handles all node-watch file events (remove, update)
+   * @param {string} event - node-watch event type; eg. 'remove' || 'change'
+   * @param {string} contentFilePath - path to file that triggered that event
+   */
+  handleFileEvent: (event, contentFilePath) => {
+    switch (event) {
+      case 'remove':
+        // contentFilePath = /my_absolute_file/content/content-delivery/en/topics/introduction.md  
+        // contentPath = content-delivery/en/topics/introduction
+        const contentPath = contentFilePath.replace(config.contentInputFolder, '').replace(path.parse(contentFilePath).ext, '')  
+        // [ content-delivery, en, topics, introduction ]
+        const contentPathParts = contentPath.replace(/\\/g, '/').split('/')
+        // content-delivery
+        const origin = contentPathParts.shift()
+        // en
+        const lang = contentPathParts.shift()
+        // topics/introduction
+        const relativePath = contentPathParts.join('/')
 
-    if (!!args.watch) { 
-      watch(config.contentInputFolder, { filter: /\.md$/, recursive: true }, (event, contentFilePath) => {
+        delete Docgen.sections[origin][lang][relativePath]
 
-        switch (event) {
-          case 'remove':
-            // contentFilePath = /my_absolute_file/content/content-delivery/en/topics/introduction.md  
-            // contentPath = content-delivery/en/topics/introduction
-            const contentPath = contentFilePath.replace(config.contentInputFolder, '').replace(path.parse(contentFilePath).ext, '')  
-            // [ content-delivery, en, topics, introduction ]
-            const contentPathParts = contentPath.replace(/\\/g, '/').split('/')
-            // content-delivery
-            const origin = contentPathParts.shift()
-            // en
-            const lang = contentPathParts.shift()
-            // topics/introduction
-            const relativePath = contentPathParts.join('/')
-
-            delete Docgen.sections[origin][lang][relativePath]
-
-            Docgen.generate(origin, lang)
-          break
-          default:
-            const section = Docgen.load(contentFilePath)
-            Docgen.generate(section.origin, section.lang)
-            break
-        }
-      })
+        Docgen.generate(origin, lang)
+      break
+      default:
+        const section = Docgen.load(contentFilePath)
+        Docgen.generate(section.origin, section.lang)
+        break
     }
   },
 
+  /**
+   * Iterates through all markdown files, loads their content
+   * and generates section and menu JSONs after preparation
+   */
   coldstart: () => {
     glob(`${config.contentInputFolder}**/*.md`, (err, files) => {
       if (err) throw err
@@ -74,6 +80,10 @@ const Docgen = {
     })
   }, 
   
+  /**
+   * Iterate through all origins and languages to trigger 
+   * the generate for each content file.
+   */
   generateAll: () => {
     // content-delivery, ...
     Docgen.listFoldersInFolder(config.contentInputFolder).forEach((origin) => {
@@ -85,6 +95,11 @@ const Docgen = {
     })
   },
 
+  /**
+   * Generates ordered sections and menu JSON for one origin and language combination
+   * @param {string} origin - first level of content folder, eg.: content-delivery, managmenet
+   * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
+   */
   generate: (origin, lang) => {
     // order sections for one language and origin
     const orderedSections = Docgen.orderSections(Docgen.sections[origin][lang])
@@ -95,6 +110,11 @@ const Docgen = {
     Docgen.exportMenu(menu, origin, lang)
   },
 
+  /**
+   * Generates menu from an array of ordered sections
+   * @param {Array} orderedSections - Array containing ordered section objects of one origin and language
+   * @returns {Array} menu - Array of nested section objects grouped by categories
+   */
   generateMenu: (orderedSections) => {
     let latestStartpage = null
     let categories = {}
@@ -143,14 +163,22 @@ const Docgen = {
     return menu
   },
 
+  /**
+   * Exports the generated menu as JSON depending on origin and language
+   * @param {Array} menu - Array of nested enhaunced section objects
+   * @param {string} origin - first level of content folder, eg.: content-delivery, managmenet
+   * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
+   */
   exportMenu: (menu, origin, lang) => {
     return fs.writeFile(config.menuOutputFile.replace('{origin}', origin).replace('{lang}', lang), JSON.stringify(menu))
   },
 
-  exportSections: (orderedSections, origin, lang) => {
-    return fs.writeFileSync(config.sectionsOutputFile.replace('{origin}', origin).replace('{lang}', lang), JSON.stringify(orderedSections))
-  },
-
+  /**
+   * Transforms each key/value into an array of objects ordered according to 
+   * the position attribute given in frontmatter for each section
+   * @param {Object} sections - Sections Object, where each key is a relative path
+   * @returns {Array} orderedSections - Array of section objects ordered according to attributes.position
+   */
   orderSections: (sections) => {
     return Object.values(sections).sort((a, b) => {
       if (a.attributes.position < b.attributes.position) return -1
@@ -159,6 +187,21 @@ const Docgen = {
     })
   },
 
+  /**
+   * Exports the ordered sections as JSON depending on origin and language
+   * @param {Array} orderedSections - Array of ordered section objects
+   * @param {string} origin - first level of content folder, eg.: content-delivery, managmenet
+   * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
+   */
+  exportSections: (orderedSections, origin, lang) => {
+    return fs.writeFileSync(config.sectionsOutputFile.replace('{origin}', origin).replace('{lang}', lang), JSON.stringify(orderedSections))
+  },
+
+  /**
+   * Loads one file into Docgen.sections
+   * @param {string} contentFilePath - Absolute path to Content Source File, will be a *.md file containing frontmatter.
+   * @returns {Object} section - Object containing parsed markdown and additional information
+   */
   load: (contentFilePath) => {
     const content = fs.readFileSync(contentFilePath, { encoding: 'utf8' })
 
@@ -213,6 +256,9 @@ const Docgen = {
     return section
   },
 
+  /**
+   * Generate and export a routes.json which will be used by Nuxt during "nuxt generate"
+   */
   generateRoutes: () => {
     const routes = []
     Docgen.listFoldersInFolder(config.contentInputFolder).forEach((origin) => {
@@ -230,14 +276,27 @@ const Docgen = {
     })
   },
 
-  prepareTemplate(string) {
-    string = string.replace(new RegExp('<p><RequestExample', 'g'), '<RequestExample')
-    string = string.replace(new RegExp('</RequestExample></p>', 'g'), '</RequestExample>')
-    string = string.replace(new RegExp('<table>', 'g'), '<div class="table"><table>')
-    string = string.replace(new RegExp('</table>', 'g'), '</table></div>')
-    return string
+  /**
+   * Replaces all wrapper <p> for our RequestExample component with an empty string array 
+   * as it otherwise would be an invalid HTML because RequestExample will be rendered to a Block Type
+   * Element which is not allowed to be nested inside a paragraph.
+   * Adds a wrapper div to each <table> so we can later add overflow-y container.
+   * @param {string} html - HTML content from Markdown file
+   * @returns {string} html
+   */
+  prepareTemplate(html) {
+    html = html.replace(new RegExp('<p><RequestExample', 'g'), '<RequestExample')
+    html = html.replace(new RegExp('</RequestExample></p>', 'g'), '</RequestExample>')
+    html = html.replace(new RegExp('<table>', 'g'), '<div class="table"><table>')
+    html = html.replace(new RegExp('</table>', 'g'), '</table></div>')
+    return html
   },
 
+  /**
+   * Returns all first level subfolder names as string Array
+   * @param {string} folder - Path to folder you want all first level subfolders.
+   * @returns {Array<string>} folders - Array of folder names as string
+   */
   listFoldersInFolder: (folder) => {
     return fs.readdirSync(folder).filter((file) => {
       return fs.statSync(path.join(folder, file)).isDirectory()
