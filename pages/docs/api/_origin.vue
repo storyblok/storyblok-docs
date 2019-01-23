@@ -28,7 +28,13 @@ export default {
       htmlAttrs: {
         lang: this.lang
       },
-      title: `${this.ordered[0].title} - Storyblok` 
+      title: `${this.ordered[0].title} - Storyblok`,
+      link: [
+        {
+          rel: 'canonical',
+          href: `https://www.storyblok.com${this.$route.path}`
+        }
+      ]
     }
   },
   components: {
