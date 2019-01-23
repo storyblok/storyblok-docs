@@ -1,7 +1,7 @@
 [Settings]
 
 [build]
-  publish = "empty"
+  publish = "deploy"
   command = "npm run generate"
 
 [context.deploy-preview]
