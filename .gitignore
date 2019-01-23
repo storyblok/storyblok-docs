@@ -83,6 +83,9 @@ dist
 # nuxt pwa
 sw.*
 
+# Netlify
+.netlify
+
 # content
 /static/*.ordered.*
 /static/*.menu.*
