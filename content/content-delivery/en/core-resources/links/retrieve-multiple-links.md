@@ -1,6 +1,6 @@
 ---
 category: Core Resources
-title: Retrieve All Links
+title: Retrieve Multiple Links
 position: 430
 ---
 
