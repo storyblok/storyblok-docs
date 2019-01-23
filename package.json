@@ -5,7 +5,7 @@
   "author": "Dominik Angerer <da@storyblok.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt & node docgen.js watch=true",
+    "dev": "node docgen.js watch=true & nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "node docgen.js && nuxt generate",

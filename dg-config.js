@@ -1,10 +1,8 @@
 module.exports = {
-  baseDir: `${__dirname}/`,
-  docgenDir: `${__dirname}/.docgen/`,
-  orderedContentFile: `${__dirname}/static/{origin}.ordered.{lang}.json`,
-  menuContentFile: `${__dirname}/static/{origin}.menu.{lang}.json`,
-  routesFile: `${__dirname}/routes.json`,
-  originContentDir: `${__dirname}/content/`,
+  defaultLanguage: `en`,
   splitString: ';examplearea',
-  ignoreFiles: [ '.DS_Store' ], 
+  availableRoutesFile: `${__dirname}/routes.json`,
+  contentInputFolder: `${__dirname}/content/`,
+  sectionsOutputFile: `${__dirname}/static/{origin}.ordered.{lang}.json`,
+  menuOutputFile: `${__dirname}/static/{origin}.menu.{lang}.json`
 }

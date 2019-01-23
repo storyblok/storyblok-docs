@@ -84,13 +84,7 @@ dist
 sw.*
 
 # content
-/.docgen
-/assets/*.ordered.*
-/assets/*.menu.*
-/assets/*.content.*
 /static/*.ordered.*
 /static/*.menu.*
-/static/*.content.*
-/demo
 routes.json
 rs-config.js
