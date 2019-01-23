@@ -1,3 +1,11 @@
-[context.deploy-preview.environment]
-command = "npm run generate"
-publish = "dist"
+[Settings]
+
+[build]
+
+[context.deploy-preview]
+  publish = "dist"
+  command = "npm run generate"
+
+[context.branch-deploy]
+  publish = "dist"
+  command = "npm run generate"
