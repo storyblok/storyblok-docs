@@ -44,5 +44,3 @@ Example Response
   }
 }
 ```
-
-https://api.storyblok.com/v1/cdn/stories/c0d2ed0-e323-43ca-ae59-5cd7d38683cb?token=ask9soUkv02QqbZgmZdeDAtt&language=de&find_by=uuid
