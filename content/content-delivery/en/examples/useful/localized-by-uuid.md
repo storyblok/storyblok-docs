@@ -10,7 +10,7 @@ Appending the query parameter `language` in combination with `find_by=uuid` allo
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/c0d2ed0-e323-43ca-ae59-5cd7d38683cb?token=ask9soUkv02QqbZgmZdeDAtt&language=de&find_by=uuid"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v1/cdn/stories/ac0d2ed0-e323-43ca-ae59-5cd7d38683cb?token=ask9soUkv02QqbZgmZdeDAtt&find_by=uuid&language=de"></RequestExample>
 
 Example Response
 
