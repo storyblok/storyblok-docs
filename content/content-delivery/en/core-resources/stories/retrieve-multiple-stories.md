@@ -22,10 +22,10 @@ If no entries are found with your filters applied, you will receive an empty arr
 | `search_term` | Search content items by full text. |
 | `filter_query` | Filter by specific attribute(s) of your content type. The filter query parameter needs to contain the query operation key. Separate the values by a comma , to filter by multiple values. <br><br> `filter_query[ATTRIBUTE][OPERATION]=VALUE,...` <br><br> Following filter operations `OPERATION` are available: <br> `in` - Exact match of one of the provided values<br> `not_in` - Does not contain the given value  <br> `all_in_array` - Contains all of the values of an array value <br> `in_array` - Contains any of the values of an array value <br> `gt-date` - Greater than date (Format: 2018-03-03 10:00) <br> `lt-date` - Less than date <br> `gt-num` - Greater than numeric value <br> `lt-num` - Less than numeric value. <br><br> Checkout the [filter_query Examples](#filter-queries/overview) we put together for you with most common use-cases. | 
 | `is_startpage` | Filter by folder startpage. Use `is_startpage=1` to only return startpages and `is_startpage=0` to exclude startpages from the result. |
+| `language` | Add the language i18n code as query parameter to receive a localized version if filtering by UUIDs |
 | `page` | Numeric. default: `1`. Read more at [Pagination](#topics/pagination) |
 | `per_page` | Numeric. default:`25`, max: `100`. Read more at [Pagination](#topics/pagination) |  
 | `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
-
 
 ;examplearea
 
