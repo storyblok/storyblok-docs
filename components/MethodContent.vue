@@ -29,7 +29,7 @@ export default {
   },
   computed: {
     editSectionURL() {
-      return `https://github.com/storyblok/storyblok/blob/master/content${this.method.contentPath}.md` 
+      return `https://github.com/storyblok/storyblok-docs/blob/master/content/${this.method.contentPath}.md` 
     }
   },
   components: {
