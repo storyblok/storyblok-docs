@@ -24,6 +24,32 @@ $ npm run dev
 $ npm run generate
 ```
 
+## The Folder Structure
+
+```
+- content
+  - origin (content delivery or management)
+    - languages (en, de, ...)
+      - categories
+        - method/section.md
+```
+
+## How should the method/section.md look like:
+
+```
+---
+category: Category Name
+title: The Sidebar Title & Headline
+position: 10100
+---
+
+This is the method written content; the left area of a section.
+
+;examplearea
+
+This is the method example; the right area of a section.
+```
+
 ## Licence
 
 ```
