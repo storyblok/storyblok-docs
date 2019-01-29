@@ -7,6 +7,7 @@
     <CsharpRequest v-show="technology == 'csharp'" v-bind=propsData></CsharpRequest>
     <SwiftRequest v-show="technology == 'swift'" v-bind=propsData></SwiftRequest>
     <RubyRequest v-show="technology == 'ruby'" v-bind=propsData></RubyRequest>
+    <PythonRequest v-show="technology == 'python'" v-bind=propsData></PythonRequest>
   </div>
 </template>
 
@@ -15,7 +16,8 @@ export default {
   props: {
     url: String,
     httpMethod: String,
-    requestObject: Object
+    requestObject: Object,
+    keepToken: Boolean
   },
   components: {
     BashRequest: () => import('@/components/requests/BashRequest'),
@@ -25,13 +27,15 @@ export default {
     CsharpRequest: () => import('@/components/requests/CsharpRequest'),
     SwiftRequest: () => import('@/components/requests/SwiftRequest'),
     RubyRequest: () => import('@/components/requests/RubyRequest'),
+    PythonRequest: () => import('@/components/requests/PythonRequest'),
   },
   computed: {
     propsData() {
       return {
         url: this.url,
         httpMethod: this.httpMethod,
-        requestObject: this.requestObject
+        requestObject: this.requestObject,
+        keepToken: !!this.keepToken
       }
     },
     technology() {

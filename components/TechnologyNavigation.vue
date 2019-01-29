@@ -37,6 +37,10 @@ export default {
         {
           key: 'ruby',
           name: 'Ruby'
+        },
+        {
+          key: 'python',
+          name: 'Python'
         }
       ]
     }

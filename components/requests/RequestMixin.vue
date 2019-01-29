@@ -10,7 +10,8 @@ export default {
   props: {
     url: String,
     requestObject: Object,
-    httpMethod: String
+    httpMethod: String,
+    keepToken: Boolean
   },
   methods: {
     output(technology) {
@@ -96,7 +97,9 @@ export default {
           delete params[prop]
         }
       }
-      delete params.token
+      if(!this.keepToken) {
+        delete params.token
+      }
       return params
     },
     urlWithoutParams() {
