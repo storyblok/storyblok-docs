@@ -52,6 +52,7 @@ const RenderingServiceHelper = {
           fs.readFile(input, { encoding: 'utf8' }, (err, data) => {
             data = RenderingServiceHelper.resolveAssets(data)
             data = RenderingServiceHelper.addVersionParam(data)
+            data = RenderingServiceHelper.addGoogleAnalytics(data)
 
             fs.writeFile(path.join(output.folder, output.filename), data, (err) => {
               if (err) throw err
@@ -95,6 +96,9 @@ const RenderingServiceHelper = {
   },
   addVersionParam: (data) => {
     return RenderingServiceHelper.replaceAll(data, `.js"`, `.js?v=${version}"`)  
+  },
+  addGoogleAnalytics: (data) => {
+    return data.replace('</body>', `{% include 'ga' %}</body>`)
   },
   resolveAssets: (data) => {
     return RenderingServiceHelper.replaceAll(data, '/_nuxt/', '//a.storyblok.com/t/' + config.spaceId + '/assets/_nuxt/')

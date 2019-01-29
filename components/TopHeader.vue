@@ -50,6 +50,7 @@ export default {
   @media screen and (min-width: 1050px) {
     width: 100%;
     max-width: $side-bar-width;
+    border-right: 1px solid #efefef;
   }
 }
 
