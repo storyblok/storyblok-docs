@@ -1,4 +1,4 @@
-<h1>Storyblok API Documentation<a href='https://app.netlify.com/sites/storyblok-docs/deploys'><img align="right" src='https://api.netlify.com/api/v1/badges/bd9ea974-391c-4937-bc20-d626afd9a6e1/deploy-status'/></h1>
+<h1>Storyblok API Documentation<a href='https://app.netlify.com/sites/storyblok-docs/deploys'><img align="right" src='https://api.netlify.com/api/v1/badges/bd9ea974-391c-4937-bc20-d626afd9a6e1/deploy-status'/></a></h1>
 
 > A Nuxt.js setup to generate an intuitive, readable and collaborative API documentation with copy and paste able examples
 
