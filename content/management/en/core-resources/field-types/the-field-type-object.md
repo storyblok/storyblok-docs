@@ -19,7 +19,7 @@ Example Object
 
 ```json
 {
-  "task": {
+  "field_type": {
     "id": 124,
     "name": "my-geo-selector",
     "body": "const Fieldtype = {}",
