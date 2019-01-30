@@ -12,6 +12,7 @@ This endpoint lets you push and pull the code of your field type via the managem
 
 Read more about [field type development](https://www.storyblok.com/docs/Guides/Creating-a-field-type-plugin).
 
+;examplearea
 
 Endpoint
 
