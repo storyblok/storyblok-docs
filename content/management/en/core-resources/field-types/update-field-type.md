@@ -16,6 +16,6 @@ position: 1850
 
 Example Request
 
-<RequestExample url="https://mapi.storyblok.com/v1/field_types/124" httpMethod="PUT" :requestObject='{"task":{"body":"const Fieldtype = {}","compiled_body":"var Fieldtype = {}"}}'></RequestExample>
+<RequestExample url="https://mapi.storyblok.com/v1/field_types/124" httpMethod="PUT" :requestObject='{"field_type":{"body":"const Fieldtype = {}","compiled_body":"var Fieldtype = {}"}}'></RequestExample>
 
 You will receive a [field type object](#core-resources/field-types/the-field-type-object) as response.
