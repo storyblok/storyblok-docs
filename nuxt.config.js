@@ -126,7 +126,7 @@ module.exports = {
         enrichedRoutes.push({
           route: route,
           payload: {
-            ordered: require(`${__dirname}/static/${origin}.ordered.${lang}.json`),
+            ordered: require(`${__dirname}/static/${origin}.methods.${lang}.json`),
             menu: require(`${__dirname}/static/${origin}.menu.${lang}.json`)
           }
         })

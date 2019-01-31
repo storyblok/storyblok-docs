@@ -1,6 +1,6 @@
 <template>
   <div class="methods">
-    <MethodArea :key=method.path v-for="(method, index) in methods" :method=method :index=index></MethodArea>
+    <MethodArea :key=item.contentPath v-for="(item, index) in $store.state.flattened" :method=methodByContentPath(item.contentPath) :index=index></MethodArea>
   </div>
 </template>
 
@@ -10,9 +10,6 @@ import throttle from 'lodash.throttle';
 
 export default {
   name: 'methods',
-  props: {
-    methods: Array
-  },
   data() {
     return {
       scheduledAnimationFrame: false,
@@ -30,6 +27,9 @@ export default {
     }
   },
   methods: {
+    methodByContentPath(contentPath) {
+      return this.$store.state.sections[contentPath.replace(this.$store.getters.originLanguagePath, '')]
+    },
     onScroll() {
       this.lastScrollY = window.scrollY;
       if (this.scheduledAnimationFrame){

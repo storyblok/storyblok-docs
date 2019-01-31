@@ -3,6 +3,7 @@ module.exports = {
   splitString: ';examplearea',
   availableRoutesFile: `${__dirname}/routes.json`,
   contentInputFolder: `${__dirname}/content/`,
-  sectionsOutputFile: `${__dirname}/static/{origin}.ordered.{lang}.json`,
+  menuInputFile: `${__dirname}/content/{origin}.{lang}.json`,
+  sectionsOutputFile: `${__dirname}/static/{origin}.methods.{lang}.json`,
   menuOutputFile: `${__dirname}/static/{origin}.menu.{lang}.json`
 }

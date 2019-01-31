@@ -66,7 +66,7 @@ const Docgen = {
 
   /**
    * Iterates through all markdown files, loads their content
-   * and generates section and menu JSONs after preparation
+   * and generates section JSONs after preparation
    */
   coldstart: () => {
     glob(`${config.contentInputFolder}**/*.md`, (err, files) => {
@@ -96,31 +96,29 @@ const Docgen = {
   },
 
   /**
-   * Generates ordered sections and menu JSON for one origin and language combination
+   * Generates sections and menu JSON for one origin and language combination
    * @param {string} origin - first level of content folder, eg.: content-delivery, managmenet
    * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
    */
   generate: (origin, lang) => {
     // order sections for one language and origin
-    const orderedSections = Docgen.orderSections(Docgen.sections[origin][lang])
-    Docgen.exportSections(orderedSections, origin, lang)
+    Docgen.exportSections(Docgen.sections[origin][lang], origin, lang)
 
-    // generate menu with nested categories
-    const menu = Docgen.generateMenu(orderedSections)
-    Docgen.exportMenu(menu, origin, lang)
+    // copies menu to static
+    Docgen.exportMenu(origin, lang)
   },
 
   /**
-   * Generates menu from an array of ordered sections
-   * @param {Array} orderedSections - Array containing ordered section objects of one origin and language
+   * Generates menu from an array of sections
+   * @param {Array} sections - Array containing section objects of one origin and language
    * @returns {Array} menu - Array of nested section objects grouped by categories
    */
-  generateMenu: (orderedSections) => {
+  generateMenu: (sections) => {
     let latestStartpage = null
     let categories = {}
 
-    for (let index = 0, max = orderedSections.length; index < max; index++) {
-      const section = JSON.parse(JSON.stringify(orderedSections[index]))
+    for (let index = 0, max = sections.length; index < max; index++) {
+      const section = JSON.parse(JSON.stringify(sections[index]))
 
       let isChild = false
 
@@ -165,36 +163,22 @@ const Docgen = {
 
   /**
    * Exports the generated menu as JSON depending on origin and language
-   * @param {Array} menu - Array of nested enhaunced section objects
    * @param {string} origin - first level of content folder, eg.: content-delivery, managmenet
    * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
    */
-  exportMenu: (menu, origin, lang) => {
-    return fs.writeFile(config.menuOutputFile.replace('{origin}', origin).replace('{lang}', lang), JSON.stringify(menu))
+  exportMenu: (origin, lang) => {
+    fs.copy(config.menuInputFile.replace('{origin}', origin).replace('{lang}', lang) , config.menuOutputFile.replace('{origin}', origin).replace('{lang}', lang))
   },
 
-  /**
-   * Transforms each key/value into an array of objects ordered according to 
-   * the position attribute given in frontmatter for each section
-   * @param {Object} sections - Sections Object, where each key is a relative path
-   * @returns {Array} orderedSections - Array of section objects ordered according to attributes.position
-   */
-  orderSections: (sections) => {
-    return Object.values(sections).sort((a, b) => {
-      if (a.attributes.position < b.attributes.position) return -1
-      if (a.attributes.position > b.attributes.position) return 1
-      return 0
-    })
-  },
 
   /**
-   * Exports the ordered sections as JSON depending on origin and language
-   * @param {Array} orderedSections - Array of ordered section objects
+   * Exports the sections as JSON depending on origin and language
+   * @param {Array} sections - Array of section objects
    * @param {string} origin - first level of content folder, eg.: content-delivery, managmenet
    * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
    */
-  exportSections: (orderedSections, origin, lang) => {
-    return fs.writeFileSync(config.sectionsOutputFile.replace('{origin}', origin).replace('{lang}', lang), JSON.stringify(orderedSections))
+  exportSections: (sections, origin, lang) => {
+    return fs.writeFileSync(config.sectionsOutputFile.replace('{origin}', origin).replace('{lang}', lang), JSON.stringify(sections))
   },
 
   /**
