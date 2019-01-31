@@ -30,6 +30,7 @@ const Docgen = {
     Docgen.coldstart()
     if (!!args.watch) {
       watch(config.contentInputFolder, { filter: /\.md$/, recursive: true }, Docgen.handleFileEvent)
+      watch(config.contentInputFolder, { filter: /\.json$/, recursive: false }, Docgen.handleMenuEvent)
     }
   },
     
@@ -65,6 +66,32 @@ const Docgen = {
   },
 
   /**
+   * Handles all node-watch file events (remove, update)
+   * @param {string} event - node-watch event type; eg. 'remove' || 'change'
+   * @param {string} contentFilePath - path to file that triggered that event
+   */
+  handleMenuEvent: (event, contentFilePath) => {
+    switch (event) {
+      case 'remove':
+        // ignore
+        return
+      break
+      default:
+        // [ content-delivery, en, json ]
+        const contentPathParts = contentFilePath.replace(config.contentInputFolder, '').split('.')
+
+        // content-delivery
+        const origin = contentPathParts.shift()
+        
+        // en
+        const lang = contentPathParts.shift()
+        
+        Docgen.exportMenu(origin, lang)
+        break
+    }
+  },
+
+  /**
    * Iterates through all markdown files, loads their content
    * and generates section JSONs after preparation
    */
@@ -89,14 +116,14 @@ const Docgen = {
     Docgen.listFoldersInFolder(config.contentInputFolder).forEach((origin) => {
       // en, ...
       Docgen.listFoldersInFolder(config.contentInputFolder + origin).forEach((lang) => {
-        // generate sections and menu json from one language and origin
+        // generate sections json from one language and origin
         Docgen.generate(origin, lang)
       })
     })
   },
 
   /**
-   * Generates sections and menu JSON for one origin and language combination
+   * Generates sections JSON for one origin and language combination
    * @param {string} origin - first level of content folder, eg.: content-delivery, managmenet
    * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
    */
@@ -114,7 +141,7 @@ const Docgen = {
    * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
    */
   exportMenu: (origin, lang) => {
-    fs.copy(config.menuInputFile.replace('{origin}', origin).replace('{lang}', lang) , config.menuOutputFile.replace('{origin}', origin).replace('{lang}', lang))
+    fs.copySync(config.menuInputFile.replace('{origin}', origin).replace('{lang}', lang), config.menuOutputFile.replace('{origin}', origin).replace('{lang}', lang))
   },
 
 
