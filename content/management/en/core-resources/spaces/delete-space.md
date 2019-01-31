@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Delete a Space
-position: 860
 ---
 
 Delete a space by its numeric id.

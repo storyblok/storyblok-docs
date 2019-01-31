@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve Current Space
-position: 220
 ---
 
 Returns the current space object, if you're authenticated with a `token`.

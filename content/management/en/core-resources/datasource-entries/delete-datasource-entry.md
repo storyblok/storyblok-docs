@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Delete a Datasource Entry
-position: 760
 ---
 
 Delete a datasource entry by using its numeric id.

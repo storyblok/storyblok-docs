@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Links Object
-position: 410
 ---
 
 | Property            | Description          |

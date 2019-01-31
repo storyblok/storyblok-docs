@@ -1,8 +1,5 @@
 ---
-category: Core Resources
 title: Spaces
-startpage: true
-position: 200
 ---
 
 This endpoint is mostly useful for client side apps. The response contains `space.version` which developers can use to call the story API and get the most recent published version.

@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Delete a Task
-position: 1060
 ---
 
 Delete a task by using its numeric id.

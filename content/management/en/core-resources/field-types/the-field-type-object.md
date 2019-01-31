@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Field Type Object
-position: 1810
 ---
 
 | Property | Description |

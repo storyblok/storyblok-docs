@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Activity Object
-position: 1410
 ---
 
 | Property | Description |

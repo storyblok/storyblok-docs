@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Datasource Entry
-position: 720
 ---
 
 Returns a single datasource entry object with a specific numeric id.

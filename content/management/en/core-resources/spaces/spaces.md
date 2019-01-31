@@ -1,8 +1,5 @@
 ---
-category: Core Resources
 title: Spaces
-startpage: true
-position: 800
 ---
 
 A space is a content repository. Think of it as a place to keep all the content related to one project. Each space has its own components, datasources, assets, environments, domains, collaborators, and permissions.

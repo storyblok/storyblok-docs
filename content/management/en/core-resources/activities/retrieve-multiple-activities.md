@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Activities
-position: 1430
 ---
 
 Returns an array of activity objects. Can be filtered on date ranges and is [paged](#topics/pagination).

@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Component Field
-position: 220
 ---
 
 Not every property will be used for every field type; some may only effect specific types.

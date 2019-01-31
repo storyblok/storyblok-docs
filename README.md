@@ -28,8 +28,9 @@ $ npm run generate
 
 ```
 - content
-  - origin (content delivery or management)
-    - languages (en, de, ...)
+  - {origin}.{lang}.json
+  - {origin} (content delivery or management)
+    - {lang} (en, de, ...)
       - categories
         - method/section.md
 ```
@@ -38,9 +39,8 @@ $ npm run generate
 
 ```
 ---
-category: Category Name
 title: The Sidebar Title & Headline
-position: 10100
+sidebarTitle: optional: This overrides the title
 ---
 
 This is the method written content; the left area of a section.

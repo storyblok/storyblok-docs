@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve Multiple Links
-position: 430
 ---
 
 Returns the links object containing all links of one space. Use the `version` parameter and the correct token types to receive either `draft` and `published` or only `published` links.  

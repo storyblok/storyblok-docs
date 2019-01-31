@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Field Type
-position: 1820
 ---
 
 Returns a single field type object with a specific numeric id.

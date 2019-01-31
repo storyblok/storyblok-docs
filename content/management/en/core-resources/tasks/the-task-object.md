@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Task Object
-position: 1010
 ---
 
 | Property | Description |

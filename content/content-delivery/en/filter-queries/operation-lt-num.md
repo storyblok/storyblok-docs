@@ -1,8 +1,6 @@
 ---
-category: Filter Queries
 title: "Operation: `lt-num`"
 sidebarTitle: "lt-num"
-position: 1070
 ---
 
 Allows you to filter fields of type `number`, or custom field type with numbers in the schema. Returns all entries that are **LOWER** than the provided value.

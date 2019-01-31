@@ -1,8 +1,5 @@
 ---
-category: Core Resources
 title: Datasource Entries
-startpage: true
-position: 700
 ---
 
 The actual KEY/VALUE pair object a datasource consists of. One specific datasource entry is a set of two linked data items: a key, which is a unique identifier for the item of data scoped in the data source, and the value, which is the data that is identified.

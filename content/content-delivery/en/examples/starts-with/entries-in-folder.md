@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Entries in folder xx
-position: 10110
 ---
 
 You can use the `starts_with` parameter to load entries that are in a specific folder. This is useful if you create your articles in an `articles/` folder, `products/` in a products folder.

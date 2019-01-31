@@ -1,8 +1,5 @@
 ---
-category: Topics
 title: Pagination
-startpage: true
-position: 50
 ---
 
 All top-level API resources have support for bulk fetches via "list" API methods. For instance, you can list `stories` and `datasource_entries`. These list API methods share a common structure, taking these two parameters: `page`, `per_page`.

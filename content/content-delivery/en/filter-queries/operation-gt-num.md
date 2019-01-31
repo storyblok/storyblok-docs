@@ -1,8 +1,6 @@
 ---
-category: Filter Queries
 title: "Operation: `gt-num`"
 sidebarTitle: gt-num
-position: 1060
 ---
 
 Allows you to filter fields of type `number`, `string` (number value), or custom field type with numbers in the schema. Returns all entries that are **GREATER** than the provided value.

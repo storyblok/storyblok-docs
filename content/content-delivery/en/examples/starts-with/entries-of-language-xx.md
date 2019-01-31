@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Entries of language xx
-position: 10120
 ---
 
 The field type translation will map the available language keys with the folder paths. So for example if you have a folder Products with multiple products and those products do have translateable fields you are able to load those translated version with prepending the language key infront of the slug.

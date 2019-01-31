@@ -1,0 +1,119 @@
+[{
+  "category": "Topics",
+  "items": [{
+    "contentPath": "content-delivery/en/topics/introduction"
+  }, {
+    "contentPath": "content-delivery/en/topics/authentication"
+  }, {
+    "contentPath": "content-delivery/en/topics/errors"
+  }, {
+    "contentPath": "content-delivery/en/topics/cache-invalidation"
+  }, {
+    "contentPath": "content-delivery/en/topics/pagination"
+  }]
+}, {
+  "category": "Core Resources",
+  "items": [{
+    "contentPath": "content-delivery/en/core-resources/stories/stories",
+    "children": [{
+      "contentPath": "content-delivery/en/core-resources/stories/the-story-object"
+    }, {
+      "contentPath": "content-delivery/en/core-resources/stories/retrieve-one-story"
+    }, {
+      "contentPath": "content-delivery/en/core-resources/stories/retrieve-multiple-stories"
+    }]
+  }, {
+    "contentPath": "content-delivery/en/core-resources/spaces/spaces",
+    "children": [{
+      "contentPath": "content-delivery/en/core-resources/spaces/the-space-object"
+    }, {
+      "contentPath": "content-delivery/en/core-resources/spaces/retrieve-current-space"
+    }]
+  }, {
+    "contentPath": "content-delivery/en/core-resources/datasource-entries/datasource-entries",
+    "children": [{
+      "contentPath": "content-delivery/en/core-resources/datasource-entries/the-datasource-entry-object"
+    }, {
+      "contentPath": "content-delivery/en/core-resources/datasource-entries/retrieve-multiple-datasource-entries"
+    }]
+  }, {
+    "contentPath": "content-delivery/en/core-resources/links/links",
+    "children": [{
+      "contentPath": "content-delivery/en/core-resources/links/the-links-object"
+    }, {
+      "contentPath": "content-delivery/en/core-resources/links/the-link-object"
+    }, {
+      "contentPath": "content-delivery/en/core-resources/links/retrieve-multiple-links"
+    }]
+  }, {
+    "contentPath": "content-delivery/en/core-resources/tags/tags",
+    "children": [{
+      "contentPath": "content-delivery/en/core-resources/tags/the-tag-object"
+    }, {
+      "contentPath": "content-delivery/en/core-resources/tags/retrieve-all-tags"
+    }]
+  }]
+}, {
+  "category": "Filter Queries",
+  "items": [{
+    "contentPath": "content-delivery/en/filter-queries/overview",
+    "children": [{
+      "contentPath": "content-delivery/en/filter-queries/operation-in"
+    }, {
+      "contentPath": "content-delivery/en/filter-queries/operation-not-in"
+    }, {
+      "contentPath": "content-delivery/en/filter-queries/operation-in-array"
+    }, {
+      "contentPath": "content-delivery/en/filter-queries/operation-all-in-array"
+    }, {
+      "contentPath": "content-delivery/en/filter-queries/operation-gt-date"
+    }, {
+      "contentPath": "content-delivery/en/filter-queries/operation-lt-date"
+    }, {
+      "contentPath": "content-delivery/en/filter-queries/operation-gt-num"
+    }, {
+      "contentPath": "content-delivery/en/filter-queries/operation-lt-num"
+    }]
+  }]
+}, {
+  "category": "Examples",
+  "items": [{
+    "contentPath": "content-delivery/en/examples/starts-with/starts-with",
+    "children": [{
+      "contentPath": "content-delivery/en/examples/starts-with/entries-in-folder"
+    }, {
+      "contentPath": "content-delivery/en/examples/starts-with/draft-entries-in-folder"
+    }, {
+      "contentPath": "content-delivery/en/examples/starts-with/entries-of-language-xx"
+    }]
+  }, {
+    "contentPath": "content-delivery/en/examples/filtering/filters",
+    "children": [{
+      "contentPath": "content-delivery/en/examples/filtering/filter-entries-by-boolean-value"
+    }, {
+      "contentPath": "content-delivery/en/examples/filtering/entries-between-two-numbers"
+    }]
+  }, {
+    "contentPath": "content-delivery/en/examples/ordering/order",
+    "children": [{
+      "contentPath": "content-delivery/en/examples/ordering/sort-by-admin-interface"
+    }, {
+      "contentPath": "content-delivery/en/examples/ordering/sort-by-content-attribute"
+    }, {
+      "contentPath": "content-delivery/en/examples/ordering/sort-by-story-property"
+    }]
+  }, {
+    "contentPath": "content-delivery/en/examples/useful/useful",
+    "children": [{
+      "contentPath": "content-delivery/en/examples/useful/load-latest-cache-version-timestamp"
+    }, {
+      "contentPath": "content-delivery/en/examples/useful/load-draft-version"
+    }, {
+      "contentPath": "content-delivery/en/examples/useful/resolve-relationships"
+    }, {
+      "contentPath": "content-delivery/en/examples/useful/load-without-startpage"
+    }, {
+      "contentPath": "content-delivery/en/examples/useful/localized-by-uuid"
+    }]
+  }]
+}]

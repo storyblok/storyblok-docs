@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Asset Folder Object
-position: 410
 ---
 
 | Property | Description |

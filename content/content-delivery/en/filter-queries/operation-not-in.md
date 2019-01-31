@@ -1,8 +1,6 @@
 ---
-category: Filter Queries
 title: "Operation: `not_in`"
 sidebarTitle: "not_in"
-position: 1011
 ---
 
 Filter your entries by checking if your custom attribute (any field inside the `content` field) does not have a value that is equal to one of the values provided.

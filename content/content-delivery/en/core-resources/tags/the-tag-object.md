@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Tag Object
-position: 510
 ---
 
 | Property         | Description          |

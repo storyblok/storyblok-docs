@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Update a Space Role
-position: 950
 ---
 
 | Property | Description |

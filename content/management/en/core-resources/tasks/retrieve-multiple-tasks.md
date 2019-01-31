@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Tasks
-position: 1030
 ---
 
 Returns an array of task objects. This endpoint is [paged](#topics/pagination).

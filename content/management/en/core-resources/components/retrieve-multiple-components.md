@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Components
-position: 250
 ---
 
 Returns an array of component objects. This endpoint is [paged](#topics/pagination).

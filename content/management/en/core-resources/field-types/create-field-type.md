@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Create a Field Type
-position: 1840
 ---
 
 | Property | Description |

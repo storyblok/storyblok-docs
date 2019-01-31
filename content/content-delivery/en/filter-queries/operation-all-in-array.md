@@ -1,8 +1,6 @@
 ---
-category: Filter Queries
 title: "Operation: `all_in_array`"
 sidebarTitle: all_in_array
-position: 1030
 ---
 
 Filter your entries by checking if your custom array attribute (any field inside the `content` field) contains **all** of the values provided. As soon as **all** of the provided values separated with `,` are in the array field, the story object will be in the response. 

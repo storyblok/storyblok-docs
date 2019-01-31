@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Activity
-position: 1420
 ---
 
 Returns a single activity object with a specific numeric id.

@@ -1,8 +1,6 @@
 ---
-category: Filter Queries
 title: "Operation: `lt-date`"
 sidebarTitle: "lt-date"
-position: 1050
 ---
 
 Think of it at **BEFORE** a specific date. Allows you to filter fields of type `date/datetime` (Format: `YYYY-mm-dd HH:MM`). Returns all entries that are **lower** than (eg. before) the provided date.

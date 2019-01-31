@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve Multiple Datasource Entries
-position: 320
 ---
 
 Returns an array of datasource entry objects for the `datasource` and `dimension` defined, if authenticated using a preview or public token.

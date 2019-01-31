@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Presets
-position: 1730
 ---
 
 Returns an array of preset objects.

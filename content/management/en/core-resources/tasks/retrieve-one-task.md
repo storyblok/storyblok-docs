@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Task
-position: 1020
 ---
 
 Returns a single task object with a specific numeric id.

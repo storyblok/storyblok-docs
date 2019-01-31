@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Space Role Object
-position: 910
 ---
 
 | Property | Description |

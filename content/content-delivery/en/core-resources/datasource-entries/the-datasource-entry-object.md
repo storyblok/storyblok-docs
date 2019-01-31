@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Datasource Entry Object
-position: 310
 ---
 
 You can use the `dimension=your_defined_dimension` (eg. `dimension=en`) to receive the dimensions value besides the default value in one datasource entry. 

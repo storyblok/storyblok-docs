@@ -1,9 +1,9 @@
 <template>
   <div>
-    <TopHeader :menu="menu"/>
-    <SidebarNavigation :menu="menu"/>
+    <TopHeader/>
+    <SidebarNavigation/>
     <main class="main">
-      <Methods :methods="ordered"/>
+      <Methods/>
     </main>
   </div>
 </template>
@@ -16,19 +16,12 @@ import TopHeader from '@/components/TopHeader'
 
 export default {
   name: 'page',
-  data() {
-    return {
-      lang: 'en',
-      menu: [],
-      ordered: []
-    }
-  },
   head() {
     return {
       htmlAttrs: {
-        lang: this.lang
+        lang: this.$store.state.lang
       },
-      title: `${this.ordered[0].title} - Storyblok`,
+      // title: `${this.$store.state.sections[this.$store.state.menu[0].items[0]]} - Storyblok`,
       link: [
         {
           rel: 'canonical',
@@ -42,30 +35,29 @@ export default {
     SidebarNavigation,
     TopHeader,
   },
-  async asyncData ({ store, params, payload }) {
+  async fetch ({ store, params, payload }) {
     const origin = params.origin
     const lang = params.lang || 'en'
 
     let menu = null
-    let ordered = null
+    let sections = null
 
     if (!!payload) {
       menu = payload.menu
-      ordered = payload.ordered
+      sections = payload.sections
     } else {
       const base = process.client ? window.location.origin : 'http://localhost:3000'
-      const [menuRes, orderedRes] = await Promise.all([
+      const [menuRes, sectionsRes] = await Promise.all([
         axios.get(base + `/${origin}.menu.${lang}.json`), 
-        axios.get(base + `/${origin}.ordered.${lang}.json`)])
+        axios.get(base + `/${origin}.methods.${lang}.json`)])
       menu = menuRes.data
-      ordered = orderedRes.data
+      sections = sectionsRes.data
     }
 
-    return {
-      menu,
-      ordered,
-      lang
-    }
+    store.commit('SET_LANG', lang)
+    store.commit('SET_ORIGIN', origin)
+    store.commit('SET_SECTIONS', sections)
+    store.commit('SET_MENU', menu)
   }
  }
 </script>

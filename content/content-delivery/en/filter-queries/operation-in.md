@@ -1,8 +1,6 @@
 ---
-category: Filter Queries
 title: "Operation: `in`"
 sidebarTitle: "in"
-position: 1010
 ---
 
 Filter your entries by checking if your custom attribute (any field inside the `content` field) has a value that is equal to one of the values provided.

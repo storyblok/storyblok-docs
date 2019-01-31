@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Sort by admin interface
-position: 10410
 ---
 
 Some of you might like to define the order of your entries in Storyblok, utilizing the move functionality. To receive the order just like in Storyblok you can make use of the `position` property. 

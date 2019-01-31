@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Asset Folders
-position: 430
 ---
 
 Returns an array of asset folder objects.

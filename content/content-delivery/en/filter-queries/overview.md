@@ -1,10 +1,7 @@
 ---
-category: Filter Queries
 title: Filter Queries
 sidebarTitle: Operations
 showChildren: true
-startpage: true
-position: 1000
 ---
 
 With the filter_query you're able to filter by specific attribute(s) of your stories. The filter_query parameter accepts an `attribute` and an `operation` key.  

@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Create a Preset
-position: 1740
 ---
 
 | Property | Description |

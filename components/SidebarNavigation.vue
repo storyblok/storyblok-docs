@@ -1,16 +1,20 @@
 <template>
   <nav class="side-navigation">
     <ul class="side-navigation__categories">
-      <li :key=category.category v-for="(category, index) in menu">
+      <li :key=category.category v-for="(category, index) in $store.state.menu">
         <div class="side-navigation__category" :class="{ 'side-navigation__category--first': index == 0 }">{{category.category}}</div>
         <ul class="side-navigation__items">
-          <li :key=method.path v-for="method in category.items">
-            <a :href="toId(method)" @click="navigate(method)" :class="{ 'active': isMenuItemActive(method), 'child-active': isChildActive(method) }">{{title(method)}}</a>
-            <ul class="side-navigation__children" v-if="method.children.length > 0">
-              <li :key=child.path v-for="child in method.children">
+          <li :key=item.contentPath v-for="item in category.items">
+            <a :href="toId(item)" 
+              @click="navigate(item)" 
+              :class="{ 'active': isMenuItemActive(item), 'child-active': isChildActive(item) }">
+              {{title(item)}}
+            </a>
+            <ul class="side-navigation__children" v-if="item.children && item.children.length > 0">
+              <li :key=child.contentPath v-for="child in item.children">
                 <a :href=toId(child) :class="{ 'active': isMenuItemActive(child) }">{{title(child)}}</a>
               </li>
-            </ul>
+            </ul> 
           </li>
         </ul>
       </li>
@@ -20,47 +24,40 @@
 
 <script>
 export default {
-  props: {
-    menu: Array
-  },
-  computed: {
-    activeMenuPath() {
-      return this.$store.state.activeMenuPath
-    }
-  },
   methods: {
-    isCategoryVisible(index, method) {
-      if (index == 0) {
-        return true
-      }
-      if (index > 0) {
-        return this.menu[index - 1].attributes.category != method.attributes.category
-      }
-      return false
+    methodByContentPath(contentPath) {
+      if(typeof contentPath === 'undefined') return {}
+      return this.$store.state.sections[contentPath.replace(this.$store.getters.originLanguagePath, '')]
     },
-    isChildActive(method) {
+    isChildActive(item) {
+      let method = this.methodByContentPath(item.contentPath)
       let active = false
       if(method.attributes.showChildren) {
         return method.attributes.showChildren
       }
-      method.children.forEach((element) => {
+      if(typeof item.children === 'undefined') {
+        return false
+      }
+      item.children.forEach((element) => {
         if(this.isMenuItemActive(element)) {
           active = true
         }
       })
       return active
     },
-    isMenuItemActive(method) {
-      return this.activeMenuPath == method.path
+    isMenuItemActive(item) {
+      // console.log(this.$store.state.activeMenuPath, this.methodByContentPath(item.contentPath).path)
+      return this.$store.state.activeMenuPath == this.methodByContentPath(item.contentPath).path
     },
-    toId(method){
-      return `#${method.path}`
+    toId(item){
+      return `#${this.methodByContentPath(item.contentPath).path}`
     },
-    title(method) {
+    title(item) {
+      let method = this.methodByContentPath(item.contentPath)
       return method.attributes.sidebarTitle || method.attributes.title 
     },
-    navigate(method) {
-      this.$store.commit('SET_ACTIVE_MENU_PATH', method.path)
+    navigate(item) {
+      this.$store.commit('SET_ACTIVE_MENU_PATH', this.methodByContentPath(item.contentPath).path)
     }
   }
 }

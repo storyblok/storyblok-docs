@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Datasource Entries
-position: 730
 ---
 
 Returns an array of datasource entry objects. This endpoint is [paged](#topics/pagination) and can be filtered by a datasource id or slug. The dimension parameter allows you to have the dimension value filled with the according data.

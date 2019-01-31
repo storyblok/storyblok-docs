@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Story
-position: 120
 ---
 
 Returns a single, fully loaded story object by providing a specific numeric id.

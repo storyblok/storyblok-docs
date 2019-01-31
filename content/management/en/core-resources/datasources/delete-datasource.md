@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Delete a Datasource
-position: 660
 ---
 
 Delete a datasource by using its numeric id.

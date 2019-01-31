@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Delete a Preset
-position: 1760
 ---
 
 Delete a preset by using its numeric id.

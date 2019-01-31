@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Create a Space Role
-position: 940
 ---
 
 | Property | Description |

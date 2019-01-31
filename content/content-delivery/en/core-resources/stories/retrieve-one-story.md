@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Story
-position: 120
 ---
 
 Returns a story object for the `full_slug`, `id` or `uuid` if authenticated using a preview or public token.

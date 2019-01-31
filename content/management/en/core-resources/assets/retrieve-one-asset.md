@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Asset
-position: 340
 ---
 
 Returns a single asset object by providing a specific numeric id.
