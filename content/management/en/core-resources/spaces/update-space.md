@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Update a Space
-position: 850
 ---
 
 You're only able to update the following properties of your space. 

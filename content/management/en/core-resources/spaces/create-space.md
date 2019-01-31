@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Create a Space
-position: 840
 ---
 
 | Property | Description |

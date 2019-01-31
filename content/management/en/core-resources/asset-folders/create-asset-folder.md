@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Create an Asset Folder
-position: 440
 ---
 
 | Property | Description |

@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Delete a Field Type
-position: 1860
 ---
 
 Delete a field type by using its numeric id.

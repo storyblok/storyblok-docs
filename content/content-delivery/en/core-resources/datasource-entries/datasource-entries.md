@@ -1,8 +1,5 @@
 ---
-category: Core Resources
 title: Datasource Entries
-startpage: true
-position: 300
 ---
 
 A data source is simply a collection of key-value pairs. One specific datasource-entry is a set of two linked attributes: a key, which is a unique identifier for the item and the value.

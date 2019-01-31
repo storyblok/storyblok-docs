@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Update a Datasource Entry
-position: 750
 ---
 
 | Property | Description |

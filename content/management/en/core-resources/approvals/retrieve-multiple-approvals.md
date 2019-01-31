@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Activities
-position: 1230
 ---
 
 Returns an array of approval objects. This endpoint can be filtered on approver and is [paged](#topics/pagination).

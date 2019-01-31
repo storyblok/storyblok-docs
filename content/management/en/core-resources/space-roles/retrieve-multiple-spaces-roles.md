@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Space Role
-position: 930
 ---
 
 Returns an array of space role objects.

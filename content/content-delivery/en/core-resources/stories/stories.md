@@ -1,8 +1,5 @@
 ---
-category: Core Resources
 title: Stories
-startpage: true
-position: 100
 ---
 
 Storyblok’s most used content delivery endpoint is trimmed for low latency and optimum availability.

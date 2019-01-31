@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Create Approval
-position: 1240
 ---
 
 | Property | Description |

@@ -109,59 +109,6 @@ const Docgen = {
   },
 
   /**
-   * Generates menu from an array of sections
-   * @param {Array} sections - Array containing section objects of one origin and language
-   * @returns {Array} menu - Array of nested section objects grouped by categories
-   */
-  generateMenu: (sections) => {
-    let latestStartpage = null
-    let categories = {}
-
-    for (let index = 0, max = sections.length; index < max; index++) {
-      const section = JSON.parse(JSON.stringify(sections[index]))
-
-      let isChild = false
-
-      // group by startpage
-      if (latestStartpage == null) {
-        latestStartpage = section
-        latestStartpage.children = []
-      } else if (typeof section.attributes !== 'undefined' && section.attributes.startpage) {
-        latestStartpage = section
-        latestStartpage.children = []
-      } else {
-        isChild = true
-        latestStartpage.children.push(section)
-      }
-      
-      // categories
-      if (!isChild) { 
-        if (typeof categories[section.attributes.category] !== 'undefined') { 
-          categories[section.attributes.category].push(section)   
-        } else {
-          categories[section.attributes.category] = []
-          categories[section.attributes.category].push(section)        
-        }
-      }
-
-      delete section.example
-      delete section.content
-      delete section.origin
-      delete section.lang
-    }
-
-    const menu = []
-    for (const key in categories) {
-      if (categories.hasOwnProperty(key)) {
-        const category = categories[key]
-        menu.push({ category: key, items: category })
-      }
-    }
-
-    return menu
-  },
-
-  /**
    * Exports the generated menu as JSON depending on origin and language
    * @param {string} origin - first level of content folder, eg.: content-delivery, managmenet
    * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...

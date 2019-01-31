@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Draft version of entries in folder xx
-position: 10111
 ---
 
 You can use the `version` param combined with the `starts_with` param to load entries that are in a specific folder.

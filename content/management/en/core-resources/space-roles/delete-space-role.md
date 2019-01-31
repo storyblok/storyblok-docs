@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Delete a Space Role
-position: 960
 ---
 
 Delete a space role using its numeric id. 

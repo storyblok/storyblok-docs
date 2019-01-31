@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Space
-position: 820
 ---
 
 Returns a single space object by providing a specific numeric id.

@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Datasource
-position: 620
 ---
 
 Returns a single datasource object with a specific numeric id.

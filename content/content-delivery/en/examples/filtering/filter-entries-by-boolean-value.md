@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Filter entries by boolean value
-position: 10220
 ---
 
 Imagine you want to allow your editors to have featured products with a boolean flag in your content schema. To filter all products to only receive the featured once you can utilize the [filter_query operation in](#filter-queries/operation-in) to check for an exact value.

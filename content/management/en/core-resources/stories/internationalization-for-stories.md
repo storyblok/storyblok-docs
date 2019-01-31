@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Internationalization for Stories
-position: 170
 ---
 
 If you use our field level translations functionality, you can provide the values for the translations/languages within the same content object by appending `__i18n__` followed by the language code. Make sure to have the component field option `translateable` to `true`.

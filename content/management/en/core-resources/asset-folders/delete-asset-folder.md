@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Delete an Asset Folder
-position: 460
 ---
 
 Delete an asset folder by using its numeric id.

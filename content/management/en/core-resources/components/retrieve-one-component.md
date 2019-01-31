@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Component
-position: 240
 ---
 
 Returns a single, fully loaded component object by providing a specific numeric id.

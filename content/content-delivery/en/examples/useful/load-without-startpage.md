@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Load without startpage
-position: 11040
 ---
 
 Appending the query paramter `is_startpage` with the value `false` (eg. `is_startpage=false`) to retrieve only entries of a folder and skipping the startpage you've defined in that folder.

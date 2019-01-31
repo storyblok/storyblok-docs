@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Create a Component
-position: 260
 ---
 
 You can set most of the fields that are available in the component object, below we only list the properties in the example and possible required fields. 

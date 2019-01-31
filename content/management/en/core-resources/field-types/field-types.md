@@ -1,8 +1,5 @@
 ---
-category: Core Resources
 title: Field types
-startpage: true
-position: 1800
 ---
 
 

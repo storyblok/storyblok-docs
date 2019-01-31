@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Load story localized by uuid
-position: 11050
 ---
 
 Appending the query parameter `language` in combination with `find_by=uuid` allows you to load localized versions of your entries without knowing its slug. If you know the slug of your content entry you can simply prepend the language code, eg. `/posts/my-first-post` would be `/de/posts/my-first-post`. As you only have a UUID by hand, and you do know the slug you can use the language parameter instead.

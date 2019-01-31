@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Load with resolved relationships
-position: 11030
 ---
 
 Resolve relationships to other Stories (in the first level of nesting) of a `multi-option` or `single-option` field-type. Provide the field key(s) as comma separated string to resolve specific fields. 

@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Signed Response Object
-position: 330
 ---
 
 After creating an asset entry using a POST request you will receive a response object with all information needed to finally upload your asset. The second request after the creation of the asset entry will need all information in `fields` appended to your `application/x-www-form-urlencoded` request besides the actual `file` input. See the demo on how to [upload an asset](#core-resources/assets/upload-asset).

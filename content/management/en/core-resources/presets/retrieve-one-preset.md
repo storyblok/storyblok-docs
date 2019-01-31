@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Preset
-position: 1720
 ---
 
 Returns a single preset object with a specific numeric id.

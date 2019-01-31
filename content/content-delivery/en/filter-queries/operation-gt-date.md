@@ -1,8 +1,6 @@
 ---
-category: Filter Queries
 title: "Operation: `gt-date`"
 sidebarTitle: gt-date
-position: 1040
 ---
 
 Think of it at **AFTER** a specific date. Allows you to filter fields of type `date/datetime` (Format: `YYYY-mm-dd HH:MM`). Returns all entries that are **greater** (eg. later) than the provided value.

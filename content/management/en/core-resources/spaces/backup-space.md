@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Backup a Space
-position: 880
 ---
 
 Trigger the backup task for your space. Make sure you've configured backups in [your space options](#example-space-options).

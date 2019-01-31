@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Sort by content attribute
-position: 10410
 ---
 
 To sort by a field that you have defined in your content schema of your content type, you're able to use the `sort_by` parameter as shown below.

@@ -1,8 +1,5 @@
 ---
-category: Topics
 title: Authentication
-startpage: true
-position: 20
 ---
 
 Authenticate your account by including your access token in API requests. You can manage your API tokens in the Dashboard of each space. In your Space Dashboard at app.storyblok.com you will be able to generate two types of tokens

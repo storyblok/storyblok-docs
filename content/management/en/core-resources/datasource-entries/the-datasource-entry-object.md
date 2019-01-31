@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Datasource Entry Object
-position: 710
 ---
 
 | Property | Description |

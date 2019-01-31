@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Update an Asset Folder
-position: 450
 ---
 
 | Property | Description |

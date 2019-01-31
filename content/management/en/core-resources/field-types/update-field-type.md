@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Update a Field Type
-position: 1850
 ---
 
 | Property | Description |

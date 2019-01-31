@@ -1,8 +1,5 @@
 ---
-category: Core Resources
 title: Presets
-startpage: true
-position: 1700
 ---
 
 As a developer, you can now define multiple default values for your components. For example, a teaser component can have three styles: 

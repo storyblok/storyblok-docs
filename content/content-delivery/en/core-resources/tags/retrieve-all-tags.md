@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve All Tags
-position: 520
 ---
 
 Returns an array of tag objects of one space. Use the `version` parameter and the correct token types to receive either `draft` and `published` or only `published` links.  

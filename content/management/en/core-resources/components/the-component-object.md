@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Component Object
-position: 210
 ---
 
 | Property | Description |

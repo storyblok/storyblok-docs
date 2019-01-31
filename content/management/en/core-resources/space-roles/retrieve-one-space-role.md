@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Space Role
-position: 920
 ---
 
 Returns a single, space role object by providing a specific numeric id.

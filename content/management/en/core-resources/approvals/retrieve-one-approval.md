@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Approval
-position: 1220
 ---
 
 Returns a single approval object with a specific numeric id.

@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Assets
-position: 350
 ---
 
 Returns an array of asset objects. This endpoint is [paged](#topics/pagination).

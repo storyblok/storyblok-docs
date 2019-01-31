@@ -1,7 +1,5 @@
 ---
-category: Examples
 title: Sort by story object property
-position: 10410
 ---
 
 You can sort your content entries by custom and predefined property using the `sort_by` parameter and `field:asc` or `field:desc` as value.

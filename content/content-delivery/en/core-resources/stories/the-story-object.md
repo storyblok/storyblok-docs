@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Story Object
-position: 110
 ---
 
 This is an object representing your content entry. One Story object can be of a specific type, so called content types and is able to contain components. You define the fields and nestability of your content types to achieve your content structure. To learn how to build a basic blog you can checkout our [content building tutorial](https://www.storyblok.com/tp/how-to-create-a-blog-content-structure).

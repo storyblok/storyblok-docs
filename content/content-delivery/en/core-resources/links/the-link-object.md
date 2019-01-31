@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Link Object
-position: 420
 ---
 
 You can access a draft or published version of your links by providing the `version` parameter and the correct token type (eg. preview for draft, public for published).

@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Create a Datasource Entry
-position: 640
 ---
 
 | Property | Description |

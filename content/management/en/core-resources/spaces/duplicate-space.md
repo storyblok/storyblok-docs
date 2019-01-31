@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Duplicate a Space
-position: 870
 ---
 
 Duplicate a space and all it's content entries and components; Assets will not be duplicated and still will reference the original space.

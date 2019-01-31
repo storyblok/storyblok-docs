@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Create a Task
-position: 1040
 ---
 
 | Property | Description |

@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve one Asset Folder
-position: 420
 ---
 
 Returns a single, asset folder object by providing a specific numeric id.

@@ -1,8 +1,5 @@
 ---
-category: Topics
 title: Cache Invalidation
-startpage: true
-position: 40
 ---
 
 Storyblok uses a CDN in front of the API to deliver your content in the fastest way possible. If you're using the Storyblok Content Delivery API directly in your client application it is recommended to use a backend version number or the `versions` parameter provided by the `/v1/cdn/spaces/me?token=access_token` call.

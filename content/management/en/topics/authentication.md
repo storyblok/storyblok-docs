@@ -1,8 +1,5 @@
 ---
-category: Topics
 title: Authentication
-startpage: true
-position: 30
 ---
 
 Authenticate your account by including your personal access token in API requests. The easiest way to get started is to create an OAuth2 token using the Storyblok app. Go to the [My Account section](https://app.storyblok.com/#!/me/account) at app.storyblok.com and click on “Generate new token”.

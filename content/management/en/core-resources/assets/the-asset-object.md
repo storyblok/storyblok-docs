@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Asset Object
-position: 310
 ---
 
 | Property | Description |

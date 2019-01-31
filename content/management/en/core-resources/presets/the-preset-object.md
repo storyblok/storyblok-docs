@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: The Preset Object
-position: 1710
 ---
 
 | Property | Description |

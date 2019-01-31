@@ -1,7 +1,5 @@
 ---
-category: Core Resources
 title: Retrieve multiple Spaces
-position: 830
 ---
 
 Returns an array of space objects.
