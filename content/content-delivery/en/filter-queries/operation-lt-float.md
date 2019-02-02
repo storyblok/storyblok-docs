@@ -1,27 +1,27 @@
 ---
-title: "Operation: `lt-num`"
-sidebarTitle: "lt-num"
+title: "Operation: `lt-float`"
+sidebarTitle: "lt-float"
 ---
 
 Allows you to filter fields of type `number`, or custom field type with numbers in the schema. Returns all entries that are **LOWER** than the provided value.
 
 You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
  
-## Use-cases: lt-num
+## Use-cases: lt-float
 
-As soon as you need to query for a specific integer or float value in your content entries, this is your go to filter for lower than checks. You can build price filter for your products if your price value is in the CMS and not your PIM or any other number oriented kind of filter. 
+As soon as you need to query for a specific float value in your content entries, this is your go to filter for lower than checks. You can build price filter for your products if your price value is in the CMS and not your PIM or any other number oriented kind of filter. 
 
 | Filter Query | Description |
 |--|--|
-| `filter_query[price][lt-num]=100` | all entries with price field **lower** than 100 |
-| `filter_query[price][lt-num]=99` | all entries with price field **lower** than 99 |
-| `filter_query[price][lt-num]=1999` | all entries with price field **lower** than 1999 (no thousand separator) |
+| `filter_query[price][lt-float]=100.50` | all entries with price field **lower** than 100.50 |
+| `filter_query[price][lt-float]=99.50` | all entries with price field **lower** than 99.50 |
+| `filter_query[price][lt-float]=1999.50` | all entries with price field **lower** than 1999.50 (no thousand separator) |
 
 ;examplearea
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][lt-num]=100"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][lt-float]=100.50"></RequestExample>
 
 Example Response
 
