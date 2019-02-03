@@ -4,88 +4,54 @@
 
 <script>
 import RequestMixin from "@/components/requests/RequestMixin"
+import sdk from "@/sdks/ruby/methods"
 
 export default {
   mixins: [RequestMixin],
   computed: {
     request() {
+      if (sdk[(this.httpMethod || 'GET') + ':' + this.url]) {
+        return `require 'storyblok'
+client = Storyblok::Client.new(token: 'YOUR_TOKEN')
+
+${sdk[(this.httpMethod || 'GET') + ':' + this.url]}`;
+      }
+      console.log((this.httpMethod || 'GET') + ':' + this.url)
+
       switch (this.httpMethod) {
         case "POST":
-          return `require 'uri'
-require 'net/http'
+          return `require 'storyblok'
+client = Storyblok::Client.new(oauth_token: 'YOUR_OAUTH_TOKEN')
 
-url = URI("${this.url}")
+payload = ${JSON.stringify(this.requestObject, null, 2).replace(new RegExp(':', 'g'), ' => ')}
 
-http = Net::HTTP.new(url.host, url.port)
-
-request = Net::HTTP::Post.new(url)
-request["Content-Type"] = "application/json"
-request["Authorization"] = 'YOUR_OAUTH_TOKEN'
-request.body = ${JSON.stringify(JSON.stringify(this.requestObject))}
-
-response = http.request(request)
-puts response.read_body`;
+client.post('${this.path}', payload)`;
           break
         case "PUT":
-          return `require 'uri'
-require 'net/http'
+          return `require 'storyblok'
+client = Storyblok::Client.new(oauth_token: 'YOUR_OAUTH_TOKEN')
 
-url = URI("${this.url}")
+payload = ${JSON.stringify(this.requestObject, null, 2).replace(new RegExp(':', 'g'), ' => ')}
 
-http = Net::HTTP.new(url.host, url.port)
-
-request = Net::HTTP::Put.new(url)
-request["Content-Type"] = "application/json"
-request["Authorization"] = 'YOUR_OAUTH_TOKEN'
-request.body = ${JSON.stringify(JSON.stringify(this.requestObject))}
-
-response = http.request(request)
-puts response.read_body`;
+client.put('${this.path}', payload)`;
           break
         case "DELETE":
-          return `require 'uri'
-require 'net/http'
+          return `require 'storyblok'
+client = Storyblok::Client.new(oauth_token: 'YOUR_OAUTH_TOKEN')
 
-url = URI("${this.url}")
-
-http = Net::HTTP.new(url.host, url.port)
-
-request = Net::HTTP::Delete.new(url)
-request["Content-Type"] = "application/json"
-request["Authorization"] = 'YOUR_OAUTH_TOKEN'
-
-response = http.request(request)
-puts response.read_body`;
+client.delete('${this.path}')`;
           break
         case "GETOAUTH":
-          return `require 'uri'
-require 'net/http'
+          return `require 'storyblok'
+client = Storyblok::Client.new(oauth_token: 'YOUR_OAUTH_TOKEN')
 
-url = URI("${this.url}")
-
-http = Net::HTTP.new(url.host, url.port)
-
-request = Net::HTTP::Get.new(url)
-request["Content-Type"] = "application/json"
-request["Authorization"] = 'YOUR_OAUTH_TOKEN'
-
-response = http.request(request)
-puts response.read_body`;
+client.get('${this.path}')`;
           break
         default:
-          return `require 'uri'
-require 'net/http'
+          return `require 'storyblok'
+client = Storyblok::Client.new(oauth_token: 'YOUR_OAUTH_TOKEN')
 
-url = URI("${this.url}")
-
-http = Net::HTTP.new(url.host, url.port)
-http.use_ssl = true
-http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-request = Net::HTTP::Get.new(url)
-
-response = http.request(request)
-puts response.read_body`;
+client.get('${this.path}')`;
           break
       }
     }
