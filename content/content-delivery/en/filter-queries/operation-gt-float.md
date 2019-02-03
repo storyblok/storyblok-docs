@@ -1,29 +1,29 @@
 ---
-title: "Operation: `gt-num`"
-sidebarTitle: gt-num
+title: "Operation: `gt-float`"
+sidebarTitle: gt-float
 ---
 
-Allows you to filter fields of type `number`, `string` (number value), or custom field type with numbers in the schema. Returns all entries that are **GREATER** than the provided value.
+Allows you to filter fields of type `float`, `string` (float value), or custom field type with numbers in the schema. Returns all entries that are **GREATER** than the provided value.
 
 You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
  
-## Use-cases: gt-num
+## Use-cases: gt-float
 
-As soon as you need to query for a specific integer or float value in your content entries, this is your go to filter for greater than checks. You can build price filter for your products if your price value is in the CMS and not your PIM or any other number oriented kind of filter. 
+As soon as you need to query for a specific float value in your content entries, this is your go to filter for greater than checks. You can build price filter for your products if your price value is in the CMS and not your PIM or any other number oriented kind of filter. 
 
 | Filter Query | Description |
 |--|--|
-| `filter_query[price][gt-num]=100` | all entries with price field **greater** than 100 |
-| `filter_query[price][gt-num]=99` | all entries with price field **greater** than 99 |
-| `filter_query[price][gt-num]=99` | all entries with price field **greater** than 99 |
-| `filter_query[price][gt-num]=1999` | all entries with price field **greater** than 1999 (no thousand separator) |
-| `filter_query[price][gt-num]=1999` | all entries with price field **greater** than 1999 (no thousand separator) |
+| `filter_query[price][gt-float]=100.50` | all entries with price field **greater** than 100.50 |
+| `filter_query[price][gt-float]=99.50` | all entries with price field **greater** than 99.50 |
+| `filter_query[price][gt-float]=99.50` | all entries with price field **greater** than 99.50 |
+| `filter_query[price][gt-float]=1999.50` | all entries with price field **greater** than 1999.50 (no thousand separator) |
+| `filter_query[price][gt-float]=1999.50` | all entries with price field **greater** than 1999.50 (no thousand separator) |
 
 ;examplearea
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt-num]=100"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt-float]=100.50"></RequestExample>
 
 Example Response
 
@@ -42,7 +42,7 @@ Example Response
         "image": "//a.storyblok.com/f/44203/6016x4016/995fde1190/spaceship.jpg",
         // filtered on this price attribute;
         // value of field price needs to be greater than 100
-        "price": "1700000000",
+        "price": "17000000.50",
         "component": "product",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In erat mauris, faucibus quis pharetra sit amet, pretium ac libero. Etiam vehicula eleifend bibendum."
       },
@@ -60,7 +60,7 @@ Example Response
         "image": "//a.storyblok.com/f/44203/5616x3744/8cff02e5d6/coat.jpg",
         // filtered on this price attribute;
         // value of field price needs to be greater than 100
-        "price": "270",
+        "price": "27.50",
         "component": "product",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In erat mauris, faucibus quis pharetra sit amet, pretium ac libero. Etiam vehicula eleifend bibendum."
       },
