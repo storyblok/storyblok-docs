@@ -2,13 +2,13 @@
 title: Entries between two numbers
 ---
 
-A common filter needed for a shop content structure implementation would be a simple price range products filter. In the examples above you already saw how to write one [filter_query](#filter-queries/overview) to receive all products that are greater or lower a specific price tag; In this example we will combine the [gt-date](#filter-queries/operation-gt-date) and [lt-date](#filter-queries/operation-lt-date) filters to get all products between a price range.
+A common filter needed for a shop content structure implementation would be a simple price range products filter. In the examples above you already saw how to write one [filter_query](#filter-queries/overview) to receive all products that are greater or lower a specific price tag; In this example we will combine the [gt-float](#filter-queries/operation-gt-float) and [lt-float](#filter-queries/operation-lt-float) filters to get all products between a price range.
 
 ;examplearea
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt-num]=100&filter_query[price][lt-num]=300"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt-float]=100.50&filter_query[price][lt-float]=300.50"></RequestExample>
 
 Example Response
 
@@ -26,7 +26,7 @@ Example Response
         "name": "Coat",
         "image": "//a.storyblok.com/f/44203/5616x3744/8cff02e5d6/coat.jpg",
         // filtered on GREATER than 100 and LOWER than 300
-        "price": "270",
+        "price": "270.50",
         "component": "product",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In erat mauris, faucibus quis pharetra sit amet, pretium ac libero. Etiam vehicula eleifend bibendum."
       },

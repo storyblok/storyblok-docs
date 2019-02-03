@@ -70,9 +70,13 @@
     }, {
       "contentPath": "content-delivery/en/filter-queries/operation-lt-date"
     }, {
-      "contentPath": "content-delivery/en/filter-queries/operation-gt-num"
+      "contentPath": "content-delivery/en/filter-queries/operation-gt-int"
     }, {
-      "contentPath": "content-delivery/en/filter-queries/operation-lt-num"
+      "contentPath": "content-delivery/en/filter-queries/operation-lt-int"
+    }, {
+      "contentPath": "content-delivery/en/filter-queries/operation-gt-float"
+    }, {
+      "contentPath": "content-delivery/en/filter-queries/operation-lt-float"
     }]
   }]
 }, {
