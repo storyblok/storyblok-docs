@@ -19,6 +19,10 @@ export default {
           name: 'JavaScript'
         },
         {
+          key: 'ruby',
+          name: 'Ruby'
+        },
+        {
           key: 'php',
           name: 'PHP'
         },
@@ -33,10 +37,6 @@ export default {
         {
           key: 'swift',
           name: 'Swift'
-        },
-        {
-          key: 'ruby',
-          name: 'Ruby'
         },
         {
           key: 'python',
@@ -65,7 +65,7 @@ export default {
   list-style: none;
   padding: 0px 0px 0px 10px;
   margin: 0px;
-  
+
   li {
     display: inline-block;
   }

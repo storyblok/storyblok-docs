@@ -16,7 +16,6 @@ client = Storyblok::Client.new(token: 'YOUR_TOKEN')
 
 ${sdk[(this.httpMethod || 'GET') + ':' + this.url]}`;
       }
-      console.log((this.httpMethod || 'GET') + ':' + this.url)
 
       switch (this.httpMethod) {
         case "POST":
