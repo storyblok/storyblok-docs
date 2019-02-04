@@ -30,7 +30,8 @@
     "nodemon": "^1.18.9",
     "nuxt-sass-resources-loader": "^2.0.5",
     "prismjs-components-loader": "^3.0.1",
-    "sass-loader": "^7.1.0"
+    "sass-loader": "^7.1.0",
+    "storyblok-js-client": "^1.0.21"
   },
   "browserslist": [
     "last 2 version",
