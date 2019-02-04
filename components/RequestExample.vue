@@ -2,11 +2,11 @@
   <div class="request-example">
     <BashRequest v-show="technology == 'bash'" v-bind=propsData></BashRequest>
     <JavaScriptRequest v-show="technology == 'javascript'" v-bind=propsData></JavaScriptRequest>
+    <RubyRequest v-show="technology == 'ruby'" v-bind=propsData></RubyRequest>
     <PhpRequest v-show="technology == 'php'" v-bind=propsData></PhpRequest>
     <JavaRequest v-show="technology == 'java'" v-bind=propsData></JavaRequest>
     <CsharpRequest v-show="technology == 'csharp'" v-bind=propsData></CsharpRequest>
     <SwiftRequest v-show="technology == 'swift'" v-bind=propsData></SwiftRequest>
-    <RubyRequest v-show="technology == 'ruby'" v-bind=propsData></RubyRequest>
     <PythonRequest v-show="technology == 'python'" v-bind=propsData></PythonRequest>
   </div>
 </template>
