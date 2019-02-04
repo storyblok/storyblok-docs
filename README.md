@@ -50,6 +50,7 @@ This is the method written content; the left area of a section.
 This is the method example; the right area of a section.
 ```
 
+
 ## Licence
 
 ```
