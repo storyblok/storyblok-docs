@@ -91,3 +91,4 @@ sw.*
 /static/*.menu.*
 routes.json
 .DS_Store
+/deploy/views

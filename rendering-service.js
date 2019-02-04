@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs-extra')
 const glob = require('glob')
 const config = require('./rs-config')
+const StoryblokClient = require('storyblok-js-client')
 
 const version = Date.now()
 
@@ -19,7 +20,7 @@ const RenderingServiceHelper = {
           let requestRoute = path.dirname(file).replace(config.contentInputFolder, '')
           let output = RenderingServiceHelper.generateLiquidOutputPaths(file)
           let pathToLiquid = output.folder.replace(config.contentOutputFolder, '') + '/' + RenderingServiceHelper.replaceAll(output.originalFilename, '-', '_')
-        
+
           routes.push(`
   {% when '/${requestRoute}' %}
     {% include 'gnd/${pathToLiquid}' %}`)
@@ -30,11 +31,11 @@ const RenderingServiceHelper = {
 {% case request.path %}${routes.join('')}
   {% else %}
     {% flow show_404 %}
-{% endcase %} 
+{% endcase %}
 {%endspaceless%}`
 
         fs.ensureDirSync(path.dirname(config.routerFile))
-        
+
         fs.writeFile(config.routerFile, routerTemplate, (err) => {
           if (err) throw err
         })
@@ -42,6 +43,11 @@ const RenderingServiceHelper = {
     )
   },
   generateLiquids: () => {
+    let Storyblok = new StoryblokClient({
+      token: process.env.THEME_TOKEN
+    })
+    let themeEnv = process.env.THEME_ENV == 'live' ? 'live' : 'dev'
+
     glob(`${__dirname}/dist/**/*.html`, { ignore: '**/dist/*.html' },
       (err, files) => {
         files.forEach((input) => {
@@ -54,24 +60,31 @@ const RenderingServiceHelper = {
             data = RenderingServiceHelper.addVersionParam(data)
             data = RenderingServiceHelper.addGoogleAnalytics(data)
 
-            fs.writeFile(path.join(output.folder, output.filename), data, (err) => {
-              if (err) throw err
+            Storyblok.put('spaces/' + config.spaceId + '/templates/create_or_update?token=' + process.env.THEME_TOKEN, {
+              template: {
+                path: 'components/gnd/docs/api/' + output.filename,
+                tmpl_type: 'text',
+                body: data,
+                env: themeEnv
+              }
+            }).catch((e) => {
+              console.log(e.response.data)
             })
           })
         })
       }
     )
   },
-  generateAssets: () => { 
+  generateAssets: () => {
     glob(`${__dirname}/dist/_nuxt/*.js`, (err, files) => {
       files.forEach((file) => {
         let outputFolder = path.dirname(file).replace(config.assetInputFolder, config.assetOutputFolder)
         let outputFilename = path.basename(file)
-        
+
         fs.ensureDirSync(outputFolder)
 
         fs.readFile(file, { encoding: 'utf8' }, (err, data) => {
-          
+
           data = RenderingServiceHelper.resolveAssets(data)
           data = RenderingServiceHelper.addVersionParam(data)
 
@@ -95,13 +108,13 @@ const RenderingServiceHelper = {
     }
   },
   addVersionParam: (data) => {
-    return RenderingServiceHelper.replaceAll(data, `.js"`, `.js?v=${version}"`)  
+    return RenderingServiceHelper.replaceAll(data, `.js"`, `.js?v=${version}"`)
   },
   addGoogleAnalytics: (data) => {
     return data.replace('</body>', `{% include 'ga' %}</body>`)
   },
   resolveAssets: (data) => {
-    return RenderingServiceHelper.replaceAll(data, '/_nuxt/', '//a.storyblok.com/t/' + config.spaceId + '/assets/_nuxt/')
+    return RenderingServiceHelper.replaceAll(data, '/_nuxt/', 'https://storyblok-docs.netlify.com/_nuxt/')
   },
   replaceAll(target, search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);
