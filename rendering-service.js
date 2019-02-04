@@ -44,8 +44,9 @@ const RenderingServiceHelper = {
   },
   generateLiquids: () => {
     let Storyblok = new StoryblokClient({
-      oauthToken: process.env.OAUTH_TOKEN
+      token: process.env.THEME_TOKEN
     })
+    let themeEnv = process.env.THEME_ENV == 'live' ? 'live' : 'dev'
 
     glob(`${__dirname}/dist/**/*.html`, { ignore: '**/dist/*.html' },
       (err, files) => {
@@ -59,15 +60,16 @@ const RenderingServiceHelper = {
             data = RenderingServiceHelper.addVersionParam(data)
             data = RenderingServiceHelper.addGoogleAnalytics(data)
 
-            let outputFilename = path.basename(file)
-            console.log('outputFilename')
-            console.log(outputFilename)
-
-            /*Storyblok.put('spaces/' + config.spaceId + '/templates/create_or_update', {
-              path: outputFilename,
-              tmpl_type: 'text',
-              body: data
-            })*/
+            Storyblok.put('spaces/' + config.spaceId + '/templates/create_or_update?token=' + process.env.THEME_TOKEN, {
+              template: {
+                path: 'components/gnd/docs/api/' + output.filename,
+                tmpl_type: 'text',
+                body: data,
+                env: themeEnv
+              }
+            }).catch((e) => {
+              console.log(e.response.data)
+            })
           })
         })
       }
