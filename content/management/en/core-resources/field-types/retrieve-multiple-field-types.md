@@ -1,5 +1,5 @@
 ---
-title: Retrieve multiple Field Type
+title: Retrieve multiple Field Types
 ---
 
 Returns an array of field type objects. This endpoint is [paged](#topics/pagination).

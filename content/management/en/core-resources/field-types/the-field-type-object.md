@@ -6,8 +6,7 @@ title: The Field Type Object
 |---|---|
 | `id` | Numeric ID of your field type |
 | `name` | Given name of your field type. Needs to be unique. A personal prefix is recommended (Example: my-geo-selector) |
-| `body` | The uncompiled javascript code of the field type |
-| `compiled_body` | The compiled javascript code of the field type |
+| `body` | The javascript code of the field type |
 | `space_ids` | Array of space ids where the field type is assigned to |
 
 
