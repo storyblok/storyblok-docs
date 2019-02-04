@@ -90,5 +90,4 @@ sw.*
 /static/*.ordered.*
 /static/*.menu.*
 routes.json
-rs-config.js
 .DS_Store
