@@ -19,8 +19,7 @@ Example Object
   "field_type": {
     "id": 124,
     "name": "my-geo-selector",
-    "body": "const Fieldtype = {}",
-    "compiled_body": "var Fieldtype = {}",
+    "body": "var Fieldtype = {}",
     "space_ids": []
   }
 }
