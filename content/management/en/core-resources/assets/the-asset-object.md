@@ -12,7 +12,9 @@ title: The Asset Object
 | `deleted_at` | Deleted date (Format: `YYYY-mm-dd HH:MM`) |
 | `file` | File Object |
 | `asset_folder_id` | Id of the folder containing this asset |
-| `short_filename` | Prepared field which contains the file name for sorting |
+| `short_filename` | The file name of the asset |
+| `content_type` | The MIME content type |
+| `content_length` | The content length in bytes |
 
 ;examplearea
 
@@ -30,6 +32,8 @@ Example Object
   },
   "asset_folder_id": null,
   "deleted_at": null,
-  "short_filename": null
+  "short_filename": "your_filename.jpg",
+  "content_type": "image/jpeg",
+  "content_length": 12303
 }
 ```
