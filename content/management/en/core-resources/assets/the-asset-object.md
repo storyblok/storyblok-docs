@@ -13,7 +13,7 @@ title: The Asset Object
 | `file` | File Object |
 | `asset_folder_id` | Id of the folder containing this asset |
 | `short_filename` | The file name of the asset |
-| `content_type` | The MIME content type |
+| `content_type` | The MIME type of the asset |
 | `content_length` | The content length in bytes |
 
 ;examplearea
