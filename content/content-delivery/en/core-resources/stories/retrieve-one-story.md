@@ -16,7 +16,7 @@ Returns a story object for the `full_slug`, `id` or `uuid` if authenticated usin
 | `find_by` | Added if you want to query by `uuid` instead of using the numeric `id` | 
 | `version` | Default: `published`. Possible values: `draft`, `published` |
 | `resolve_links` | If `resolve_links=1` it will automatically resolve internal links of the multilink field type. The limit of resolved links per Story is `50`. |
-| `resolve_relations` | Resolve relationships to other Stories (in the first level of nesting) of a multi-option or single-option field-type. Provide the field key(s) as comma separated string to resolve specific fields. Example: `resolve_relations=author,categories` |
+| `resolve_relations` | Resolve relationships to other Stories of a multi-option or single-option field-type. Provide the component name and the field key as comma separated string. The limit of resolved relationships is `5` where each relationship can have up to `50` Stories. Example: `resolve_relations=page.author,page.categories` |
 | `cv` | Read more about cache version at [Cache invalidation](#cache-invalidation) |
 
 ;examplearea
