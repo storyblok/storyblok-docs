@@ -17,6 +17,7 @@ Returns a story object for the `full_slug`, `id` or `uuid` if authenticated usin
 | `version` | Default: `published`. Possible values: `draft`, `published` |
 | `resolve_links` | If `resolve_links=1` it will automatically resolve internal links of the multilink field type. The limit of resolved links per Story is `50`. |
 | `resolve_relations` | Resolve relationships to other Stories of a multi-option or single-option field-type. Provide the component name and the field key as comma separated string. The limit of resolved relationships is `5` where each relationship can have up to `50` Stories. Example: `resolve_relations=page.author,page.categories` |
+| `from_release` | Access version of specific release by release id |
 | `cv` | Read more about cache version at [Cache invalidation](#cache-invalidation) |
 
 ;examplearea
