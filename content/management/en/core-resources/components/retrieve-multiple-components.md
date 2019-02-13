@@ -2,7 +2,7 @@
 title: Retrieve multiple Components
 ---
 
-Returns an array of component objects. This endpoint is [paged](#topics/pagination).
+Returns an array of component objects. The response of this endpoint is not paginated and you will retrieve all components.
 
 ;examplearea
 
