@@ -11,12 +11,12 @@ Duplicate a space and all it's content entries and components; Assets will not b
 | `space[story_published_hook]` | Published Webhook URL |
 | `space[searchblok_id]` | Searchblok id, if available |
 | `space[environments]` | Array of `name` and `location` (url) objects |
-| `space[dup_id]` | The numeric id of the original space |
+| `dup_id` | The numeric id of the original space |
 
 ;examplearea
 
 Example Request
 
-<RequestExample url="https://mapi.storyblok.com/v1/spaces/" httpMethod="POST" :requestObject='{"space":{"name":"Example Space", "dup_id":12422}}'></RequestExample>
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/" httpMethod="POST" :requestObject='{"dup_id":12422, "space":{"name":"Example Space"}}'></RequestExample>
 
 You will receive a [space object](#core-resources/spaces/the-space-object) as response.
