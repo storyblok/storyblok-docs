@@ -12,6 +12,7 @@ You can set most of the fields that are available in the story object, below we 
 | `story[content]` | Object structure for your content |
 | `story[default_root]` (required*) | Default content type/root component. (*Required if `is_folder` is `true`) |
 | `publish` | Should the story be published immediately (set 1 to publish) |
+| `release_id` | Numeric ID of release (optional) |
 
 You can save any data in the `story[content]` attribute, and use it in the editor, as long as you follow these rules:
 
