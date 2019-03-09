@@ -24,7 +24,7 @@ If no entries are found with your filters applied, you will receive an empty arr
 | `language` | Add the language i18n code as query parameter to receive a localized version if filtering by UUIDs |
 | `with_tag` | Filter by specific tag(s). Use comma to filter by multiple tags. Examples: with_tag=featured,home |
 | `page` | Numeric. default: `1`. Read more at [Pagination](#topics/pagination) |
-| `per_page` | Numeric. default:`25`, max: `100`. Read more at [Pagination](#topics/pagination) |  
+| `per_page` | Numeric. default: `25`, max: `100`. Read more at [Pagination](#topics/pagination) |  
 | `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
 
 ;examplearea
