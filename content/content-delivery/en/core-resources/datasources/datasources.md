@@ -9,5 +9,5 @@ A data source is contains the information (slug) to receive a collection of data
 Endpoint
 
 ```bash
-GET /v1/cdn/datasource_entries/
+GET /v1/cdn/datasources/
 ```
