@@ -20,6 +20,7 @@ querystring = ${JSON.stringify(queryParams)}
 
 payload = ${JSON.stringify(JSON.stringify(this.requestObject))}
 headers = {
+  'Content-Type': "application/json",
   'Authorization': "YOUR_OAUTH_TOKEN"
 }
 
@@ -36,6 +37,7 @@ querystring = ${JSON.stringify(queryParams)}
 
 payload = ${JSON.stringify(JSON.stringify(this.requestObject))}
 headers = {
+  'Content-Type': "application/json",
   'Authorization': "YOUR_OAUTH_TOKEN"
 }
 
@@ -52,6 +54,7 @@ querystring = ${JSON.stringify(queryParams)}
 
 payload = ${JSON.stringify(JSON.stringify(this.requestObject))}
 headers = {
+  'Content-Type': "application/json",
   'Authorization': "YOUR_OAUTH_TOKEN"
 }
 
@@ -68,6 +71,7 @@ querystring = ${JSON.stringify(queryParams)}
 
 payload = ""
 headers = {
+  'Content-Type': "application/json",
   'Authorization': "YOUR_OAUTH_TOKEN"
 }
 
