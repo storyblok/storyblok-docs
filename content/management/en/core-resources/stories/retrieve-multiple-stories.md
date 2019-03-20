@@ -22,7 +22,7 @@ Returns an array of story objects *without* `content`. Can be filtered with the 
 | `starts_with` | Filter stories starting with a specific slug |
 | `in_trash` | Filter by items in the trash folder |
 | `search` | Filter by search term |
-| `filter_query` | Filter by specific attribute(s) of your content type. See [content delivery api documentation](/content-delivery-api/#filter-queries/overview). |
+| `filter_query` | Filter by specific attribute(s) of your content type. See [content delivery api documentation](/docs/api/content-delivery#filter-queries/overview). |
 
 ;examplearea
 
