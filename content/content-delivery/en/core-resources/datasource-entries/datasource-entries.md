@@ -16,4 +16,4 @@ GET /v1/cdn/datasource_entries/
 
 Additional Information
 
-You can load content entries from different spaces by using different access tokens for your requests. Your access tokens decide which space you want to access. Checkout [Cache Invalidations](#cache-invalidations) if you want to know more about how you are able to invalidate the cache of your published content.
+You can load content entries from different spaces by using different access tokens for your requests. Your access tokens decide which space you want to access. Checkout [Cache Invalidations](#topics/cache-invalidation) if you want to know more about how you are able to invalidate the cache of your published content.
