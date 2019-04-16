@@ -24,7 +24,7 @@ Returns an array of story objects *without* `content`. Can be filtered with the 
 | `search` | Filter by search term |
 | `filter_query` | Filter by specific attribute(s) of your content type. See [content delivery api documentation](/docs/api/content-delivery#filter-queries/overview). |
 | `from_release` | Filter items by the release id |
-| `is_published` | `true` for entries that were published at least once; `false` for those that were never published |
+| `is_published` | `true` for entries that were published at least once (and never unpublished); `false` for those that were never published |
 
 ;examplearea
 
