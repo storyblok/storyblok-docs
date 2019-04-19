@@ -25,9 +25,11 @@ Example Response
 ```json
 {
   "space": {
+    "id": 123,
     "name": "Storyblok.com",
     "domain": "https://www.storyblok.com/",
-    "version": 1544117388
+    "version": 1544117388,
+    "language_codes": ["de"]
   }
 }
 ```
