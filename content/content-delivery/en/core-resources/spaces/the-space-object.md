@@ -8,8 +8,9 @@ In the content delivery API a space object is mostly used to receive the latest 
 |---------------------|----------------------|
 | `id`                | Numeric id | 
 | `name`              | Given name  | 
-| `value`             | Given value in default dimension | 
-| `dimension_value`   | Given value in the requested dimension | 
+| `domain`            | Given domain | 
+| `version`           | Cache version |
+| `language_codes`    | Array of language codes |
 
 ;examplearea
 
@@ -20,7 +21,8 @@ Example Object
   "space": {
     "name": "Storyblok.com",
     "domain": "https://www.storyblok.com/",
-    "version": 1544117388
+    "version": 1544117388,
+    "language_codes": ["de"]
   }
 }
 ```
