@@ -19,6 +19,7 @@ Example Object
 ```json
 {
   "space": {
+    "id": 123,
     "name": "Storyblok.com",
     "domain": "https://www.storyblok.com/",
     "version": 1544117388,
