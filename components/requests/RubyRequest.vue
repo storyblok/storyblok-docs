@@ -17,6 +17,12 @@ client = Storyblok::Client.new(token: 'YOUR_TOKEN')
 ${sdk[(this.httpMethod || 'GET') + ':' + this.url]}`;
       }
 
+      let queryParams = ''
+
+      if (JSON.stringify(this.queryParams) != '{}') {
+        queryParams = `, {:params => ${JSON.stringify(this.queryParams, null, 2).replace(new RegExp(':', 'g'), ' => ')}}`
+      }
+
       switch (this.httpMethod) {
         case "POST":
           return `require 'storyblok'
@@ -44,13 +50,13 @@ client.delete('${this.path}')`;
           return `require 'storyblok'
 client = Storyblok::Client.new(oauth_token: 'YOUR_OAUTH_TOKEN')
 
-client.get('${this.path}')`;
+client.get('${this.path}'${queryParams})`;
           break
         default:
           return `require 'storyblok'
 client = Storyblok::Client.new(oauth_token: 'YOUR_OAUTH_TOKEN')
 
-client.get('${this.path}')`;
+client.get('${this.path}'${queryParams})`;
           break
       }
     }
