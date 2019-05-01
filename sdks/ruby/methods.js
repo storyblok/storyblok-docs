@@ -31,5 +31,6 @@ export default {
   "GET:https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][lt-int]=100": "client.stories(filter_query: {price: {'lt-int': 100}}, starts_with: 'products/')",
   "GET:https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt-float]=100.50": "client.stories(filter_query: {price: {'gt-float': 100.5}}, starts_with: 'products/')",
   "GET:https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][lt-float]=100.50": "client.stories(filter_query: {price: {'lt-float': 100.5}}, starts_with: 'products/')",
-  "GET:https://api.storyblok.com/v1/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt-float]=100.50&filter_query[price][lt-float]=300.50": "client.stories(filter_query: {price: {'gt-float': 100.5, 'lt-float': 300.5}}, starts_with: 'products/')"
+  "GET:https://api.storyblok.com/v1/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt-float]=100.50&filter_query[price][lt-float]=300.50": "client.stories(filter_query: {price: {'gt-float': 100.5, 'lt-float': 300.5}}, starts_with: 'products/')",
+  "GET:https://api.storyblok.com/v1/cdn/datasources?token=ask9soUkv02QqbZgmZdeDAtt": "client.datasources"
 }
