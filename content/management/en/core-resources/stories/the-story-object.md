@@ -9,7 +9,7 @@ This is an object representing your content entry. One Story object can be of a 
 | `id`                  | Numeric id | 
 | `uuid`                | Generated uuid string | 
 | `name`                | The name you give this story | 
-| `slug`                | Gthe slug / path you give this story |
+| `slug`                | The slug / path you give this story |
 | `full_slug`           | Combined parent folder and current slug | 
 | `path`                | Given real path, used in the preview editor | 
 | `content`             | Your defined custom content object | 
