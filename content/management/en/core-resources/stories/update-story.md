@@ -7,6 +7,16 @@ Can be used to build migrations, updates if you changed your component structure
 | Property | Description |
 |---|---|
 | `story` | Your full [story object](#core-resources/stories/the-story-object) |
+| `story[name]` | Name of the story is **required** |
+| `story[slug]` | Slug is **required**; Used to identify the story (can not include `/`create stories with `is_folder` and required path segments and `parent_id` link instead) |
+| `story[content]` | Object structure for your content |
+| `story[default_root]` (required*) | Default content type/root component. (*Required if `is_folder` is `true`) |
+| `story[is_folder]` | If `true` a folder will be created instead of a story |
+| `story[parent_id]` | The id of the parent |
+| `story[disble_fe_editor]` | Is side by side editor disabled for all entries in folder (true/false) |
+| `story[path]` | Given real path, used in the preview editor |
+| `story[is_startpage]` | Is startpage of current folder (true/false) |
+| `story[first_published_at]` | First publishing date (Format: YYYY-mm-dd HH:MM) |
 | `force_update` | If '1' it will overwrite a locked story |
 | `release_id` | Numeric ID of release (optional) |
 | `publish` | If '1' it will publish the story |
