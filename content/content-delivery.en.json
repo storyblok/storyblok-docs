@@ -12,6 +12,9 @@
         "contentPath": "content-delivery/en/topics/errors"
       },
       {
+        "contentPath": "content-delivery/en/topics/rate-limit"
+      },
+      {
         "contentPath": "content-delivery/en/topics/cache-invalidation"
       },
       {
