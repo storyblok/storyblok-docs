@@ -11,6 +11,12 @@ You can set most of the fields that are available in the story object, below we 
 | `story[slug]` | Slug is **required**; Used to identify the story (can not include `/`create stories with `is_folder` and required path segments and `parent_id` link instead) |
 | `story[content]` | Object structure for your content |
 | `story[default_root]` (required*) | Default content type/root component. (*Required if `is_folder` is `true`) |
+| `story[is_folder]` | If `true` a folder will be created instead of a story |
+| `story[parent_id]` | The id of the parent |
+| `story[disble_fe_editor]` | Is side by side editor disabled for all entries in folder (true/false) |
+| `story[path]` | Given real path, used in the preview editor |
+| `story[is_startpage]` | Is startpage of current folder (true/false) |
+| `story[first_published_at]` | First publishing date (Format: YYYY-mm-dd HH:MM) |
 | `publish` | Should the story be published immediately (set 1 to publish) |
 | `release_id` | Numeric ID of release (optional) |
 
