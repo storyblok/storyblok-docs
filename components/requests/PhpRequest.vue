@@ -4,163 +4,60 @@
 
 <script>
 import RequestMixin from "@/components/requests/RequestMixin"
+import sdk from "@/sdks/php/methods"
 
 export default {
   mixins: [RequestMixin],
   computed: {
     request() {
-      let queryParams = this.queryParams
+      if (sdk[(this.httpMethod || 'GET') + ':' + this.url]) {
+        return `$client = new \\Storyblok\\Client('YOUR_TOKEN');
+
+${sdk[(this.httpMethod || 'GET') + ':' + this.url]}`;
+      }
+
+      let queryParams = JSON.stringify(this.queryParams, null, 2)
+        .replace(new RegExp(':', 'g'), ' => ')
+        .replace(new RegExp('{', 'g'), '[')
+        .replace(new RegExp('}', 'g'), ']')
+      let requestObject = ''
+
+      if (this.requestObject) {
+        requestObject = JSON.stringify(this.requestObject, null, 2)
+          .replace(new RegExp(':', 'g'), ' => ')
+          .replace(new RegExp('{', 'g'), '[')
+          .replace(new RegExp('}', 'g'), ']')
+      }
+
       switch (this.httpMethod) {
         case "POST":
-          return `<?php
+          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
 
-$curl = curl_init();
+$payload = ${requestObject};
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "${this.url}",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "POST",
-  CURLOPT_POSTFIELDS => ${JSON.stringify(JSON.stringify(this.requestObject))},
-  CURLOPT_HTTPHEADER => array(
-    "Content-Type: application/json",
-    "Authorization: YOUR_OAUTH_TOKEN"
-  ),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}`
+$client->post('${this.path}', $payload)->getBody();`
           break;
         case "PUT":
-          return `<?php
+          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
 
-$curl = curl_init();
+$payload = ${requestObject};
 
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "${this.url}",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "PUT",
-  CURLOPT_POSTFIELDS => ${JSON.stringify(JSON.stringify(this.requestObject))},
-  CURLOPT_HTTPHEADER => array(
-    "Content-Type: application/json",
-    "Authorization: YOUR_OAUTH_TOKEN"
-  ),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}`
+$client->put('${this.path}', $payload)->getBody();`
           break;
         case "DELETE":
-          return `<?php
+          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
 
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "${this.url}",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "DELETE",
-  CURLOPT_POSTFIELDS => ${JSON.stringify(JSON.stringify(this.requestObject))},
-  CURLOPT_HTTPHEADER => array(
-    "Content-Type: application/json",
-    "Authorization: YOUR_OAUTH_TOKEN"
-  ),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}`
+$client->delete('${this.path}')->getBody();`
         break;
         case "GETOAUTH":
-          queryParams['token'] = 'YOUR_TOKEN'
-          return `<?php
+          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
 
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "${this.url}",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(
-    "Content-Type: application/json",
-    "Authorization: YOUR_OAUTH_TOKEN"
-  ),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}`
+$client->get('${this.path}'${queryParams === '[]' ? '' : ', ' + queryParams})->getBody();`
         break;
         default:
-          return `<?php
+          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
 
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "${this.url}",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_ENCODING => "",
-  CURLOPT_MAXREDIRS => 10,
-  CURLOPT_TIMEOUT => 30,
-  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-  CURLOPT_CUSTOMREQUEST => "GET",
-  CURLOPT_HTTPHEADER => array(),
-));
-
-$response = curl_exec($curl);
-$err = curl_error($curl);
-
-curl_close($curl);
-
-if ($err) {
-  echo "cURL Error #:" . $err;
-} else {
-  echo $response;
-}`
+$client->get('${this.path}'${queryParams === '[]' ? '' : ', ' + queryParams})->getBody();`
           break
       }
     }
