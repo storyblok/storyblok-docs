@@ -8,7 +8,7 @@ Returns an array of story objects *without* `content`. Can be filtered with the 
 |----|----|
 | `page` | Current page of stories |
 | `contain_component` | Filters by component in all levels of the content. Allows comma separated value for multiple components |
-| `search_term` | Filter by a term using full text search |
+| `text_search` | Filter by a term using full text search |
 | `sort_by` | Sort entries by specific attribute and order with `content.YOUR_FIELD:asc` and `content.YOUR_FIELD:desc`. Possible values are all root attributes of the entry (*position* and *parent_position* are special invisible attributes) and all fields of your content type inside `content` with a dot as seperator. Example: 'position:asc', 'parent_position:asc', 'content.your_custom_field:asc', 'created_at:desc' |
 | `pinned` | Filter by pinned stories if '1' |
 | `excluding_ids` | Exclude stories by ids (comma separated) from result |
@@ -34,7 +34,7 @@ Example Request
 
 Example Request with `search_term`
 
-<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/stories/?search_term=My%20fulltext%20search" httpMethod="GETOAUTH"></RequestExample>
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/stories/?text_search=My%20fulltext%20search" httpMethod="GETOAUTH"></RequestExample>
 
 Example Request with `by_uuids`
 
