@@ -24,6 +24,9 @@ export default {
       return this.$store.state.sections[contentPath.replace(this.$store.getters.originLanguagePath, '')]
     },
     path(item) {
+      if (typeof this.methodByContentPath(item.contentPath) === 'undefined') {
+        throw new Error(`File ${item.contentPath} not found.`)
+      }
       return this.methodByContentPath(item.contentPath).path
     },
     navigate() {

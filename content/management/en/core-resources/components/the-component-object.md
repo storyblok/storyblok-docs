@@ -14,6 +14,7 @@ title: The Component Object
 | `is_nestable` | Component should be insertable in `blocks` field type fields |
 | `all_presets` | Array of presets for this component |
 | `real_name` | Duplicated technical name, used for internal tasks |
+| `component_group_uuid` | The component group uuid of the component |
 
 ;examplearea
 
@@ -44,7 +45,8 @@ Example Object
     "is_nestable": true,
     "all_presets": [],
     "preset_id": null,
-    "real_name": "post"
+    "real_name": "post",
+    "component_group_uuid": "19323-32144-23423-42314"
   },
   "update_content": true
 }

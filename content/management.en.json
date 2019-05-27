@@ -86,6 +86,29 @@
       {
         "children": [
           {
+            "contentPath": "management/en/core-resources/component-groups/the-component-group-object"
+          },
+          {
+            "contentPath": "management/en/core-resources/component-groups/retrieve-one-component-group"
+          },
+          {
+            "contentPath": "management/en/core-resources/component-groups/retrieve-multiple-component-groups"
+          },
+          {
+            "contentPath": "management/en/core-resources/component-groups/create-component-group"
+          },
+          {
+            "contentPath": "management/en/core-resources/component-groups/update-component-group"
+          },
+          {
+            "contentPath": "management/en/core-resources/component-groups/delete-component-group"
+          }
+        ],
+        "contentPath": "management/en/core-resources/component-groups/component-groups"
+      },
+      {
+        "children": [
+          {
             "contentPath": "management/en/core-resources/assets/the-asset-object"
           },
           {
