@@ -5,8 +5,8 @@
         <div class="side-navigation__category" :class="{ 'side-navigation__category--first': index == 0 }">{{category.category}}</div>
         <ul class="side-navigation__items">
           <li :key=item.contentPath v-for="item in category.items">
-            <a :href="toId(item)" 
-              @click="navigate(item)" 
+            <a :href="toId(item)"
+              @click="navigate(item)"
               :class="{ 'active': isMenuItemActive(item), 'child-active': isChildActive(item) }">
               {{title(item)}}
             </a>
@@ -14,7 +14,7 @@
               <li :key=child.contentPath v-for="child in item.children">
                 <a :href=toId(child) :class="{ 'active': isMenuItemActive(child) }">{{title(child)}}</a>
               </li>
-            </ul> 
+            </ul>
           </li>
         </ul>
       </li>
@@ -54,7 +54,7 @@ export default {
     },
     title(item) {
       let method = this.methodByContentPath(item.contentPath)
-      return method.attributes.sidebarTitle || method.attributes.title 
+      return method.attributes.sidebarTitle || method.attributes.title
     },
     navigate(item) {
       this.$store.commit('SET_ACTIVE_MENU_PATH', this.methodByContentPath(item.contentPath).path)
@@ -83,21 +83,22 @@ export default {
 
   a {
     display: inline-block;
-    padding: 1px 0px;
+    padding: 5px 0px;
     width: 100%;
     font-weight: normal;
-    color: $sidebar-text-color; 
+    color: $sidebar-text-color;
+    line-height: 1.3;
 
     &.active {
       color: $sidebar-link-color;
       font-weight: bold;
     }
 
-    &.active + .side-navigation__children, 
+    &.active + .side-navigation__children,
     &.child-active + .side-navigation__children {
       display: block;
     }
-  }  
+  }
 }
 
 .side-navigation__categories {
