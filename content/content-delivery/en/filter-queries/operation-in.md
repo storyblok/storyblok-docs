@@ -14,7 +14,7 @@ You can combined this query with the `starts_with`, [pagination](#topics/paginat
 | Filter Query | Description |
 |--|--|
 | `filter_query[author][in]=authorId&starts_with=posts/` | all Posts by one Author |
-| `filter_query[customer][in]=customerId&starts_with=orders/&` | all Comments by one Post |
+| `filter_query[customer][in]=customerId&starts_with=orders/&` | all Orders by one Customer |
 | `filter_query[post][in]=postId&starts_with=comments/` | all Comments by one Post |
 | `filter_query[seo.title][in]=Title` | all entries with field `seo` and a nested field `title` and the value `Title` |
 | `filter_query[component][in]=post` | all entries of one Content Type |
