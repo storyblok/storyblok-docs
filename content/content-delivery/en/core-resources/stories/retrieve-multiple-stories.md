@@ -11,6 +11,7 @@ If no entries are found with your filters applied, you will receive an empty arr
 | `token` (required) | Your public or preview token |
 | `starts_with` | Filter by `full_slug`. Can be used to retrieve all entries form a specific folder. Examples: `starts_with=de/beitraege`, `starts_with=en/posts` | 
 | `by_uuids` | Get stories by comma separated `uuid`. Example: `by_uuids=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4` | 
+| `by_uuids_ordered` | Get stories by comma separated `uuid` ordered by the sequence provided in the parameter value. Example: `by_uuids_ordered=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4` | 
 | `excluding_ids` | Exclude stories by comma separated numeric ids. Example: `excluding_ids=101231,9101231` |
 | `excluding_fields` | Exclude specific fields of your content type by comma seperated names. Example: `excluding_fields=title,content` |
 | `version` | Default: `published`. Possible values: `draft`, `published` |
