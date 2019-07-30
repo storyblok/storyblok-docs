@@ -19,7 +19,7 @@ Can be used to build migrations, updates if you changed your component structure
 | `story[first_published_at]` | First publishing date (Format: YYYY-mm-dd HH:MM) |
 | `force_update` | If '1' it will overwrite a locked story |
 | `release_id` | Numeric ID of release (optional) |
-| `publish` | If '1' it will publish the story |
+| `publish` | If '1' it will publish the story, 'publish' must be omitted if publication is not desired |
 
 ;examplearea
 
