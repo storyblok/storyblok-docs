@@ -10,8 +10,8 @@ If no entries are found with your filters applied, you will receive an empty arr
 |---------------------|----------------------|
 | `token` (required) | Your public or preview token |
 | `starts_with` | Filter by `full_slug`. Can be used to retrieve all entries form a specific folder. Examples: `starts_with=de/beitraege`, `starts_with=en/posts` | 
-| `by_uuids` | Get stories by comma separated `uuid`. Example: `by_uuids=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4` | 
-| `by_uuids_ordered` | Get stories by comma separated `uuid` ordered by the sequence provided in the parameter value. Example: `by_uuids_ordered=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4` | 
+| `by_uuids` | Get stories by comma separated `uuid`. To get a specific language you need to combine this filter with `starts_with=en/*` (replace `en` with your langauge) Example: `by_uuids=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4` | 
+| `by_uuids_ordered` | Get stories by comma separated `uuid` ordered by the sequence provided in the parameter value. To get a specific language you need to combine this filter with `starts_with=en/*` (replace `en` with your langauge) Example: `by_uuids_ordered=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4` | 
 | `excluding_ids` | Exclude stories by comma separated numeric ids. Example: `excluding_ids=101231,9101231` |
 | `excluding_fields` | Exclude specific fields of your content type by comma seperated names. Example: `excluding_fields=title,content` |
 | `version` | Default: `published`. Possible values: `draft`, `published` |
@@ -22,7 +22,6 @@ If no entries are found with your filters applied, you will receive an empty arr
 | `search_term` | Search content items by full text. |
 | `filter_query` | Filter by specific attribute(s) of your content type. The filter query parameter needs to contain the query operation key. Separate the values by a comma , to filter by multiple values. <br><br> `filter_query[ATTRIBUTE][OPERATION]=VALUE,...` <br><br> Following filter operations `OPERATION` are available: <br> `in` - Exact match of one of the provided values<br> `not_in` - Does not contain the given value  <br> `all_in_array` - Contains all of the values of an array value <br> `in_array` - Contains any of the values of an array value <br> `gt-date` - Greater than date (Format: 2018-03-03 10:00) <br> `lt-date` - Less than date <br> `gt-int` - Greater than integer value <br> `lt-int` - Less than integer value. <br> `gt-float` - Greater than float value <br> `lt-float` - Less than float value. <br><br> Checkout the [filter_query Examples](#filter-queries/overview) we put together for you with most common use-cases. | 
 | `is_startpage` | Filter by folder startpage. Use `is_startpage=1` to only return startpages and `is_startpage=0` to exclude startpages from the result. |
-| `language` | Add the language i18n code as query parameter to receive a localized version if filtering by UUIDs |
 | `with_tag` | Filter by specific tag(s). Use comma to filter by multiple tags. Examples: with_tag=featured,home |
 | `page` | Numeric. default: `1`. Read more at [Pagination](#topics/pagination) |
 | `per_page` | Numeric. default: `25`, max: `100`. Read more at [Pagination](#topics/pagination) |  
