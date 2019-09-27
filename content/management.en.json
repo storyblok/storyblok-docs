@@ -121,6 +121,9 @@
             "contentPath": "management/en/core-resources/assets/retrieve-multiple-assets"
           },
           {
+            "contentPath": "management/en/core-resources/assets/filter-assets-by-folder"
+          },
+          {
             "contentPath": "management/en/core-resources/assets/upload-asset"
           },
           {
