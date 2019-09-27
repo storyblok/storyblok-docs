@@ -164,6 +164,9 @@
             "contentPath": "management/en/core-resources/datasources/retrieve-multiple-datasources"
           },
           {
+            "contentPath": "management/en/core-resources/datasources/filter-datasources"
+          },
+          {
             "contentPath": "management/en/core-resources/datasources/create-datasource"
           },
           {
