@@ -2,12 +2,12 @@
 title: Retrieve multiple Datasources
 ---
 
-Returns an array of datasource objects. This endpoint is [paged](#topics/pagination) and can be filtered by a datasource id or slug. The dimension parameter allows you to have the dimension value filled with the according data.
+Returns an array of datasource objects. This endpoint is paged and can be filtered by slug. 
 
 | Parameter | Description |
 |----|----|
-| `datasource_id` | Provide the numeric id of a datasource |
-| `datasource_slug` | Provide the slug of a datasource |
+| `search` | Provide a search string |
+| `by_ids` | Provide ids |
 
 ;examplearea
 
