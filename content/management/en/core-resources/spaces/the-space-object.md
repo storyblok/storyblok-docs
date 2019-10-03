@@ -25,7 +25,7 @@ The space object contains all information of one of your accounts spaces. Some o
   "tax_number": "ATU72706128", // Your VAT number
   "order_number": "Your custom order number",
   "company": "Storyblok GmbH",
-  "email": "da@storyblok.com", 
+  "email": "billing@storyblok.com", 
   "name": "Ing. Dominik Angerer", 
   "address_city": "Linz", 
   "address_country": "Austria", 
