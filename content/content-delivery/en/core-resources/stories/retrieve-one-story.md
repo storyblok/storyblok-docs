@@ -6,7 +6,7 @@ Returns a story object for the `full_slug`, `id` or `uuid` if authenticated usin
 
 | Path Parameter           | Description          |
 |---------------------|----------------------|
-| `:full_slug`          | Use the `full_slug` of your content entry to retrieve it |
+| `:full_slug`          | Use the `full_slug` of your content entry to retrieve it. Attention: If you use field level translations and a root folder with the same name of a language code you need to prepend `[default]` to the path to retrieve the default language (Example: api.storyblok.com/v1/cdn/stories/[default]/de/home). |
 | `:id`          | Use the numeric `id` of your content entry to retrieve it |
 | `:uuid`               | You can use the `uuid` property to query for your content entry. To tell our API to use the `uuid` instead of the `id` append the query param `find_by=uuid` | 
 
