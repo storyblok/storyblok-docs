@@ -20,6 +20,7 @@ Returns a story object for the `full_slug`, `id` or `uuid` if authenticated usin
 | `from_release` | Access version of specific release by release id |
 | `cv` | Read more about cache version at [Cache invalidation](#cache-invalidation) |
 | `language` | Add the language i18n code as query parameter to receive a localized version when using a numeric id or uuid as path parameter |
+| `fallback_lang` | Define a custom fallback language (i18n code). By default the fallback language is the one defined in the space settings  |
 
 ;examplearea
 
