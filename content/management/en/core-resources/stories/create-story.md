@@ -17,6 +17,8 @@ You can set most of the fields that are available in the story object, below we 
 | `story[path]` | Given real path, used in the preview editor |
 | `story[is_startpage]` | Is startpage of current folder (true/false) |
 | `story[first_published_at]` | First publishing date (Format: YYYY-mm-dd HH:MM) |
+| `story[translated_slugs_attributes]` | Add translated slugs/names if you have the "Translatable slugs" app installed. Example: `[{lang: "de", slug: "startseite", name: "Startseite"}]`. |
+0: {id: 104, lang: "de", slug: "germantest", name: "Test-german333"}
 | `publish` | Should the story be published immediately (set 1 to publish) |
 | `release_id` | Numeric ID of release (optional) |
 
