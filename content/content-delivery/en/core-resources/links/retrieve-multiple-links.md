@@ -9,6 +9,7 @@ Returns the links object containing all links of one space. Use the `version` pa
 | `token` (required) | Your public or preview token |
 | `starts_with` | Filter by `full_slug`. Can be used to retrieve all links form a specific folder. Examples: `starts_with=de/beitraege`, `starts_with=en/posts` | 
 | `version` | Default: `published`. Possible values: `draft`, `published` |
+| `paginated` | Set this to `1` if you want to retrieve the paginated results. With the parameters `per_page` and `page` you can define the page size and page number |
 
 Attention: This API endpoint is not paged.
 
