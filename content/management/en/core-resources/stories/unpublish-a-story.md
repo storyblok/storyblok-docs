@@ -8,4 +8,4 @@ Unpublishing a story besides using the `unpublish` action in visual editor or in
 
 Example Request
 
-<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/stories/2141/publish" httpMethod="GETOAUTH"></RequestExample>
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/stories/2141/unpublish" httpMethod="GETOAUTH"></RequestExample>
