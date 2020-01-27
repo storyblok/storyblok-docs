@@ -50,6 +50,9 @@
           },
           {
             "contentPath": "management/en/core-resources/stories/publish-a-story"
+          },
+          {
+            "contentPath": "management/en/core-resources/stories/unpublish-a-story"
           }
         ],
         "contentPath": "management/en/core-resources/stories/stories"
