@@ -48,12 +48,20 @@ Example Object
     "is_startpage": false,
     "parent_id": 107348,
     "group_id": "4add5c88-8d9c-4480-bfcf-63016c4c463e",
+    "translated_slugs": [
+      {
+        "path": "mein-beitrag",
+        "name": "Mein Beitrag",
+        "lang": "de"
+      }
+      // only gets included if the translatable slug app is installed
+    ],
     "alternates": [
       {
         "id": 107381,
         "name": "Mein dritter Beitrag",
-        "slug": "my-third-post",
-        "full_slug": "en/my-third-post",
+        "slug": "my-post-in-another-folder",
+        "full_slug": "de/my-post-in-another-folder",
         "is_folder": false,
         "parent_id": 107356
       }
