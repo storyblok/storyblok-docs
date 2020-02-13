@@ -17,7 +17,7 @@
     "babel-polyfill": "^6.26.0",
     "cross-env": "^5.2.0",
     "lodash.throttle": "^4.1.1",
-    "marked": "^0.5.2",
+    "marked": "^0.6.1",
     "nuxt": "^2.0.0",
     "prismjs": "^1.15.0"
   },
