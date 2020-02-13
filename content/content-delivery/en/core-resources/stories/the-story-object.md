@@ -22,6 +22,7 @@ This is an object representing your content entry. One Story object can be of a 
 | `parent_id`           | Parent folder id | 
 | `group_id`            | Alternates group id (uuid string) | 
 | `alternates`          | Array of alternate objects | 
+| `translated_slugs`    | Array of translated slugs. Only gets included if the translatable slug app is installed | 
 
 ;examplearea
 
