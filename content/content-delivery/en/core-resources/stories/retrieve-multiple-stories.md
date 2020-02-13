@@ -74,6 +74,7 @@ Example Object
       "parent_id": 107348,
       "group_id": "d5ea8520-1296-40b7-8360-894461fdc5b6",
       "alternates": [ ],
+      "translated_slugs": [ ],
       "release_id": null,
       "lang": "default"
     },
@@ -104,6 +105,7 @@ Example Object
       "parent_id": 107348,
       "group_id": "854c3d1f-5d7f-4785-92ee-620a7c6ca7ee",
       "alternates": [ ],
+      "translated_slugs": [ ],
       "release_id": null,
       "lang": "default"
     },
