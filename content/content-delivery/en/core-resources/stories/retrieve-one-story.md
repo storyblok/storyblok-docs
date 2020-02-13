@@ -67,6 +67,7 @@ Example Response
     "parent_id": 107348,
     "group_id": "d5ea8520-1296-40b7-8360-894461fdc5b6",
     "alternates": [ ],
+    "translated_slugs": [ ],
     "release_id": null,
     "lang": "default"
   }
