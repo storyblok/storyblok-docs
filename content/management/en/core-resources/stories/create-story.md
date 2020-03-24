@@ -16,6 +16,7 @@ You can set most of the fields that are available in the story object, below we 
 | `story[disble_fe_editor]` | Is side by side editor disabled for all entries in folder (true/false) |
 | `story[path]` | Given real path, used in the preview editor |
 | `story[is_startpage]` | Is startpage of current folder (true/false) |
+| `story[position]` | Integer value of the position |
 | `story[first_published_at]` | First publishing date (Format: YYYY-mm-dd HH:MM) |
 | `story[translated_slugs_attributes]` | Add translated slugs/names if you have the "Translatable slugs" app installed. Example: `[{lang: "de", slug: "startseite", name: "Startseite"}]`. |
 | `publish` | Should the story be published immediately (set 1 to publish) |
