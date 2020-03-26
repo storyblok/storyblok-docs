@@ -18,7 +18,7 @@ Returns a story object for the `full_slug`, `id` or `uuid` if authenticated usin
 | `resolve_links` | The parameter `resolve_links` will automatically resolve internal links of the multilink field type. If the value is `story` the whole story object will be included. If the value is `url` only uuid, id, name, path, slug and url (url is a computed property which returns the "Real path" if defined to use it for navigation links) will be included. The limit of resolved links per Story is `50` when resolving with `story` and `100` when resolving with `url`. |
 | `resolve_relations` | Resolve relationships to other Stories of a multi-option or single-option field-type. Provide the component name and the field key as comma separated string. The limit of resolved relationships is `100` Stories. Example: `resolve_relations=page.author,page.categories`; Read more about it in our [tutorial](https://www.storyblok.com/tp/using-relationship-resolving-to-include-other-content-entries). |
 | `from_release` | Access version of specific release by release id |
-| `cv` | Read more about cache version at [Cache invalidation](#cache-invalidation) |
+| `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
 | `language` | Add the language i18n code as query parameter to receive a localized version when using a numeric id or uuid as path parameter |
 | `fallback_lang` | Define a custom fallback language (i18n code). By default the fallback language is the one defined in the space settings  |
 
