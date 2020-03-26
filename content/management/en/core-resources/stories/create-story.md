@@ -26,7 +26,8 @@ You can save any data in the `story[content]` attribute, and use it in the edito
 
 - The `story[content]` property needs to be an object at the root level
 - Every object inside needs to have the property `"component":"your_components_name"`
-- Only nest components using arrays, except if you want to build a custom field type
+- Only nest components using arrays, except if you want to build a [custom field type](https://www.storyblok.com/plugins).
+- Every nested object which is a `component` or [custom field type](https://www.storyblok.com/plugins) needs a `_uid` property.
 
 This lets you import data and define the schema of your components afterwards in the interface where necessary.
 
