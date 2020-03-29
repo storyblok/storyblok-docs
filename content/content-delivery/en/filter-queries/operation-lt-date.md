@@ -1,25 +1,25 @@
 ---
-title: "Operation: `lt-date`"
-sidebarTitle: "lt-date"
+title: "Operation: `lt_date`"
+sidebarTitle: "lt_date"
 ---
 
 Think of it at **BEFORE** a specific date. Allows you to filter fields of type `date/datetime` (Format: `YYYY-mm-dd HH:MM`). Returns all entries that are **lower** than (eg. before) the provided date.
 
 You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
  
-## Use-cases: lt-date
+## Use-cases: lt_date
 
 You can create custom dates that allow you to schedule posts, launch products, schedule christmas teaser and more. Creating a field with the type `date` does not effect the published state of one content entry, but allows your frontend / server side implementation to query all entries before a specific date (eg. today)
 
 | Filter Query | Description |
 |--|--|
-| `filter_query[schedule][lt-date]=2018-12-24 09:00` | all entries with date field `schedule` before `"2018-12-24 09:00"` |
+| `filter_query[schedule][lt_date]=2018-12-24 09:00` | all entries with date field `schedule` before `"2018-12-24 09:00"` |
 
 ;examplearea
 
 Example Request (All posts scheduled BEFORE date)
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&starts_with=posts/&filter_query[schedule][lt-date]=2018-12-24 09:00"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&starts_with=posts/&filter_query[schedule][lt_date]=2018-12-24 09:00"></RequestExample>
 
 Example Response (All posts scheduled BEFORE date)
 

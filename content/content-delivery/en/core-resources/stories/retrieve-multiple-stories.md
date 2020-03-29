@@ -24,6 +24,10 @@ If no entries are found with your filters applied, you will receive an empty arr
 | `filter_query` | Filter by specific attribute(s) of your content type. The filter query parameter needs to contain the query operation key. Separate the values by a comma , to filter by multiple values. <br><br> `filter_query[ATTRIBUTE][OPERATION]=VALUE,...` <br><br> Following filter operations `OPERATION` are available: <br> `in` - Exact match of one of the provided values<br> `not_in` - Does not contain the given value<br> `like` - Does contain the given value with a wildcard * search<br> `not_like` - Does not contain the given value with a wildcard * search <br> `all_in_array` - Contains all of the values of an array value <br> `in_array` - Contains any of the values of an array value <br> `gt_date` - Greater than date (Format: 2018-03-03 10:00) <br> `lt_date` - Less than date <br> `gt_int` - Greater than integer value <br> `lt_int` - Less than integer value. <br> `gt_float` - Greater than float value <br> `lt_float` - Less than float value. <br><br> Checkout the [filter_query Examples](#filter-queries/overview) we put together for you with most common use-cases. | 
 | `is_startpage` | Filter by folder startpage. Use `is_startpage=1` to only return startpages and `is_startpage=0` to exclude startpages from the result. |
 | `with_tag` | Filter by specific tag(s). Use comma to filter by multiple tags. Examples: with_tag=featured,home |
+| `first_published_at_gt`| Filter by content items after a specific first published date (Format: 2018-03-03 10:00)
+| `first_published_at_lt`| Filter by content items before a specific first published date (Format: 2018-03-03 10:00)
+| `published_at_gt`| Filter by content items after a specific published date (Format: 2018-03-03 10:00)
+| `published_at_lt`| Filter by content items before a specific published date (Format: 2018-03-03 10:00)
 | `page` | Numeric. default: `1`. Read more at [Pagination](#topics/pagination) |
 | `per_page` | Numeric. default: `25`, max: `100`. Read more at [Pagination](#topics/pagination) |  
 | `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
