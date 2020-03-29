@@ -111,6 +111,12 @@
             "contentPath": "content-delivery/en/filter-queries/operation-not-in"
           },
           {
+            "contentPath": "content-delivery/en/filter-queries/operation-like"
+          },
+          {
+            "contentPath": "content-delivery/en/filter-queries/operation-not-like"
+          },
+          {
             "contentPath": "content-delivery/en/filter-queries/operation-in-array"
           },
           {
