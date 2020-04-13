@@ -9,7 +9,7 @@ Returns an array of story objects *without* `content`. Can be filtered with the 
 | `page` | Current page of stories |
 | `contain_component` | Filters by component in all levels of the content. Allows comma separated value for multiple components |
 | `text_search` | Filter by a term using full text search |
-| `sort_by` | Sort entries by specific attribute and order with `content.YOUR_FIELD:asc` and `content.YOUR_FIELD:desc`. Possible values are all root attributes of the entry (*position* and *parent_position* are special invisible attributes) and all fields of your content type inside `content` with a dot as seperator. Example: 'position:asc', 'parent_position:asc', 'content.your_custom_field:asc', 'created_at:desc' |
+| `sort_by` | Sort entries by specific attribute and order with `content.YOUR_FIELD:asc` and `content.YOUR_FIELD:desc`. To sort integers append `:int`. To sort floats append `:float`. Possible values are all root attributes of the entry (*position* and *parent_position* are special invisible attributes) and all fields of your content type inside `content` with a dot as seperator. Example: 'position:asc', 'parent_position:asc', 'content.your_custom_field:asc', 'content.your_number_field:asc:int', 'created_at:desc'. |
 | `pinned` | Filter by pinned stories if '1' |
 | `excluding_ids` | Exclude stories by ids (comma separated) from result |
 | `by_ids` | Filter by ids (comma separated) |
