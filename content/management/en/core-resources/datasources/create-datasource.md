@@ -1,5 +1,5 @@
 ---
-title: Create a Datasource Entry
+title: Create a Datasource
 ---
 
 | Property | Description |
