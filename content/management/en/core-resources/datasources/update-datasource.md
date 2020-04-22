@@ -1,5 +1,5 @@
 ---
-title: Update a Datasource Entry
+title: Update a Datasource
 ---
 
 | Property | Description |
