@@ -11,6 +11,8 @@ If no entries are found with your filters applied, you will receive an empty arr
 | `token` (required) | Your public or preview token |
 | `starts_with` | Filter by `full_slug`. Can be used to retrieve all entries form a specific folder. Examples: `starts_with=de/beitraege`, `starts_with=en/posts`. Attention: If you use field level translations and a root folder with the same name of a language code you need to prepend [default] to the path to retrieve the default language (Example: `starts_with=[default]/de/home`). | 
 | `by_uuids` | Get stories by comma separated `uuid`. To get a specific language you need to combine this filter with `starts_with=en/*` (replace `en` with your langauge) Example: `by_uuids=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4` | 
+| `by_slugs` | Get stories by comma separated `full_slug`. You can also specify wildcards with `*`. Examples: `by_slugs=authors/john,authors/max`, `by_slugs=authors/*,articles/*` | 
+| `excluding_slugs` | Exclude stories specifying comma separated values of `full_slug`. You can also specify wildcards with `*`. Examples: `excluding_slugs=authors/john,authors/max`, `excluding_slugs=authors/*` | 
 | `fallback_lang` | Define a custom fallback language. By default the fallback language is the one defined in the space settings  |
 | `by_uuids_ordered` | Get stories by comma separated `uuid` ordered by the sequence provided in the parameter value. To get a specific language you need to combine this filter with `starts_with=en/*` (replace `en` with your langauge) Example: `by_uuids_ordered=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4` | 
 | `excluding_ids` | Exclude stories by comma separated numeric ids. Example: `excluding_ids=101231,9101231` |
