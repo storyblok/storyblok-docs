@@ -33,25 +33,28 @@ Example Response (all Posts by one Author)
 {
   "stories": [
     {
-      "name": "My third post",
-      "id": 107350,
-      "uuid": "ac0d2ed0-e323-43ca-ae59-5cd7d38683cb",
+      "name": "My second post",
+      "created_at": "2018-04-24T11:57:29.283Z",
+      "published_at": "2019-01-22T20:42:50.324Z",
+      "alternates": [],
+      "id": 107349,
+      "uuid": "a91440ee-fd57-4ee3-83cf-d49d217ae919",
       "content": {
         "_uid": "98cccd01-f807-4494-996d-c6b0de2045a5",
         "image": "//a.storyblok.com/f/44162/1500x500/68b522b06d/1500x500.jpeg",
         "title": "My second title",
-        // filtered on this author attribute
+         // filtered on this author attribute
         "author": "22f4fb1b-50b3-4bf2-816e-7d589e307421",
-        "content": "Lorem ipsum dolor sit amet, *consectetur* adipisicing elit, sed do eiusmod...",
-        "schedule": "2018-08-31 21:59",
+        "content": "Lorem ipsum dolor sit amet, *consectetur* adipisicing elit, sed do eiusmod",
+        "schedule": "",
         "component": "post",
         "categories": [
-          "9aa72a2f-04ae-48df-b71f-25f53044dc97"
+          "5db2e929-6d3d-4564-982e-fa8513b0e5de"
         ],
-        "description": "Description of the third"
+        "description": "Description of the second"
       },
-      "slug": "my-third-post",
-      "full_slug": "posts/my-third-post",
+      "slug": "my-second-post",
+      "full_slug": "posts/my-second-post",
       ...
     },
     {
