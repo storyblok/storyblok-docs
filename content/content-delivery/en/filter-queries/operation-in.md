@@ -3,7 +3,7 @@ title: "Operation: `in`"
 sidebarTitle: "in"
 ---
 
-Filter your entries by checking if your custom attribute (any field inside the `content` field) has a value that is equal to one of the values provided.
+Filter your entries by checking if your custom attribute (any field inside the `content` field) has a value that is equal to one of the values provided, this filter will return all occurrences of content referred to the filter.
 
 ## Use-cases: in
 
