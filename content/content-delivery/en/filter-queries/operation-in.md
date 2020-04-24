@@ -9,7 +9,7 @@ Filter your entries by checking if your custom attribute (any field inside the `
 
 Get all content entries that is refered to another in a [1:N relationship](https://www.storyblok.com/tp/how-to-build-relationships-between-2-content-types) or if you want to get all entries with a specific value in one of it's fields.
 
-You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
+You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed, with these additions of other filters, this filter is a very powerful alternative.
 
 | Filter Query | Description |
 |--|--|
@@ -45,7 +45,7 @@ Example Response (all Posts by one Author)
         "title": "My second title",
          // filtered on this author attribute
         "author": "22f4fb1b-50b3-4bf2-816e-7d589e307421",
-        "content": "Lorem ipsum dolor sit amet, *consectetur* adipisicing elit, sed do eiusmod",
+        "content": "Lorem ipsum dolor sit amet, *consectetur* adipisicing elit, sed do eiusmod...",
         "schedule": "",
         "component": "post",
         "categories": [
