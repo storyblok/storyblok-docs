@@ -2,7 +2,7 @@
 title: Use Cases
 ---
 
-The Management API should not be use to consume your information as it does not utilize our global CDN for your requests and can result in higher latencies. Please make sure to use the Content Delivery API instead.
+The Management API should not be used to consume your information as it does not utilize our global CDN for your requests and can result in higher latencies. Please make sure to use the Content Delivery API instead.
 
 ;examplearea
   
