@@ -8,17 +8,17 @@ Here you can find an example [using Node.js on Github](https://github.com/onefri
 
 ;examplearea
 
-1) Start by requesting a signed upload URL and parameter 
+1. Start by requesting a signed upload URL and parameter
 
 Example Request
 
-<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/assets/" httpMethod="POST" :requestObject='{"filename":"your_file.jpg","size":"400x500","asset_folder_id"}'></RequestExample>
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/656/assets/" httpMethod="POST" :requestObject='{"filename":"your_file.jpg","size":"400x500"}'></RequestExample>
 
 Example Request (with asset folder)
 
 <RequestExample url="https://mapi.storyblok.com/v1/spaces/606/assets/" httpMethod="POST" :requestObject='{"filename":"your_file.jpg","size":"400x500","asset_folder_id":123}'></RequestExample>
 
-2) Use the received signed response object to upload your file (example uses Node.js): 
+2. Use the received signed response object to upload your file (example uses Node.js): 
 
 ```javascript
 const FormData = require('form-data')

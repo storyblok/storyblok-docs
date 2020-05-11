@@ -358,6 +358,43 @@
           }
         ],
         "contentPath": "management/en/core-resources/field-types/field-types"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/en/core-resources/workflow-stages/object"
+          },
+          {
+            "contentPath": "management/en/core-resources/workflow-stages/get-one"
+          },
+          {
+            "contentPath": "management/en/core-resources/workflow-stages/get-all"
+          },
+          {
+            "contentPath": "management/en/core-resources/workflow-stages/create"
+          },
+          {
+            "contentPath": "management/en/core-resources/workflow-stages/update"
+          },
+          {
+            "contentPath": "management/en/core-resources/workflow-stages/delete"
+          }
+        ],
+        "contentPath": "management/en/core-resources/workflow-stages/intro"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/en/core-resources/workflow-stage-changes/object"
+          },
+          {
+            "contentPath": "management/en/core-resources/workflow-stage-changes/get-all"
+          },
+          {
+            "contentPath": "management/en/core-resources/workflow-stage-changes/create"
+          }
+        ],
+        "contentPath": "management/en/core-resources/workflow-stage-changes/intro"
       }
     ]
   }
