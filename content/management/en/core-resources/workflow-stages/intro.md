@@ -9,5 +9,5 @@ Content production in enterprises sometimes requires strict workflows to make su
 Endpoint
 
 ```bash
-GET /v1/spaces/:space_id/space_roles/:space_role_id
+GET /v1/spaces/:space_id/workflow_stages/:id
 ```
