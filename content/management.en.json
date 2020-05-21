@@ -418,6 +418,14 @@
           }
         ],
         "contentPath": "management/en/core-resources/releases/intro"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/en/core-resources/deployments/create"
+          }
+        ],
+        "contentPath": "management/en/core-resources/deployments/intro"
       }
     ]
   }
