@@ -395,6 +395,29 @@
           }
         ],
         "contentPath": "management/en/core-resources/workflow-stage-changes/intro"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/en/core-resources/releases/object"
+          },
+          {
+            "contentPath": "management/en/core-resources/releases/get-one"
+          },
+          {
+            "contentPath": "management/en/core-resources/releases/get-all"
+          },
+          {
+            "contentPath": "management/en/core-resources/releases/create"
+          },
+          {
+            "contentPath": "management/en/core-resources/releases/update"
+          },
+          {
+            "contentPath": "management/en/core-resources/releases/delete"
+          }
+        ],
+        "contentPath": "management/en/core-resources/releases/intro"
       }
     ]
   }
