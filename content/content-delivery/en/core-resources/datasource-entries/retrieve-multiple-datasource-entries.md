@@ -9,9 +9,9 @@ Returns an array of datasource entry objects for the `datasource` and `dimension
 | `token` (required) | Your public or preview token |
 | `datasource` | 	Datasource group id/slug | 
 | `dimension` | Dimension that you defined for your datasource (eg. `dimension=en`) |
-| `page` | Numeric. default: `1`. Read more at [Pagination](#pagination) |
-| `per_page` | Numeric. default: `25`, max: `1000`. Read more at [Pagination](#pagination) | 
-| `cv` | Read more about cache version at [Cache invalidation](#cache-invalidation) |
+| `page` | Numeric. default: `1`. Read more at [Pagination](#topics/pagination) |
+| `per_page` | Numeric. default: `25`, max: `100`. Read more at [Pagination](#topics/pagination) | 
+| `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
 
 ;examplearea
 
