@@ -22,6 +22,7 @@ Can be used to build migrations, updates if you changed your component structure
 | `force_update` | If '1' it will overwrite a locked story |
 | `release_id` | Numeric ID of release (optional) |
 | `publish` | If '1' it will publish the story, 'publish' must be omitted if publication is not desired |
+| `lang` | Language code to publish the story individually (must be enabled in the space settings) |
 
 ;examplearea
 
