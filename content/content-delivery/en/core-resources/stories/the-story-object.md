@@ -37,6 +37,7 @@ Example Object
     "name": "My third post",
     "slug": "my-third-post",
     "full_slug": "posts/my-third-post",
+    "default_full_slug": null,
     "created_at": "2018-04-24T11:57:29.302Z",
     "published_at": "2018-08-07T09:40:13.802Z",
     "first_published_at": "2018-08-07T09:40:13.802Z",
