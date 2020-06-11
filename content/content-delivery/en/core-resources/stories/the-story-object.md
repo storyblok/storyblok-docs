@@ -11,6 +11,7 @@ This is an object representing your content entry. One Story object can be of a 
 | `name`                | The name you give this story | 
 | `slug`                | Gthe slug / path you give this story |
 | `full_slug`           | Combined parent folder and current slug | 
+| `default_full_slug`   | Contains the full slug of the default language if the app Translatable Slugs is installed | 
 | `created_at`          | Creation date (Format: `YYYY-mm-dd HH:MM`) | 
 | `published_at`        | Latest publishing date (Format: `YYYY-mm-dd HH:MM`) | 
 | `first_published_at`  | First publishing date (Format: `YYYY-mm-dd HH:MM`) | 
