@@ -9,7 +9,7 @@ Not every property will be used for every field type; some may only effect speci
 | `id` | Numeric Unique ID |
 | `type` | The type of your field |
 | `pos` | Position of field in component |
-| `translateable` | Can field be translated; Default: false |
+| `translatable` | Can field be translated; Default: false |
 | `required` | Is field required; Default: false |
 | `regex` | Client Regex validation for the field |
 | `description` | Description shown in the editor interface |
