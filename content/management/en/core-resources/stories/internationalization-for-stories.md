@@ -2,7 +2,7 @@
 title: Internationalization for Stories
 ---
 
-If you use our field level translations functionality, you can provide the values for the translations/languages within the same content object by appending `__i18n__` followed by the language code. Make sure to have the component field option `translateable` to `true`.
+If you use our field level translations functionality, you can provide the values for the translations/languages within the same content object by appending `__i18n__` followed by the language code. Make sure to have the component field option `translatable` to `true`.
 
 Get a [full list of our languages codes](https://gist.github.com/DominikAngerer/f685f2c988171faef3fb6c2ffff4c78c) on Github.
 
