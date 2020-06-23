@@ -7,7 +7,7 @@ You can use the `starts_with` parameter to load entries that are in a specific f
 | Slug | Description |
 |--|--|
 | `?starts_with=products/` | all entries in folder `products` |
-| `?starts_with=de/products/` | all entries with `de` values in translateable fields in folder `products` |
+| `?starts_with=de/products/` | all entries with `de` values in translatable fields in folder `products` |
 | `?starts_with=articles/` | all entries in folder `articles` |
 
 ;examplearea
@@ -30,9 +30,9 @@ Example Response
       "uuid": "14d950c6-0a8f-4088-98e3-73efced9ff6d",
       "content": {
         "_uid": "00b45e23-5dc5-4398-9b34-e87ae4ed42e6",
-        // translateable field
+        // translatable field
         "name": "Raumschiff",
-        // translateable field
+        // translatable field
         "description": "Deutsches Lorem ipsum dolor sit amet, consectetur adipiscing elit. In erat mauris, faucibus quis pharetra sit amet.",
         "image": "//a.storyblok.com/f/44203/6016x4016/995fde1190/spaceship.jpg",
         "price": "1700000000",
@@ -52,9 +52,9 @@ Example Response
       "uuid": "9176c97c-2602-4878-80f0-ea89c9eb26b7",
       "content": {
         "_uid": "89dbca77-6df2-4c42-bcd5-a2d81277fe4b",
-        // translateable field
+        // translatable field
         "name": "Schuh",
-        // translateable field
+        // translatable field
         "description": "Deutsches Lorem ipsum dolor sit amet, consectetur adipiscing elit. In erat mauris, faucibus quis pharetra sit amet.",
         "image": "//a.storyblok.com/f/44203/2880x1920/3af2f49951/shoe.jpg",
         "price": "10",
