@@ -7,7 +7,7 @@ title: Create a Release
 | `release` | Your [release object](#core-resources/releases/object) **required** |
 | `release[name]` | Name of the release |
 | `release[release_at]` | Date to deploy the release (Format: YYYY-mm-dd HH:MM) |
-| `release[banches_to_deploy]` | Ids of pipeline stages (called branches before) to deploy the release to  |
+| `release[branches_to_deploy]` | Ids of pipeline stages (called branches before) to deploy the release to  |
 
 ;examplearea
 
