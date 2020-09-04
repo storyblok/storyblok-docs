@@ -2,7 +2,7 @@
 title: Approvals
 ---
 
-Triggers a approval message for a specific content entry. It allows you to send an approval request to another collaborator of the space.
+Triggers an approval message for a specific content entry. It allows you to send an approval request to another collaborator of the space.
 
 ;examplearea
 
