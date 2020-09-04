@@ -2,7 +2,7 @@
 title: Tasks
 ---
 
-You can create a Tasks that editor can press to send requests to one of your custom endpoints to either trigger a build for production or other common use-cases like product syncs or other publishing tasks. Future updates will also bring scheduled and timed tasks so you can handle all your tasks at one place.
+You can create a Task to send requests to one of your custom endpoints. This lets you trigger a build for production or other common use-cases like product syncs or  publishing tasks. Future updates will also bring scheduled and timed tasks so you can handle all your tasks at one place.
 
 The payload Storyblok will send to your webhook url as POST request:
 
