@@ -14,7 +14,6 @@ This is an object representing your content entry. One Story object can be of a 
 | `path`                | Given real path, used in the preview editor | 
 | `content`             | Your defined custom content object | 
 | `release_id`          | Id of your content stage (default: null) | 
-| `lang`                | Defined language (default: "default") | 
 | `published`           | Is story published (true/false) |
 | `unpublished_changes` | Story has unpublished changes; saved but not published (true/false) |
 | `position`            | Position in folder | 
