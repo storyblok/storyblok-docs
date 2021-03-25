@@ -12,7 +12,7 @@ Returns the links object containing all links of one space. Use the `version` pa
 | `paginated` | Set this to `1` if you want to retrieve the paginated results. With the parameters `per_page` and `page` you can define the page size and page number |
 | `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
 
-Attention: This API endpoint is not paged.
+Attention: This API endpoint is not paged by default. Activate it using `paginated=1`.
 
 ;examplearea
 
