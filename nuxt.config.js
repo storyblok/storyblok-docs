@@ -106,10 +106,16 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    ['nuxt-sass-resources-loader', [
-      '@/assets/_variables.scss',
-    ]]
+    '@nuxtjs/style-resources'
   ],
+
+  css: [
+    '~assets/_variables.scss'
+  ],
+
+  styleResources: {
+    scss: ['./assets/*.scss']
+  },
 
   generate: {
     routes(callback) {
