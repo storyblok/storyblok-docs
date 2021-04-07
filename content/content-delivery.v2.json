@@ -1,0 +1,212 @@
+[
+  {
+    "category": "Topics",
+    "items": [
+      {
+        "contentPath": "content-delivery/v2/topics/introduction"
+      },
+      {
+        "contentPath": "content-delivery/v2/topics/authentication"
+      },
+      {
+        "contentPath": "content-delivery/v2/topics/errors"
+      },
+      {
+        "contentPath": "content-delivery/v2/topics/rate-limit"
+      },
+      {
+        "contentPath": "content-delivery/v2/topics/cache-invalidation"
+      },
+      {
+        "contentPath": "content-delivery/v2/topics/pagination"
+      }
+    ]
+  },
+  {
+    "category": "Core Resources",
+    "items": [
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/core-resources/stories/the-story-object"
+          },
+          {
+            "contentPath": "content-delivery/v2/core-resources/stories/retrieve-one-story"
+          },
+          {
+            "contentPath": "content-delivery/v2/core-resources/stories/retrieve-multiple-stories"
+          }
+        ],
+        "contentPath": "content-delivery/v2/core-resources/stories/stories"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/core-resources/spaces/the-space-object"
+          },
+          {
+            "contentPath": "content-delivery/v2/core-resources/spaces/retrieve-current-space"
+          }
+        ],
+        "contentPath": "content-delivery/v2/core-resources/spaces/spaces"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/core-resources/datasources/the-datasource-object"
+          },
+          {
+            "contentPath": "content-delivery/v2/core-resources/datasources/retrieve-multiple-datasources"
+          }
+        ],
+        "contentPath": "content-delivery/v2/core-resources/datasources/datasources"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/core-resources/datasource-entries/the-datasource-entry-object"
+          },
+          {
+            "contentPath": "content-delivery/v2/core-resources/datasource-entries/retrieve-multiple-datasource-entries"
+          }
+        ],
+        "contentPath": "content-delivery/v2/core-resources/datasource-entries/datasource-entries"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/core-resources/links/the-links-object"
+          },
+          {
+            "contentPath": "content-delivery/v2/core-resources/links/the-link-object"
+          },
+          {
+            "contentPath": "content-delivery/v2/core-resources/links/retrieve-multiple-links"
+          }
+        ],
+        "contentPath": "content-delivery/v2/core-resources/links/links"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/core-resources/tags/the-tag-object"
+          },
+          {
+            "contentPath": "content-delivery/v2/core-resources/tags/retrieve-all-tags"
+          }
+        ],
+        "contentPath": "content-delivery/v2/core-resources/tags/tags"
+      }
+    ]
+  },
+  {
+    "category": "Filter Queries",
+    "items": [
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-in"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-not-in"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-like"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-not-like"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-in-array"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-all-in-array"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-gt-date"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-lt-date"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-gt-int"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-lt-int"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-gt-float"
+          },
+          {
+            "contentPath": "content-delivery/v2/filter-queries/operation-lt-float"
+          }
+        ],
+        "contentPath": "content-delivery/v2/filter-queries/overview"
+      }
+    ]
+  },
+  {
+    "category": "Examples",
+    "items": [
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/examples/starts-with/entries-in-folder"
+          },
+          {
+            "contentPath": "content-delivery/v2/examples/starts-with/draft-entries-in-folder"
+          },
+          {
+            "contentPath": "content-delivery/v2/examples/starts-with/entries-of-language-xx"
+          }
+        ],
+        "contentPath": "content-delivery/v2/examples/starts-with/starts-with"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/examples/filtering/filter-entries-by-boolean-value"
+          },
+          {
+            "contentPath": "content-delivery/v2/examples/filtering/entries-between-two-numbers"
+          }
+        ],
+        "contentPath": "content-delivery/v2/examples/filtering/filters"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/examples/ordering/sort-by-admin-interface"
+          },
+          {
+            "contentPath": "content-delivery/v2/examples/ordering/sort-by-content-attribute"
+          },
+          {
+            "contentPath": "content-delivery/v2/examples/ordering/sort-by-story-property"
+          }
+        ],
+        "contentPath": "content-delivery/v2/examples/ordering/order"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "content-delivery/v2/examples/useful/load-latest-cache-version-timestamp"
+          },
+          {
+            "contentPath": "content-delivery/v2/examples/useful/load-draft-version"
+          },
+          {
+            "contentPath": "content-delivery/v2/examples/useful/resolve-relationships"
+          },
+          {
+            "contentPath": "content-delivery/v2/examples/useful/load-without-startpage"
+          },
+          {
+            "contentPath": "content-delivery/v2/examples/useful/localized-by-uuid"
+          }
+        ],
+        "contentPath": "content-delivery/v2/examples/useful/useful"
+      }
+    ]
+  }
+]

@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style lang="scss">
-.top-header {  
+.top-header {
   background: $sidebar-background;
   @media screen and (min-width: 1320px) {
     background: transparent;
@@ -39,7 +39,7 @@ export default {
   top: 0px;
   width: 100%;
   z-index: 30;
-  
+
   display: flex;
   flex-flow: row wrap;
 }
@@ -54,7 +54,7 @@ export default {
   }
 }
 
-.top-header__content {  
+.top-header__content {
   background: $sidebar-background;
   text-align: right;
   width:50%;
@@ -75,7 +75,7 @@ export default {
   color: $example-text-color;
   flex-grow: 1;
   display: none;
-  
+
   @media screen and (min-width: 1050px) {
     display: block;
     height: auto;

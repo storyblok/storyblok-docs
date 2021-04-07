@@ -37,7 +37,7 @@ export default {
   },
   async fetch ({ store, params, payload }) {
     const origin = params.origin
-    const lang = params.lang || 'en'
+    const lang = params.lang || 'v1'
 
     let menu = null
     let sections = null
@@ -48,7 +48,7 @@ export default {
     } else {
       const base = process.client ? window.location.origin : 'http://localhost:3000'
       const [menuRes, sectionsRes] = await Promise.all([
-        axios.get(base + `/${origin}.menu.${lang}.json`), 
+        axios.get(base + `/${origin}.menu.${lang}.json`),
         axios.get(base + `/${origin}.methods.${lang}.json`)])
       menu = menuRes.data
       sections = sectionsRes.data

@@ -1,0 +1,432 @@
+[
+  {
+    "category": "Topics",
+    "items": [
+      {
+        "contentPath": "management/v1/topics/introduction"
+      },
+      {
+        "contentPath": "management/v1/topics/use-cases"
+      },
+      {
+        "contentPath": "management/v1/topics/authentication"
+      },
+      {
+        "contentPath": "management/v1/topics/errors"
+      },
+      {
+        "contentPath": "management/v1/topics/rate-limit"
+      },
+      {
+        "contentPath": "management/v1/topics/pagination"
+      }
+    ]
+  },
+  {
+    "category": "Core Resources",
+    "items": [
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/stories/the-story-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/retrieve-one-story"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/retrieve-multiple-stories"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/create-story"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/update-story"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/delete-story"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/internationalization-for-stories"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/publish-a-story"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/unpublish-a-story"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/stories/stories"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/components/the-component-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/components/the-component-field-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/components/possible-field-types"
+          },
+          {
+            "contentPath": "management/v1/core-resources/components/retrieve-one-component"
+          },
+          {
+            "contentPath": "management/v1/core-resources/components/retrieve-multiple-components"
+          },
+          {
+            "contentPath": "management/v1/core-resources/components/create-component"
+          },
+          {
+            "contentPath": "management/v1/core-resources/components/update-component"
+          },
+          {
+            "contentPath": "management/v1/core-resources/components/delete-component"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/components/components"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/component-groups/the-component-group-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/component-groups/retrieve-one-component-group"
+          },
+          {
+            "contentPath": "management/v1/core-resources/component-groups/retrieve-multiple-component-groups"
+          },
+          {
+            "contentPath": "management/v1/core-resources/component-groups/create-component-group"
+          },
+          {
+            "contentPath": "management/v1/core-resources/component-groups/update-component-group"
+          },
+          {
+            "contentPath": "management/v1/core-resources/component-groups/delete-component-group"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/component-groups/component-groups"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/assets/the-asset-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/assets/signed-response-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/assets/retrieve-one-asset"
+          },
+          {
+            "contentPath": "management/v1/core-resources/assets/retrieve-multiple-assets"
+          },
+          {
+            "contentPath": "management/v1/core-resources/assets/upload-asset"
+          },
+          {
+            "contentPath": "management/v1/core-resources/assets/delete-asset"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/assets/assets"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/asset-folders/the-asset-folder-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/asset-folders/retrieve-one-asset-folder"
+          },
+          {
+            "contentPath": "management/v1/core-resources/asset-folders/retrieve-multiple-asset-folders"
+          },
+          {
+            "contentPath": "management/v1/core-resources/asset-folders/create-asset-folder"
+          },
+          {
+            "contentPath": "management/v1/core-resources/asset-folders/update-asset-folder"
+          },
+          {
+            "contentPath": "management/v1/core-resources/asset-folders/delete-asset-folder"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/asset-folders/asset-folders"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/datasources/the-datasource-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasources/retrieve-one-datasource"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasources/retrieve-multiple-datasources"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasources/create-datasource"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasources/update-datasource"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasources/delete-datasource"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/datasources/datasources"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/datasource-entries/the-datasource-entry-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasource-entries/retrieve-one-datasource-entry"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasource-entries/retrieve-multiple-datasource-entries"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasource-entries/create-datasource-entry"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasource-entries/update-datasource-entry"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasource-entries/delete-datasource-entry"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/datasource-entries/datasource-entries"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/spaces/the-space-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/spaces/retrieve-one-space"
+          },
+          {
+            "contentPath": "management/v1/core-resources/spaces/retrieve-multiple-spaces"
+          },
+          {
+            "contentPath": "management/v1/core-resources/spaces/create-space"
+          },
+          {
+            "contentPath": "management/v1/core-resources/spaces/update-space"
+          },
+          {
+            "contentPath": "management/v1/core-resources/spaces/delete-space"
+          },
+          {
+            "contentPath": "management/v1/core-resources/spaces/duplicate-space"
+          },
+          {
+            "contentPath": "management/v1/core-resources/spaces/backup-space"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/spaces/spaces"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/space-roles/the-space-role-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/space-roles/retrieve-one-space-role"
+          },
+          {
+            "contentPath": "management/v1/core-resources/space-roles/retrieve-multiple-spaces-roles"
+          },
+          {
+            "contentPath": "management/v1/core-resources/space-roles/create-space-role"
+          },
+          {
+            "contentPath": "management/v1/core-resources/space-roles/update-space-role"
+          },
+          {
+            "contentPath": "management/v1/core-resources/space-roles/delete-space-role"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/space-roles/space-roles"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/tasks/the-task-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/tasks/retrieve-one-task"
+          },
+          {
+            "contentPath": "management/v1/core-resources/tasks/retrieve-multiple-tasks"
+          },
+          {
+            "contentPath": "management/v1/core-resources/tasks/create-task"
+          },
+          {
+            "contentPath": "management/v1/core-resources/tasks/update-task"
+          },
+          {
+            "contentPath": "management/v1/core-resources/tasks/delete-taks"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/tasks/tasks"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/approvals/the-approval-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/approvals/retrieve-one-approval"
+          },
+          {
+            "contentPath": "management/v1/core-resources/approvals/retrieve-multiple-approvals"
+          },
+          {
+            "contentPath": "management/v1/core-resources/approvals/create-approval"
+          },
+          {
+            "contentPath": "management/v1/core-resources/approvals/create-release-approval"
+          },
+          {
+            "contentPath": "management/v1/core-resources/approvals/delete-approval"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/approvals/approvals"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/activities/the-activity-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/activities/retrieve-one-activity"
+          },
+          {
+            "contentPath": "management/v1/core-resources/activities/retrieve-multiple-activities"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/activities/activities"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/presets/the-preset-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/presets/retrieve-one-preset"
+          },
+          {
+            "contentPath": "management/v1/core-resources/presets/retrieve-multiple-presets"
+          },
+          {
+            "contentPath": "management/v1/core-resources/presets/create-preset"
+          },
+          {
+            "contentPath": "management/v1/core-resources/presets/update-preset"
+          },
+          {
+            "contentPath": "management/v1/core-resources/presets/delete-preset"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/presets/presets"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/field-types/the-field-type-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/field-types/retrieve-one-field-type"
+          },
+          {
+            "contentPath": "management/v1/core-resources/field-types/retrieve-multiple-field-types"
+          },
+          {
+            "contentPath": "management/v1/core-resources/field-types/create-field-type"
+          },
+          {
+            "contentPath": "management/v1/core-resources/field-types/update-field-type"
+          },
+          {
+            "contentPath": "management/v1/core-resources/field-types/delete-field-type"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/field-types/field-types"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/workflow-stages/object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stages/get-one"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stages/get-all"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stages/create"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stages/update"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stages/delete"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/workflow-stages/intro"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/workflow-stage-changes/object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stage-changes/get-all"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stage-changes/create"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/workflow-stage-changes/intro"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/releases/object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/releases/get-one"
+          },
+          {
+            "contentPath": "management/v1/core-resources/releases/get-all"
+          },
+          {
+            "contentPath": "management/v1/core-resources/releases/create"
+          },
+          {
+            "contentPath": "management/v1/core-resources/releases/update"
+          },
+          {
+            "contentPath": "management/v1/core-resources/releases/delete"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/releases/intro"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/deployments/create"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/deployments/intro"
+      }
+    ]
+  }
+]

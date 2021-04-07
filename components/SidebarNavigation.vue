@@ -1,5 +1,11 @@
 <template>
   <nav class="side-navigation">
+    <div class="side-navigation__select">
+      <select>
+        <option>Api V1</option>
+        <option>Api V2 (latest)</option>
+      </select>
+    </div>
     <ul class="side-navigation__categories">
       <li :key=category.category v-for="(category, index) in $store.state.menu">
         <div class="side-navigation__category" :class="{ 'side-navigation__category--first': index == 0 }">{{category.category}}</div>
@@ -64,6 +70,15 @@ export default {
 </script>
 
 <style lang="scss">
+.side-navigation__select {
+  padding: 0 20px 10px 20px;
+
+  select {
+    width: 100%;
+    padding: 5px;
+  }
+}
+
 .side-navigation {
   position: fixed;
   top: 60px;
