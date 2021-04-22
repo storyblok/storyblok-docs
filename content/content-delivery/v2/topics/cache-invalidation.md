@@ -2,39 +2,37 @@
 title: Cache Invalidation
 ---
 
-Storyblok uses a CDN in front of the API to deliver your content in the fastest way possible. If you're using the Storyblok Content Delivery API directly in your client application it is recommended to use a backend version number or the `versions` parameter provided by the `/v1/cdn/spaces/me?token=access_token` call.
+Storyblok uses a CDN in front of the API to deliver your content in the fastest way possible. To have a high cache hit rate for published content the Storyblok appends a parameter called `cv` which stands for "cache version".
 
-## Recommended: Client Side
+The "cache version" always updates if you publish any new content in Storyblok and you can retrieve it by doing an api call to a cdn resource without providing the `cv` parameter `/v2/cdn/stories?token=wANpEQEsMYGOwLxwXQ76Ggtt&version=published`. 
 
-1. Request the resource `/v2/cdn/spaces/me` to get the `space.version` property
-2. Append the `space.version` to all your subsequent calls of the endpoint `/v2/cdn/stories`
+If you don't use our oficial [javascript SDK](https://github.com/storyblok/storyblok-js-client) which handles the cv parameter automatically you need to make sure to pass the `cv` parameter in your requests like following:
 
-## Recommended: SSG / Server Side
-
-1. Generate a timestamp (once on a server, not on every request/client load)
-2. Append your timestamp to all your subsequent calls of the endpoint `/v2/cdn/stories`
-
-Also server side applications application can use the  `space.version` option. Storing the version string to a file and reusing this timestamp will guarantee you the latest version with optimal speed. You can either use the [Storyblok Webhooks](https://www.storyblok.com/docs/Guides/using-storyblok-webhooks) or [Storyblok JavaScript Events](https://www.storyblok.com/docs/Guides/storyblok-latest-js#events) to update your version file.
+1. Do a request to the stories endpoint `/v2/cdn/stories` without appending the `cv` parameter
+2. Check the response body for the `cv` attribute
+3. Safe the `cv` attribute in memory and use it for the subsequent requests
+4. When publishing new content clear the attribute from the memory and save a new one by starting at step 1.
 
 ;examplearea
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v2/cdn/spaces/me?token=wANpEQEsMYGOwLxwXQ76Ggtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/example?token=wANpEQEsMYGOwLxwXQ76Ggtt&version=published"></RequestExample>
 
 Example Response
 
 ```json
 {
-  "space": {
-    "name": "Space A",
-    "domain": "http://example.storyblok.com",
-    "version": 1541863983
-  }
+  "story": {
+    "name": "Example",
+    "slug": "example",
+    ...
+  },
+  "cv": 1541863983
 }
 ```
 
-Use the timestamp as `cv`:
+Use the cv attribute value as `cv` parameter for the subsequent requests:
 
 <RequestExample url="https://api.storyblok.com/v2/cdn/stories?cv=1541863983&token=wANpEQEsMYGOwLxwXQ76Ggtt"></RequestExample>
 

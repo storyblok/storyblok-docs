@@ -9,7 +9,7 @@ If no entries are found with your filters applied, you will receive an empty arr
 | Query Parameter           | Description          |
 |---------------------|----------------------|
 | `token` (required) | Your public or preview token |
-| `cv` (required) | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
+| `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
 | `starts_with` | Filter by `full_slug`. Can be used to retrieve all entries form a specific folder. Examples: `starts_with=de/beitraege`, `starts_with=en/posts`. Attention: If you use field level translations and a root folder with the same name of a language code you need to prepend [default] to the path to retrieve the default language (Example: `starts_with=[default]/de/home`). |
 | `version` | Default: `published`. Possible values: `draft`, `published` |
 | `search_term` | Search content items by full text. |
@@ -38,6 +38,17 @@ If no entries are found with your filters applied, you will receive an empty arr
 | `filter_query` | Filter by specific attribute(s) of your content type - it will not work for default Story properties. The filter query parameter needs to contain the query operation key. Separate the values by a comma , to filter by multiple values. <br><br> `filter_query[ATTRIBUTE][OPERATION]=VALUE,...` <br><br> Following filter operations `OPERATION` are available: <br> `is` - Checks for empty or not empty values and booleans. For strings the value can be `empty` or `not_empty`. For arrays use `empty_array` or `not_empty_array`. For booleans use `true` or `false`. Additionally you can check for null values with `null` and `not_null`<br> `in` - Exact match of one of the provided values<br> `not_in` - Does not contain the given value<br> `like` - Does contain the given value with a wildcard * search<br> `not_like` - Does not contain the given value with a wildcard * search <br> `all_in_array` - Contains all of the values of an array value <br> `in_array` - Contains any of the values of an array value <br> `gt_date` - Greater than date (Format: 2018-03-03 10:00) <br> `lt_date` - Less than date <br> `gt_int` - Greater than integer value <br> `lt_int` - Less than integer value. <br> `gt_float` - Greater than float value <br> `lt_float` - Less than float value. <br><br> Checkout the [filter_query Examples](#filter-queries/overview) we put together for you with most common use-cases. |
 | `excluding_fields` | Exclude specific fields of your content type by comma seperated names. Example: `excluding_fields=title,content` |
 | `resolve_assets` | If the value is `1` it will resolve assets in the content and include the meta information (only available with premium plans) |
+
+**Response**
+
+The response will contain following attributes:
+
+| Property         | Description          |
+|------------------|----------------------|
+| `stories`        | An array of [story objects](#core-resources/stories/the-story-object) |
+| `cv`             | The [cache version](#topics/cache-invalidation) |
+| `rels`           | Array of related [story objects](#the-story-object) when using the resolve_relations parameter |
+| `links`          | Array of link or [story objects](#the-story-object) when using the resolve_links parameter |
 
 ;examplearea
 

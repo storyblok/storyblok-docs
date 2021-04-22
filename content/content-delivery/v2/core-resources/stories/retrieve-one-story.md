@@ -22,6 +22,17 @@ Returns a story object for the `full_slug`, `id` or `uuid` if authenticated usin
 | `language` | Add the language i18n code as query parameter to receive a localized version when using a numeric id or uuid as path parameter |
 | `fallback_lang` | Define a custom fallback language (i18n code). By default the fallback language is the one defined in the space settings  |
 
+**Response**
+
+The response will contain following attributes:
+
+| Property         | Description          |
+|------------------|----------------------|
+| `story`          | A single [story object](#core-resources/stories/the-story-object) |
+| `cv`             | The [cache version](#topics/cache-invalidation) |
+| `rels`           | Array of related [story objects](#the-story-object) when using the resolve_relations parameter |
+| `links`          | Array of link or [story objects](#the-story-object) when using the resolve_links parameter |
+
 ;examplearea
 
 Endpoint
