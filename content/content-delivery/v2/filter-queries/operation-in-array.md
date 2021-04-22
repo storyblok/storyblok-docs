@@ -21,7 +21,7 @@ Get all content entries that is refered to others in a [N:N relationship](https:
 
 Example Request (all entries of category `9aa72a2f-04ae-48df-b71f-25f53044dc97` **and** `84550816-245d-4fe6-8ae8-b633d4a328f4` in field `categories`)
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?filter_query[categories][in_array]=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?filter_query[categories][in_array]=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response (all entries of category `9aa72a2f-04ae-48df-b71f-25f53044dc97` **and** `84550816-245d-4fe6-8ae8-b633d4a328f4` in field `categories`)
 

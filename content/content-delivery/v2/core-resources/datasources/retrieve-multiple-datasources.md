@@ -15,12 +15,12 @@ Returns an array of datasource objects.
 Endpoint
 
 ```bash
-GET /v1/cdn/datasources
+GET /v2/cdn/datasources
 ```
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/datasources?token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/datasources?token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response 
 

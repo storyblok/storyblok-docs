@@ -21,7 +21,7 @@ As soon as you need to query for a specific integer value in your content entrie
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][lt_int]=100"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][lt_int]=100"></RequestExample>
 
 Example Response
 

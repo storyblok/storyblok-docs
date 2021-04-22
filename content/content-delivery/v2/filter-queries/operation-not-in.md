@@ -21,7 +21,7 @@ You can combined this query with the `starts_with`, [pagination](#topics/paginat
 
 Example Request (all Posts without specific Author)
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?filter_query[author][not_in]=22f4fb1b-50b3-4bf2-816e-7d589e307421&token=ask9soUkv02QqbZgmZdeDAtt&starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?filter_query[author][not_in]=22f4fb1b-50b3-4bf2-816e-7d589e307421&token=ask9soUkv02QqbZgmZdeDAtt&starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

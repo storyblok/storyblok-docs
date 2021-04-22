@@ -8,7 +8,7 @@ Appending the query paramter `version` with the value `draft` (eg. `version=draf
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories?version=draft&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories?version=draft&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

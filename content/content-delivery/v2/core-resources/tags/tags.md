@@ -9,5 +9,5 @@ Each tag is a string value that can be reused accross Stories to create features
 Endpoint
 
 ```bash
-GET /v1/cdn/tags/
+GET /v2/cdn/tags/
 ```

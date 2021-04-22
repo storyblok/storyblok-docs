@@ -23,7 +23,7 @@ As soon as you need to query for a specific float value in your content entries,
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt_float]=100.50"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt_float]=100.50"></RequestExample>
 
 Example Response
 

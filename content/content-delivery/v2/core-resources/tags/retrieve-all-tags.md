@@ -20,7 +20,7 @@ GET /v1/cdn/tags/?starts_with=posts/
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/tags/?starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/tags/?starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response 
 

@@ -14,7 +14,7 @@ The field type translation will map the available language keys with the folder 
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?starts_with=de/*&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?starts_with=de/*&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

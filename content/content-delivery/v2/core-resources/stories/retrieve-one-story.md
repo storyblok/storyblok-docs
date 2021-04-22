@@ -27,12 +27,12 @@ Returns a story object for the `full_slug`, `id` or `uuid` if authenticated usin
 Endpoint
 
 ```bash
-GET /v1/cdn/stories/(:full_slug|:id|:uuid)
+GET /v2/cdn/stories/(:full_slug|:id|:uuid)
 ```
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/posts/my-third-post?token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/posts/my-third-post?token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response 
 
@@ -70,6 +70,9 @@ Example Response
     "translated_slugs": [ ],
     "release_id": null,
     "lang": "default"
-  }
+  },
+  "cv": 1560257296,
+  "rels": [],
+  "links": []
 }
 ```

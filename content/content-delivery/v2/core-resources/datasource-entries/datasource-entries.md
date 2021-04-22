@@ -11,7 +11,7 @@ Key-value pairs can be used for a single-choice, multiple-choice options and as 
 Endpoint
 
 ```bash
-GET /v1/cdn/datasource_entries/
+GET /v2/cdn/datasource_entries/
 ```
 
 Additional Information

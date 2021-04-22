@@ -18,12 +18,12 @@ Returns an array of datasource entry objects for the `datasource` and `dimension
 Endpoint
 
 ```bash
-GET /v1/cdn/datasource_entries?datasource=:slug
+GET /v2/cdn/datasource_entries?datasource=:slug
 ```
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/datasource_entries?datasource=labels&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/datasource_entries?datasource=labels&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response 
 

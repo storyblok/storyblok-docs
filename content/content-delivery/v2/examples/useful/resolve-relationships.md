@@ -10,7 +10,7 @@ Example: `resolve_relations=categories`.
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?resolve_relations=categories&starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?resolve_relations=categories&starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

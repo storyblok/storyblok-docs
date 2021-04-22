@@ -10,7 +10,7 @@ Some of you might like to define the order of your entries in Storyblok, utilizi
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories?sort_by=position:desc&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories?sort_by=position:desc&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

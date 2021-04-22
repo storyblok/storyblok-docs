@@ -12,7 +12,7 @@ You can use the `version` param combined with the `starts_with` param to load en
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?version=draft&starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?version=draft&starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

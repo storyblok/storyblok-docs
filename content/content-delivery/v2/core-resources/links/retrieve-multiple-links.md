@@ -19,12 +19,12 @@ Attention: This API endpoint is not paged by default. Activate it using `paginat
 Endpoint
 
 ```bash
-GET /v1/cdn/links/?starts_with=posts/
+GET /v2/cdn/links/?starts_with=posts/
 ```
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/links/?starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/links/?starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Object 
 

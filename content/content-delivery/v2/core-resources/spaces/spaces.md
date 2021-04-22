@@ -13,5 +13,5 @@ Read more about [Cache invalidation](#cache-invalidation)
 Endpoint
 
 ```bash
-GET /v1/cdn/spaces/me/
+GET /v2/cdn/spaces/me/
 ```

@@ -8,6 +8,7 @@ With the filter_query you're able to filter by specific attribute(s) of your sto
 
 | Operation | Description |
 |----|---------|
+| [`is`](#filter-queries/operation-is) | Matches a value type |
 | [`in`](#filter-queries/operation-in) | Matches exactly **one** value |
 | [`not_in`](#filter-queries/operation-not-in) | Matches all without the given value |
 | [`like`](#filter-queries/operation-like) | Matches exactly **one** value with a wildcard search using * (Example: "john*") |
@@ -23,12 +24,26 @@ With the filter_query you're able to filter by specific attribute(s) of your sto
 
 You can find one example for each filter query in the description page for each operation, and examples that combine multiple filters in the [filter examples](#examples/filtering/filters) section.
 
+By default the applied filters are connected by the AND operator but it is also possible to apply filters by the OR operator using the keyword `__or`. Following an example using the Javascript SDK:
+
+```
+StoryblokClient.get('cdn/stories', {
+  filter_query_v2: {
+    __or: [
+      { color: { in: 'red' } },
+      { background: { in: 'blue' } }
+    ],
+    component: { in: 'article' }
+  }
+})
+```
+
 ;examplearea
 
 Endpoint
 
 ```bash
-GET /v1/cdn/stories/?filter_query[ATTRIBUTE][OPERATION]=VALUE,...
+GET /v2/cdn/stories/?filter_query[ATTRIBUTE][OPERATION]=VALUE,...
 ```
 
 Example Story Object

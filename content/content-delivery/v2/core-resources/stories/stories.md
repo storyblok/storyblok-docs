@@ -11,7 +11,7 @@ To achieve low latencies all over the world, Storyblok uses a CDN in front of th
 Endpoint
 
 ```bash
-GET /v1/cdn/stories/
+GET /v2/cdn/stories/
 ```
 
 Additional Information

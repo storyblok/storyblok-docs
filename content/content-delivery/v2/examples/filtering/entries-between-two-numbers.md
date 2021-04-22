@@ -8,7 +8,7 @@ A common filter needed for a shop content structure implementation would be a si
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt-float]=100.50&filter_query[price][lt-float]=300.50"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&filter_query[price][gt-float]=100.50&filter_query[price][lt-float]=300.50"></RequestExample>
 
 Example Response
 

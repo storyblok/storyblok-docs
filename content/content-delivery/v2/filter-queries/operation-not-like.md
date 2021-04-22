@@ -20,7 +20,7 @@ You can combined this query with the `starts_with`, [pagination](#topics/paginat
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?version=draft&token=6HMYdAjBoONyuS6GIf5PdAtt&starts_with=authors/&filter_query[name][not_like]=john*"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?version=draft&token=6HMYdAjBoONyuS6GIf5PdAtt&starts_with=authors/&filter_query[name][not_like]=john*"></RequestExample>
 
 Example Response
 

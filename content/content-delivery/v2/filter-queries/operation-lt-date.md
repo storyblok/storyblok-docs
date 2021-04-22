@@ -19,7 +19,7 @@ You can create custom dates that allow you to schedule posts, launch products, s
 
 Example Request (All posts scheduled BEFORE date)
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&starts_with=posts/&filter_query[schedule][lt_date]=2018-12-24 09:00"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&starts_with=posts/&filter_query[schedule][lt_date]=2018-12-24 09:00"></RequestExample>
 
 Example Response (All posts scheduled BEFORE date)
 

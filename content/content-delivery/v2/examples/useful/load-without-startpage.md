@@ -8,7 +8,7 @@ Appending the query paramter `is_startpage` with the value `false` (eg. `is_star
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories?is_startpage=false&starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories?is_startpage=false&starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

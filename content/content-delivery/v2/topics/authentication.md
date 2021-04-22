@@ -35,6 +35,6 @@ or use directly as parameter
 
 </div> 
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories?token=wANpEQEsMYGOwLxwXQ76Ggtt" :keepToken="true"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories?token=wANpEQEsMYGOwLxwXQ76Ggtt" :keepToken="true"></RequestExample>
 
 To perform a GET request with your token append the query parameter **token** with your **preview** or **public** token as shown in the example above.

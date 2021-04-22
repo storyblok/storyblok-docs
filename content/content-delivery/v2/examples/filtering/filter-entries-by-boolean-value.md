@@ -8,7 +8,7 @@ Imagine you want to allow your editors to have featured products with a boolean 
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?filter_query[featured][in]=true&starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?filter_query[featured][in]=true&starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

@@ -14,7 +14,7 @@ As you can see it works just like with the default properties of a story object 
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories?sort_by=content.name:asc&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories?sort_by=content.name:asc&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

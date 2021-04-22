@@ -9,5 +9,5 @@ Links are another representation of your content entries, eg. Stories. With the 
 Endpoint
 
 ```bash
-GET /v1/cdn/links/
+GET /v2/cdn/links/
 ```

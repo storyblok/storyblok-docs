@@ -8,7 +8,7 @@ With the cache invalidation provided by Storyblok utilizing the `cv` (cache vers
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/spaces/me/?cv=CURRENT_TIMESTAMP&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/spaces/me/?cv=CURRENT_TIMESTAMP&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

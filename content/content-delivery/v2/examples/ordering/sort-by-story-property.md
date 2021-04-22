@@ -14,7 +14,7 @@ You can sort your content entries by custom and predefined property using the `s
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories?sort_by=name:asc&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories?sort_by=name:asc&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

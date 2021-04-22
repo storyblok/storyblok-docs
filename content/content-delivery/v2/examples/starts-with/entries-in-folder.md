@@ -14,7 +14,7 @@ You can use the `starts_with` parameter to load entries that are in a specific f
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v1/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?starts_with=products/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 
