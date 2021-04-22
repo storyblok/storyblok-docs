@@ -1,5 +1,5 @@
 module.exports = {
-  defaultLanguage: `en`,
+  defaultLanguage: `v1`,
   splitString: ';examplearea',
   availableRoutesFile: `${__dirname}/routes.json`,
   contentInputFolder: `${__dirname}/content/`,

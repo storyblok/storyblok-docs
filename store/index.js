@@ -18,6 +18,9 @@ const createStore = () => {
     },
     mutations: {
       SET_MENU(state, menu) {
+        if (!menu) {
+          return
+        }
         state.menu = menu
         let flattened = []
         menu.forEach((category) => {
@@ -53,5 +56,5 @@ const createStore = () => {
     }
   })
 }
-  
+
 export default createStore

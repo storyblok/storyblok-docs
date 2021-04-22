@@ -125,7 +125,7 @@ module.exports = {
         let lang = parts[1]
         let origin = parts[4]
         if (lang == 'docs') {
-          lang = 'en'
+          lang = 'v1'
           origin = parts[3]
         }
 
