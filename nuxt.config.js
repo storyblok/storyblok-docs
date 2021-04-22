@@ -106,10 +106,16 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    ['nuxt-sass-resources-loader', [
-      '@/assets/_variables.scss',
-    ]]
+    '@nuxtjs/style-resources'
   ],
+
+  css: [
+    '~assets/_variables.scss'
+  ],
+
+  styleResources: {
+    scss: ['./assets/*.scss']
+  },
 
   generate: {
     routes(callback) {
@@ -119,7 +125,7 @@ module.exports = {
         let lang = parts[1]
         let origin = parts[4]
         if (lang == 'docs') {
-          lang = 'en'
+          lang = 'v1'
           origin = parts[3]
         }
 

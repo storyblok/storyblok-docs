@@ -28,9 +28,9 @@ $ npm run generate
 
 ```
 - content
-  - {origin}.{lang}.json
+  - {origin}.{version}.json
   - {origin} (content delivery or management)
-    - {lang} (en, de, ...)
+    - {version} (v1, v2, ...)
       - categories
         - method/section.md
 ```

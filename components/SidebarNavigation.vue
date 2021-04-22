@@ -1,5 +1,11 @@
 <template>
   <nav class="side-navigation">
+    <div class="side-navigation__select">
+      <select @change="changeVersion($event)" v-model="version" v-if="version">
+        <option value="v1">Api V1</option>
+        <option value="v2">Api V2 (latest)</option>
+      </select>
+    </div>
     <ul class="side-navigation__categories">
       <li :key=category.category v-for="(category, index) in $store.state.menu">
         <div class="side-navigation__category" :class="{ 'side-navigation__category--first': index == 0 }">{{category.category}}</div>
@@ -24,7 +30,22 @@
 
 <script>
 export default {
+  data() {
+    return {
+      version: null
+    }
+  },
+  mounted() {
+    let version = window.location.pathname.split('/')[1]
+
+    if (['v1', 'v2'].indexOf(version) > -1) {
+      this.version = version
+    }
+  },
   methods: {
+    changeVersion(e) {
+      window.location.href = `/${e.target.value}/docs/api/content-delivery`
+    },
     methodByContentPath(contentPath) {
       if(typeof contentPath === 'undefined') return {}
       return this.$store.state.sections[contentPath.replace(this.$store.getters.originLanguagePath, '')]
@@ -64,6 +85,15 @@ export default {
 </script>
 
 <style lang="scss">
+.side-navigation__select {
+  padding: 0 20px 10px 20px;
+
+  select {
+    width: 100%;
+    padding: 5px;
+  }
+}
+
 .side-navigation {
   position: fixed;
   top: 60px;
