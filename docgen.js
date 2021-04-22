@@ -26,8 +26,6 @@ const Docgen = {
   sections: {},
 
   init: () => {
-    console.log(process.env.THEME_ENV)
-
     Docgen.generateRoutes()
     Docgen.coldstart()
     if (!!args.watch) {
