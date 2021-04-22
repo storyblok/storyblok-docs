@@ -26,6 +26,8 @@ const Docgen = {
   sections: {},
 
   init: () => {
+    console.log(process.env.THEME_ENV)
+
     Docgen.generateRoutes()
     Docgen.coldstart()
     if (!!args.watch) {
@@ -33,7 +35,7 @@ const Docgen = {
       watch(config.contentInputFolder, { filter: /\.json$/, recursive: false }, Docgen.handleMenuEvent)
     }
   },
-    
+
   /**
    * Handles all node-watch file events (remove, update)
    * @param {string} event - node-watch event type; eg. 'remove' || 'change'
@@ -42,9 +44,9 @@ const Docgen = {
   handleFileEvent: (event, contentFilePath) => {
     switch (event) {
       case 'remove':
-        // contentFilePath = /my_absolute_file/content/content-delivery/en/topics/introduction.md  
+        // contentFilePath = /my_absolute_file/content/content-delivery/en/topics/introduction.md
         // contentPath = content-delivery/en/topics/introduction
-        const contentPath = contentFilePath.replace(config.contentInputFolder, '').replace(path.parse(contentFilePath).ext, '')  
+        const contentPath = contentFilePath.replace(config.contentInputFolder, '').replace(path.parse(contentFilePath).ext, '')
         // [ content-delivery, en, topics, introduction ]
         const contentPathParts = contentPath.replace(/\\/g, '/').split('/')
         // content-delivery
@@ -82,10 +84,10 @@ const Docgen = {
 
         // content-delivery
         const origin = contentPathParts.shift()
-        
+
         // en
         const lang = contentPathParts.shift()
-        
+
         Docgen.exportMenu(origin, lang)
         break
     }
@@ -105,10 +107,10 @@ const Docgen = {
 
       Docgen.generateAll()
     })
-  }, 
-  
+  },
+
   /**
-   * Iterate through all origins and languages to trigger 
+   * Iterate through all origins and languages to trigger
    * the generate for each content file.
    */
   generateAll: () => {
@@ -164,22 +166,22 @@ const Docgen = {
     const content = fs.readFileSync(contentFilePath, { encoding: 'utf8' })
 
     const frontmatterContent = frontmatter(content)
-    const title = marked(frontmatterContent.attributes.title || '').replace('<p>', '').replace('</p>\n', '') 
+    const title = marked(frontmatterContent.attributes.title || '').replace('<p>', '').replace('</p>\n', '')
     const areas = frontmatterContent.body.split(config.splitString)
     const methodContent = Docgen.prepareTemplate(marked(areas[0] || ''))
     const methodExample = Docgen.prepareTemplate(marked(areas[1] || ''))
 
     // contentFilePath = /my_absolute_file/content/content-delivery/en/topics/introduction.md
-    
+
     // contentPath = content-delivery/en/topics/introduction
-    const contentPath = contentFilePath.replace(config.contentInputFolder, '').replace(path.parse(contentFilePath).ext, '')  
-    
+    const contentPath = contentFilePath.replace(config.contentInputFolder, '').replace(path.parse(contentFilePath).ext, '')
+
     // [ content-delivery, en, topics, introduction ]
     const contentPathParts = contentPath.replace(/\\/g, '/').split('/')
 
     // content-delivery
     const origin = contentPathParts.shift()
-    
+
     // en
     const lang = contentPathParts.shift()
 
@@ -209,7 +211,7 @@ const Docgen = {
     }
 
     // assign data to origin, lang and relativePath combination
-    Docgen.sections[origin][lang][relativePath] = section 
+    Docgen.sections[origin][lang][relativePath] = section
 
     return section
   },
@@ -222,7 +224,7 @@ const Docgen = {
     Docgen.listFoldersInFolder(config.contentInputFolder).forEach((origin) => {
       Docgen.listFoldersInFolder(config.contentInputFolder + origin).forEach((lang) => {
         if(lang == config.defaultLanguage) {
-          routes.push(`/docs/api/${origin}/`)          
+          routes.push(`/docs/api/${origin}/`)
         } else {
           routes.push(`/${lang}/docs/api/${origin}/`)
         }
@@ -235,7 +237,7 @@ const Docgen = {
   },
 
   /**
-   * Replaces all wrapper <p> for our RequestExample component with an empty string array 
+   * Replaces all wrapper <p> for our RequestExample component with an empty string array
    * as it otherwise would be an invalid HTML because RequestExample will be rendered to a Block Type
    * Element which is not allowed to be nested inside a paragraph.
    * Adds a wrapper div to each <table> so we can later add overflow-y container.
