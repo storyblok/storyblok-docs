@@ -1,9 +1,9 @@
 <template>
   <nav class="side-navigation">
     <div class="side-navigation__select">
-      <select>
-        <option>Api V1</option>
-        <option>Api V2 (latest)</option>
+      <select @change="changeVersion($event)" v-model="version" v-if="version">
+        <option value="v1">Api V1</option>
+        <option value="v2">Api V2 (latest)</option>
       </select>
     </div>
     <ul class="side-navigation__categories">
@@ -30,7 +30,22 @@
 
 <script>
 export default {
+  data() {
+    return {
+      version: null
+    }
+  },
+  mounted() {
+    let version = window.location.pathname.split('/')[1]
+
+    if (['v1', 'v2'].indexOf(version) > -1) {
+      this.version = version
+    }
+  },
   methods: {
+    changeVersion(e) {
+      window.location.href = `/${e.target.value}/docs/api/content-delivery`
+    },
     methodByContentPath(contentPath) {
       if(typeof contentPath === 'undefined') return {}
       return this.$store.state.sections[contentPath.replace(this.$store.getters.originLanguagePath, '')]

@@ -105,6 +105,9 @@
       {
         "children": [
           {
+            "contentPath": "content-delivery/v2/filter-queries/operation-is"
+          },
+          {
             "contentPath": "content-delivery/v2/filter-queries/operation-in"
           },
           {

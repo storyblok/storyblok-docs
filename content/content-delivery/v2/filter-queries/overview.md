@@ -26,7 +26,7 @@ You can find one example for each filter query in the description page for each 
 
 By default the applied filters are connected by the AND operator but it is also possible to apply filters by the OR operator using the keyword `__or`. Following an example using the Javascript SDK:
 
-```
+```javascript
 StoryblokClient.get('cdn/stories', {
   filter_query_v2: {
     __or: [
