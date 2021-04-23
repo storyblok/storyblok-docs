@@ -19,7 +19,7 @@ const RenderingServiceHelper = {
         files.forEach((file) => {
           let requestRoute = path.dirname(file).replace(config.contentInputFolder, '')
           let output = RenderingServiceHelper.generateLiquidOutputPaths(file)
-          let pathToLiquid = output.folder.replace(config.contentOutputFolder, '') + '/' + RenderingServiceHelper.replaceAll(output.originalFilename, '-', '_')
+          let pathToLiquid = RenderingServiceHelper.replaceAll(output.folder.replace(config.contentOutputFolder, ''), '-', '_') + '/' + RenderingServiceHelper.replaceAll(output.originalFilename, '-', '_')
 
           routes.push(`
   {% when '/${requestRoute}' %}
@@ -52,17 +52,21 @@ const RenderingServiceHelper = {
       (err, files) => {
         files.forEach((input) => {
           let output = RenderingServiceHelper.generateLiquidOutputPaths(input)
-
+          
           fs.ensureDirSync(output.folder)
 
-          fs.readFile(input, { encoding: 'utf8' }, (err, data) => {
+          fs.readFile(input, { encoding: 'utf8' }, async (err, data) => {
+
             data = RenderingServiceHelper.resolveAssets(data)
             data = RenderingServiceHelper.addVersionParam(data)
-            data = RenderingServiceHelper.addGoogleAnalytics(data)
+            let renderingServiceFolder = output.folder.split('deploy/views/')[1]
 
-            Storyblok.put('spaces/' + config.spaceId + '/templates/create_or_update?token=' + process.env.THEME_TOKEN, {
+            let uploadPath = renderingServiceFolder.replace('-', '_') + '/' + output.filename
+            console.log(uploadPath)
+            
+            await Storyblok.put('spaces/' + config.spaceId + '/templates/create_or_update?token=' + process.env.THEME_TOKEN, {
               template: {
-                path: 'components/gnd/docs/api/' + output.filename,
+                path: uploadPath,
                 tmpl_type: 'text',
                 body: data,
                 env: themeEnv
@@ -110,11 +114,8 @@ const RenderingServiceHelper = {
   addVersionParam: (data) => {
     return RenderingServiceHelper.replaceAll(data, `.js"`, `.js?v=${version}"`)
   },
-  addGoogleAnalytics: (data) => {
-    return data.replace('</body>', `{% include 'ga' %}</body>`)
-  },
   resolveAssets: (data) => {
-    return RenderingServiceHelper.replaceAll(data, '/_nuxt/', 'https://storyblok-docs.netlify.com/_nuxt/')
+    return RenderingServiceHelper.replaceAll(data, '/_nuxt/', 'https://storyblok-docs.netlify.app/_nuxt/')
   },
   replaceAll(target, search, replacement) {
     return target.replace(new RegExp(search, 'g'), replacement);

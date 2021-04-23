@@ -19,7 +19,7 @@ export default {
   head() {
     return {
       htmlAttrs: {
-        lang: this.$store.state.lang
+        lang: 'en'
       },
       // title: `${this.$store.state.sections[this.$store.state.menu[0].items[0]]} - Storyblok`,
       link: [
@@ -37,7 +37,7 @@ export default {
   },
   async fetch ({ store, params, payload }) {
     const origin = params.origin
-    const lang = params.lang || 'v1'
+    const lang = params.lang || 'v2'
 
     let menu = null
     let sections = null

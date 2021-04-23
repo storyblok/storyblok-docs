@@ -19,7 +19,7 @@ export default {
   head() {
     return {
       htmlAttrs: {
-        lang: this.$store.state.lang
+        lang: 'en'
       },
       // title: `${this.$store.state.sections[this.$store.state.menu[0].items[0]]} - Storyblok`,
       link: [

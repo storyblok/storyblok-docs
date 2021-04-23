@@ -224,7 +224,7 @@ const Docgen = {
         if(lang == config.defaultLanguage) {
           routes.push(`/docs/api/${origin}/`)
         } else {
-          routes.push(`/${lang}/docs/api/${origin}/`)
+          routes.push(`/docs/api/${origin}/${lang}/`)
         }
       })
     })

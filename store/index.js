@@ -5,7 +5,7 @@ const createStore = () => {
     state: {
       activeMenuPath: 'topics/introduction',
       technology: 'bash',
-      lang: 'en',
+      lang: 'v1',
       origin: 'content-delivery',
       sections: {},
       menu: [],

@@ -4,5 +4,5 @@ module.exports = {
   assetOutputFolder:`${__dirname}/deploy/_nuxt`,
   contentOutputFolder: `${__dirname}/deploy/views/components/gnd/`,
   routerFile: `${__dirname}/deploy/views/docs-router.liquid`,
-  spaceId: 51376
+  spaceId: 88751
 }

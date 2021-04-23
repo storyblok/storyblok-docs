@@ -128,6 +128,9 @@ module.exports = {
           lang = 'v1'
           origin = parts[3]
         }
+        if (route.indexOf('v2') >= 0) {
+          lang = 'v2'
+        }
 
         enrichedRoutes.push({
           route: route,
