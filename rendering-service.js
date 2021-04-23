@@ -55,20 +55,19 @@ const RenderingServiceHelper = {
 
           fs.ensureDirSync(output.folder)
 
-          fs.readFile(input, { encoding: 'utf8' }, (err, data) => {
+          fs.readFile(input, { encoding: 'utf8' }, async (err, data) => {
             data = RenderingServiceHelper.resolveAssets(data)
             data = RenderingServiceHelper.addVersionParam(data)
             data = RenderingServiceHelper.addGoogleAnalytics(data)
+            let renderingServiceFolder = output.folder.split('deploy/views/')[1]
 
-            Storyblok.put('spaces/' + config.spaceId + '/templates/create_or_update?token=' + process.env.THEME_TOKEN, {
+            await Storyblok.put('spaces/' + config.spaceId + '/templates/create_or_update?token=' + process.env.THEME_TOKEN, {
               template: {
-                path: 'components/gnd/docs/api/' + output.filename,
+                path: renderingServiceFolder + '/' + output.filename,
                 tmpl_type: 'text',
                 body: data,
                 env: themeEnv
               }
-            }).catch((e) => {
-              console.log(e.response.data)
             })
           })
         })
