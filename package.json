@@ -10,7 +10,7 @@
     "start": "nuxt start",
     "generate": "node docgen.js && nuxt generate",
     "netlify": "node docgen.js && nuxt generate && netlify deploy",
-    "full": "node docgen.js && nuxt generate && node rendering-service.js"
+    "full": "node docgen.js && nuxt generate"
   },
   "dependencies": {
     "axios": "^0.21.1",
