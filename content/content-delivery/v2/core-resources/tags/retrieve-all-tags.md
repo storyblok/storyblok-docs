@@ -15,7 +15,7 @@ Returns an array of tag objects of one space. Use the `version` parameter and th
 Endpoint
 
 ```bash
-GET /v1/cdn/tags/?starts_with=posts/
+GET /v2/cdn/tags/?starts_with=posts/
 ```
 
 Example Request
