@@ -4,7 +4,7 @@ import marked from '@/lib/markedWithPrism.js'
 export default {
   data() {
     return {
-      bases: ['https://api.storyblok.com/v1', 'https://mapi.storyblok.com/v1'],
+      bases: ['https://api.storyblok.com/v1', 'https://mapi.storyblok.com/v1', 'https://api.storyblok.com/v2'],
     }
   },
   props: {
