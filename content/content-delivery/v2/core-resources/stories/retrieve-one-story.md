@@ -19,7 +19,7 @@ Returns a story object for the `full_slug`, `id` or `uuid` if authenticated usin
 | `resolve_relations` | Resolve relationships to other Stories of a multi-option or single-option field-type. Provide the component name and the field key as comma separated string. The limit of resolved relationships is `100` Stories. You can't use this filter to resolve relations of resolved entries (eg. nested relationship resolving). Example: `resolve_relations=page.author,page.categories`; Read more about it in our [tutorial](https://www.storyblok.com/tp/using-relationship-resolving-to-include-other-content-entries). |
 | `from_release` | Access version of specific release by release id |
 | `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
-| `language` | Add the language i18n code as query parameter to receive a localized version when using a numeric id or uuid as path parameter |
+| `language` | Add the language i18n code as query parameter to receive a localized version |
 | `fallback_lang` | Define a custom fallback language (i18n code). By default the fallback language is the one defined in the space settings  |
 
 **Response**
