@@ -28,7 +28,7 @@ By default the applied filters are connected by the AND operator but it is also 
 
 ```javascript
 StoryblokClient.get('cdn/stories', {
-  filter_query_v2: {
+  filter_query: {
     __or: [
       { color: { in: 'red' } },
       { background: { in: 'blue' } }
