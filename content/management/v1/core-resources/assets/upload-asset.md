@@ -2,7 +2,7 @@
 title: Upload Asset
 ---
 
-Uploading assets in Storyblok is a two step process. First you need to sign the asset you want to upload. Then you need to post the image as form data to our Amazon S3 bucket. Uploaded files will have parameterized names; Every dot `"."` (except the last one) will be replaced with underscore `"_"`; 
+Uploading assets in Storyblok is a three step process. First you need to sign the asset you want to upload. Then you need to post the image as form data to our Amazon S3 bucket. Lastly, you need to send another request to finalize the process and let Storyblok retrieve the MIME type and the content length for your asset. Uploaded files will have parameterized names; Every dot `"."` (except the last one) will be replaced with underscore `"_"`.
 
 Here you can find an example [using Node.js on Github](https://github.com/onefriendaday/storyblok-file-upload-example).
 
@@ -18,7 +18,7 @@ Example Request (with asset folder)
 
 <RequestExample url="https://mapi.storyblok.com/v1/spaces/606/assets/" httpMethod="POST" :requestObject='{"filename":"your_file.jpg","size":"400x500","asset_folder_id":123}'></RequestExample>
 
-2. Use the received signed response object to upload your file (example uses Node.js): 
+2. Use the received signed response object to upload your file (example uses Node.js) and to finalize the process: 
 
 ```javascript
 const FormData = require('form-data')
@@ -36,6 +36,13 @@ const fileUpload = (signed_response_object, success, failed) => {
   // submit your form
   form.submit(signed_response_object.post_url, (err, res) => {
     if (err) throw err
+    
+    // 3. finalize the upload
+    Storyblok.get('spaces/606/assets/' + signed_response_object.id + '/finish_upload').then(response => {
+      console.log('https://a.storyblok.com/' + signed_response_object.fields.key + ' uploaded!')
+    }).catch(error => { 
+      throw error
+    })
     console.log('https://a.storyblok.com/' + signed_response_object.fields.key + ' uploaded!')
   })
 }
