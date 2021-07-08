@@ -20,7 +20,7 @@ This is an object representing your content entry. One Story object can be of a 
 | `is_startpage`        | Is startpage of current folder (true/false) | 
 | `is_folder`           | Is story a folder (true/false) | 
 | `default_root`        | Component name which will be used as default content type for this folders entries |
-| `disble_fe_editor`    | Is side by side editor disabled for all entries in folder (true/false) |
+| `disable_fe_editor`    | Is side by side editor disabled for all entries in folder (true/false) |
 | `parent_id`           | Parent story/folder numeric id | 
 | `parent`              | Essential parent information as object (resolved from `parent_id`) | 
 | `group_id`            | Alternates group id (uuid string) | 
@@ -70,7 +70,7 @@ Example Object
     },
     "path": null,
     "default_root": null,
-    "disble_fe_editor": false,
+    "disable_fe_editor": false,
     // parent folder id
     "parent_id": 369683,
     // resolved parent folder information
@@ -78,7 +78,7 @@ Example Object
       "id": 369683,
       "slug": "posts",
       "name": "Posts",
-      "disble_fe_editor": true,
+      "disable_fe_editor": true,
       "uuid": "dcfcc350-e63e-4232-8dcb-ba4b8e70799d"
     },
     "full_slug": "posts/my-third-post", // automatically generated
@@ -87,7 +87,7 @@ Example Object
       "id": 369683,
       "name": "Posts",
       "parent_id": 0,
-      "disble_fe_editor": true
+      "disable_fe_editor": true
     }],
     "published": false,
     "unpublished_changes": true,
