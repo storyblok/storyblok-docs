@@ -13,7 +13,7 @@ Can be used to build migrations, updates if you changed your component structure
 | `story[default_root]` (required*) | Default content type/root component. (*Required if `is_folder` is `true`) |
 | `story[is_folder]` | If `true` a folder will be created instead of a story |
 | `story[parent_id]` | The id of the parent |
-| `story[disble_fe_editor]` | Is side by side editor disabled for all entries in folder (true/false) |
+| `story[disable_fe_editor]` | Is side by side editor disabled for all entries in folder (true/false) |
 | `story[path]` | Given real path, used in the preview editor |
 | `story[is_startpage]` | Is startpage of current folder (true/false) |
 | `story[position]` | Integer value of the position |
