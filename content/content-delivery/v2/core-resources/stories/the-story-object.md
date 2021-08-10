@@ -26,6 +26,8 @@ This is an object representing your content entry. One Story object can be of a 
 | `translated_slugs`    | Array of translated slugs. Only gets included if the translatable slug app is installed | 
 | `links`               | Array of all resolved links if the `resolve_links` parameter is in use | 
 | `rels`                | Array of all resolved stories if the `resolve_relations` parameter is in use |
+| `rel_uuids`           | Array of the uuids of all the relations to resolve if the `resolve_relations` parameter is in use and if the limit of resolvable relations is hit |
+| `link_uuids`          | Array of the uuids of all the links to resolve if the `resolve_links` parameter is in use and if the limit of resolvable links is hit |
 
 ;examplearea
 
