@@ -24,8 +24,10 @@ This is an object representing your content entry. One Story object can be of a 
 | `group_id`            | Alternates group id (uuid string) | 
 | `alternates`          | Array of alternate objects | 
 | `translated_slugs`    | Array of translated slugs. Only gets included if the translatable slug app is installed | 
-| `links`               | Array of all resolved links if the `resolve_links` parameter is in use | 
-| `rels`                | Array of all resolved stories if the `resolve_relations` parameter is in use |
+| `sort_by_date`        | null (What type and What does it do?) | 
+| `tag_list`            | Array of tag objects | 
+| `meta_data`           | What does it do? What type is it? | 
+| `path`                | What does it do? What type is it? | 
 
 ;examplearea
 
@@ -33,44 +35,37 @@ Example Object
 
 ```json
 {
-  "story": {
-    "id": 107350,
-    "uuid": "ac0d2ed0-e323-43ca-ae59-5cd7d38683cb",
-    "name": "My third post",
-    "slug": "my-third-post",
-    "full_slug": "posts/my-third-post",
-    "default_full_slug": null,
-    "created_at": "2018-04-24T11:57:29.302Z",
-    "published_at": "2018-08-07T09:40:13.802Z",
-    "first_published_at": "2018-08-07T09:40:13.802Z",
-    "release_id": null,
-    "lang": "default",
-    "content": {
-      "component": "your_content_type",
-      // and fields you define yourself are in here
-    },
-    "position": -20,
-    "is_startpage": false,
-    "parent_id": 107348,
-    "group_id": "4add5c88-8d9c-4480-bfcf-63016c4c463e",
-    "translated_slugs": [
-      {
-        "path": "mein-beitrag",
-        "name": "Mein Beitrag",
-        "lang": "de"
-      }
-      // only gets included if the translatable slug app is installed
-    ],
-    "alternates": [
-      {
-        "id": 107381,
-        "name": "Mein dritter Beitrag",
-        "slug": "my-post-in-another-folder",
-        "full_slug": "de/my-post-in-another-folder",
-        "is_folder": false,
-        "parent_id": 107356
-      }
-    ]
+    "data": {
+      "story": {
+        "name": "My third post",
+        "created_at": "2018-04-24T11:57:29.302Z",
+        "published_at": "2018-08-07T09:40:13.802Z",
+        "id": 72882536,
+        "uuid": "ac0d2ed0-e323-43ca-ae59-5cd7d38683cb",
+        "content": {
+          "component": "your_content_type",
+          // and fields you define yourself are in here
+         },
+        "slug": "my-third-post",
+        "full_slug": "posts/my-third-post",
+        "sort_by_date": null,
+        "position": 0,
+        "tag_list": [],
+        "is_startpage": false,
+        "parent_id": 72882535,
+        "meta_data": null,
+        "group_id": "4add5c88-8d9c-4480-bfcf-63016c4c463e",
+        "first_published_at": "2018-08-07T09:40:13.802Z",
+        "release_id": null,
+        "lang": "default",
+        "path": null,
+        "alternates": [],
+        "default_full_slug": null,
+        "translated_slugs": null
+      },
+    "cv": 1632799493,
+    "rels": [],
+    "links": []
   }
 }
 ```
