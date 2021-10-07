@@ -13,7 +13,7 @@ With the filter_query you're able to filter by specific attribute(s) of your sto
 | [`not_in`](#filter-queries/operation-not-in) | Matches all without the given value |
 | [`like`](#filter-queries/operation-like) | Matches exactly **one** value with a wildcard search using * (Example: "john*") |
 | [`not_like`](#filter-queries/operation-not-like) | Matches all without the given value |
-| [`in_array`](#filter-queries/operation-in-array) | Matches **any** value of given array |
+| [`any_in_array`](#filter-queries/operation-any-in-array) | Matches **any** value of given array |
 | [`all_in_array`](#filter-queries/operation-all-in-array) | Must match **all** values of given array |
 | [`gt_date`](#filter-queries/operation-gt-date) | Greater than date (Format: `YYYY-mm-dd HH:MM`) |
 | [`lt_date`](#filter-queries/operation-lt-date) | Less than date (Format: `2018-03-03 10:00`) |
