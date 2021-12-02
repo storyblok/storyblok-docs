@@ -9,7 +9,7 @@ This is an object representing your content entry. One Story object can be of a 
 | `id`                  | Numeric id | 
 | `uuid`                | Generated uuid string | 
 | `name`                | The name you give this story | 
-| `slug`                | Gthe slug / path you give this story |
+| `slug`                | The slug / path you give this story |
 | `full_slug`           | Combined parent folder and current slug | 
 | `default_full_slug`   | Contains the full slug of the default language if the app Translatable Slugs is installed | 
 | `created_at`          | Creation date (Format: `YYYY-mm-dd HH:MM`) | 
