@@ -49,6 +49,8 @@ The response will contain following attributes:
 | `cv`             | The [cache version](#topics/cache-invalidation) |
 | `rels`           | Array of related [story objects](#the-story-object) when using the resolve_relations parameter |
 | `links`          | Array of link or [story objects](#the-story-object) when using the resolve_links parameter |
+| `rel_uuids`      | Array of the uuids of all the related [story objects](#the-story-object) if the `resolve_relations` parameter is in use and if the limit of resolvable relations is hit |
+| `link_uuids`     | Array of the uuids of all the links if the `resolve_links` parameter is in use and if the limit of resolvable links is hit |
 
 ;examplearea
 
