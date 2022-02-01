@@ -120,7 +120,7 @@
             "contentPath": "content-delivery/v2/filter-queries/operation-not-like"
           },
           {
-            "contentPath": "content-delivery/v2/filter-queries/operation-in-array"
+            "contentPath": "content-delivery/v2/filter-queries/operation-any-in-array"
           },
           {
             "contentPath": "content-delivery/v2/filter-queries/operation-all-in-array"
