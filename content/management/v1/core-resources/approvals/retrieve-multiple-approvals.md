@@ -1,5 +1,5 @@
 ---
-title: Retrieve multiple Activities
+title: Retrieve multiple Approvals
 ---
 
 Returns an array of approval objects. This endpoint can be filtered on approver and is [paged](#topics/pagination).
