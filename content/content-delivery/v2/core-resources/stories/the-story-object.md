@@ -6,26 +6,30 @@ This is an object representing your content entry. One Story object can be of a 
 
 | Property            | Description          |
 |---------------------|----------------------|
-| `id`                  | Numeric id | 
+| `id`                  | Numeric id | 
 | `uuid`                | Generated uuid string | 
-| `name`                | The name you give this story | 
-| `slug`                | The slug / path you give this story |
-| `full_slug`           | Combined parent folder and current slug | 
+| `name`                | The name you give this story | 
+| `slug`                | The slug / path you give this story |
+| `full_slug`           | Combined parent folder and current slug | 
 | `default_full_slug`   | Contains the full slug of the default language if the app Translatable Slugs is installed | 
-| `created_at`          | Creation date (Format: `YYYY-mm-dd HH:MM`) | 
+| `created_at`          | Creation date (Format: `YYYY-mm-dd HH:MM`) | 
 | `published_at`        | Latest publishing date (Format: `YYYY-mm-dd HH:MM`) | 
-| `first_published_at`  | First publishing date (Format: `YYYY-mm-dd HH:MM`) | 
-| `release_id`          | Id of your content stage (default: null) | 
-| `lang`                | Defined language (default: "default") | 
-| `content`             | Your defined custom content body object | 
-| `position`            | Position in folder | 
-| `is_startpage`        | Is startpage of current folder (true/false) | 
+| `first_published_at`  | First publishing date (Format: `YYYY-mm-dd HH:MM`) | 
+| `release_id`          | Id of your content stage (default: null) | 
+| `lang`                | Defined language (default: "default") | 
+| `content`             | Your defined custom content body object | 
+| `position`            | Position in folder | 
+| `is_startpage`        | Is startpage of current folder (true/false) | 
 | `parent_id`           | Parent folder id | 
-| `group_id`            | Alternates group id (uuid string) | 
+| `group_id`            | Alternates group id (uuid string) | 
 | `alternates`          | Array of alternate objects | 
 | `translated_slugs`    | Array of translated slugs. Only gets included if the translatable slug app is installed | 
 | `links`               | Array of all resolved links if the `resolve_links` parameter is in use | 
 | `rels`                | Array of all resolved stories if the `resolve_relations` parameter is in use |
+| `sort_by_date`        | The date defined in the field "Sort by date" (Format: `YYYY-mm-dd HH:MM`) | 
+| `tag_list`            | Array of tag objects | 
+| `meta_data`           | A JSON object to store data that are not editable and only are managed by the management api | 
+| `path`                | The path is the value of the field "Real path" which overwrites the full_slug with a custom path (usually this value is only used by the visual preview in the editing interface) | 
 
 ;examplearea
 
@@ -43,6 +47,7 @@ Example Object
     "created_at": "2018-04-24T11:57:29.302Z",
     "published_at": "2018-08-07T09:40:13.802Z",
     "first_published_at": "2018-08-07T09:40:13.802Z",
+    "sort_by_date": "2018-08-07T09:40:13.802Z",
     "release_id": null,
     "lang": "default",
     "content": {
@@ -61,6 +66,13 @@ Example Object
       }
       // only gets included if the translatable slug app is installed
     ],
+    "tag_list": [
+      "Red"
+    ],
+    "meta_data": {
+      "value_managed_by_mapi": "done"
+    },
+    "path": "/",
     "alternates": [
       {
         "id": 107381,
