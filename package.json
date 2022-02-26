@@ -19,7 +19,7 @@
     "lodash.throttle": "^4.1.1",
     "marked": "^2.0.3",
     "nuxt": "^2.0.0",
-    "prismjs": "^1.15.0"
+    "prismjs": "^1.27.0"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",
