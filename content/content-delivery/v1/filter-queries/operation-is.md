@@ -14,7 +14,7 @@ You can combine this query with the `starts_with`, [pagination](#topics/paginati
 | Filter Query | Description |
 |--|--|
 | `filter_query[authors][is]=empty_array` | all posts that have no authors |
-| `filter_query[orders][is]=not_empty_array&starts_with=customers/&` | all customers by that have orders |
+| `filter_query[orders][is]=not_empty_array&starts_with=customers/&` | all customer entries that have orders |
 | `filter_query[message][is]=empty&starts_with=comments/` | all comments with an empty message |
 | `filter_query[my_plugin.show_in][is]=true` | all entries with field `my_plugin` and a nested field `show_in` that have the value `true` |
 | `filter_query[enabled][is]=false` | all entries where `enabled` is `false` |
