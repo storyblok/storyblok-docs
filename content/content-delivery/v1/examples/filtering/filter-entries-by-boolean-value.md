@@ -25,8 +25,9 @@ Example Response
         "_uid": "baa8057c-a928-4fda-b322-9499a081a9c9",
         "name": "Coat",
         "image": "//a.storyblok.com/f/44203/5616x3744/8cff02e5d6/coat.jpg",
-        // filtered on GREATER than 100 and LOWER than 300
         "price": "270",
+        // filtered if featured is TRUE
+        "featured": true
         "component": "product",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In erat mauris, faucibus quis pharetra sit amet, pretium ac libero. Etiam vehicula eleifend bibendum."
       },
