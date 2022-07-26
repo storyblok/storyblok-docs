@@ -31,31 +31,31 @@ ${sdk[(this.httpMethod || 'GET') + ':' + this.url]}`;
 
       switch (this.httpMethod) {
         case "POST":
-          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
+          return `$client = new \\Storyblok\\Client('YOUR_OAUTH_TOKEN');
 
 $payload = ${requestObject};
 
 $client->post('${this.path}', $payload)->getBody();`
           break;
         case "PUT":
-          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
+          return `$client = new \\Storyblok\\Client('YOUR_OAUTH_TOKEN');
 
 $payload = ${requestObject};
 
 $client->put('${this.path}', $payload)->getBody();`
           break;
         case "DELETE":
-          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
+          return `$client = new \\Storyblok\\Client('YOUR_OAUTH_TOKEN');
 
 $client->delete('${this.path}')->getBody();`
         break;
         case "GETOAUTH":
-          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
+          return `$client = new \\Storyblok\\Client('YOUR_OAUTH_TOKEN');
 
 $client->get('${this.path}'${queryParams === '[]' ? '' : ', ' + queryParams})->getBody();`
         break;
         default:
-          return `$client = new \\Storyblok\\ManagementClient('YOUR_OAUTH_TOKEN');
+          return `$client = new \\Storyblok\\Client('YOUR_OAUTH_TOKEN');
 
 $client->get('${this.path}'${queryParams === '[]' ? '' : ', ' + queryParams})->getBody();`
           break
