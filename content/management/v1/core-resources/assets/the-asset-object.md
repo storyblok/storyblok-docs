@@ -15,6 +15,7 @@ title: The Asset Object
 | `short_filename` | The file name of the asset |
 | `content_type` | The MIME type of the asset |
 | `content_length` | The content length in bytes |
+| `is_private` | Defines if the asset should be inaccessable to the public |
 
 ;examplearea
 
@@ -34,6 +35,7 @@ Example Object
   "deleted_at": null,
   "short_filename": "your_filename.jpg",
   "content_type": "image/jpeg",
-  "content_length": 12303
+  "content_length": 12303,
+  "is_private": false
 }
 ```

@@ -9,12 +9,12 @@ Filter your entries by checking if your custom attribute (any field inside the `
 
 Get all content entries that have a specific type of value.
 
-You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
+You can combine this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 
 | Filter Query | Description |
 |--|--|
 | `filter_query[authors][is]=empty_array` | all posts that have no authors |
-| `filter_query[orders][is]=not_empty_array&starts_with=customers/&` | all customers by that have orders |
+| `filter_query[orders][is]=not_empty_array&starts_with=customers/&` | all customer entries that have orders |
 | `filter_query[message][is]=empty&starts_with=comments/` | all comments with an empty message |
 | `filter_query[my_plugin.show_in][is]=true` | all entries with field `my_plugin` and a nested field `show_in` that have the value `true` |
 | `filter_query[enabled][is]=false` | all entries where `enabled` is `false` |

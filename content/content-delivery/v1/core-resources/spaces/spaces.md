@@ -6,7 +6,7 @@ This endpoint is mostly useful for client side apps. The response contains `spac
 
 As Storyblok uses a CDN in front of the API to deliver the response in the fastest way possible, you should append the `cv` parameter to the story api.
 
-Read more about [Cache invalidation](#cache-invalidation)
+Read more about [Cache invalidation](#topics/cache-invalidation)
 
 ;examplearea
 

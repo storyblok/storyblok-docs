@@ -17,7 +17,7 @@ To allow a calculation of how many pages are available you can access the `Total
 
 Example Request
 
-<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?per_page=2&page=1&starts_with=posts/&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories?cv=1560257296&page=1&per_page=2&starts_with=posts%2F&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response
 

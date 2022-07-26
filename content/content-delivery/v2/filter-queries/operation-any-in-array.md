@@ -1,27 +1,27 @@
 ---
-title: "Operation: `in_array`"
-sidebarTitle: "in_array"
+title: "Operation: `any_in_array`"
+sidebarTitle: "any_in_array"
 ---
 
 Filter your entries by checking if your custom array attribute (any field inside the `content` field) contains **one** of the values provided. As soon as **one** of the provided values separated with `,` are in the array field, the story object will be in the response. 
 
 You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 
-## Use-cases: in_array
+## Use-cases: any_in_array
 
 Get all content entries that is refered to others in a [N:N relationship](https://www.storyblok.com/tp/how-to-build-a-content-relationship) or if you want to get all entries with a specific value in one of it's **array fields**. You can combined this query with the `starts_with`, [pagination](#topics/pagination), and other query options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 
 | Filter Query | Description |
 |--|--|
-| `filter_query[categories][in_array]=sportsid,esportsid` | all entries of category `sportsid` **or** `esportsid` in field `categories` |
-| `filter_query[tags][in_array]=food,health` | all entries of category `food` **or** `health` |
-| `filter_query[related_products][in_array]=product-one-id,product-two-id` | all entries with `product-one` **or** `product-two` in the field `related_products` |
+| `filter_query[categories][any_in_array]=sportsid,esportsid` | all entries of category `sportsid` **or** `esportsid` in field `categories` |
+| `filter_query[tags][any_in_array]=food,health` | all entries of category `food` **or** `health` |
+| `filter_query[related_products][any_in_array]=product-one-id,product-two-id` | all entries with `product-one` **or** `product-two` in the field `related_products` |
 
 ;examplearea
 
 Example Request (all entries of category `9aa72a2f-04ae-48df-b71f-25f53044dc97` **and** `84550816-245d-4fe6-8ae8-b633d4a328f4` in field `categories`)
 
-<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?filter_query[categories][in_array]=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
+<RequestExample url="https://api.storyblok.com/v2/cdn/stories/?filter_query[categories][any_in_array]=9aa72a2f-04ae-48df-b71f-25f53044dc97,84550816-245d-4fe6-8ae8-b633d4a328f4&token=ask9soUkv02QqbZgmZdeDAtt"></RequestExample>
 
 Example Response (all entries of category `9aa72a2f-04ae-48df-b71f-25f53044dc97` **and** `84550816-245d-4fe6-8ae8-b633d4a328f4` in field `categories`)
 
@@ -43,7 +43,7 @@ Example Response (all entries of category `9aa72a2f-04ae-48df-b71f-25f53044dc97`
         "schedule": "",
         "component": "post",
         // filtered on this categories attribute;
-        // In response because in_array matches if ONE id does.
+        // In response because any_in_array matches if ONE id does.
         "categories": [
           "9aa72a2f-04ae-48df-b71f-25f53044dc97",
           "84550816-245d-4fe6-8ae8-b633d4a328f4"
@@ -68,7 +68,7 @@ Example Response (all entries of category `9aa72a2f-04ae-48df-b71f-25f53044dc97`
         "schedule": "2018-08-31 21:59",
         "component": "post",
         // filtered on this categories attribute;
-        // In response because in_array matches if ONE id does.
+        // In response because any_in_array matches if ONE id does.
         "categories": [
           "9aa72a2f-04ae-48df-b71f-25f53044dc97"
         ],
