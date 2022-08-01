@@ -21,7 +21,8 @@ Returns a story object for the `full_slug`, `id` or `uuid` if authenticated usin
 | `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
 | `language` | Add the language i18n code as query parameter to receive a localized version |
 | `fallback_lang` | Define a custom fallback language (i18n code). By default the fallback language is the one defined in the space settings  |
-
+| `resolve_assets` | If the value is 1 it will resolve assets in the content and include the meta information (only available with premium plans)  |
+	
 **Response**
 
 The response will contain following attributes:
