@@ -20,3 +20,9 @@ Base URL
 ```bash
 https://api.storyblok.com/v2
 ```
+
+If you use other regions you need to append the region code. Example: api-us.storyblok.com for the US region.
+
+```bash
+https://api{-us}.storyblok.com/v2
+```
