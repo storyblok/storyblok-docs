@@ -127,6 +127,9 @@
             "contentPath": "management/v1/core-resources/assets/upload-asset"
           },
           {
+            "contentPath": "management/v1/core-resources/assets/update-asset"
+          },
+          {
             "contentPath": "management/v1/core-resources/assets/delete-asset"
           }
         ],

@@ -9,7 +9,7 @@ Filter your entries by checking if your custom attribute (any field inside the `
 
 Get all content entries that have a specific type of value.
 
-You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
+You can combine this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 
 | Filter Query | Description |
 |--|--|
