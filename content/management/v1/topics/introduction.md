@@ -18,3 +18,9 @@ Base URL
 ```bash
 https://mapi.storyblok.com
 ```
+
+If you created your space in US, please use this for US Management API:
+
+```bash
+https://api-us.storyblok.com/v1/
+```
