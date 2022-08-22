@@ -2,7 +2,7 @@
 title: Collaborators
 ---
 
-The Collaborators endpoint tells you who has access to a space. You can use it to add, remove or update collaborators, their roles and permissions. 
+The Collaborators endpoint tells you which users has access to a space. You can use the `collaborators` endpoint to add, remove or update collaborators, their roles and permissions.
 
 ;examplearea
 
