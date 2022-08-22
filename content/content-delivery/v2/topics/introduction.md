@@ -21,7 +21,7 @@ Base URL
 https://api.storyblok.com/v2
 ```
 
-If you use other regions you need to append the region code. Example: api-us.storyblok.com for the US region.
+If you created your space in US, then you need to use region code like in the example. Example: api-us.storyblok.com
 
 ```bash
 https://api{-us}.storyblok.com/v2
