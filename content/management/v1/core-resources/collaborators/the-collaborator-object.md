@@ -22,7 +22,7 @@ This is an object representing collaborators in a space. Some of the properties 
 | `space_id`                  | Numeric id of the collaborator space |
 | `space_role_ids`           | Array of space role ids |
 
-You can learn more about permissions and roles for collaborators in the [Space Roles](https://www.storyblok.com/docs/api/management#core-resources/space-roles/the-space-role-object) endpoint.
+You can learn more about permissions and roles for collaborators in the [Space Roles](#core-resources/space-roles/the-space-role-object) endpoint.
 
 ;examplearea
 
