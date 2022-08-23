@@ -53,17 +53,6 @@
       {
         "children": [
           {
-            "contentPath": "content-delivery/v1/core-resources/collaborators/the-collaborator-object"
-          },
-          {
-            "contentPath": "content-delivery/v1/core-resources/collaborators/delete-collaborator"
-          }
-        ],
-        "contentPath": "content-delivery/v1/core-resources/collaborators/collaborators"
-      },
-      {
-        "children": [
-          {
             "contentPath": "content-delivery/v1/core-resources/datasources/the-datasource-object"
           },
           {
