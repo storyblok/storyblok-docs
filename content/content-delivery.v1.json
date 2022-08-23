@@ -57,7 +57,10 @@
           },
           {
             "contentPath": "content-delivery/v1/core-resources/collaborators/delete-collaborator"
-          }
+          },
+           {
+             "contentPath": "content-delivery/v1/core-resources/collaborators/add-collaborator"
+           }
         ],
         "contentPath": "content-delivery/v1/core-resources/collaborators/collaborators"
       },
