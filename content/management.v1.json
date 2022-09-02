@@ -60,6 +60,23 @@
       {
         "children": [
           {
+            "contentPath": "management/v1/core-resources/collaborators/the-collaborator-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/collaborators/add-collaborator"
+          },
+          {
+            "contentPath": "management/v1/core-resources/collaborators/delete-collaborator"
+          },
+          {
+            "contentPath": "management/v1/core-resources/collaborators/update-collaborator"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/collaborators/collaborators"
+      },
+      {
+        "children": [
+          {
             "contentPath": "management/v1/core-resources/components/the-component-object"
           },
           {
