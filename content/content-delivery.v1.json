@@ -64,6 +64,7 @@
       {
         "children": [
           {
+
             "contentPath": "content-delivery/v1/core-resources/datasources/the-datasource-object"
           },
           {
