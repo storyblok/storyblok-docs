@@ -23,6 +23,8 @@ Example Request (all entries of `9aa72a2f-04ae-48df-b71f-25f53044dc97` in field 
 
 <RequestExample url="https://api.storyblok.com/v1/cdn/stories/?token=ask9soUkv02QqbZgmZdeDAtt&filter_query[categories][eq_array]=9aa72a2f-04ae-48df-b71f-25f53044dc97"></RequestExample>
 
+Example Request (all entries of `9aa72a2f-04ae-48df-b71f-25f53044dc97` in field `categories`)
+
 ```json
 {
    "stories":[
