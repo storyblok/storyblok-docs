@@ -9,7 +9,7 @@ You can combine this query with the `starts_with`, [pagination](#topics/paginati
 
 ## Use-cases: eq_array
 
-Get all content entries that match entire array in a [N:N relationship](https://www.storyblok.com/tp/how-to-build-a-content-relationship) or if you want to get all entries that with the values in all of it's **array fields**. You can combined this query with the `starts_with`, [pagination](#topics/pagination), and other query options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
+Get all content entries that match entire array in a [N:N relationship](https://www.storyblok.com/tp/how-to-build-a-content-relationship) or if you want to get entries that match with the values in all of it's **array fields**. You can combined this query with the `starts_with`, [pagination](#topics/pagination), and other query options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 
 | Filter Query | Description |
 |--|--|
