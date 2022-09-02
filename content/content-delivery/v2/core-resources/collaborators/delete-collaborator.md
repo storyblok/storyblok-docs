@@ -2,7 +2,7 @@
 title: Delete a Collaborator
 ---
 
-Delete a collaborator by using its numeric id.
+Delete a collaborator by using its numeric `id`.
 
 ;examplearea
 
