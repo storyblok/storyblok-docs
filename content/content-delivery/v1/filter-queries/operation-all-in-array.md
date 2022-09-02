@@ -5,7 +5,7 @@ sidebarTitle: all_in_array
 
 Filter your entries by checking if your custom array attribute (any field inside the `content` field) contains **all** of the values provided. As soon as **all** of the provided values separated with `,` are in the array field, the story object will be in the response. 
 
-You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
+You can combine this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 
 ## Use-cases: all_in_array
 
@@ -56,7 +56,7 @@ Example Response (all entries of category `9aa72a2f-04ae-48df-b71f-25f53044dc97`
     },
     {
       ...
-    }
+    },
   ]
 }
 ```

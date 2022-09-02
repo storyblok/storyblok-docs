@@ -126,6 +126,9 @@
             "contentPath": "content-delivery/v1/filter-queries/operation-all-in-array"
           },
           {
+            "contentPath": "content-delivery/v1/filter-queries/operation-eq-array"
+          },
+          {
             "contentPath": "content-delivery/v1/filter-queries/operation-gt-date"
           },
           {
