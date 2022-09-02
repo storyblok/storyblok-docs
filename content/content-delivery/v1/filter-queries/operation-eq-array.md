@@ -16,6 +16,7 @@ Get all content entries that match entire array in a [N:N relationship](https://
 | `filter_query[categories][eq_array]=sportsid,esportsid` | all entries that have the categories `sportsid` and `esportsid` in `categories` |
 | `filter_query[tags][eq_array]=food,health` | all entries that matches `food` **and** `health` in `categories` |
 | `filter_query[related_products][eq_array]=product1,product2` | all entries in `related_products` that matches `product1` **and** `product2` |
+
 :examplearea
 
 Example Request (all entries of `9aa72a2f-04ae-48df-b71f-25f53044dc97` in field `categories`)
