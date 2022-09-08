@@ -2,7 +2,7 @@
 title: Load draft version
 ---
 
-Appending the query paramter `version` with the value `draft` (eg. `version=draft`) and using the preview token as token will allow you to access the draft versions of content entries. You can perform all kind of queries, sorting and filterings with either published or draft versions.
+Appending the query parameter `version` with the value `draft` (eg. `version=draft`) and using the preview token as token will allow you to access the draft versions of content entries. You can perform all kind of queries, sorting and filtering with either published or draft versions.
 
 ;examplearea
 
