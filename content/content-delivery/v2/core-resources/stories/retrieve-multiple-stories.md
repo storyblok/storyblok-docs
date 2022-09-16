@@ -4,7 +4,7 @@ title: Retrieve Multiple Stories
 
 Returns a list of stories that are in your Storyblok space. The stories are returned in sorted order, depending on the order in your space. You can use the query parameter `sort_by` with any [story object property](#the-story-object) and first level of your content type to order the response to your needs.
 
-If no entries are found with your filters applied, you will receive an empty array. You will *not* receive a `404` error message, to check if you have results go for the array length.
+If no entries are found with your filters applied, you will receive an empty array. You will *not* receive a `404` error message, to check if you have results go for the array length. It's important to note that this gets resolved in the `rels` array
 
 | Query Parameter           | Description          |
 |---------------------|----------------------|
