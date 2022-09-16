@@ -2,9 +2,9 @@
 title: Load with resolved relationships
 ---
 
-Resolve relationships to other Stories (in the first level of nesting) of a `multi-option` or `single-option` field-type. Provide the field key(s) as comma separated string to resolve specific fields. 
+Resolve relationships to other Stories (in the first level of nesting) of a `multi-option` or `single-option` field-type. Provide the component name dot the field key(s) as comma separated string to resolve specific fields
 
-Example: `resolve_relations=categories`.
+Example: `resolve_relations=Teaser.categories`.
 
 ;examplearea
 
