@@ -16,7 +16,7 @@ title: The Asset Object
 | `content_type` | The MIME type of the asset |
 | `content_length` | The content length in bytes |
 | `is_private` | Defines if the asset should be inaccessable to the public |
-| `publish_at` | Published date (Format: `YYYY-mm-dd HH:MM`) |
+| `published_at` | Published date (Format: `YYYY-mm-dd HH:MM`) |
 
 ;examplearea
 
@@ -38,6 +38,6 @@ Example Object
   "content_type": "image/jpeg",
   "content_length": 12303,
   "is_private": false,
-  "publish_at": "2018-11-10T15:33:00.578Z"
+  "published_at": "2018-11-10T15:33:00.578Z"
 }
 ```
