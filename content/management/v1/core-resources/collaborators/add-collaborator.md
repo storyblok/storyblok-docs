@@ -13,7 +13,7 @@ You can set some of the fields available in the collaborator object, below we on
 | `space_role_id` | Numeric id of the space role connected with collaborators, usually `null` with more than one collaborator  **required** |
 | `space_role_ids` | Numeric `id` of the space for multiple roles and collaborators |
 | `permissions` | Permissions for the collaborator, can `Allow managing subscription` for collaborator |
-| `allow_multiple_roles_creation` | Boolean value, if `true` you can create multiple roles for the collaborator |
+| `allow_multiple_roles_creation` | Boolean value, if `true` you can create multiple roles for a collaborator |
 
 ;examplearea
 
