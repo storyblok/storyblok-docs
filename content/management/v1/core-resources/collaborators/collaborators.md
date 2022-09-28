@@ -9,5 +9,5 @@ The Collaborators endpoint tells you which users has access to a space. You can 
 Endpoint
 
 ```bash
-GET /v1/spaces/:space_id/stories/:story_id/collaborators
+GET /v1/spaces/:space_id/collaborators
 ```

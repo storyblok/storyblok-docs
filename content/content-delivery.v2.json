@@ -42,17 +42,6 @@
       {
         "children": [
           {
-            "contentPath": "content-delivery/v2/core-resources/collaborators/the-collaborator-object"
-          },
-          {
-            "contentPath": "content-delivery/v2/core-resources/collaborators/update-collaborator"
-          }
-        ],
-        "contentPath": "content-delivery/v2/core-resources/collaborators/collaborators"
-      },
-      {
-        "children": [
-          {
             "contentPath": "content-delivery/v2/core-resources/spaces/the-space-object"
           },
           {
