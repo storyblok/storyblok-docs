@@ -7,7 +7,7 @@ You can set some of the fields available in the collaborator object, below we on
 | Property | Description |
 |---|---|
 | `collaborator` | The [collaborator object](#core-resources/collaborators/the-collaborator-object) |
-| `email` | Email that will be used in the space interface for collaborator **required** |
+| `email` | Email that will be used in the space interface for collaborator or collaborator SSO ID **required** |
 | `role` | Role name of the collaborator, could be admin, editor or custom roles, which is set to `id` and set to `multi` if you have more than one role **required** |
 | `space_id` | Numeric id of the collaborator space **required** |
 | `space_role_id` | Numeric id of the space role connected with collaborators, usually `null` with more than one collaborator  **required** |
