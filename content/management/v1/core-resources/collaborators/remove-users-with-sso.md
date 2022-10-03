@@ -2,7 +2,7 @@
 title: Remove user with SSO 
 ---
 
-Remove a user by using its `sso_id`, this can be an `email` or other forms of user `id`.
+Remove a user by using its `sso_id`, this can be an `email`.
 
 ;examplearea
 
