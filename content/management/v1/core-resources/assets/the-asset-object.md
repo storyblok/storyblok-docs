@@ -16,7 +16,7 @@ title: The Asset Object
 | `content_type` | The MIME type of the asset |
 | `content_length` | The content length in bytes |
 | `is_private` | Defines if the asset should be inaccessable to the public |
-| `published_at` | Published date (Format: `YYYY-mm-dd HH:MM`) |
+| `publish_at` | Used to schedule publishing date and time for private assets (Format: `YYYY-mm-dd HH:MM`) |
 
 ;examplearea
 
