@@ -38,6 +38,6 @@ Example Object
   "content_type": "image/jpeg",
   "content_length": 12303,
   "is_private": false,
-  "published_at": "2018-11-10T15:33:00.578Z"
+  "publish_at": "2018-11-10T15:33:00.578Z"
 }
 ```
