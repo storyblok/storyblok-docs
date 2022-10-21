@@ -18,8 +18,8 @@ You can combine this query with the `starts_with`, [pagination](#topics/paginati
 | `filter_query[message][is]=empty&starts_with=comments/` | all comments with an empty message |
 | `filter_query[my_plugin.show_in][is]=true` | all entries with field `my_plugin` and a nested field `show_in` that have the value `true` |
 | `filter_query[enabled][is]=false` | all entries where `enabled` is `false` |
-| `filter_query[image][is]=null` | all entries where the `image` attribute is `null` |
-| `filter_query[featured][is]=not_null` | all entries where the `featured` attribute is `null` |
+| `filter_query[image][is]=null` | all entries where the `image` attribute is `null` or is missing |
+| `filter_query[featured][is]=not_null` | all entries where the `featured` attribute is not `null` or is not missing|
 
 ;examplearea
 
