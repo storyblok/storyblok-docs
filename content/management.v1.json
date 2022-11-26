@@ -40,6 +40,9 @@
             "contentPath": "management/v1/core-resources/stories/create-story"
           },
           {
+            "contentPath": "management/v1/core-resources/stories/compare-versions"
+          },
+          {
             "contentPath": "management/v1/core-resources/stories/update-story"
           },
           {
