@@ -2,11 +2,7 @@
 title: Get Story Version
 --- 
 
-Get a Story's version using a GET request for each version of the story you want to get Returns a single story's version object by providing a specific numeric id.
-
-You can get a story version
-
-can be done by using a GET request for each story you want to unpublish.
+You can get a story versions using a GET request for each version of the story you want to get. This returns fully loaded versions of story object by providing a specific numeric id.
 
 ;examplearea
 
