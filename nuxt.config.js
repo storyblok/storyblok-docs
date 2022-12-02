@@ -3,10 +3,6 @@ const routes = require('./routes')
 
 module.exports = {
   mode: 'universal',
-  serverMiddleware: [{ 
-    path: '/',
-    handler: './lib/routing/middleware'
-  }],
   /*
    ** Headers of the page
    */
