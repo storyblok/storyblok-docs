@@ -1,5 +1,5 @@
 ---
-title: Content Delivery API Reference
+title: Content Delivery API V1 Reference
 sidebarTitle: Introduction
 ---
 
