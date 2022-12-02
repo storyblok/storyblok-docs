@@ -5,7 +5,7 @@ module.exports = {
   mode: 'universal',
   serverMiddleware: [{ 
     path: '/',
-    handler: './middleware'
+    handler: './lib/routing/middleware'
   }],
   /*
    ** Headers of the page
