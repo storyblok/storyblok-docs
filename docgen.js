@@ -220,12 +220,9 @@ const Docgen = {
   generateRoutes: () => {
     const routes = []
     Docgen.listFoldersInFolder(config.contentInputFolder).forEach((origin) => {
+      routes.push(`/docs/api/${origin}/`)
       Docgen.listFoldersInFolder(config.contentInputFolder + origin).forEach((lang) => {
-        if(lang == config.defaultLanguage) {
-          routes.push(`/docs/api/${origin}/`)
-        } else {
-          routes.push(`/docs/api/${origin}/${lang}/`)
-        }
+        routes.push(`/docs/api/${origin}/${lang}/`)
       })
     })
 
