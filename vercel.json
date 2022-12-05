@@ -1,9 +1,9 @@
 {
-  "trailingSlash": true,
+  "trailingSlash": false,
   "redirects": [
     { 
-      "source": "/docs/api/content-delivery/",
-      "destination": "/docs/api/content-delivery/v2/", 
+      "source": "/docs/api/content-delivery",
+      "destination": "/docs/api/content-delivery/v2", 
       "statusCode": 302
     }
   ]
