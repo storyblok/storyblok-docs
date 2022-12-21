@@ -10,7 +10,7 @@ If you don't use our oficial [javascript SDK](https://github.com/storyblok/story
 
 1. Do a request to the stories endpoint `/v2/cdn/stories` without appending the `cv` parameter
 2. Check the response body for the `cv` attribute
-3. Safe the `cv` attribute in memory and use it for the subsequent requests
+3. Save the `cv` attribute in memory and use it for the subsequent requests
 4. When publishing new content clear the attribute from the memory and save a new one by starting at step 1.
 
 ;examplearea
