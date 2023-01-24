@@ -2,7 +2,7 @@
 title: Update a Story
 ---
 
-Can be used to build migrations, updates if you changed your component structure, or if you only need to do a bulk action on all your content items. If you want to publish your story immediately add the parameter publish with the value 1 to the object. It's important to note that you set alternate versions of a story, with the Management API using the `group_id` when updating a story.
+Can be used for migrations, updates (e.g. if you changed your component structure), or bulk actions. If you want to publish your story immediately, add the parameter `publish` with the value `1` to the object. In order to set alternate versions of a story, you can set the `group_id` equal to the `group_id` of the story (or stories) that should be the alternate(s).
 
 | Property | Description |
 |---|---|
@@ -13,7 +13,7 @@ Can be used to build migrations, updates if you changed your component structure
 | `story[default_root]` (required*) | Default content type/root component. (*Required if `is_folder` is `true`) |
 | `story[is_folder]` | If `true` a folder will be created instead of a story |
 | `story[parent_id]` | The id of the parent |
-| `story[alternates]` | Array of resolved subset of **link objects** |
+| `story[alternates]` | Array of resolved subset of **link objects** (automatically generated) |
 | `story[disble_fe_editor]` | Is side by side editor disabled for all entries in folder (true/false) |
 | `story[path]` | Given real path, used in the preview editor |
 | `story[is_startpage]` | Is startpage of current folder (true/false) |
