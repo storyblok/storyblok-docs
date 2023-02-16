@@ -8,10 +8,10 @@ The management api is rate limited to 3 requests per second for users on the fre
 
 | Plan | Rate Limit |
 |------|-----------|
-| Free | 3 per second |
-| Basic | 6 per second |
-| Advanced | 6 per second |
-| Premium | 6 per second |
+| Community | 3 per second |
+| Entry | 6 per second |
+| Teams | 6 per second |
 | Enterprise | Custom |
+| Enterprise + | Custom |
 
 
