@@ -20,6 +20,7 @@ Can be used for migrations, updates (e.g. if you changed your component structur
 | `story[position]` | Integer value of the position |
 | `story[first_published_at]` | First publishing date (Format: YYYY-mm-dd HH:MM) |
 | `story[translated_slugs_attributes]` | Add/modify/delete translated slugs/names if you have the "Translatable slugs" app installed. Example: `[{lang: "de", slug: "startseite", name: "Startseite"}]`. To edit existing slugs add the `id` to the object. To delete an item add `_destroy` with the value `1` to the object. |
+| `group_id` | Numeric ID of the group (optional) |
 | `force_update` | If '1' it will overwrite a locked story |
 | `release_id` | Numeric ID of release (optional) |
 | `publish` | If '1' it will publish the story, 'publish' must be omitted if publication is not desired |
