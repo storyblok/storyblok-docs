@@ -13,9 +13,10 @@ title: Possible field types
 | `boolean` | Boolean; a checkbox - true/false |
 | `options` | Multi-Options; a list of checkboxes |
 | `option` | Single-Option; a single dropdown |
+| `assets` | File; can be any file, of type including PDFs, audio, videos and documents |
 | `image` | Image; a upload field for a single image with cropping possibilities |
 | `file` | File; a upload field for a single file |
-| `multiasset` | Multi-Assets; a upload field for a multiple files |
+| `multiasset` | Multi-Assets; a upload field for a multiple filetypes such as videos, PDFs, audio files and documents |
 | `multilink` | Link; an input field for internal linking to other stories |
 | `section` | Group; no input possibility - allows you to group fields in sections |
 | `custom` | Plugin; Extend the editor yourself with a color picker or similar - Check out: [Creating a Storyblok field type plugin](https://www.storyblok.com/docs/Guides/Creating-a-field-type-plugin) |
