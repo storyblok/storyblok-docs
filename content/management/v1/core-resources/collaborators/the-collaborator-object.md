@@ -6,7 +6,7 @@ This is an object representing collaborators in a space. Some of the properties 
 
 | Property            | Description          |
 |---------------------|----------------------|
-| `id`                  | Numeric id | 
+| `id`                  | Numeric id of collaborator | 
 | `firstname`                | First name of collaborator | 
 | `lastname`                 | Last name of collaborator |
 | `alt_email`                   | Email of collaborator |
@@ -37,23 +37,19 @@ Example Object
             "firstname":"Marve",
             "lastname":"Priscy",
             "alt_email":null,
-            "avatar":null,
+            "avatar":"avatars/115866/5fgecfcb64/mayve.jpeg",
             "userid":"mayve@email.com",
             "friendly_name":"Marve Priscy"
          },
-         "role":"admin",
+         "role":"49708",
          "user_id":262115,
-         "permissions":[
-            
-         ],
+         "permissions":["can_subscribe"],
          "allowed_path":"",
          "field_permissions":"",
          "id":236290,
-         "space_role_id":null,
+         "space_role_id":"49708",
          "invitation":null,
-         "space_role_ids":[
-            
-         ],
+         "space_role_ids":[],
          "space_id":866112
       }
    ]
