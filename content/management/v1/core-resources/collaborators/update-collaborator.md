@@ -4,6 +4,7 @@ title: Update a Collaborator Roles and Permissions
 
 | Property | Description |
 |---|---|
+| `collaborator` | The [collaborator object](#core-resources/collaborators/the-collaborator-object) |
 | `id` | The collaborator `id` |
 | `role` | the role name of the collaborator. Could be admin, editor or set to a role`id`. For custom roles, you need to set `role_id` for the role and set role to `multi` if you have more than one custom role **required** |
 | `space_role_id` | Numeric id connected with a role, usually an array of `ids` with more than one role  **required** |

@@ -2,7 +2,7 @@
 title: Delete a Collaborator
 ---
 
-Delete a collaborator by using its numeric `id`. SSO users can be deleted by using their `sso_id`.
+Delete a collaborator by using their collaborator `id`. SSO users can be deleted by using their `sso_id`.
 
 ;examplearea
 
