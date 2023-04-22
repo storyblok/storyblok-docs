@@ -9,5 +9,5 @@ You can read more about releases [here](https://www.storyblok.com/docs/setup-bra
 Endpoint
 
 ```bash
-GET /v1/spaces/:space_id/workflow_stages/:id
+GET /v1/spaces/:space_id/releases/:release_id
 ```
