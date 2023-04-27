@@ -19,7 +19,7 @@ You can set some of the fields available in the collaborator object, below we on
 
 Example Request
 
-<RequestExample url="https://mapi.storyblok.com/v1/spaces/656/collaborators/" httpMethod="POST" :requestObject='{"email":"you@email.com","space_role_id":18705}}'></RequestExample>
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/656/collaborators/" httpMethod="POST" :requestObject='{"email":"you@email.com","space_role_id":18705}'></RequestExample>
 
 You will receive a fully loaded [collaborator object](#core-resources/collaborators/the-collaborator-object) as response.
 
