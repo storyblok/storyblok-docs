@@ -73,9 +73,6 @@
           },
           {
             "contentPath": "management/v1/core-resources/collaborators/add-users-with-sso"
-          },
-          {
-            "contentPath": "management/v1/core-resources/collaborators/remove-users-with-sso"
           }
         ],
         "contentPath": "management/v1/core-resources/collaborators/collaborators"
