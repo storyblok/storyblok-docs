@@ -13,12 +13,17 @@ The requests in the right sidebar are designed to work as is. The sample request
 
 Official libraries for the Storyblok Management API are [available in several languages](https://www.storyblok.com/getting-started). Community-supported libraries are also available for additional languages.
 
-Base URL
+Base URL:
 
 ```bash
 https://mapi.storyblok.com
 ```
-If you created your space in US, please use this for US Management API:
+If you are based in the United States, please use this URL:
 ```bash
 https://api-us.storyblok.com
+```
+
+If you are based in China, please use this URL:
+```bash
+https://app.storyblokchina.cn
 ```
