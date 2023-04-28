@@ -18,12 +18,12 @@ Base URL:
 ```bash
 https://mapi.storyblok.com
 ```
-If you are based in the United States, please use this URL:
+For spaces whose server location is in the United States, please use this URL:
 ```bash
 https://api-us.storyblok.com
 ```
 
-If you are based in China, please use this URL:
+For spaces whose server location is in China, please use this URL:
 ```bash
 https://app.storyblokchina.cn
 ```
