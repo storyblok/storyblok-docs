@@ -8,4 +8,4 @@ You can read more about branches [here](https://www.storyblok.com/docs/setup-bra
 
 Stories created via the Management API are created in the default branch (Preview). Subsequently, they can be deployed to other branches (e.g. Staging, Production according to the "source of sync" option) by triggering a deployment.
 
-For using this endpoint, you have to install the Pipeline application.
+For using this endpoint, you have to install the Pipelines application.
