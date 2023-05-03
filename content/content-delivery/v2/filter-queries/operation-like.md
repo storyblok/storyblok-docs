@@ -9,12 +9,13 @@ Filter your entries by checking if your custom attribute (any field inside the `
 
 Get all content entries that are containing a specific value.
 
-You can combined this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
+You can combine this query with the `starts_with`, [pagination](#topics/pagination), other filter query, and query/sorting options of [Stories](#core-resources/stories/retrieve-multiple-stories) if needed.
 
 | Filter Query | Description |
 |--|--|
 | `filter_query[name][like]=john*` | all entries starting with the name "John" |
 | `filter_query[name][like]=*john*` | all entries containing the name "John" |
+| `filter_query[name][like]=` | all entries with the field `name` with empty value. The entries without the `name` field will not be included |
 
 ;examplearea
 
@@ -46,4 +47,3 @@ Example Response
   ]
 }
 ```
-
