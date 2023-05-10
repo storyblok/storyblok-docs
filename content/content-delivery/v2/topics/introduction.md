@@ -15,14 +15,17 @@ The requests in the right sidebar are designed to work as is. The sample request
 
 Official libraries for the Storyblok Content Delivery API are [available in several languages](https://www.storyblok.com/getting-started). Community-supported libraries are also available for additional languages.
 
-Base URL
-
+Base URL:
 ```bash
 https://api.storyblok.com/v2
 ```
 
-If you created your space in US, then you need to use region code like in the example. Example: api-us.storyblok.com
-
+Base URL for spaces created in the US:
 ```bash
 https://api{-us}.storyblok.com/v2
+```
+
+Base URL for spaces created in China:
+```bash
+https://app.storyblokchina.cn
 ```
