@@ -15,6 +15,7 @@ With the filter_query you're able to filter by specific attribute(s) of your sto
 | [`not_like`](#filter-queries/operation-not-like) | Matches all without the given value |
 | [`any_in_array`](#filter-queries/operation-any-in-array) | Matches **any** value of given array |
 | [`all_in_array`](#filter-queries/operation-all-in-array) | Must match **all** values of given array |
+| [`eq_array`](#filter-queries/operation-eq-array) | Matches values of given array |
 | [`gt_date`](#filter-queries/operation-gt-date) | Greater than date (Format: `YYYY-mm-dd HH:MM`) |
 | [`lt_date`](#filter-queries/operation-lt-date) | Less than date (Format: `2018-03-03 10:00`) |
 | [`gt_int`](#filter-queries/operation-gt-int) | Greater than integer value |
