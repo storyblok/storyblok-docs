@@ -19,6 +19,9 @@
       },
       {
         "contentPath": "management/v1/topics/pagination"
+      },
+      {
+        "contentPath": "management/v1/topics/typescript"
       }
     ]
   },
@@ -151,6 +154,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/assets/delete-asset"
+          },
+          {
+            "contentPath": "management/v1/core-resources/assets/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/assets/assets"
@@ -174,6 +180,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/asset-folders/delete-asset-folder"
+          },
+          {
+            "contentPath": "management/v1/core-resources/asset-folders/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/asset-folders/asset-folders"
@@ -318,6 +327,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/approvals/delete-approval"
+          },
+          {
+            "contentPath": "management/v1/core-resources/approvals/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/approvals/approvals"
@@ -332,6 +344,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/activities/retrieve-multiple-activities"
+          },
+          {
+            "contentPath": "management/v1/core-resources/activities/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/activities/activities"
