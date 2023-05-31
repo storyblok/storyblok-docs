@@ -53,6 +53,12 @@
           },
           {
             "contentPath": "management/v1/core-resources/stories/unpublish-a-story"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/compare-story-version"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/get-story-version"
           }
         ],
         "contentPath": "management/v1/core-resources/stories/stories"
