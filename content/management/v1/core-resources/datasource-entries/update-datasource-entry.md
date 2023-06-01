@@ -4,6 +4,7 @@ title: Update a Datasource Entry
 
 | Property | Description |
 |---|---|
+| `id` | Numeric id of the datasource entry |
 | `datasource_entry` | Your full [datasource entry object](#core-resources/datasource-entries/the-datasource-entry-object) |
 | `datasource_entry[name]`  | Name is **required** |
 | `datasource_entry[value]`  | Value is **required** |
