@@ -4,25 +4,28 @@ title: Typescript
 
 From version 5, <strong>[Storyblok Javascript Client](https://github.com/storyblok/storyblok-js-client)</strong> is written in <strong>Typescript</strong>. <br />
 This means that you can use the client with <strong>Typescript</strong> and benefit from the type safety. <br />
-Bellow you can find the interfaces that are used in the Storyblok Client and how and when to use them.
+
+Below you can find the interfaces that are used in the Storyblok Client and how and when to use them.
 
 There are two types of requests that one can do with the <strong>Storyblok Client Management API</strong>, hence two types of interfaces are used for them.
 
-| Request type     | Interface          |
-|---------------------|----------------------|
-| `get` |   |
-| `put` | ISbCRUDParams |
-| `post` | ISbCRUDParams |
-| `delete` | ISbCRUDParams |
+| Request type     | Interface          | Method |
+|---------------------|----------------------|--|
+| `get` | <strong>ISbGetParams</strong> | `GET` |
+| `post` | <strong>ISbCUDParams</strong> | `POST` |
+| `put` | <strong>ISbCUDParams</strong> | `PUT` |
+| `delete` | <strong>ISbCUDParams</strong> | `DELETE` |
 
-So let's see how to use the interfaces with the Storyblok Client. The example below shows how to use the <strong>`ISbCRUDParams`</strong> interface with the <strong>`post`</strong> request.
+*Note: `ISbCUDParams` is used for `post`, `put` and `delete` requests. <strong>ISbCUD is not a typo</strong>*
+
+So let's see how to use the interfaces with the Storyblok Client. The example below shows how to use the <strong>`ISbCUDParams`</strong> interface with the <strong>`post`</strong> request.
 
 ```javascript
 const StoryblokClient = require('storyblok-js-client')
-import { ISbCRUDParams } from 'storyblok-js-client/dist/types/interfaces'
+import { ISbCUDParams } from 'storyblok-js-client/dist/types/interfaces'
 import { Activity } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIActivities'
 
-const payload:ISbCRUDParams<Activity> = {
+const payload:ISbCUDParams<Activity> = {
   activity: {
     trackable_id: 123,
     trackable_type: 'story',
@@ -43,11 +46,11 @@ StoryblokClient.post('spaces/<YOUR-SPACE-ID>/activities/', payload)
 
 ```
 
-Note that we imported <strong>`ISbCRUDParams`</strong> and the <strong>`Activity`</strong> interfaces. <br />
-One will use <strong>`ISbCRUDParams`</strong> for pretty much all requests that are not <strong>`get`</strong> requests. <br />
+Note that we imported <strong>`ISbCUDParams`</strong> and the <strong>`Activity`</strong> interfaces. <br />
+One will use <strong>`ISbCUDParams`</strong> for pretty much all requests that are not <strong>`get`</strong> requests. <br />
 For the interfaces from the Core Resources, one can find them in the <strong>`storyblok-js-client/dist/types/MAPIInterfaces/`</strong> folder.
 
-Bellow is the list of all interfaces that are used in the <strong>Storyblok Client Management API</strong>.  <br />
+Below is the list of all interfaces that are used in the <strong>Storyblok Client Management API - CUD Parameters (POST, PUT, DELETE)</strong>.  <br />
 For each interface, one can find the corresponding description inside <strong>The Typescript Interfaces</strong> section from each Core Resource.
 
 To import the interfaces, one can use the following import path: <br />
@@ -57,7 +60,8 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 
 ---
 
-Interfaces' List
+<strong>CUD<POST, PUT, DELETE></strong> Interfaces' List<br />
+*Note: <strong>Only</strong> these interfaces will be allowed to be used with the <strong>`post`</strong>, <strong>`put`</strong> and <strong>`delete`</strong> requests*
 ---
 
 | Interface     | Core Resource          | Alias | Import Path |
@@ -87,5 +91,48 @@ Interfaces' List
 | `ISBContentMAPITask` | [Tasks Resource](#core-resources/tasks/tasks) | `Task` | `MAPITasks` |
 | `ISbContentMAPIWorkflowStage` | [Workflow Stages Resource](#core-resources/workflow-stages/intro) | `WorkflowStage` | `MAPIWorkflowStages` |
 | `ISbContentMAPIWorkflowStageChanges` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/intro) | `WorkflowStageChanges` | `MAPIWorkflowStages` |
+
+---
+
+The same goes for the <strong>Storyblok Client Management API - Get Parameters (GET)</strong>. <br />
+For each interface, one can find the corresponding description inside <strong>The Typescript Interfaces</strong> section from each Core Resource.
+
+To import the interfaces, one can use the following import path: <br />
+```javascript
+import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfaces/<Import Path>"
+```
+
+The example below shows how to use the <strong>`ISbGETParams`</strong> interface with the <strong>`get`</strong> request.
+
+```javascript
+const StoryblokClient = require('storyblok-js-client')
+import { ISbGETParams } from 'storyblok-js-client/dist/types/interfaces'
+import { GetMultipleDataSourcesEntries } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIDataSources'
+
+const payload:ISbGETParams<GetMultipleDataSourcesEntries> = {
+  datasource_id: 123,
+	datasource_slug: 'foo'
+	dimension: 'en'
+}
+
+StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
+  .then(response => {
+    // handle response
+  })
+  .catch(error => {
+    // handle error
+  });
+
+```
+
+---
+<strong>GET</strong> Interfaces' List<br />
+*Note: <strong>Only</strong> these interfaces will be allowed to be used with the <strong>`get`</strong> requests*
+---
+
+| Interface     | Core Resource          | Alias | Import Path |
+|---------------------|----------------------|---------|--------|
+| `ISbGetParams` | [Data Sources Resource](#core-resources/datasources/retrieve-multiple-datasources) | `GetMultipleDataSources` | `MAPIDataSources` |
+| `ISbGetParams` | [Data Sources Entries Resource](#core-resources/datasource-entries/retrieve-multiple-datasource-entries) | `GetMultipleDataSourceEntries` | `MAPIDataSources` |
 
 As for any <strong>Typescript</strong> file, if one uses a good code editor, hovering over the interface will show the interface's description.
