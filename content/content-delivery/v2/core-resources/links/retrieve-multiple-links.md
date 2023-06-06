@@ -2,7 +2,7 @@
 title: Retrieve Multiple Links
 ---
 
-Returns the links object containing all links of one space. Use the `version` parameter and the correct token types to receive either `draft` and `published` or only `published` links.  
+Returns the links object containing all links of one space including the `draft` and `published` links. To get only `published` links, use the `version=published`.
 
 | Query Parameter           | Description          |
 |---------------------|----------------------|
