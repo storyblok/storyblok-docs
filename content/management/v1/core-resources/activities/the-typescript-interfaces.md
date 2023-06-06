@@ -37,10 +37,10 @@ Example on how use the <strong>Activity's</strong> interface with the Storyblok 
 
 ```javascript
 const StoryblokClient = require('storyblok-js-client')
-import { ISbCRUDParams } from 'storyblok-js-client/dist/types/interfaces';
+import { ISbCUDParams } from 'storyblok-js-client/dist/types/interfaces';
 import { Activity } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIActivities';
 
-const payload:ISbCRUDParams<Activity> = {
+const payload:ISbCUDParams<Activity> = {
   activity: {
     trackable_id: 123,
     trackable_type: 'story',

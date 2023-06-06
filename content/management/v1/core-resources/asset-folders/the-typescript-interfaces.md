@@ -27,10 +27,10 @@ Example on how use the <strong>Asset's</strong> interface with the Storyblok Cli
 
 ```javascript
 const StoryblokClient = require('storyblok-js-client')
-import { ISbCRUDParams } from 'storyblok-js-client/dist/types/interfaces';
+import { ISbCUDParams } from 'storyblok-js-client/dist/types/interfaces';
 import { AssetFolder } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
 
-const payload:ISbCRUDParams<AssetFolder> = {
+const payload:ISbCUDParams<AssetFolder> = {
   asset_folder: {
 		id: 123,
 		name: 'My Asset Folder',

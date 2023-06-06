@@ -304,6 +304,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/tasks/delete-taks"
+          },
+          {
+            "contentPath": "management/v1/core-resources/tasks/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/tasks/tasks"
