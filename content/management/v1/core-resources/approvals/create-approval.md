@@ -4,6 +4,7 @@ title: Create Approval
 
 | Property | Description |
 |---|---|
+| `approval` | Your full [approval object](#core-resources/approvals/the-approval-object) |
 | `story_id` | ID of content entry that should be approved |
 | `approver_id` | ID of the User that should be the approver |
 
