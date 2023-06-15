@@ -31,10 +31,10 @@ Example on how use the <strong>Task's</strong> interface with the Storyblok Clie
 
 ```javascript
 const StoryblokClient = require('storyblok-js-client')
-import { ISbCUDParams } from 'storyblok-js-client/dist/types/interfaces';
+import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
 import { Task } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPITasks';
 
-const payload:ISbCUDParams<Task> = {
+const payload:ISbP2Params<Task> = {
   task: {
 		name: 'My Task Name',
 		task_type: 'webhook',

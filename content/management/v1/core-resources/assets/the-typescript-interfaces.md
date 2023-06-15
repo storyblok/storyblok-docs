@@ -34,10 +34,10 @@ Example on how use the <strong>Asset's</strong> interface with the Storyblok Cli
 
 ```javascript
 const StoryblokClient = require('storyblok-js-client')
-import { ISbCUDParams } from 'storyblok-js-client/dist/types/interfaces';
+import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
 import { Asset } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
 
-const payload:ISbCUDParams<Asset> = {
+const payload:ISbP2Params<Asset> = {
   id: 123,
   filename: 'my-image.jpg',
   asset_folder_id: 123

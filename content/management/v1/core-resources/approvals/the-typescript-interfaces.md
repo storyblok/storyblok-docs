@@ -47,10 +47,10 @@ Example on how use the <strong>Approval's</strong> interface with the Storyblok 
 
 ```javascript
 const StoryblokClient = require('storyblok-js-client')
-import { ISbCUDParams } from 'storyblok-js-client/dist/types/interfaces';
+import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
 import { Approval } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIApprovals';
 
-const payload:ISbCUDParams<Approval> = {
+const payload:ISbP2Params<Approval> = {
   approval: {
     status: 'pending',
     story_id: 123,

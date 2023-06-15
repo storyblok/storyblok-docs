@@ -12,20 +12,20 @@ There are two types of requests that one can do with the <strong>Storyblok Clien
 | Request type     | Interface          | Method |
 |---------------------|----------------------|--|
 | `get` | <strong>ISbGetParams</strong> | `GET` |
-| `post` | <strong>ISbCUDParams</strong> | `POST` |
-| `put` | <strong>ISbCUDParams</strong> | `PUT` |
-| `delete` | <strong>ISbCUDParams</strong> | `DELETE` |
+| `post` | <strong>ISbP2Params</strong> | `POST` |
+| `put` | <strong>ISbP2Params</strong> | `PUT` |
+| `delete` | <strong>-</strong> | `DELETE` |
 
-*Note: `ISbCUDParams` is used for `post`, `put` and `delete` requests. <strong>ISbCUD is not a typo</strong>*
+*Note: `ISbP2Params` is used for `post` and `put` requests.*
 
-So let's see how to use the interfaces with the Storyblok Client. The example below shows how to use the <strong>`ISbCUDParams`</strong> interface with the <strong>`post`</strong> request.
+So let's see how to use the interfaces with the Storyblok Client. The example below shows how to use the <strong>`ISbP2Params`</strong> interface with the <strong>`post`</strong> request.
 
 ```javascript
 const StoryblokClient = require('storyblok-js-client')
-import { ISbCUDParams } from 'storyblok-js-client/dist/types/interfaces'
+import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces'
 import { Activity } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIActivities'
 
-const payload:ISbCUDParams<Activity> = {
+const payload:ISbP2Params<Activity> = {
   activity: {
     trackable_id: 123,
     trackable_type: 'story',
@@ -46,11 +46,11 @@ StoryblokClient.post('spaces/<YOUR-SPACE-ID>/activities/', payload)
 
 ```
 
-Note that we imported <strong>`ISbCUDParams`</strong> and the <strong>`Activity`</strong> interfaces. <br />
-One will use <strong>`ISbCUDParams`</strong> for pretty much all requests that are not <strong>`get`</strong> requests. <br />
+Note that we imported <strong>`ISbP2Params`</strong> and the <strong>`Activity`</strong> interfaces. <br />
+One will use <strong>`ISbP2Params`</strong> for pretty much all requests that are not <strong>`get`</strong> requests. <br />
 For the interfaces from the Core Resources, one can find them in the <strong>`storyblok-js-client/dist/types/MAPIInterfaces/`</strong> folder.
 
-Below is the list of all interfaces that are used in the <strong>Storyblok Client Management API - CUD Parameters (POST, PUT, DELETE)</strong>.  <br />
+Below is the list of all interfaces that are used in the <strong>Storyblok Client Management API - Parameters (POST, PUT)</strong>.  <br />
 For each interface, one can find the corresponding description inside <strong>The Typescript Interfaces</strong> section from each Core Resource.
 
 To import the interfaces, one can use the following import path: <br />
@@ -60,8 +60,8 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 
 ---
 
-<strong>CUD<POST, PUT, DELETE></strong> Interfaces' List<br />
-*Note: <strong>Only</strong> these interfaces will be allowed to be used with the <strong>`post`</strong>, <strong>`put`</strong> and <strong>`delete`</strong> requests*
+<strong><POST, PUT></strong> Interfaces' List<br />
+*Note: <strong>Only</strong> these interfaces will be allowed to be used with the <strong>`post`</strong> and <strong>`put`</strong> requests*
 ---
 
 | Interface     | Core Resource          | Alias | Import Path |
