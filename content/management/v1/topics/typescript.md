@@ -11,10 +11,10 @@ There are two types of requests that one can do with the <strong>Storyblok Clien
 
 | Request type     | Interface          | Method |
 |---------------------|----------------------|--|
-| `get` | <strong>ISbGetParams</strong> | `GET` |
-| `post` | <strong>ISbP2Params</strong> | `POST` |
-| `put` | <strong>ISbP2Params</strong> | `PUT` |
-| `delete` | <strong>-</strong> | `DELETE` |
+| `get` | ISbGetParams | `GET` |
+| `post` | ISbP2Params | `POST` |
+| `put` | ISbP2Params | `PUT` |
+| `delete` | *No params are needed* | `DELETE` |
 
 *Note: `ISbP2Params` is used for `post` and `put` requests.*
 
