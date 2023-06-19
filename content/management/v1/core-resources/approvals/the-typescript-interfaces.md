@@ -46,9 +46,17 @@ export type GetMultipleApprovals = ISbRetrieveMultipleApprovalsParams
 Example on how use the <strong>Approval's</strong> interface with the Storyblok Client
 
 ```javascript
+// POST, PUT
 const StoryblokClient = require('storyblok-js-client')
-import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
-import { Approval } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIApprovals';
+// Import the interfaces
+import {
+  ISbP2Params,
+  ISbGetParams
+} from 'storyblok-js-client/dist/types/interfaces';
+import {
+  Approval,
+  GetMultipleApprovals
+} from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIApprovals';
 
 const payload:ISbP2Params<Approval> = {
   approval: {
@@ -59,6 +67,19 @@ const payload:ISbP2Params<Approval> = {
 }
 
 StoryblokClient.post('spaces/<YOUR-SPACE-ID>/approvals/', payload)
+  .then(response => {
+    // handle response
+  })
+  .catch(error => {
+    // handle error
+  });
+
+// GET
+const payload:ISbGetParams<GetMultipleApprovals> = {
+  approver: 123
+}
+
+StoryblokClient.get('spaces/<YOUR-SPACE-ID>/approvals/', payload)
   .then(response => {
     // handle response
   })

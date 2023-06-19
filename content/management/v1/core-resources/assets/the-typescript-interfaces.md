@@ -33,6 +33,7 @@ export type Asset = ISbAsset
 Example on how use the <strong>Asset's</strong> interface with the Storyblok Client
 
 ```javascript
+// POST, PUT
 const StoryblokClient = require('storyblok-js-client')
 import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
 import { Asset } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
@@ -44,6 +45,15 @@ const payload:ISbP2Params<Asset> = {
 }
 
 StoryblokClient.post('spaces/<YOUR-SPACE-ID>/assets/', payload)
+  .then(response => {
+    // handle response
+  })
+  .catch(error => {
+    // handle error
+  });
+
+// GET
+StoryblokClient.get('spaces/<YOUR-SPACE-ID>/assets/123')
   .then(response => {
     // handle response
   })

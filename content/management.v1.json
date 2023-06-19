@@ -206,6 +206,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/datasources/delete-datasource"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasources/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/datasources/datasources"
@@ -229,6 +232,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/datasource-entries/delete-datasource-entry"
+          },
+          {
+            "contentPath": "management/v1/core-resources/datasource-entries/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/datasource-entries/datasource-entries"
