@@ -402,6 +402,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/field-types/delete-field-type"
+          },
+          {
+            "contentPath": "management/v1/core-resources/field-types/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/field-types/field-types"

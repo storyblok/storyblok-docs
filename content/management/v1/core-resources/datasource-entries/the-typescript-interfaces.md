@@ -89,15 +89,3 @@ Storyblok.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', params)
   });
 
 ```
-
-Example Object
-
-```json
-{
-  "approval": {
-    "status": "pending",
-    "story_id": 123,
-    "approver_id": 456
-  }
-}
-```

@@ -94,15 +94,3 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasources/', params)
     // handle error
   });
 ```
-
-Example Object
-
-```json
-{
-  "approval": {
-    "status": "pending",
-    "story_id": 123,
-    "approver_id": 456
-  }
-}
-```

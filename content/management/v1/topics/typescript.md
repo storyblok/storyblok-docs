@@ -136,5 +136,6 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
 | `ISbRetrieveMultipleApprovalsParams` | [Approvals Resource](#core-resources/approvals/approvals) | `GetMultipleApprovals` | `MAPIApprovals` |
 | `ISbRetrieveMultipleDataSourcesParams` | [Data Sources Resource](#core-resources/datasources/retrieve-multiple-datasources) | `GetMultipleDataSources` | `MAPIDataSources` |
 | `ISbRetrieveMultipleDataSourcesEntriesParams` | [Data Sources Entries Resource](#core-resources/datasource-entries/retrieve-multiple-datasource-entries) | `GetMultipleDataSourceEntries` | `MAPIDataSources` |
+| `ISbRetrieveMultipleFieldTypesParams` | [Field Types Resource](#core-resources/field-types/field-types) | `GetMultipleFieldTypes` | `MAPIFieldTypes` |
 
 As for any <strong>Typescript</strong> file, if one uses a good code editor, hovering over the interface will show the interface's description.
