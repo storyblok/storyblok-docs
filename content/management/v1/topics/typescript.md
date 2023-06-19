@@ -52,6 +52,7 @@ For the interfaces from the Core Resources, one can find them in the <strong>`st
 
 Below is the list of all interfaces that are used in the <strong>Storyblok Client Management API - Parameters (POST, PUT)</strong>.  <br />
 For each interface, one can find the corresponding description inside <strong>The Typescript Interfaces</strong> section from each Core Resource.
+There one will find all the types expected for each interface. For instance, if you see a field that is of type `string`, then you will have to pass a `string` value for that field.
 
 To import the interfaces, one can use the following import path: <br />
 ```javascript
