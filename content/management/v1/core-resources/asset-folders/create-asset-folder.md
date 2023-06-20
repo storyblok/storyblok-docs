@@ -6,6 +6,7 @@ title: Create an Asset Folder
 |---|---|
 | `asset_folder` | Your full [asset folder object](#core-resources/asset-folders/the-asset-object) |
 | `asset_folder[name]`  | Name is **required** |
+| `asset_folder[parent_id]`  | The identifier of the parent folder. The `parent_id` parameter is **optional**. If the `parent_id` is omitted or set to null, the folder is created at root level |
 
 ;examplearea
 
