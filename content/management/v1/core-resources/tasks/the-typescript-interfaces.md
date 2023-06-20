@@ -27,9 +27,9 @@ export type Task = ISBContentMAPITask
 
 ;examplearea
 
-Example on how use the <strong>Task's</strong> interface with the Storyblok Client
+Example on how use the <strong>Task's</strong> interfaces with the Storyblok Client
 
-```javascript
+```typescript
 const StoryblokClient = require('storyblok-js-client')
 import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
 import { Task } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPITasks';
@@ -49,16 +49,4 @@ StoryblokClient.post('spaces/<YOUR-SPACE-ID>/tasks/', payload)
   .catch(error => {
     // handle error
   });
-```
-
-Example Object
-
-```json
-{
-	"task": {
-		"name": "My Task Name",
-		"task_type": "webhook",
-		"webhook_url": "https://www.storyblok.com"
-	}
-}
 ```

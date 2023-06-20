@@ -44,9 +44,9 @@ export type GetMultipleDataSources = ISbRetrieveMultipleDataSourcesParams
 
 ;examplearea
 
-Example on how use the <strong>Approval's</strong> interface with the Storyblok Client
+Example on how use the <strong>DataSources'</strong> interfaces with the Storyblok Client
 
-```javascript
+```typescript
 const StoryblokClient = require('storyblok-js-client')
 // Import the interfaces
 import {

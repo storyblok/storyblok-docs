@@ -138,5 +138,6 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
 | `ISbRetrieveMultipleDataSourcesParams` | [Data Sources Resource](#core-resources/datasources/retrieve-multiple-datasources) | `GetMultipleDataSources` | `MAPIDataSources` |
 | `ISbRetrieveMultipleDataSourcesEntriesParams` | [Data Sources Entries Resource](#core-resources/datasource-entries/retrieve-multiple-datasource-entries) | `GetMultipleDataSourceEntries` | `MAPIDataSources` |
 | `ISbRetrieveMultipleFieldTypesParams` | [Field Types Resource](#core-resources/field-types/field-types) | `GetMultipleFieldTypes` | `MAPIFieldTypes` |
+| `ISbRetrieveMultipleWorkflowStageChangesParams` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/intro) | `GetMultipleWorkflowStageChanges` | `MAPIWorkflowStages` |
 
 As for any <strong>Typescript</strong> file, if one uses a good code editor, hovering over the interface will show the interface's description.

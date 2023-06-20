@@ -40,9 +40,9 @@ export type GetMultipleDataSourcesEntries = ISbRetrieveMultipleDataSourcesEntrie
 
 ;examplearea
 
-Example on how use the <strong>Approval's</strong> interface with the Storyblok Client
+Example on how use the <strong>DataSource Entries'</strong> interfaces with the Storyblok Client
 
-```javascript
+```typescript
 const StoryblokClient = require('storyblok-js-client')
 // Import the interfaces
 import {
@@ -87,5 +87,4 @@ Storyblok.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', params)
   .catch(error => {
     // handle error
   });
-
 ```

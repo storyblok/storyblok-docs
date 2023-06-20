@@ -46,9 +46,9 @@ export type GetActivities = ISbRetrieveMultipleActivitiesParams
 
 ;examplearea
 
-Example on how use the <strong>Activity's</strong> interface with the Storyblok Client
+Example on how use the <strong>Activity's</strong> interfaces with the Storyblok Client
 
-```javascript
+```typescript
 const StoryblokClient = require('storyblok-js-client')
 // Import the interfaces
 import {

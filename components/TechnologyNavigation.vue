@@ -1,46 +1,61 @@
 <template>
     <ul class="technology-navigation">
       <li :key=technology.key v-for="technology in technologies">
-        <a href="#" :class="{ active: $store.state.technology == technology.key }" @click.prevent="switchTechnology(technology.key)">{{technology.name}}</a>
+        <template v-if="technology.show()">
+          <a href="#" :class="{ active: $store.state.technology == technology.key }" @click.prevent="switchTechnology(technology.key)">{{technology.name}}</a>
+        </template>
       </li>
     </ul>
 </template>
 
 <script>
 export default {
-  data() {
+  data(instance) {
     return {
       technologies: [{
           key: 'bash',
-          name: 'curl'
+          name: 'curl',
+          show: () => !instance.isTypescriptRoute
         },
         {
           key: 'javascript',
-          name: 'JavaScript'
+          name: 'JavaScript',
+          show: () => !instance.isTypescriptRoute
+        },
+        {
+          key: 'typescript',
+          name: 'Typescript',
+          show: () => instance.isTypescriptRoute
         },
         {
           key: 'ruby',
-          name: 'Ruby'
+          name: 'Ruby',
+          show: () => !instance.isTypescriptRoute
         },
         {
           key: 'php',
-          name: 'PHP'
+          name: 'PHP',
+          show: () => !instance.isTypescriptRoute
         },
         {
           key: 'java',
-          name: 'Java'
+          name: 'Java',
+          show: () => !instance.isTypescriptRoute
         },
         {
           key: 'csharp',
-          name: 'C#'
+          name: 'C#',
+          show: () => !instance.isTypescriptRoute
         },
         {
           key: 'swift',
-          name: 'Swift'
+          name: 'Swift',
+          show: () => !instance.isTypescriptRoute
         },
         {
           key: 'python',
-          name: 'Python'
+          name: 'Python',
+          show: () => !instance.isTypescriptRoute
         }
       ]
     }
@@ -50,10 +65,17 @@ export default {
       this.switchTechnology(typeof window.localStorage.technology === 'undefined' ? 'bash' : window.localStorage.technology)
     }
   },
+
+  computed: {
+    isTypescriptRoute() {
+      return this.$route.fullPath.indexOf('typescript-interfaces') > -1
+    }
+  },
+
   methods: {
     switchTechnology(technology) {
       this.$store.commit('SET_TECHNOLOGY', technology)
-    }
+    },
   }
 }
 </script>

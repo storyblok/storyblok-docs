@@ -30,14 +30,14 @@ export type Asset = ISbAsset
 
 ;examplearea
 
-Example on how use the <strong>Asset's</strong> interface with the Storyblok Client
+Example on how use the <strong>Asset's</strong> interfaces with the Storyblok Client
 
-```javascript
-// POST, PUT
+```typescript
 const StoryblokClient = require('storyblok-js-client')
 import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
 import { Asset } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
 
+// POST, PUT
 const payload:ISbP2Params<Asset> = {
   id: 123,
   filename: 'my-image.jpg',
@@ -60,14 +60,4 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/assets/123')
   .catch(error => {
     // handle error
   });
-```
-
-Example Object
-
-```json
-{
-  "id": 123,
-  "filename": "my-image.jpg",
-  "asset_folder_id": 123
-}
 ```

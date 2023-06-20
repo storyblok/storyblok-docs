@@ -442,6 +442,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/workflow-stage-changes/create"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stage-changes/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/workflow-stage-changes/intro"

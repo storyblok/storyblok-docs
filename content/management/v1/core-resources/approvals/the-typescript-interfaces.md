@@ -43,10 +43,9 @@ export type GetMultipleApprovals = ISbRetrieveMultipleApprovalsParams
 
 ;examplearea
 
-Example on how use the <strong>Approval's</strong> interface with the Storyblok Client
+Example on how use the <strong>Approval's</strong> interfaces with the Storyblok Client
 
-```javascript
-// POST, PUT
+```typescript
 const StoryblokClient = require('storyblok-js-client')
 // Import the interfaces
 import {
@@ -58,6 +57,7 @@ import {
   GetMultipleApprovals
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIApprovals';
 
+// POST, PUT
 const payload:ISbP2Params<Approval> = {
   approval: {
     status: 'pending',

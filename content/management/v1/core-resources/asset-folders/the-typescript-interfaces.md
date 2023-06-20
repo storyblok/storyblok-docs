@@ -23,9 +23,9 @@ export type AssetFolder = ISbAssetFolder
 
 ;examplearea
 
-Example on how use the <strong>Asset's</strong> interface with the Storyblok Client
+Example on how use the <strong>Asset's</strong> interfaces with the Storyblok Client
 
-```javascript
+```typescript
 const StoryblokClient = require('storyblok-js-client')
 import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
 import { AssetFolder } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
@@ -45,16 +45,4 @@ StoryblokClient.post('spaces/<YOUR-SPACE-ID>/asset_folders/', payload)
   .catch(error => {
     // handle error
   });
-```
-
-Example Object
-
-```json
-{
-	"asset_folder": {
-		"id": 123,
-		"name": "My Asset Folder",
-		"parent_id": 123
-	}
-}
 ```
