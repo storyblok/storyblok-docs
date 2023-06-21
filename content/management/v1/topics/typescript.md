@@ -131,12 +131,12 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
 
 | Interface     | Core Resource          | Alias | Import Path |
 |---------------------|----------------------|---------|--------|
-| `ISbRetrieveMultipleActivitiesParams` | [Activities Resource](#core-resources/activities/activities) | `GetActivities` | `MAPIActivities` |
-| `ISbRetrieveMultipleApprovalsParams` | [Approvals Resource](#core-resources/approvals/approvals) | `GetMultipleApprovals` | `MAPIApprovals` |
+| `ISbRetrieveMultipleActivitiesParams` | [Activities Resource](#core-resources/activities/retrieve-multiple-activities) | `GetMultipleActivities` | `MAPIActivities` |
+| `ISbRetrieveMultipleApprovalsParams` | [Approvals Resource](#core-resources/approvals/retrieve-multiple-approvals) | `GetMultipleApprovals` | `MAPIApprovals` |
 | `ISbRetrieveMultipleDataSourcesParams` | [Data Sources Resource](#core-resources/datasources/retrieve-multiple-datasources) | `GetMultipleDataSources` | `MAPIDataSources` |
 | `ISbRetrieveMultipleDataSourcesEntriesParams` | [Data Sources Entries Resource](#core-resources/datasource-entries/retrieve-multiple-datasource-entries) | `GetMultipleDataSourceEntries` | `MAPIDataSources` |
-| `ISbRetrieveMultipleFieldTypesParams` | [Field Types Resource](#core-resources/field-types/field-types) | `GetMultipleFieldTypes` | `MAPIFieldTypes` |
-| `ISbRetrieveMultipleWorkflowStageChangesParams` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/intro) | `GetMultipleWorkflowStageChanges` | `MAPIWorkflowStages` |
-| `ISbContentMAPIGetMultipleStories` | [Stories Resource](#core-resources/stories/retrieve-multiple-stories) | `GetMultipleStories` | `MAPIStories` |
+| `ISbRetrieveMultipleFieldTypesParams` | [Field Types Resource](#core-resources/field-types/retrieve-multiple-field-types) | `GetMultipleFieldTypes` | `MAPIFieldTypes` |
+| `ISbRetrieveMultipleWorkflowStageChangesParams` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/get-all) | `GetMultipleWorkflowStageChanges` | `MAPIWorkflowStages` |
+| `ISbRetrieveMultipleStories` | [Stories Resource](#core-resources/stories/retrieve-multiple-stories) | `GetMultipleStories` | `MAPIStories` |
 
 As for any <strong>Typescript</strong> file, if one uses a good code editor, hovering over the interface will show the interface's description.
