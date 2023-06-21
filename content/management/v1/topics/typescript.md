@@ -67,9 +67,9 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 
 | Interface     | Core Resource          | Alias | Import Path |
 |---------------------|----------------------|---------|--------|
-| `ISBContentMAPIActivity` | [Activities Resource](#core-resources/activities/activities) | `Activity` | `MAPIActivities` |
-| `ISBContentMAPIApprovals` | [Approvals Resource](#core-resources/approvals/approvals) | `Approval` | `MAPIApprovals` |
-| `ISBContentMAPIReleaseApproval` | [Release Approvals Resource](#core-resources/approvals/create-release-approval) | `ReleaseApproval` | `MAPIApprovals` |
+| `ISbContentMAPIActivity` | [Activities Resource](#core-resources/activities/activities) | `Activity` | `MAPIActivities` |
+| `ISbContentMAPIApprovals` | [Approvals Resource](#core-resources/approvals/approvals) | `Approval` | `MAPIApprovals` |
+| `ISbContentMAPIReleaseApproval` | [Release Approvals Resource](#core-resources/approvals/create-release-approval) | `ReleaseApproval` | `MAPIApprovals` |
 | `ISbAsset` | [Assets Resource](#core-resources/assets/assets) | `Asset` | `MAPIAssets` |
 | `ISbAssetFolder` | [Asset Folders Resource](#core-resources/asset-folders/asset-folders) | `AssetFolder` | `MAPIAssets` |
 | `ISbContentMAPIBranchDeployments` | [Branch Deployments Resource](#core-resources/deployments/intro) | `BranchDeployment` | `MAPIBranchDeployments` |
@@ -77,17 +77,17 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 | `ISbContentMAPIComponentGroup` | [Component Groups Resource](#core-resources/component-groups/component-groups) | `ComponentGroup` | `MAPIComponents` |
 | `ISbContentMAPIDataSource` | [Data Sources Resource](#core-resources/datasources/datasources) | `DataSource` | `MAPIDataSources` |
 | `ISbContentMAPIDataSourceEntry` | [Data Sources Entries Resource](#core-resources/datasource-entries/datasource-entries) | `DataSourceEntry` | `MAPIDataSources` |
-| `ISBContentMAPIFieldTypes` | [Field Types Resource](#core-resources/field-types/field-types) | `FieldType` | `MAPIFieldTypes` |
-| `ISBContentMAPIPresets` | [Presets Resource](#core-resources/presets/presets) | `Preset` | `MAPIPresets` |
+| `ISbContentMAPIFieldTypes` | [Field Types Resource](#core-resources/field-types/field-types) | `FieldType` | `MAPIFieldTypes` |
+| `ISbContentMAPIPresets` | [Presets Resource](#core-resources/presets/presets) | `Preset` | `MAPIPresets` |
 | `ISbContentMAPIReleases` | [Releases Resource](#core-resources/releases/intro) | `Release` | `MAPIReleases` |
-| `ISBContentMAPISpace` | [Spaces Resource](#core-resources/spaces/spaces) | `Space` | `MAPISpaces` |
-| `ISBContentMAPICreateSpace` | [Create Space Resource](#core-resources/spaces/create-space) | `CreateSpace` | `MAPISpaces` |
-| `ISBContentMAPIUpdateSpace` | [Update Space Resource](#core-resources/spaces/update-space) | `UpdateSpace` | `MAPISpaces` |
-| `ISBContentMAPIDuplicateSpace` | [Duplicate Space Resource](#core-resources/spaces/duplicate-space) | `DuplicateSpace` | `MAPISpaces` |
-| `ISBContentMAPISpaceRoles` | [Space Roles Resource](#core-resources/space-roles/space-roles) | `SpaceRoles` | `MAPISpacesRoles` |
+| `ISbContentMAPISpace` | [Spaces Resource](#core-resources/spaces/spaces) | `Space` | `MAPISpaces` |
+| `ISbContentMAPICreateSpace` | [Create Space Resource](#core-resources/spaces/create-space) | `CreateSpace` | `MAPISpaces` |
+| `ISbContentMAPIUpdateSpace` | [Update Space Resource](#core-resources/spaces/update-space) | `UpdateSpace` | `MAPISpaces` |
+| `ISbContentMAPIDuplicateSpace` | [Duplicate Space Resource](#core-resources/spaces/duplicate-space) | `DuplicateSpace` | `MAPISpaces` |
+| `ISbContentMAPISpaceRoles` | [Space Roles Resource](#core-resources/space-roles/space-roles) | `SpaceRoles` | `MAPISpacesRoles` |
 | `ISbContentMAPIStory` | [Stories Resource](#core-resources/stories/stories) | `CreateStory` | `MAPIStories` |
 | `ISbContentMAPIUpdateStory` | [Update Story Resource](#core-resources/stories/update-story) | `UpdateStory` | `MAPIStories` |
-| `ISBContentMAPITask` | [Tasks Resource](#core-resources/tasks/tasks) | `Task` | `MAPITasks` |
+| `ISbContentMAPITask` | [Tasks Resource](#core-resources/tasks/tasks) | `Task` | `MAPITasks` |
 | `ISbContentMAPIWorkflowStage` | [Workflow Stages Resource](#core-resources/workflow-stages/intro) | `WorkflowStage` | `MAPIWorkflowStages` |
 | `ISbContentMAPIWorkflowStageChanges` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/intro) | `WorkflowStageChanges` | `MAPIWorkflowStages` |
 
