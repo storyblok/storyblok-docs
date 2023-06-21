@@ -85,9 +85,7 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 | `ISBContentMAPIUpdateSpace` | [Update Space Resource](#core-resources/spaces/update-space) | `UpdateSpace` | `MAPISpaces` |
 | `ISBContentMAPIDuplicateSpace` | [Duplicate Space Resource](#core-resources/spaces/duplicate-space) | `DuplicateSpace` | `MAPISpaces` |
 | `ISBContentMAPISpaceRoles` | [Space Roles Resource](#core-resources/space-roles/space-roles) | `SpaceRoles` | `MAPISpacesRoles` |
-| `ISbContentMAPIStory` | [Stories Resource](#core-resources/stories/stories) | `Story` | `MAPIStories` |
-| `ISbContentMAPIMultipleStories` | [Multiple Stories Resource](#core-resources/stories/retrieve-multiple-stories) | `MultipleStories` | `MAPIStories` |
-| `ISbContentMAPICreateStory` | [Create Story Resource](#core-resources/stories/create-story) | `CreateStory` | `MAPIStories` |
+| `ISbContentMAPIStory` | [Stories Resource](#core-resources/stories/stories) | `CreateStory` | `MAPIStories` |
 | `ISbContentMAPIUpdateStory` | [Update Story Resource](#core-resources/stories/update-story) | `UpdateStory` | `MAPIStories` |
 | `ISBContentMAPITask` | [Tasks Resource](#core-resources/tasks/tasks) | `Task` | `MAPITasks` |
 | `ISbContentMAPIWorkflowStage` | [Workflow Stages Resource](#core-resources/workflow-stages/intro) | `WorkflowStage` | `MAPIWorkflowStages` |
@@ -139,5 +137,6 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
 | `ISbRetrieveMultipleDataSourcesEntriesParams` | [Data Sources Entries Resource](#core-resources/datasource-entries/retrieve-multiple-datasource-entries) | `GetMultipleDataSourceEntries` | `MAPIDataSources` |
 | `ISbRetrieveMultipleFieldTypesParams` | [Field Types Resource](#core-resources/field-types/field-types) | `GetMultipleFieldTypes` | `MAPIFieldTypes` |
 | `ISbRetrieveMultipleWorkflowStageChangesParams` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/intro) | `GetMultipleWorkflowStageChanges` | `MAPIWorkflowStages` |
+| `ISbContentMAPIGetMultipleStories` | [Stories Resource](#core-resources/stories/retrieve-multiple-stories) | `GetMultipleStories` | `MAPIStories` |
 
 As for any <strong>Typescript</strong> file, if one uses a good code editor, hovering over the interface will show the interface's description.

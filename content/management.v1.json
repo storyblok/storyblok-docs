@@ -56,6 +56,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/stories/unpublish-a-story"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/stories/stories"
