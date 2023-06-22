@@ -6,6 +6,7 @@ title: Update a Space Role
 |---|---|
 | `space_role` | Your full [component object](#core-resources/space-roles/the-space-role-object) |
 | `space_role[name]` | The space role name is **required** |
+| `space_role[role]` | The space role role is **optional** |
 
 ;examplearea
 
