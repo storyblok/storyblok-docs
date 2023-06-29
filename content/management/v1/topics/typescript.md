@@ -73,6 +73,9 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 | `ISbAsset` | [Assets Resource](#core-resources/assets/assets) | `Asset` | `MAPIAssets` |
 | `ISbAssetFolder` | [Asset Folders Resource](#core-resources/asset-folders/asset-folders) | `AssetFolder` | `MAPIAssets` |
 | `ISbContentMAPIBranchDeployments` | [Branch Deployments Resource](#core-resources/deployments/intro) | `BranchDeployment` | `MAPIBranchDeployments` |
+| `ISbContentMAPICollaborator` | [Collaborators Resource](#core-resources/collaborators/collaborators) | `Collaborator` | `MAPICollaborators` |
+| `ISbContentMAPICollaboratorAdd` | [Add Collaborators Resource](#core-resources/collaborators/add-collaborator) | `AddCollaborator` | `MAPICollaborators` |
+| `ISbContentMAPICollaboratorAddWithSSO` | [Add Collaborators with SSO Resource](#core-resources/collaborators/add-users-with-sso) | `AddCollaboratorWithSSO` | `MAPICollaborators` |
 | `ISbContentMAPIComponent` | [Components Resource](#core-resources/components/components) | `Component` | `MAPIComponents` |
 | `ISbContentMAPIComponentGroup` | [Component Groups Resource](#core-resources/component-groups/component-groups) | `ComponentGroup` | `MAPIComponents` |
 | `ISbContentMAPIDataSource` | [Data Sources Resource](#core-resources/datasources/datasources) | `DataSource` | `MAPIDataSources` |

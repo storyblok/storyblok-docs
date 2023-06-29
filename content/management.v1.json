@@ -79,6 +79,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/collaborators/add-users-with-sso"
+          },
+          {
+            "contentPath": "management/v1/core-resources/collaborators/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/collaborators/collaborators"
