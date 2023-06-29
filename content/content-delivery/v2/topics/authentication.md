@@ -7,7 +7,7 @@ Authenticate your account by including your access token in API requests. You ca
 - Public: Allows access to your published content entries: `version=published` 
 - Preview: Allows access to the draft and published content entries:  `version=draft` and `version=published`
 
-**Public** and **Preview** tokens are **read only** and do not allow you or others to write or delete entries in your space. The public token can be published. All tokens can be revoked at any point of time, you are able to create multiple tokens of the same type to grant access for specific use-cases. For CRUD operations you can have a look at the Management API documentation.
+**Public** and **Preview** tokens are **read only** and do not allow you or others to write or delete entries in your space. The public token can be published. All tokens can be revoked at any point in time. You can also create multiple tokens of the same type to grant access for specific use-cases. For CRUD operations checkout the [Management API documentation](https://www.storyblok.com/docs/api/management).
 
 If you're using the Content Staging (eg. Release and Schedule) feature you can also create Public and Preview tokens for each staging environment.
 
