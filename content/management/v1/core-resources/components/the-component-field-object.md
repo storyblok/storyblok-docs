@@ -18,6 +18,9 @@ Not every property will be used for every field type; some may only effect speci
 | `preview_field` | Is used as instance preview field below component name in bloks types |
 | `no_translate` | Boolean; Should be excluded in translation export |
 | `rtl` | Boolean; Enable global RTL for this field <br>Only for type: *markdown*, *text*, *textarea* |
+| `exclude_from_merge` | Excludes a blok from being merged during a merge action (only works with the [Dimensions App](https://www.storyblok.com/apps/locales)) |
+| `exclude_from_overwrite` | Excludes a blok from being overwritten during an overwrite action (only works with the [Dimensions App](https://www.storyblok.com/apps/locales)) |
+| `force_merge` | Overwrites a blok during a merge action (only works with the [Dimensions App](https://www.storyblok.com/apps/locales)) |
 | `rich_markdown` | Enable rich markdown view by default (true/false); <br>Only for type: *markdown* |
 | `keys` | Array of field keys to include in this section; <br>Only for type: *section* |
 | `field_type` | Name of the custom field type plugin; <br>Only for type: *custom* |
