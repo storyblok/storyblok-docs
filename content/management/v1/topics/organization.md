@@ -3,9 +3,9 @@ title: Organization
 sidebarTitle: Organization
 ---
 
-The Organization endpoint is very helpfull for getting full statictics on your storyblok spaces. You can see how many users you have in your Organization along with all usefull information like `last_sign_in_at`, `last_sign_in_ip`.
+The Organization endpoint is helpful for obtaining comprehensive statistics on your Storyblok spaces. It provides valuable information, such as the number of users within your organization, as well as details like `last_sign_in_at` or `last_sign_in_ip`.
 
-On the right hand site you can see an Example Response.
+On the right hand site you can see an example response.
 
 ;examplearea
 
