@@ -19,6 +19,9 @@
       },
       {
         "contentPath": "management/v1/topics/pagination"
+      },
+      {
+        "contentPath": "management/v1/topics/organization"
       }
     ]
   },
