@@ -22,32 +22,29 @@ Example Object
 
 ```json
 {
-  "component": {
-    "id": 214123,
-    "name": "post",
-    "display_name": "Post",
-    "created_at": "2018-12-28T14:54:01.423Z",
-    "schema": {
-      // definition of fields (schema) for this component
-      "title": {
-        "type": "text",
-        "pos": 0
-      },
-      "description": {
-        "type": "text",
-        "pos": 1
-      },
-      ...
+  "id": 214123,
+  "name": "post",
+  "display_name": "Post",
+  "created_at": "2018-12-28T14:54:01.423Z",
+  "schema": {
+    // definition of fields (schema) for this component
+    "title": {
+      "type": "text",
+      "pos": 0
     },
-    "image": null,
-    "preview_field": null,
-    "is_root": true,
-    "is_nestable": true,
-    "all_presets": [],
-    "preset_id": null,
-    "real_name": "post",
-    "component_group_uuid": "19323-32144-23423-42314"
+    "description": {
+      "type": "text",
+      "pos": 1
+    },
+    ...
   },
-  "update_content": true
+  "image": null,
+  "preview_field": null,
+  "is_root": true,
+  "is_nestable": true,
+  "all_presets": [],
+  "preset_id": null,
+  "real_name": "post",
+  "component_group_uuid": "19323-32144-23423-42314"
 }
 ```

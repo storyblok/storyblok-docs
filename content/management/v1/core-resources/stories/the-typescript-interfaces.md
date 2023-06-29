@@ -59,9 +59,9 @@ export interface ISbContentMAPIStory {
 			name: string | null
 			lang: ISbContentMAPI['lang']
 		}[]
-		publish?: boolean
-		release_id?: number
 	}
+	publish?: boolean
+	release_id?: number
 }
 
 /**
