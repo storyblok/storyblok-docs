@@ -13,6 +13,8 @@ If you don't use our official [JavaScript SDK](https://github.com/storyblok/stor
 3. Safe the `cv` attribute in memory and use it for the subsequent requests
 4. When publishing new content clear the attribute from the memory and save a new one by starting at step 1.
 
+When changing a page/folder's slug in the UI, the cached_url to reflect the changes, we suggest for cases when the slug changes often or a large number of stories is being moved, to use the [resolve_links](https://www.storyblok.com/cl/url-resolving) parameter and `url` as its value to get the latest slug of the linked stories.
+
 ;examplearea
 
 Example Request
