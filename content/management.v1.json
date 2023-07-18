@@ -480,6 +480,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/releases/delete"
+          },
+          {
+            "contentPath": "management/v1/core-resources/releases/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/releases/intro"
@@ -487,10 +490,31 @@
       {
         "children": [
           {
-            "contentPath": "management/v1/core-resources/deployments/create"
+            "contentPath": "management/v1/core-resources/pipelines/object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/pipelines/get-one"
+          },
+          {
+            "contentPath": "management/v1/core-resources/pipelines/get-multiple"
+          },
+          {
+            "contentPath": "management/v1/core-resources/pipelines/create"
+          },
+          {
+            "contentPath": "management/v1/core-resources/pipelines/update-pipeline"
+          },
+          {
+            "contentPath": "management/v1/core-resources/pipelines/delete-pipeline"
+          },
+          {
+            "contentPath": "management/v1/core-resources/pipelines/pipeline-deployment"
+          },
+          {
+            "contentPath": "management/v1/core-resources/pipelines/the-typescript-interfaces"
           }
         ],
-        "contentPath": "management/v1/core-resources/deployments/intro"
+        "contentPath": "management/v1/core-resources/pipelines/intro"
       }
     ]
   }
