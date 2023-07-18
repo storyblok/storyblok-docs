@@ -111,6 +111,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/components/delete-component"
+          },
+          {
+            "contentPath": "management/v1/core-resources/components/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/components/components"

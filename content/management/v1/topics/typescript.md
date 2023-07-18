@@ -14,7 +14,7 @@ There are two types of requests that one can do with the <strong>Storyblok Clien
 | `get` | ISbGetParams | `GET` |
 | `post` | ISbP2Params | `POST` |
 | `put` | ISbP2Params | `PUT` |
-| `delete` | *No params are needed* | `DELETE` |
+| `delete` | *No params needed* | `DELETE` |
 
 *Note: `ISbP2Params` is used for `post` and `put` requests.*
 
@@ -67,32 +67,32 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 
 | Interface     | Core Resource          | Alias | Import Path |
 |---------------------|----------------------|---------|--------|
-| `ISbContentMAPIActivity` | [Activities Resource](#core-resources/activities/activities) | `Activity` | `MAPIActivities` |
-| `ISbContentMAPIApprovals` | [Approvals Resource](#core-resources/approvals/approvals) | `Approval` | `MAPIApprovals` |
-| `ISbContentMAPIReleaseApproval` | [Release Approvals Resource](#core-resources/approvals/create-release-approval) | `ReleaseApproval` | `MAPIApprovals` |
-| `ISbAsset` | [Assets Resource](#core-resources/assets/assets) | `Asset` | `MAPIAssets` |
-| `ISbAssetFolder` | [Asset Folders Resource](#core-resources/asset-folders/asset-folders) | `AssetFolder` | `MAPIAssets` |
-| `ISbContentMAPIBranchDeployments` | [Branch Deployments Resource](#core-resources/deployments/intro) | `BranchDeployment` | `MAPIBranchDeployments` |
+| `ISbContentMAPIStory` | [Stories Resource](#core-resources/stories/stories) | `CreateStory` | `MAPIStories` |
+| `ISbContentMAPIUpdateStory` | [Update Story Resource](#core-resources/stories/update-story) | `UpdateStory` | `MAPIStories` |
 | `ISbContentMAPICollaborator` | [Collaborators Resource](#core-resources/collaborators/collaborators) | `Collaborator` | `MAPICollaborators` |
 | `ISbContentMAPICollaboratorAdd` | [Add Collaborators Resource](#core-resources/collaborators/add-collaborator) | `AddCollaborator` | `MAPICollaborators` |
 | `ISbContentMAPICollaboratorAddWithSSO` | [Add Collaborators with SSO Resource](#core-resources/collaborators/add-users-with-sso) | `AddCollaboratorWithSSO` | `MAPICollaborators` |
 | `ISbContentMAPIComponent` | [Components Resource](#core-resources/components/components) | `Component` | `MAPIComponents` |
-| `ISbContentMAPIComponentGroup` | [Component Groups Resource](#core-resources/component-groups/component-groups) | `ComponentGroup` | `MAPIComponents` |
+| `ISbContentMAPIComponentGroup` | [Component Groups Resource](#core-resources/component-groups/component-groups) | `ComponentGroup` | `MAPIComponentGroups` |
+| `ISbAsset` | [Assets Resource](#core-resources/assets/assets) | `Asset` | `MAPIAssets` |
+| `ISbAssetFolder` | [Asset Folders Resource](#core-resources/asset-folders/asset-folders) | `AssetFolder` | `MAPIAssets` |
 | `ISbContentMAPIDataSource` | [Data Sources Resource](#core-resources/datasources/datasources) | `DataSource` | `MAPIDataSources` |
 | `ISbContentMAPIDataSourceEntry` | [Data Sources Entries Resource](#core-resources/datasource-entries/datasource-entries) | `DataSourceEntry` | `MAPIDataSources` |
-| `ISbContentMAPIFieldTypes` | [Field Types Resource](#core-resources/field-types/field-types) | `FieldType` | `MAPIFieldTypes` |
-| `ISbContentMAPIPresets` | [Presets Resource](#core-resources/presets/presets) | `Preset` | `MAPIPresets` |
-| `ISbContentMAPIReleases` | [Releases Resource](#core-resources/releases/intro) | `Release` | `MAPIReleases` |
 | `ISbContentMAPISpace` | [Spaces Resource](#core-resources/spaces/spaces) | `Space` | `MAPISpaces` |
 | `ISbContentMAPICreateSpace` | [Create Space Resource](#core-resources/spaces/create-space) | `CreateSpace` | `MAPISpaces` |
 | `ISbContentMAPIUpdateSpace` | [Update Space Resource](#core-resources/spaces/update-space) | `UpdateSpace` | `MAPISpaces` |
 | `ISbContentMAPIDuplicateSpace` | [Duplicate Space Resource](#core-resources/spaces/duplicate-space) | `DuplicateSpace` | `MAPISpaces` |
 | `ISbContentMAPISpaceRoles` | [Space Roles Resource](#core-resources/space-roles/space-roles) | `SpaceRoles` | `MAPISpacesRoles` |
-| `ISbContentMAPIStory` | [Stories Resource](#core-resources/stories/stories) | `CreateStory` | `MAPIStories` |
-| `ISbContentMAPIUpdateStory` | [Update Story Resource](#core-resources/stories/update-story) | `UpdateStory` | `MAPIStories` |
 | `ISbContentMAPITask` | [Tasks Resource](#core-resources/tasks/tasks) | `Task` | `MAPITasks` |
+| `ISbContentMAPIApprovals` | [Approvals Resource](#core-resources/approvals/approvals) | `Approval` | `MAPIApprovals` |
+| `ISbContentMAPIReleaseApproval` | [Release Approvals Resource](#core-resources/approvals/create-release-approval) | `ReleaseApproval` | `MAPIApprovals` |
+| `ISbContentMAPIActivity` | [Activities Resource](#core-resources/activities/activities) | `Activity` | `MAPIActivities` |
+| `ISbContentMAPIPresets` | [Presets Resource](#core-resources/presets/presets) | `Preset` | `MAPIPresets` |
+| `ISbContentMAPIFieldTypes` | [Field Types Resource](#core-resources/field-types/field-types) | `FieldType` | `MAPIFieldTypes` |
 | `ISbContentMAPIWorkflowStage` | [Workflow Stages Resource](#core-resources/workflow-stages/intro) | `WorkflowStage` | `MAPIWorkflowStages` |
 | `ISbContentMAPIWorkflowStageChanges` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/intro) | `WorkflowStageChanges` | `MAPIWorkflowStages` |
+| `ISbContentMAPIReleases` | [Releases Resource](#core-resources/releases/intro) | `Release` | `MAPIReleases` |
+| `ISbContentMAPIBranchDeployments` | [Branch Deployments Resource](#core-resources/deployments/intro) | `BranchDeployment` | `MAPIBranchDeployments` |
 
 ---
 
@@ -129,17 +129,18 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
 
 ---
 <strong>GET</strong> Interfaces' List<br />
-*Note: <strong>Only</strong> these interfaces will be allowed to be used with the <strong>`get`</strong> requests*
+*Note: <strong>Only</strong> these interfaces will be allowed to be used with the <strong>`get`</strong> requests*<br />
+*If no interface is provided for a specific Core Resource, one should just make the request following the instrucions from the Core Resource's Retrieve session, for instance: [Retrieve One Component](#core-resources/components/retrieve-one-component)*
 ---
 
 | Interface     | Core Resource          | Alias | Import Path |
 |---------------------|----------------------|---------|--------|
-| `ISbRetrieveMultipleActivitiesParams` | [Activities Resource](#core-resources/activities/retrieve-multiple-activities) | `GetActivities` | `MAPIActivities` |
-| `ISbRetrieveMultipleApprovalsParams` | [Approvals Resource](#core-resources/approvals/retrieve-multiple-approvals) | `GetApprovals` | `MAPIApprovals` |
+| `ISbRetrieveMultipleStories` | [Stories Resource](#core-resources/stories/retrieve-multiple-stories) | `GetStories` | `MAPIStories` |
 | `ISbRetrieveMultipleDataSourcesParams` | [Data Sources Resource](#core-resources/datasources/retrieve-multiple-datasources) | `GetDataSources` | `MAPIDataSources` |
 | `ISbRetrieveMultipleDataSourcesEntriesParams` | [Data Sources Entries Resource](#core-resources/datasource-entries/retrieve-multiple-datasource-entries) | `GetDataSourceEntries` | `MAPIDataSources` |
+| `ISbRetrieveMultipleApprovalsParams` | [Approvals Resource](#core-resources/approvals/retrieve-multiple-approvals) | `GetApprovals` | `MAPIApprovals` |
+| `ISbRetrieveMultipleActivitiesParams` | [Activities Resource](#core-resources/activities/retrieve-multiple-activities) | `GetActivities` | `MAPIActivities` |
 | `ISbRetrieveMultipleFieldTypesParams` | [Field Types Resource](#core-resources/field-types/retrieve-multiple-field-types) | `GetFieldTypes` | `MAPIFieldTypes` |
 | `ISbRetrieveMultipleWorkflowStageChangesParams` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/get-all) | `GetWorkflowStageChanges` | `MAPIWorkflowStages` |
-| `ISbRetrieveMultipleStories` | [Stories Resource](#core-resources/stories/retrieve-multiple-stories) | `GetStories` | `MAPIStories` |
 
 As for any <strong>Typescript</strong> file, if one uses a good code editor, hovering over the interface will show the interface's description.
