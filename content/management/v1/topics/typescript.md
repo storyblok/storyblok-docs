@@ -7,7 +7,7 @@ This means that you can use the client with <strong>Typescript</strong> and bene
 
 Below you can find the interfaces that are used in the Storyblok Client and how and when to use them.
 
-There are two types of requests that one can perform with the <strong>Storyblok Client Management API</strong>, hence two types of interfaces are used for them.
+There are two types of requests that you can perform using the <strong>Storyblok Client Management API</strong>, hence two types of interfaces are used for them.
 
 | Request type     | Interface          | Method |
 |---------------------|----------------------|--|
@@ -18,10 +18,11 @@ There are two types of requests that one can perform with the <strong>Storyblok 
 
 *Note: `ISbP2Params` is used for `post` and `put` requests.*
 
-So let's see how to use the interfaces with the Storyblok Client. The example below shows how to use the <strong>`ISbP2Params`</strong> interface with the <strong>`post`</strong> request.
+So let's see how to use the interfaces with the Storyblok Client. The example below shows how to use the <strong>`ISbP2Params`</strong> interface to perform a <strong>`post`</strong> request.
 
 ```javascript
 const StoryblokClient = require('storyblok-js-client')
+// Import the POST/PUT interface
 import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces'
 import { Activity } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIActivities'
 
@@ -47,14 +48,14 @@ StoryblokClient.post('spaces/<YOUR-SPACE-ID>/activities/', payload)
 ```
 
 Note that we imported <strong>`ISbP2Params`</strong> and the <strong>`Activity`</strong> interfaces. <br />
-One will use <strong>`ISbP2Params`</strong> for pretty much all requests that are not <strong>`get`</strong> requests. <br />
-For the interfaces from the Core Resources, one can find them in the <strong>`storyblok-js-client/dist/types/MAPIInterfaces/`</strong> folder.
+You will use <strong>`ISbP2Params`</strong> for all requests that are not <strong>`get`</strong> requests. <br />
+For the interfaces from the Core Resources, you can find them in the <strong>`storyblok-js-client/dist/types/MAPIInterfaces/`</strong> folder.
 
 Below is the list of all interfaces that are used in the <strong>Storyblok Client Management API - Parameters (POST, PUT)</strong>.  <br />
-For each interface, one can find the corresponding description inside <strong>The Typescript Interfaces</strong> section from each Core Resource.
-There one will find all the types expected for each interface. For instance, if you see a field that is of type `string`, then you will have to pass a `string` value for that field.
+For each interface, you can find the corresponding description inside <strong>The Typescript Interfaces</strong> section from each Core Resource.
+There, you will find all the types expected for each interface. For instance, if you see a field that is of type `string`, then you will have to pass a `string` value for that field.
 
-To import the interfaces, one can use the following import path: <br />
+To import the interfaces, you can use the following import path: <br />
 ```javascript
 import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfaces/<Import Path>"
 ```
@@ -97,9 +98,9 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 ---
 
 The same goes for the <strong>Storyblok Client Management API - Get Parameters (GET)</strong>. <br />
-For each interface, one can find the corresponding description inside <strong>The Typescript Interfaces</strong> section from each Core Resource.
+For each interface, you can find the corresponding description inside <strong>The Typescript Interfaces</strong> section from each Core Resource.
 
-To import the interfaces, one can use the following import path: <br />
+To import the interfaces, you can use the following import path: <br />
 ```javascript
 import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfaces/<Import Path>"
 ```
@@ -108,6 +109,7 @@ The example below shows how to use the <strong>`ISbGETParams`</strong> interface
 
 ```javascript
 const StoryblokClient = require('storyblok-js-client')
+// Import the GET interface
 import { ISbGETParams } from 'storyblok-js-client/dist/types/interfaces'
 import { GetMultipleDataSourcesEntries } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIDataSources'
 
@@ -130,7 +132,7 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
 ---
 <strong>GET</strong> Interfaces' List<br />
 *Note: <strong>Only</strong> these interfaces will be allowed to be used with the <strong>`get`</strong> requests*<br />
-*If no interface is provided for a specific Core Resource, one should just make the request following the instrucions from the Core Resource's Retrieve session, for instance: [Retrieve One Component](#core-resources/components/retrieve-one-component)*
+*If no interface is provided for a specific Core Resource, you have to make the request following the instrucions from the Core Resource's Retrieve session, for instance: [Retrieve One Component](#core-resources/components/retrieve-one-component)*
 ---
 
 | Interface     | Core Resource          | Alias | Import Path |
@@ -143,4 +145,4 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
 | `ISbRetrieveMultipleFieldTypesParams` | [Field Types Resource](#core-resources/field-types/retrieve-multiple-field-types) | `GetFieldTypes` | `MAPIFieldTypes` |
 | `ISbRetrieveMultipleWorkflowStageChangesParams` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/get-all) | `GetWorkflowStageChanges` | `MAPIWorkflowStages` |
 
-As for any <strong>Typescript</strong> file, if one uses a good code editor, hovering over the interface will show the interface's description.
+As for any <strong>Typescript</strong> file, if you use a good code editor, hovering over the interface will show the interface's description.
