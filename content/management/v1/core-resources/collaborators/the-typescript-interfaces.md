@@ -112,6 +112,7 @@ const payload: ISbP2Params<AddCollaborator> = {
   space_id: 123456,
 }
 
+// POST
 StoryblokClient.post('spaces/<YOUR-SPACE-ID>/collaborators', payload)
   .then(response => console.log(response))
   .catch(error => console.log(error))

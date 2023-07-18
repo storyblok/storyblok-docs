@@ -173,6 +173,7 @@ const payload:ISbP2Params<Component> = {
   }
 }
 
+// POST, PUT
 Storyblok.post('spaces/<YOUR-SPACE-ID>/components/', payload)
   .then(response => {
     // handle response

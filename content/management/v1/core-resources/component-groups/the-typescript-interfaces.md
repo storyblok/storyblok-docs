@@ -44,6 +44,7 @@ import {
 	ComponentGroup,
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIComponentGroups';
 
+// POST, PUT
 const payload:ISbP2Params<ComponentGroup> = {
 	component_group: {
 		name: 'My Component Group Name',
