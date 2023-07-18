@@ -7,7 +7,7 @@ This means that you can use the client with <strong>Typescript</strong> and bene
 
 Below you can find the interfaces that are used in the Storyblok Client and how and when to use them.
 
-There are two types of requests that one can do with the <strong>Storyblok Client Management API</strong>, hence two types of interfaces are used for them.
+There are two types of requests that one can perform with the <strong>Storyblok Client Management API</strong>, hence two types of interfaces are used for them.
 
 | Request type     | Interface          | Method |
 |---------------------|----------------------|--|
