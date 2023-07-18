@@ -114,7 +114,7 @@ export type Component = ISbContentMAPIComponent
 
 ;examplearea
 
-Example on how use the <strong>Collaborator's</strong> interfaces with the Storyblok Client
+Example on how use the <strong>Components'</strong> interfaces with the Storyblok Client
 
 ```typescript
 const StoryblokClient = require('storyblok-js-client')
