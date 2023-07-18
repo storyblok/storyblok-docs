@@ -137,6 +137,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/component-groups/delete-component-group"
+          },
+          {
+            "contentPath": "management/v1/core-resources/component-groups/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/component-groups/component-groups"
