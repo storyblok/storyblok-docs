@@ -83,7 +83,6 @@ const StoryblokClient = require('storyblok-js-client')
 // Import the interfaces
 import {
   ISbP2Params,
-  ISbGetParams
 } from 'storyblok-js-client/dist/types/interfaces';
 import {
   Collaborator,
