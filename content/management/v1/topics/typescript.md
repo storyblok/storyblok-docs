@@ -93,7 +93,8 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 | `ISbContentMAPIWorkflowStage` | [Workflow Stages Resource](#core-resources/workflow-stages/intro) | `WorkflowStage` | `MAPIWorkflowStages` |
 | `ISbContentMAPIWorkflowStageChanges` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/intro) | `WorkflowStageChanges` | `MAPIWorkflowStages` |
 | `ISbContentMAPIReleases` | [Releases Resource](#core-resources/releases/intro) | `Release` | `MAPIReleases` |
-| `ISbContentMAPIBranchDeployments` | [Branch Deployments Resource](#core-resources/deployments/intro) | `BranchDeployment` | `MAPIBranchDeployments` |
+| `ISbContentMAPIPipeline` | [Pipelines Resource](#core-resources/pipelines/intro) | `Pipeline` | `ISbContentMAPIPipeline` |
+| `ISbContentMAPIPipelineDeployments` | [Pipelines Deployments Resource](#core-resources/pipelines/pipeline-deployment) | `PipelineDeployment` | `ISbContentMAPIPipelineDeployments` |
 
 ---
 
