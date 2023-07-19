@@ -276,6 +276,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/spaces/backup-space"
+          },
+          {
+            "contentPath": "management/v1/core-resources/spaces/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/spaces/spaces"
