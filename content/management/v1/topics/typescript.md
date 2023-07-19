@@ -95,6 +95,7 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 | `ISbContentMAPIReleases` | [Releases Resource](#core-resources/releases/intro) | `Release` | `MAPIReleases` |
 | `ISbContentMAPIPipeline` | [Pipelines Resource](#core-resources/pipelines/intro) | `Pipeline` | `ISbContentMAPIPipeline` |
 | `ISbContentMAPIPipelineDeployments` | [Pipelines Deployments Resource](#core-resources/pipelines/pipeline-deployment) | `PipelineDeployment` | `ISbContentMAPIPipelineDeployments` |
+| `ISbContentMAPIPresets` | [Presets Resource](#core-resources/presets/presets) | `Presets` | `ISbContentMAPIPresets` |
 
 ---
 
@@ -145,5 +146,6 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
 | `ISbRetrieveMultipleActivitiesParams` | [Activities Resource](#core-resources/activities/retrieve-multiple-activities) | `GetActivities` | `MAPIActivities` |
 | `ISbRetrieveMultipleFieldTypesParams` | [Field Types Resource](#core-resources/field-types/retrieve-multiple-field-types) | `GetFieldTypes` | `MAPIFieldTypes` |
 | `ISbRetrieveMultipleWorkflowStageChangesParams` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/get-all) | `GetWorkflowStageChanges` | `MAPIWorkflowStages` |
+| `ISbRetrieveMultiplePresetsParams` | [Presets Resource](#core-resources/presets/retrieve-multiple-presets) | `GetPresets` | `ISbRetrieveMultiplePresetsParams` |
 
 As for any <strong>Typescript</strong> file, if you use a good code editor, hovering over the interface will show the interface's description.
