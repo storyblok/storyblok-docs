@@ -449,6 +449,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/workflow-stages/delete"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stages/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/workflow-stages/intro"
