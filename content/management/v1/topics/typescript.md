@@ -84,6 +84,8 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 | `ISbContentMAPIUpdateSpace` | [Update Space Resource](#core-resources/spaces/update-space) | `UpdateSpace` | `MAPISpaces` |
 | `ISbContentMAPIDuplicateSpace` | [Duplicate Space Resource](#core-resources/spaces/duplicate-space) | `DuplicateSpace` | `MAPISpaces` |
 | `ISbContentMAPISpaceRoles` | [Space Roles Resource](#core-resources/space-roles/space-roles) | `SpaceRoles` | `MAPISpacesRoles` |
+| `ISbContentMAPISpaceRolesCreate` | [Create Space Role Resource](#core-resources/space-roles/create-space-role) | `SpaceRolesCreate` | `MAPISpacesRoles` |
+| `ISbContentMAPISpaceRolesUpdate` | [Update Space Role Resource](#core-resources/space-roles/update-space-role) | `SpaceRolesUpdate` | `MAPISpacesRoles` |
 | `ISbContentMAPITask` | [Tasks Resource](#core-resources/tasks/tasks) | `Task` | `MAPITasks` |
 | `ISbContentMAPIApprovals` | [Approvals Resource](#core-resources/approvals/approvals) | `Approval` | `MAPIApprovals` |
 | `ISbContentMAPIReleaseApproval` | [Release Approvals Resource](#core-resources/approvals/create-release-approval) | `ReleaseApproval` | `MAPIApprovals` |
