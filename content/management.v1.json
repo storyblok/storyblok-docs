@@ -302,6 +302,9 @@
           },
           {
             "contentPath": "management/v1/core-resources/space-roles/delete-space-role"
+          },
+          {
+            "contentPath": "management/v1/core-resources/space-roles/the-typescript-interfaces"
           }
         ],
         "contentPath": "management/v1/core-resources/space-roles/space-roles"

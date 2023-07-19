@@ -101,10 +101,7 @@ import {
 	ISbP2Params
 } from 'storyblok-js-client/dist/types/interfaces';
 import {
-	Space,
 	CreateSpace,
-	UpdateSpace,
-	DuplicateSpace,
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPISpaces';
 
 // POST, PUT

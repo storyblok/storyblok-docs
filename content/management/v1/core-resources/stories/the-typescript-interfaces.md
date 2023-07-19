@@ -124,7 +124,6 @@ import {
 } from 'storyblok-js-client/dist/types/interfaces';
 import {
   CreateStory,
-  UpdateStory,
   GetMultipleStories,
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIStories';
 
