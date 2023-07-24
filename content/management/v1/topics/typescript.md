@@ -143,6 +143,7 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
 | Interface     | Core Resource          | Alias | Import Path |
 |---------------------|----------------------|---------|--------|
 | `ISbRetrieveMultipleStories` | [Stories Resource](#core-resources/stories/retrieve-multiple-stories) | `GetStories` | `MAPIStories` |
+| `ISbRetrieveMultipleAssets` | [Assets Resource](#core-resources/assets/retrieve-multiple-assets) | `GetMultipleAssets` | `MAPIAssets` |
 | `ISbRetrieveMultipleDataSourcesParams` | [Data Sources Resource](#core-resources/datasources/retrieve-multiple-datasources) | `GetDataSources` | `MAPIDataSources` |
 | `ISbRetrieveMultipleDataSourcesEntriesParams` | [Data Sources Entries Resource](#core-resources/datasource-entries/retrieve-multiple-datasource-entries) | `GetDataSourceEntries` | `MAPIDataSources` |
 | `ISbRetrieveMultipleApprovalsParams` | [Approvals Resource](#core-resources/approvals/retrieve-multiple-approvals) | `GetApprovals` | `MAPIApprovals` |
