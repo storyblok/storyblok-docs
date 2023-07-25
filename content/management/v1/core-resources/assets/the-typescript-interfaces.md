@@ -25,8 +25,22 @@ export interface ISbAsset {
   validate_upload?: "1"
 }
 
+/**
+ * @interface ISbRetrieveMultipleAssets
+ * @description Storyblok Content Management API Retrieve Multiple Assets Interface
+ * @reference https://www.storyblok.com/docs/api/management#core-resources/assets/retrieve-multiple-assets
+ * 
+ */
+export interface ISbRetrieveMultipleAssets {
+	in_folder?: number
+	sort_by?: 'created_at:asc' | 'created_at:desc' | 'updated_at:asc' | 'updated_at:desc' | 'short_filename:asc' | 'short_filename:desc'
+	search?: string
+	is_private?: '1'
+}
+
 // Aliases
 export type Asset = ISbAsset
+export type GetMultipleAssets = ISbRetrieveMultipleAssets
 ```
 
 ;examplearea
@@ -35,8 +49,8 @@ Example on how use the <strong>Asset's</strong> interfaces with the Storyblok Cl
 
 ```typescript
 const StoryblokClient = require('storyblok-js-client')
-import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
-import { Asset } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
+import { ISbP2Params, ISbGetParams } from 'storyblok-js-client/dist/types/interfaces';
+import { Asset, GetMultipleAssets } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
 
 // POST, PUT
 const payload:ISbP2Params<Asset> = {
@@ -54,7 +68,14 @@ StoryblokClient.post('spaces/<YOUR-SPACE-ID>/assets/', payload)
   });
 
 // GET
-StoryblokClient.get('spaces/<YOUR-SPACE-ID>/assets/123')
+const params:ISbGetParams<GetMultipleAssets> = {
+  in_folder: 123,
+  sort_by: 'created_at:asc',
+  search: 'my-image.jpg',
+  is_private: '1'
+}
+
+StoryblokClient.get('spaces/<YOUR-SPACE-ID>/assets/', params)
   .then(response => {
     // handle response
   })
