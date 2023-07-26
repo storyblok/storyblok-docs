@@ -13,7 +13,7 @@ title: The Typescript Interfaces
 export interface ISbContentMAPIDataSourceEntry {
 	datasource_entry: {
 		id?: number
-		name:	string
+		name: string
 		value: string
 		datasource_id: number
 		dimension_value?: string
@@ -35,7 +35,7 @@ export interface ISbRetrieveMultipleDataSourcesEntriesParams {
 
 // Aliases
 export type DataSourceEntry = ISbContentMAPIDataSourceEntry
-export type GetMultipleDataSourcesEntries = ISbRetrieveMultipleDataSourcesEntriesParams
+export type GetDataSourcesEntries = ISbRetrieveMultipleDataSourcesEntriesParams
 ```
 
 ;examplearea
@@ -51,7 +51,7 @@ import {
 } from 'storyblok-js-client/dist/types/interfaces';
 import {
   DataSourceEntry,
-  GetMultipleDataSourcesEntries,
+  GetDataSourcesEntries,
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIDataSourceEntries';
 
 // POST, PUT
@@ -74,7 +74,7 @@ Storyblok.post('spaces/<YOUR-SPACE-ID>/datasource_entries/', payload)
   });
 
 // GET
-const params:ISbGetParams<GetMultipleDataSourcesEntries> = {
+const params:ISbGetParams<GetDataSourcesEntries> = {
   datasource_id: 123,
   datasource_slug: 'my-data-source',
   dimension: 'my-dimension'
