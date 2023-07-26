@@ -39,7 +39,7 @@ type Dimension = {
 
 // Aliases
 export type DataSource = ISbContentMAPIDataSource
-export type GetMultipleDataSources = ISbRetrieveMultipleDataSourcesParams
+export type GetDataSources = ISbRetrieveMultipleDataSourcesParams
 ```
 
 ;examplearea
@@ -55,7 +55,7 @@ import {
 } from 'storyblok-js-client/dist/types/interfaces';
 import {
   DataSource,
-  GetMultipleDataSources,
+  GetDataSources,
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIDataSources';
 
 // POST, PUT
@@ -82,7 +82,7 @@ StoryblokClient.post('spaces/<YOUR-SPACE-ID>/datasources/', payload)
   });
 
 // GET
-const params:ISbGetParams<GetMultipleDataSources> = {
+const params:ISbGetParams<GetDataSources> = {
   search: 'My Data Source'
 }
 
