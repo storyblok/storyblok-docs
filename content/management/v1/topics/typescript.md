@@ -95,10 +95,8 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 | `ISbContentMAPIWorkflowStage` | [Workflow Stages Resource](#core-resources/workflow-stages/intro) | `WorkflowStage` | `MAPIWorkflowStages` |
 | `ISbContentMAPIWorkflowStageChanges` | [Workflow Stage Changes Resource](#core-resources/workflow-stage-changes/intro) | `WorkflowStageChanges` | `MAPIWorkflowStages` |
 | `ISbContentMAPIReleases` | [Releases Resource](#core-resources/releases/intro) | `Release` | `MAPIReleases` |
-| `ISbContentMAPIPipeline` | [Pipelines Resource](#core-resources/pipelines/intro) | `Pipeline` | `ISbContentMAPIPipeline` |
-| `ISbContentMAPIPipelineDeployments` | [Pipelines Deployments Resource](#core-resources/pipelines/pipeline-deployment) | `PipelineDeployment` | `ISbContentMAPIPipelineDeployments` |
-| `ISbContentMAPIPresets` | [Presets Resource](#core-resources/presets/presets) | `Presets` | `ISbContentMAPIPresets` |
-| `ISbContentMAPIWorkflowStage` | [Workflow Stages](#core-resources/workflow-stages/intro) | `WorkflowStage` | `ISbContentMAPIWorkflowStage` |
+| `ISbContentMAPIPipeline` | [Pipelines Resource](#core-resources/pipelines/intro) | `Pipeline` | `MAPIPipelines` |
+| `ISbContentMAPIPipelineDeployments` | [Pipelines Deployments Resource](#core-resources/pipelines/pipeline-deployment) | `PipelineDeployment` | `MAPIPipelines` |
 
 ---
 
