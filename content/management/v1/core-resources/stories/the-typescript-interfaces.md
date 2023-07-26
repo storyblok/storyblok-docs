@@ -65,11 +65,11 @@ export interface ISbContentMAPIStory {
 }
 
 /**
- * @interface ISbContentMAPIGetMultipleStories
+ * @interface ISbRetrieveMultipleStories
  * @description Storyblok Content Management API Multiple Stories Interface
  * @reference https://www.storyblok.com/docs/api/management#core-resources/stories/retrieve-multiple-stories
  */
-export interface ISbContentMAPIGetMultipleStories {
+export interface ISbRetrieveMultipleStories {
 	page?: number
 	contain_component?: string
 	text_search?: string
@@ -108,7 +108,7 @@ export interface ISbContentMAPIUpdateStory extends ISbContentMAPIStory {
 // Aliases
 export type CreateStory = ISbContentMAPIStory
 export type UpdateStory = ISbContentMAPIUpdateStory
-export type GetMultipleStories = ISbContentMAPIGetMultipleStories
+export type GetStories = ISbRetrieveMultipleStories
 ```
 
 ;examplearea
@@ -124,7 +124,7 @@ import {
 } from 'storyblok-js-client/dist/types/interfaces';
 import {
   CreateStory,
-  GetMultipleStories,
+  GetStories,
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIStories';
 
 // POST, PUT
@@ -148,7 +148,7 @@ Storyblok.post('spaces/<YOUR-SPACE-ID>/stories/', payload)
   });
 
 // GET
-const params:ISbGetParams<GetMultipleStories> = {
+const params:ISbGetParams<GetStories> = {
   page: 1,
   sort_by: 'created_at:desc'
 }
