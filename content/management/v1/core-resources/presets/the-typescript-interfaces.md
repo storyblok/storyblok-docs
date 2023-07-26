@@ -60,7 +60,7 @@ const payload:ISbP2Params<Preset> = {
   preset: {
     name: 'new name',
 		component_id: 1234,
-		image?: 'http://image.com',
+		image: 'http://image.com',
   }
 }
 
