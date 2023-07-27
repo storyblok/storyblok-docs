@@ -4,12 +4,12 @@ title: The Typescript Interfaces
 
 ```typescript
 /**
- * @interface ISbAssetFolder
- * @description Storyblok Content Management API Asset Folder Interface
+ * @interface ISbAssetFolders
+ * @description Storyblok Content Management API Assets Folder Interface
  * @reference https://www.storyblok.com/docs/api/management#core-resources/asset-folders/asset-folders
  *
  **/
-export interface ISbAssetFolder {
+export interface ISbAssetFolders {
 	asset_folder: {
 		id: number
 		name?: string
@@ -18,22 +18,22 @@ export interface ISbAssetFolder {
 }
 
 // Aliases
-export type AssetFolder = ISbAssetFolder
+export type AssetFolders = ISbAssetFolders
 ```
 
 ;examplearea
 
-Example on how use the <strong>Asset's</strong> interfaces with the Storyblok Client
+Example on how use the <strong>Assets's</strong> interfaces with the Storyblok Client
 
 ```typescript
 const StoryblokClient = require('storyblok-js-client')
 import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
-import { AssetFolder } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
+import { AssetFolders } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
 
-const payload:ISbP2Params<AssetFolder> = {
+const payload:ISbP2Params<AssetFolders> = {
   asset_folder: {
 		id: 123,
-		name: 'My Asset Folder',
+		name: 'My Assets Folder',
 		parent_id: 123
 	}
 }

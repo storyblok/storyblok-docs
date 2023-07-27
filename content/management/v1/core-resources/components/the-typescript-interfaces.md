@@ -91,12 +91,12 @@ type TComponentField = {
 }
 
 /**
- * @interface ISbContentMAPIComponent
+ * @interface ISbContentMAPIComponents
  * @description Storyblok Content Management API Component Interface
  * @reference https://www.storyblok.com/docs/api/management#core-resources/components/components
  *
  **/
-export interface ISbContentMAPIComponent {
+export interface ISbContentMAPIComponents {
 	component: TComponent
 	name?: string
 	display_name?: string
@@ -109,7 +109,7 @@ export interface ISbContentMAPIComponent {
 }
 
 // Aliases
-export type Component = ISbContentMAPIComponent
+export type Components = ISbContentMAPIComponents
 ```
 
 ;examplearea
@@ -123,10 +123,10 @@ import {
   ISbP2Params,
 } from 'storyblok-js-client/dist/types/interfaces';
 import {
-  Component,
+  Components,
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIComponents';
 
-const payload:ISbP2Params<Component> = {
+const payload:ISbP2Params<Components> = {
   component: {
     name: 'My Component Name',
     image: 'https://a.storyblok.com/f/39876/300x300/0b5b9e9e1d/my-image.jpg',

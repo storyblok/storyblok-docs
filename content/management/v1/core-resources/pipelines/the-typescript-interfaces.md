@@ -4,23 +4,23 @@ title: The Typescript Interfaces
 
 ```typescript
 /**
- * @interface ISbContentMAPIPipeline
+ * @interface ISbContentMAPIPipelines
  * @description Storyblok Content Management API Pipeline Interface
  * @reference https://www.storyblok.com/docs/api/managemen#core-resources/pipelines/object
  */
-export interface ISbContentMAPIPipeline {
-	branch: {
-		id?: number
-		name: string
-		space_id?: number
-		deleted_at?: null
-		created_at?: string
-		updated_at?: string
-		source_id?: number
-		deployed_at?: string
-		url?: string
-		position?: number
-	}
+export interface ISbContentMAPIPipelines {
+  branch: {
+    id?: number;
+    name: string;
+    space_id?: number;
+    deleted_at?: null;
+    created_at?: string;
+    updated_at?: string;
+    source_id?: number;
+    deployed_at?: string;
+    url?: string;
+    position?: number;
+  };
 }
 
 /**
@@ -30,32 +30,35 @@ export interface ISbContentMAPIPipeline {
  * @reference https://www.storyblok.com/docs/api/management#core-resources/pipelines/pipeline-deployment
  */
 export interface ISbContentMAPIPipelineDeployments {
-	branch_id: number
-	release_uuids: string[]
+  branch_id: number;
+  release_uuids: string[];
 }
 
 // Aliases
-export type Pipeline = ISbContentMAPIPipeline
-export type PipelineDeployment = ISbContentMAPIPipelineDeployments
+export type Pipelines = ISbContentMAPIPipelines;
+export type PipelineDeployments = ISbContentMAPIPipelineDeployments;
 ```
 
 ;examplearea
 
 ```typescript
-const StoryblokClient = require('storyblok-js-client')
-import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
-import { Pipeline, PipelineDeployment } from 'storyblok-js-client/dist/types/MAPIInterfaces/ISbContentMAPIPipeline';
+const StoryblokClient = require("storyblok-js-client");
+import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
+import {
+  Pipeline,
+  PipelineDeployments
+} from "storyblok-js-client/dist/types/MAPIInterfaces/ISbContentMAPIPipelines";
 
 // POST, PUT
-const payload:ISbP2Params<Pipeline> = {
-  "branch": {
-    "name": "Summer Special",
-    "source_id": null,
-		"url": "http://new-amazing-url.com",
+const payload: ISbP2Params<Pipeline> = {
+  branch: {
+    name: "Summer Special",
+    source_id: null,
+    url: "http://new-amazing-url.com"
   }
-}
+};
 
-StoryblokClient.post('spaces/<YOUR-SPACE-ID>/branches/', payload)
+StoryblokClient.post("spaces/<YOUR-SPACE-ID>/branches/", payload)
   .then(response => {
     // handle response
   })
@@ -64,7 +67,7 @@ StoryblokClient.post('spaces/<YOUR-SPACE-ID>/branches/', payload)
   });
 
 // GET
-StoryblokClient.get('spaces/<YOUR-SPACE-ID>/branches/123')
+StoryblokClient.get("spaces/<YOUR-SPACE-ID>/branches/123")
   .then(response => {
     // handle response
   })
@@ -74,18 +77,16 @@ StoryblokClient.get('spaces/<YOUR-SPACE-ID>/branches/123')
 
 // Pipeline deployment
 
-const deploymentPayload:ISbP2Params<PipelineDeployment> = {
-  "branch_id": 1, // Id of the pipeline to be deployed
-  "release_uuids":["1234-4567", "1234-4568"]
-}
+const deploymentPayload: ISbP2Params<PipelineDeployments> = {
+  branch_id: 1, // Id of the pipeline to be deployed
+  release_uuids: ["1234-4567", "1234-4568"]
+};
 
-StoryblokClient.post('spaces/<YOUR-SPACE-ID>/deployments/', deploymentPayload)
+StoryblokClient.post("spaces/<YOUR-SPACE-ID>/deployments/", deploymentPayload)
   .then(response => {
     // handle response
   })
   .catch(error => {
     // handle error
   });
-
-
 ```

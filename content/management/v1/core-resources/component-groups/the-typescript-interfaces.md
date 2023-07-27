@@ -14,18 +14,18 @@ type TComponentGroup = {
 	uuid?: string
 }
 /**
- * @interface ISbContentMAPIComponentGroup
+ * @interface ISbContentMAPIComponentGroups
  * @description Storyblok Content Management API Component Group Interface
  * @reference https://www.storyblok.com/docs/api/management#core-resources/component-groups/component-groups
  *
  **/
-export interface ISbContentMAPIComponentGroup {
+export interface ISbContentMAPIComponentGroups {
 	component_group: TComponentGroup
 	name?: string
 }
 
 // Aliases
-export type ComponentGroup = ISbContentMAPIComponentGroup
+export type ComponentGroups = ISbContentMAPIComponentGroups
 ```
 
 ;examplearea
@@ -39,11 +39,11 @@ import {
   ISbP2Params,
 } from 'storyblok-js-client/dist/types/interfaces';
 import {
-	ComponentGroup,
+	ComponentGroups,
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIComponentGroups';
 
 // POST, PUT
-const payload:ISbP2Params<ComponentGroup> = {
+const payload:ISbP2Params<ComponentGroups> = {
 	component_group: {
 		name: 'My Component Group Name',
 	}

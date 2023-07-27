@@ -18,11 +18,11 @@ export interface ISbContentMAPIApprovals {
 }
 
 /**
- * @interface ISbContentMAPIReleaseApproval
+ * @interface ISbContentMAPIReleaseApprovals
  * @description This interface is generated from the API endpoint for release approvals
  * @reference https://www.storyblok.com/docs/api/management#core-resources/approvals/release-approvals
  */
-export interface ISbContentMAPIReleaseApproval extends ISbContentMAPIApprovals {
+export interface ISbContentMAPIReleaseApprovals extends ISbContentMAPIApprovals {
 	release_id: number
 }
 
@@ -36,14 +36,14 @@ export interface ISbRetrieveMultipleApprovalsParams {
 }
 
 // Aliases
-export type Approval = ISbContentMAPIApprovals
-export type ReleaseApproval = ISbContentMAPIReleaseApproval
+export type Approvals = ISbContentMAPIApprovals
+export type ReleaseApprovals = ISbContentMAPIReleaseApprovals
 export type GetMultipleApprovals = ISbRetrieveMultipleApprovalsParams
 ```
 
 ;examplearea
 
-Example on how use the <strong>Approval's</strong> interfaces with the Storyblok Client
+Example on how use the <strong>Approvals's</strong> interfaces with the Storyblok Client
 
 ```typescript
 const StoryblokClient = require('storyblok-js-client')
@@ -53,12 +53,12 @@ import {
   ISbGetParams
 } from 'storyblok-js-client/dist/types/interfaces';
 import {
-  Approval,
+  Approvals,
   GetMultipleApprovals
 } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIApprovals';
 
 // POST, PUT
-const payload:ISbP2Params<Approval> = {
+const payload:ISbP2Params<Approvals> = {
   approval: {
     status: 'pending',
     story_id: 123,

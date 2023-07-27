@@ -9,20 +9,20 @@ title: The Typescript Interfaces
  * @reference https://www.storyblok.com/docs/api/management#core-resources/presets/presets
  */
 export interface ISbContentMAPIPresets {
-	preset: {
-		id?: number
-		name: string
-		preset?: object
-		component_id?: number
-		space_id?: number
-		image?: string
-		color?: string
-		icon?: string
-		description?: string
-		isDefault?: boolean
-		created_at?: string
-		updated_at?: string
-	}
+  preset: {
+    id?: number;
+    name: string;
+    preset?: object;
+    component_id?: number;
+    space_id?: number;
+    image?: string;
+    color?: string;
+    icon?: string;
+    description?: string;
+    isDefault?: boolean;
+    created_at?: string;
+    updated_at?: string;
+  };
 }
 
 /**
@@ -31,15 +31,14 @@ export interface ISbContentMAPIPresets {
  * @reference https://www.storyblok.com/docs/api/management/v1/#core-resources/presets/retrieve-multiple-presets
  */
 export interface ISbRetrieveMultiplePresetsParams {
-	component_id?: number
+  component_id?: number;
 }
 
 // Aliases for ISbContentMAPIPresets
-export type Preset = ISbContentMAPIPresets
+export type Presets = ISbContentMAPIPresets;
 
 // Aliases for ISbRetrieveMultiplePresetsParams
-export type GetPresets = ISbRetrieveMultiplePresetsParams
-
+export type GetPresets = ISbRetrieveMultiplePresetsParams;
 ```
 
 ;examplearea
@@ -47,24 +46,27 @@ export type GetPresets = ISbRetrieveMultiplePresetsParams
 Example on how use the <strong>Presets</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require('storyblok-js-client')
+const StoryblokClient = require("storyblok-js-client");
 // Import the interfaces
 import {
   ISbP2Params,
   ISbGetParams
-} from 'storyblok-js-client/dist/types/interfaces';
-import { Preset, GetPresets } from 'storyblok-js-client/dist/types/MAPIInterfaces/ISbContentMAPIPresets';
+} from "storyblok-js-client/dist/types/interfaces";
+import {
+  Presets,
+  GetPresets
+} from "storyblok-js-client/dist/types/MAPIInterfaces/ISbContentMAPIPresets";
 
 // POST, PUT
-const payload:ISbP2Params<Preset> = {
+const payload: ISbP2Params<Presets> = {
   preset: {
-    name: 'new name',
-		component_id: 1234,
-		image?: 'http://image.com',
+    name: "new name",
+    component_id: 1234,
+    image: "http://image.com"
   }
-}
+};
 
-Storyblok.post('spaces/<YOUR-SPACE-ID>/presets/<PRESET-ID>', payload)
+Storyblok.post("spaces/<YOUR-SPACE-ID>/presets/<PRESET-ID>", payload)
   .then(response => {
     // handle response
   })
@@ -73,11 +75,11 @@ Storyblok.post('spaces/<YOUR-SPACE-ID>/presets/<PRESET-ID>', payload)
   });
 
 // GET
-const params:ISbGetParams<GetPresets> = {
+const params: ISbGetParams<GetPresets> = {
   component_id: 1234
-}
+};
 
-Storyblok.get('spaces/<YOUR-SPACE-ID>/presets/<PRESET-ID>', params)
+Storyblok.get("spaces/<YOUR-SPACE-ID>/presets/<PRESET-ID>", params)
   .then(response => {
     // handle response
   })

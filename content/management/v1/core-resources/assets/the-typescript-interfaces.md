@@ -4,12 +4,12 @@ title: The Typescript Interfaces
 
 ```typescript
 /**
- * @interface ISbAsset
- * @description Storyblok Content Management API Asset Interface
+ * @interface ISbAssets
+ * @description Storyblok Content Management API Assets Interface
  * @reference https://www.storyblok.com/docs/api/management#core-resources/assets/assets
  *
  **/
-export interface ISbAsset {
+export interface ISbAssets {
 	id: number
 	filename?: string
 	space_id?: number
@@ -39,21 +39,21 @@ export interface ISbRetrieveMultipleAssets {
 }
 
 // Aliases
-export type Asset = ISbAsset
+export type Assets = ISbAssets
 export type GetMultipleAssets = ISbRetrieveMultipleAssets
 ```
 
 ;examplearea
 
-Example on how use the <strong>Asset's</strong> interfaces with the Storyblok Client
+Example on how use the <strong>Assets's</strong> interfaces with the Storyblok Client
 
 ```typescript
 const StoryblokClient = require('storyblok-js-client')
 import { ISbP2Params, ISbGetParams } from 'storyblok-js-client/dist/types/interfaces';
-import { Asset, GetMultipleAssets } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
+import { Assets, GetMultipleAssets } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
 
 // POST, PUT
-const payload:ISbP2Params<Asset> = {
+const payload:ISbP2Params<Assets> = {
   id: 123,
   filename: 'my-image.jpg',
   asset_folder_id: 123
