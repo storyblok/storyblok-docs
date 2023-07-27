@@ -32,8 +32,8 @@ export interface ISbContentMAPIActivities {
  * @reference https://www.storyblok.com/docs/api/management/v1/#core-resources/activities/retrieve-multiple-activities
  */
 export interface ISbRetrieveMultipleActivitiesParams {
-	created_at_gte: string
-	created_at_lte: string
+	created_at_gte?: string
+	created_at_lte?: string
 }
 
 // Alias for ISbContentMAPIActivities
@@ -82,8 +82,7 @@ StoryblokClient.post('spaces/<YOUR-SPACE-ID>/activities/', payload)
 
 // GET
 const params:ISbGetParams<GetActivities> = {
-  created_at_gte: '2018-11-10',
-  created_at_lte: '2018-11-10'
+  created_at_gte: '2018-11-10'
 }
 
 StoryblokClient.get('spaces/<YOUR-SPACE-ID>/activities/', params)

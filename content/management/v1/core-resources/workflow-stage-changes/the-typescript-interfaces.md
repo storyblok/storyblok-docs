@@ -13,8 +13,8 @@ export interface ISbContentMAPIWorkflowStageChanges {
 		id?: number
 		user_id?: number
 		created_at?: string
-		workflow_stage_id?: number
-		story_id?: number
+		workflow_stage_id: number
+		story_id: number
 		with_story?: number
 	}
 }
@@ -25,7 +25,7 @@ export interface ISbContentMAPIWorkflowStageChanges {
  * @reference https://www.storyblok.com/docs/api/management#core-resources/workflow-stage-changes/get-all
  */
 export interface ISbRetrieveMultipleWorkflowStageChangesParams {
-	with_story: number
+	with_story?: number
 }
 
 // Aliases

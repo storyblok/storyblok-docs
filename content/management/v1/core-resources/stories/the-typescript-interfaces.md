@@ -65,7 +65,7 @@ export interface ISbContentMAPIStories {
 }
 
 /**
- * @interface ISbContentMAPIGetMultipleStories
+ * @interface ISbRetrieveMultipleStories
  * @description Storyblok Content Management API Multiple Stories Interface
  * @reference https://www.storyblok.com/docs/api/management#core-resources/stories/retrieve-multiple-stories
  */
