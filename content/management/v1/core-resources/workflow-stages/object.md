@@ -36,7 +36,8 @@ Example Object
     "allow_all_stages": false,
     "allow_all_users": false,
     "position": 1,
-    "after_publish_id": null
+    "after_publish_id": null,
+    "workflow_id": 14780
   }
 }
 ```
