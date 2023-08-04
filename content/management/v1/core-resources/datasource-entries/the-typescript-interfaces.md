@@ -43,7 +43,7 @@ export type GetMultipleDataSourcesEntries = ISbRetrieveMultipleDataSourcesEntrie
 Example on how use the <strong>DataSource Entries'</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require("storyblok-js-client");
+import StoryblokClient from "storyblok-js-client";
 // Import the interfaces
 import {
   ISbP2Params,

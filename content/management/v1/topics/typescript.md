@@ -21,7 +21,7 @@ _Note: `ISbP2Params` is used for `post` and `put` requests._
 So let's see how to use the interfaces with the Storyblok Client. The example below shows how to use the <strong>`ISbP2Params`</strong> interface to perform a <strong>`post`</strong> request.
 
 ```javascript
-const StoryblokClient = require("storyblok-js-client");
+import StoryblokClient from "storyblok-js-client";
 // Import the POST/PUT interface
 import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
 import { Activities } from "storyblok-js-client/dist/types/MAPIInterfaces/MAPIActivities";
@@ -115,7 +115,7 @@ import { <Interface or Alias> } from "storyblok-js-client/dist/types/MAPIInterfa
 The example below shows how to use the <strong>`ISbGETParams`</strong> interface with the <strong>`get`</strong> request.
 
 ```javascript
-const StoryblokClient = require('storyblok-js-client')
+import StoryblokClient from 'storyblok-js-client'
 // Import the GET interface
 import { ISbGETParams } from 'storyblok-js-client/dist/types/interfaces'
 import { GetMultipleDataSourcesEntries } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIDataSources'

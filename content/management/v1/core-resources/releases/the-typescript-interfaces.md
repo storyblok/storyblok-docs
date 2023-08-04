@@ -32,7 +32,7 @@ export type Releases = ISbContentMAPIReleases;
 Example on how use the <strong>Releases</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require("storyblok-js-client");
+import StoryblokClient from "storyblok-js-client";
 import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
 import { Releases } from "storyblok-js-client/dist/types/MAPIInterfaces/ISbContentMAPIReleases";
 

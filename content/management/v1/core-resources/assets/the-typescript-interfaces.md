@@ -54,7 +54,7 @@ export type GetMultipleAssets = ISbRetrieveMultipleAssets;
 Example on how use the <strong>Assets's</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require("storyblok-js-client");
+import StoryblokClient from "storyblok-js-client";
 import {
   ISbP2Params,
   ISbGetParams

@@ -42,7 +42,7 @@ export type PipelineDeployments = ISbContentMAPIPipelineDeployments;
 ;examplearea
 
 ```typescript
-const StoryblokClient = require("storyblok-js-client");
+import StoryblokClient from "storyblok-js-client";
 import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
 import {
   Pipeline,

@@ -9,18 +9,18 @@ title: The Typescript Interfaces
  * @reference https://www.storyblok.com/docs/api/management#core-resources/components/the-component-object
  */
 type TComponent = {
-	id?: number
-	name?: string
-	display_name?: string
-	created_at?: string
-	image?: string
-	preview?: string
-	is_root?: boolean
-	is_nestable?: boolean
-	all_presets?: string[]
-	real_name?: string
-	component_group_uuid?: string
-}
+  id?: number;
+  name?: string;
+  display_name?: string;
+  created_at?: string;
+  image?: string;
+  preview?: string;
+  is_root?: boolean;
+  is_nestable?: boolean;
+  all_presets?: string[];
+  real_name?: string;
+  component_group_uuid?: string;
+};
 
 /**
  * @type TComponentFieldTypes
@@ -28,21 +28,21 @@ type TComponent = {
  * @reference https://www.storyblok.com/docs/api/management#core-resources/components/possible-field-types
  */
 type TComponentFieldTypes =
-	| 'bloks'
-	| 'text'
-	| 'textarea'
-	| 'markdown'
-	| 'number'
-	| 'datetime'
-	| 'boolean'
-	| 'options'
-	| 'option'
-	| 'image'
-	| 'file'
-	| 'multiasset'
-	| 'multilink'
-	| 'section'
-	| 'custom'
+  | "bloks"
+  | "text"
+  | "textarea"
+  | "markdown"
+  | "number"
+  | "datetime"
+  | "boolean"
+  | "options"
+  | "option"
+  | "image"
+  | "file"
+  | "multiasset"
+  | "multilink"
+  | "section"
+  | "custom";
 
 /**
  * @type TComponentField
@@ -50,45 +50,45 @@ type TComponentFieldTypes =
  * @reference https://www.storyblok.com/docs/api/management#core-resources/components/the-component-field-object
  */
 type TComponentField = {
-	[key: string]: {
-		id?: number
-		type?: TComponentFieldTypes
-		pos?: number
-		translatable?: boolean
-		required?: boolean
-		regex?: string
-		description?: string
-		default_value?: string
-		can_sync?: boolean
-		preview_field?: boolean
-		no_translate?: boolean
-		rtl?: boolean
-		rich_markdown?: boolean
-		keys?: string[]
-		field_type?: string
-		source?: undefined | 'internal_stories' | 'internal' | 'external'
-		use_uuid?: boolean
-		folder_slug?: string
-		datasource_slug?: string
-		external_datasource?: string
-		options?: { name?: string; value?: string }[]
-		image_crop?: boolean
-		keep_image_size?: boolean
-		image_width?: number | string
-		image_height?: number | string
-		asset_folder_id?: number
-		add_https?: boolean
-		restrict_components?: boolean
-		maximum?: number
-		restrict_content_types?: boolean
-		component_whitelist?: ('post' | 'page' | 'product')[]
-		disable_time?: boolean
-		max_length?: number
-		filetypes?: ('images' | 'videos' | 'audios' | 'texts')[]
-		title?: string
-		image?: string
-	}
-}
+  [key: string]: {
+    id?: number;
+    type?: TComponentFieldTypes;
+    pos?: number;
+    translatable?: boolean;
+    required?: boolean;
+    regex?: string;
+    description?: string;
+    default_value?: string;
+    can_sync?: boolean;
+    preview_field?: boolean;
+    no_translate?: boolean;
+    rtl?: boolean;
+    rich_markdown?: boolean;
+    keys?: string[];
+    field_type?: string;
+    source?: undefined | "internal_stories" | "internal" | "external";
+    use_uuid?: boolean;
+    folder_slug?: string;
+    datasource_slug?: string;
+    external_datasource?: string;
+    options?: { name?: string; value?: string }[];
+    image_crop?: boolean;
+    keep_image_size?: boolean;
+    image_width?: number | string;
+    image_height?: number | string;
+    asset_folder_id?: number;
+    add_https?: boolean;
+    restrict_components?: boolean;
+    maximum?: number;
+    restrict_content_types?: boolean;
+    component_whitelist?: ("post" | "page" | "product")[];
+    disable_time?: boolean;
+    max_length?: number;
+    filetypes?: ("images" | "videos" | "audios" | "texts")[];
+    title?: string;
+    image?: string;
+  };
+};
 
 /**
  * @interface ISbContentMAPIComponents
@@ -97,19 +97,19 @@ type TComponentField = {
  *
  **/
 export interface ISbContentMAPIComponents {
-	component: TComponent
-	name?: string
-	display_name?: string
-	image?: string
-	preview?: string
-	is_root?: boolean
-	is_nestable?: boolean
-	component_group_uuid?: string
-	schema?: TComponentField
+  component: TComponent;
+  name?: string;
+  display_name?: string;
+  image?: string;
+  preview?: string;
+  is_root?: boolean;
+  is_nestable?: boolean;
+  component_group_uuid?: string;
+  schema?: TComponentField;
 }
 
 // Aliases
-export type Components = ISbContentMAPIComponents
+export type Components = ISbContentMAPIComponents;
 ```
 
 ;examplearea
@@ -117,47 +117,43 @@ export type Components = ISbContentMAPIComponents
 Example on how use the <strong>Components'</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require('storyblok-js-client')
+import StoryblokClient from "storyblok-js-client";
 // Import the interfaces
-import {
-  ISbP2Params,
-} from 'storyblok-js-client/dist/types/interfaces';
-import {
-  Components,
-} from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIComponents';
+import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
+import { Components } from "storyblok-js-client/dist/types/MAPIInterfaces/MAPIComponents";
 
-const payload:ISbP2Params<Components> = {
+const payload: ISbP2Params<Components> = {
   component: {
-    name: 'My Component Name',
-    image: 'https://a.storyblok.com/f/39876/300x300/0b5b9e9e1d/my-image.jpg',
+    name: "My Component Name",
+    image: "https://a.storyblok.com/f/39876/300x300/0b5b9e9e1d/my-image.jpg"
   },
-  name: 'My Component Name',
+  name: "My Component Name",
   schema: {
-    'text': {
-      type: 'text',
+    text: {
+      type: "text",
       pos: 0,
       translatable: false,
       required: false,
-      regex: '',
-      description: '',
-      default_value: '',
+      regex: "",
+      description: "",
+      default_value: "",
       can_sync: false,
       preview_field: false,
       no_translate: false,
       rtl: false,
       rich_markdown: false,
       keys: [],
-      field_type: '',
+      field_type: "",
       source: undefined,
       use_uuid: false,
-      folder_slug: '',
-      datasource_slug: '',
-      external_datasource: '',
+      folder_slug: "",
+      datasource_slug: "",
+      external_datasource: "",
       options: [],
       image_crop: false,
       keep_image_size: false,
-      image_width: '',
-      image_height: '',
+      image_width: "",
+      image_height: "",
       asset_folder_id: 0,
       add_https: false,
       restrict_components: false,
@@ -167,19 +163,18 @@ const payload:ISbP2Params<Components> = {
       disable_time: false,
       max_length: 0,
       filetypes: [],
-      title: '',
-      image: ''
+      title: "",
+      image: ""
     }
   }
-}
+};
 
 // POST, PUT
-Storyblok.post('spaces/<YOUR-SPACE-ID>/components/', payload)
+Storyblok.post("spaces/<YOUR-SPACE-ID>/components/", payload)
   .then(response => {
     // handle response
   })
   .catch(error => {
     // handle error
   });
-
 ```

@@ -4,16 +4,16 @@ title: The Typescript Interfaces
 
 ```typescript
 type TUser = {
-	user: {
-		id?: number
-		firstname?: string
-		lastname?: string
-		alt_email?: string
-		avatar?: string
-		userid?: string
-		friendly_name?: string
-	}
-}
+  user: {
+    id?: number;
+    firstname?: string;
+    lastname?: string;
+    alt_email?: string;
+    avatar?: string;
+    userid?: string;
+    friendly_name?: string;
+  };
+};
 
 /**
  * @interface ISbContentMAPICollaboratorsCollection
@@ -21,21 +21,21 @@ type TUser = {
  * @reference https://www.storyblok.com/docs/api/management#core-resources/collaborators/the-collaborator-object
  */
 export interface ISbContentMAPICollaboratorsCollection {
-  collaborators: ISbContentMAPICollaborator[]
+  collaborators: ISbContentMAPICollaborator[];
 }
 
 export interface ISbContentMAPICollaborator {
-  user?: TUser
-  role?: string
-  user_id?: number
-  permissions?: string[]
-  allowed_path?: string
-  field_permissions?: string
-  id?: number
-  space_role_id?: string
-  invitation?: string
-  space_role_ids?: any[]
-  space_id?: number
+  user?: TUser;
+  role?: string;
+  user_id?: number;
+  permissions?: string[];
+  allowed_path?: string;
+  field_permissions?: string;
+  id?: number;
+  space_role_id?: string;
+  invitation?: string;
+  space_role_ids?: any[];
+  space_id?: number;
 }
 
 /**
@@ -44,14 +44,14 @@ export interface ISbContentMAPICollaborator {
  * @reference https://www.storyblok.com/docs/api/management#core-resources/collaborators/add-collaborator
  */
 export interface ISbContentMAPICollaboratorAdd {
-	collaborator?: ISbContentMAPICollaborator
-	email?: string
-	role?: string
-	space_id?: number
-	space_role_id?: number
-	space_role_ids?: number[]
-	permissions?: string[]
-	allow_multiple_roles_creation?: boolean
+  collaborator?: ISbContentMAPICollaborator;
+  email?: string;
+  role?: string;
+  space_id?: number;
+  space_role_id?: number;
+  space_role_ids?: number[];
+  permissions?: string[];
+  allow_multiple_roles_creation?: boolean;
 }
 
 /**
@@ -60,18 +60,17 @@ export interface ISbContentMAPICollaboratorAdd {
  * @reference https://www.storyblok.com/docs/api/management#core-resources/collaborators/add-users-with-sso
  */
 export interface ISbContentMAPICollaboratorAddUsersWithSSO {
-	sso_id?: string
-	email?: string
-	role?: string
-	space_role_id?: number
+  sso_id?: string;
+  email?: string;
+  role?: string;
+  space_role_id?: number;
 }
 
-
 // Aliases
-export type Collaborator = ISbContentMAPICollaborator
-export type Collaborators = ISbContentMAPICollaboratorsCollection
-export type AddCollaborator = ISbContentMAPICollaboratorAdd
-export type AddCollaboratorUsersWithSSO = ISbContentMAPICollaboratorAddUsersWithSSO
+export type Collaborator = ISbContentMAPICollaborator;
+export type Collaborators = ISbContentMAPICollaboratorsCollection;
+export type AddCollaborator = ISbContentMAPICollaboratorAdd;
+export type AddCollaboratorUsersWithSSO = ISbContentMAPICollaboratorAddUsersWithSSO;
 ```
 
 ;examplearea
@@ -79,42 +78,39 @@ export type AddCollaboratorUsersWithSSO = ISbContentMAPICollaboratorAddUsersWith
 Example on how use the <strong>Collaborator's</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require('storyblok-js-client')
+import StoryblokClient from "storyblok-js-client";
 // Import the interfaces
-import {
-  ISbP2Params,
-} from 'storyblok-js-client/dist/types/interfaces';
+import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
 import {
   Collaborator,
-  AddCollaborator,
-} from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIApprovals';
+  AddCollaborator
+} from "storyblok-js-client/dist/types/MAPIInterfaces/MAPIApprovals";
 
 // POST, PUT
 const collaborator: Collaborator = {
   user: {
     id: 123456,
-    firstname: 'John',
-    lastname: 'Doe',
-    alt_email: 'john_doe@storyblok.com',
-    avatar: 'https://a.storyblok.com/f/123456/100x100/123456.jpg',
-    userid: 'john.doe',
-    friendly_name: 'John Doe'
+    firstname: "John",
+    lastname: "Doe",
+    alt_email: "john_doe@storyblok.com",
+    avatar: "https://a.storyblok.com/f/123456/100x100/123456.jpg",
+    userid: "john.doe",
+    friendly_name: "John Doe"
   },
-  role: 'editor',
+  role: "editor",
   user_id: 123456,
-  permissions: ['read', 'write'],
-  allowed_path: '/*',
-  id: 123456,
-}
+  permissions: ["read", "write"],
+  allowed_path: "/*",
+  id: 123456
+};
 
 const payload: ISbP2Params<AddCollaborator> = {
   collaborator: collaborator,
-  space_id: 123456,
-}
+  space_id: 123456
+};
 
 // POST
-StoryblokClient.post('spaces/<YOUR-SPACE-ID>/collaborators', payload)
+StoryblokClient.post("spaces/<YOUR-SPACE-ID>/collaborators", payload)
   .then(response => console.log(response))
-  .catch(error => console.log(error))
-
+  .catch(error => console.log(error));
 ```

@@ -10,15 +10,15 @@ title: The Typescript Interfaces
  *
  **/
 export interface ISbAssetFolders {
-	asset_folder: {
-		id?: number
-		name?: string
-		parent_id?: number
-	}
+  asset_folder: {
+    id?: number;
+    name?: string;
+    parent_id?: number;
+  };
 }
 
 // Aliases
-export type AssetFolders = ISbAssetFolders
+export type AssetFolders = ISbAssetFolders;
 ```
 
 ;examplearea
@@ -26,19 +26,19 @@ export type AssetFolders = ISbAssetFolders
 Example on how use the <strong>Assets's</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require('storyblok-js-client')
-import { ISbP2Params } from 'storyblok-js-client/dist/types/interfaces';
-import { AssetFolders } from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets';
+import StoryblokClient from "storyblok-js-client";
+import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
+import { AssetFolders } from "storyblok-js-client/dist/types/MAPIInterfaces/MAPIAssets";
 
-const payload:ISbP2Params<AssetFolders> = {
+const payload: ISbP2Params<AssetFolders> = {
   asset_folder: {
-		id: 123,
-		name: 'My Assets Folder',
-		parent_id: 123
-	}
-}
+    id: 123,
+    name: "My Assets Folder",
+    parent_id: 123
+  }
+};
 
-StoryblokClient.post('spaces/<YOUR-SPACE-ID>/asset_folders/', payload)
+StoryblokClient.post("spaces/<YOUR-SPACE-ID>/asset_folders/", payload)
   .then(response => {
     // handle response
   })

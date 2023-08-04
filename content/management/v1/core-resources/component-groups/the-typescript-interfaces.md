@@ -9,10 +9,10 @@ title: The Typescript Interfaces
  * @reference https://www.storyblok.com/docs/api/management#core-resources/component-groups/the-component-group-object
  */
 type TComponentGroup = {
-	id?: number
-	name?: string
-	uuid?: string
-}
+  id?: number;
+  name?: string;
+  uuid?: string;
+};
 /**
  * @interface ISbContentMAPIComponentGroups
  * @description Storyblok Content Management API Component Group Interface
@@ -20,12 +20,12 @@ type TComponentGroup = {
  *
  **/
 export interface ISbContentMAPIComponentGroups {
-	component_group: TComponentGroup
-	name?: string
+  component_group: TComponentGroup;
+  name?: string;
 }
 
 // Aliases
-export type ComponentGroups = ISbContentMAPIComponentGroups
+export type ComponentGroups = ISbContentMAPIComponentGroups;
 ```
 
 ;examplearea
@@ -33,28 +33,23 @@ export type ComponentGroups = ISbContentMAPIComponentGroups
 Example on how use the <strong>Component Groups'</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require('storyblok-js-client')
+import StoryblokClient from "storyblok-js-client";
 // Import the interfaces
-import {
-  ISbP2Params,
-} from 'storyblok-js-client/dist/types/interfaces';
-import {
-	ComponentGroups,
-} from 'storyblok-js-client/dist/types/MAPIInterfaces/MAPIComponentGroups';
+import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
+import { ComponentGroups } from "storyblok-js-client/dist/types/MAPIInterfaces/MAPIComponentGroups";
 
 // POST, PUT
-const payload:ISbP2Params<ComponentGroups> = {
-	component_group: {
-		name: 'My Component Group Name',
-	}
-}
+const payload: ISbP2Params<ComponentGroups> = {
+  component_group: {
+    name: "My Component Group Name"
+  }
+};
 
-StoryblokClient.post('spaces/<YOUR-SPACE-ID>/component_groups/', payload)
-	.then(response => {
-		// handle response
-	})
-	.catch(error => {
-		// handle error
-	});
-
+StoryblokClient.post("spaces/<YOUR-SPACE-ID>/component_groups/", payload)
+  .then(response => {
+    // handle response
+  })
+  .catch(error => {
+    // handle error
+  });
 ```

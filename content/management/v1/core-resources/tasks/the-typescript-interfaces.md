@@ -30,7 +30,7 @@ export type Tasks = ISbContentMAPITasks;
 Example on how use the <strong>Task's</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require("storyblok-js-client");
+import StoryblokClient from "storyblok-js-client";
 import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
 import { Tasks } from "storyblok-js-client/dist/types/MAPIInterfaces/MAPITasks";
 

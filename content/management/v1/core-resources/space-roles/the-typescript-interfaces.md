@@ -58,7 +58,7 @@ export type SpaceRolesUpdate = ISbContentMAPISpaceRolesUpdate;
 Example on how use the <strong>Space Roles'</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require("storyblok-js-client");
+import StoryblokClient from "storyblok-js-client";
 // Import the interfaces
 import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
 import { SpaceRolesCreate } from "storyblok-js-client/dist/types/MAPIInterfaces/MAPIRoles";

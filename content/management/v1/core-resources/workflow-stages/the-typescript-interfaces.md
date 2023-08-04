@@ -33,7 +33,7 @@ export type WorkflowStages = ISbContentMAPIWorkflowStages;
 Example on how use the <strong>Workflow Stages</strong> interfaces with the Storyblok Client
 
 ```typescript
-const StoryblokClient = require("storyblok-js-client");
+import StoryblokClient from "storyblok-js-client";
 // Import the interfaces
 import { ISbP2Params } from "storyblok-js-client/dist/types/interfaces";
 import { WorkflowStages } from "storyblok-js-client/dist/types/MAPIInterfaces/MAPIWorkflowStages";
