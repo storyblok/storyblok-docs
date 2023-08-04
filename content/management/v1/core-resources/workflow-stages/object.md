@@ -16,6 +16,7 @@ title: The Workflow Stage Object
 | `user_ids` | User ids that are allowed to change the stage |
 | `space_role_ids` | Space role ids that are allowed to change the stage |
 | `workflow_stage_ids` | Workflow stage ids the user can change the stage to |
+| `workflow_id` | Numeric ID of connected workflow |
 
 ;examplearea
 
