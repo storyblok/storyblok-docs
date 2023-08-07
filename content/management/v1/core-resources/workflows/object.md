@@ -1,5 +1,5 @@
 ---
-title: The Workflow Object
+title: The Custom Workflow Object
 ---
 
 | Property | Description |
