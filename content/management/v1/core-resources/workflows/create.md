@@ -23,13 +23,3 @@ Example Request
 
 You will receive a [workflow object](#core-resources/workflow/object) as response
 
-{
-  "workflow": {
-    "id": 15268,
-    "content_types": [
-      "author"
-    ],
-    "is_default": false,
-    "name": "author"
-  }
-}
