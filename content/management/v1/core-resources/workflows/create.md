@@ -21,5 +21,5 @@ Example Request
     "content_types": ["page"]
 }}'></RequestExample>
 
-You will receive a [workflow object](#core-resources/workflows/object) as response
+You will receive a [workflows object](#core-resources/workflows/object) as response
 
