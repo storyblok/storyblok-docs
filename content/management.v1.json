@@ -417,6 +417,35 @@
       {
         "children": [
           {
+            "contentPath": "management/v1/core-resources/workflows/object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflows/get-one"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflows/get-all"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflows/create"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflows/update"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflows/delete"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflows/filter"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflows/duplicate"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/workflows/intro"
+      },
+      {
+        "children": [
+          {
             "contentPath": "management/v1/core-resources/workflow-stage-changes/object"
           },
           {
