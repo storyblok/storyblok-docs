@@ -8,5 +8,5 @@ Returns an array of all the workflow stages in a space.
 
 Example Request
 
-<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/workflows/" httpMethod="GETOAUTH"></RequestExample>
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/606/workflows" httpMethod="GETOAUTH"></RequestExample>
 

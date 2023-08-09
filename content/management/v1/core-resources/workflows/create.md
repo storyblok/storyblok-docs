@@ -14,12 +14,12 @@ title: Create a Custom Workflow
 
 Example Request
 
-<RequestExample url=https://mapi.storyblok.com/v1/spaces/233027/workflows" httpMethod="POST" :requestObject='{"scope":"workflow"{
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/233027/workflows" httpMethod="POST" :requestObject='{"workflow":{
    "required": false,
     "name": "page",
-    "description": "page content type workflow",
+    "description":"page",
     "content_types": ["page"]
 }}'></RequestExample>
 
-You will receive a [workflow object](#core-resources/workflow/object) as response
+You will receive a [workflow object](#core-resources/workflows/object) as response
 
