@@ -15,6 +15,8 @@ If you don't use our official [JavaScript SDK](https://github.com/storyblok/stor
 
 If an resource's response does not provide a `cv` parameter, it is possible to receive the most recent version of the data by providing a `cv` parameter in your request that is set to the Unix timestamp representing the current time.
 
+When changing a page/folder's slug in the UI, the `cached_url` to reflect the changes, we suggest for cases when the slug changes often or a large number of stories is being moved, to use the [resolve_links](https://www.storyblok.com/cl/url-resolving) parameter and `url` as its value to get the latest slug of the linked stories.
+
 ;examplearea
 
 Example Request

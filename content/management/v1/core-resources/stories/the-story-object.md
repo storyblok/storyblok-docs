@@ -2,7 +2,7 @@
 title: The Story Object
 ---
 
-This is an object representing your content entry. One Story object can be of a specific type, so called content types and is able to contain components. You define the fields and nestability of your content types to achieve your content structure. You can use this object to build up your entities when migrating or importing content.
+This is an object representing your content entry. One Story object can be of a specific type, so called content types and is able to contain components. You define the fields and nestability of your content types to achieve your content structure. You can use this object to build up your entities when migrating or importing content. You can set alternate versions of a story with Management API using the `group_id` of the story.
 
 | Property            | Description          |
 |---------------------|----------------------|

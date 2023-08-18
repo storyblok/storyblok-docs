@@ -16,6 +16,7 @@ title: Create a Workflow Stage
 | `workflow_stage[user_ids]` | User ids that are allowed to change the stage |
 | `workflow_stage[space_role_ids]` | Space role ids that are allowed to change the stage |
 | `workflow_stage[workflow_stage_ids]` | Workflow stage ids the user can change the stage to |
+| `workflow_stage[workflow_id]` | Workflow `id` (if missing, automatically sets to default workflow) **optional** |
 
 ;examplearea
 
@@ -33,6 +34,7 @@ Example Request
   "user_ids":[],
   "space_role_ids":[],
   "workflow_stage_ids":[]
+  "workflow_id": 14780
 }}'></RequestExample>
 
 You will receive a [workflow stage object](#core-resources/workflow-stage-changes/object) as response.

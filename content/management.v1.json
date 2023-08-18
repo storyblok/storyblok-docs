@@ -19,6 +19,9 @@
       },
       {
         "contentPath": "management/v1/topics/pagination"
+      },
+      {
+        "contentPath": "management/v1/topics/organization"
       }
     ]
   },
@@ -53,9 +56,35 @@
           },
           {
             "contentPath": "management/v1/core-resources/stories/unpublish-a-story"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/compare-story-version"
+          },
+          {
+            "contentPath": "management/v1/core-resources/stories/get-story-versions"
           }
         ],
         "contentPath": "management/v1/core-resources/stories/stories"
+      },
+      {
+        "children": [
+          {
+            "contentPath": "management/v1/core-resources/collaborators/the-collaborator-object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/collaborators/add-collaborator"
+          },
+          {
+            "contentPath": "management/v1/core-resources/collaborators/delete-collaborator"
+          },
+          {
+            "contentPath": "management/v1/core-resources/collaborators/update-collaborator"
+          },
+          {
+            "contentPath": "management/v1/core-resources/collaborators/add-users-with-sso"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/collaborators/collaborators"
       },
       {
         "children": [

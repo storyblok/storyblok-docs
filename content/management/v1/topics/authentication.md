@@ -8,6 +8,23 @@ Your personal access token will grant anyone who obtains it with access to all a
 
 Using an OAuth2 token, a username and password doesn’t need to be permanently stored and you can revoke access at any time.
 
+### Authorization for Apps
+In order to	Authenticate your Apps, make sure to add an "Authorization" header with your OAuth2 token.
+
+Examples
+```bash
+curl -H "Authorization: YOUR_OAUTH_TOKEN" https://mapi.storyblok.com/
+```
+```javascript
+// npm install storyblok-js-client
+const StoryblokClient = require('storyblok-js-client')
+
+// Initialize the client with the oauth token
+const Storyblok = new StoryblokClient({
+  oauthToken: 'YOUR_OAUTH_TOKEN'
+})
+```
+
 ;examplearea
 
 <div v-show="$store.state.technology == 'bash'">

@@ -16,6 +16,7 @@ You can combined this query with the `starts_with`, [pagination](#topics/paginat
 | `filter_query[authors][is]=empty_array` | all posts that have no authors |
 | `filter_query[orders][is]=not_empty_array&starts_with=customers/&` | all customers by that have orders |
 | `filter_query[message][is]=empty&starts_with=comments/` | all comments with an empty message |
+| `filter_query[message][is]=empty` | all the entries with a blank/empty `message` field, and also the entries without the `message` field. The value `empty` in the filter is used to identify entries with a blank field and/or entries without a specific field. If you need to select only the entries that have the field `message` and the value of the `message` field is blank, you should use the `like` operator with no value in the `filter_query` parameter. For example `filter_query[message][like]=`. |
 | `filter_query[my_plugin.show_in][is]=true` | all entries with field `my_plugin` and a nested field `show_in` that have the value `true` |
 | `filter_query[enabled][is]=false` | all entries where `enabled` is `false` |
 | `filter_query[image][is]=null` | all entries where the `image` attribute is `null` |
@@ -60,4 +61,3 @@ Example Response (all posts with a schedule date)
   ]
 }
 ```
-

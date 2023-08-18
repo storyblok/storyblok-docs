@@ -5,7 +5,7 @@ title: Create a Space Role
 | Property | Description |
 |---|---|
 | `space_role` | Your [space role object](#core-resources/space-roles/the-space-role-object) |
-| `space_role[name]` | The space role name is **required** |
+| `space_role[role]` | The space role name is **required** |
 
 ;examplearea
 
