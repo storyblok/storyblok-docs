@@ -2,6 +2,8 @@ const pkg = require("./package");
 const routes = require("./routes");
 
 module.exports = {
+  ssr: false,
+  target: "static",
   /*
    ** Headers of the page
    */
