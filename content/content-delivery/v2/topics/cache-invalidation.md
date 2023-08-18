@@ -4,7 +4,7 @@ title: Cache Invalidation
 
 Storyblok uses a CDN in front of the API to deliver your content in the fastest way possible. To have a high cache hit rate for published content the Storyblok appends a parameter called `cv` which stands for "cache version". This parameter is an integer that contains a Unix timestamp.
 
-The "cache version" is always updating if you publish any new content in Storyblok and you can retrieve it by doing an API call to a CDN resource without providing the `cv` parameter `/v2/cdn/stories?token=wANpEQEsMYGOwLxwXQ76Ggtt&version=published`. \
+The "cache version" is always updating if you publish any new content in Storyblok and you can retrieve it by doing an API call to a CDN resource without providing the `cv` parameter `/v2/cdn/stories?token=wANpEQEsMYGOwLxwXQ76Ggtt&version=published`.
 
 If you don't use our official [JavaScript SDK](https://github.com/storyblok/storyblok-js-client) which handles the cv parameter automatically, you need to make sure to pass the `cv` parameter in your requests like following:
 
