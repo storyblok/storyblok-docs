@@ -89,6 +89,6 @@ sw.*
 # content
 /static/*.ordered.*
 /static/*.menu.*
-routes.json
+#routes.json
 .DS_Store
 /deploy/views

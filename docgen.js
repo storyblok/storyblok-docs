@@ -1,36 +1,44 @@
-const watch = require('node-watch')
-const frontmatter = require('front-matter')
-const path = require('path')
-const fs = require('fs-extra')
-const glob = require('glob')
-const config = require('./dg-config')
-const marked = require('marked')
-const prism = require('prismjs')
-const loadTechnologies = require('prismjs/components/')
+const watch = require("node-watch");
+const frontmatter = require("front-matter");
+const path = require("path");
+const fs = require("fs-extra");
+const glob = require("glob");
+const config = require("./dg-config");
+const marked = require("marked");
+const prism = require("prismjs");
+const loadTechnologies = require("prismjs/components/");
 marked.setOptions({
   highlight(code, lang) {
-    loadTechnologies([lang])
-    return prism.highlight(code, prism.languages[lang], lang)
-  }
-})
+    loadTechnologies([lang]);
+    return prism.highlight(code, prism.languages[lang], lang);
+  },
+});
 
 const args = process.argv
-    .slice(2)
-    .map(arg => arg.split('='))
-    .reduce((args, [value, key]) => {
-        args[value] = key
-        return args
-    }, {})
+  .slice(2)
+  .map((arg) => arg.split("="))
+  .reduce((args, [value, key]) => {
+    args[value] = key;
+    return args;
+  }, {});
 
 const Docgen = {
   sections: {},
 
   init: () => {
-    Docgen.generateRoutes()
-    Docgen.coldstart()
+    Docgen.generateRoutes();
+    Docgen.coldstart();
     if (!!args.watch) {
-      watch(config.contentInputFolder, { filter: /\.md$/, recursive: true }, Docgen.handleFileEvent)
-      watch(config.contentInputFolder, { filter: /\.json$/, recursive: false }, Docgen.handleMenuEvent)
+      watch(
+        config.contentInputFolder,
+        { filter: /\.md$/, recursive: true },
+        Docgen.handleFileEvent
+      );
+      watch(
+        config.contentInputFolder,
+        { filter: /\.json$/, recursive: false },
+        Docgen.handleMenuEvent
+      );
     }
   },
 
@@ -41,27 +49,29 @@ const Docgen = {
    */
   handleFileEvent: (event, contentFilePath) => {
     switch (event) {
-      case 'remove':
+      case "remove":
         // contentFilePath = /my_absolute_file/content/content-delivery/en/topics/introduction.md
         // contentPath = content-delivery/en/topics/introduction
-        const contentPath = contentFilePath.replace(config.contentInputFolder, '').replace(path.parse(contentFilePath).ext, '')
+        const contentPath = contentFilePath
+          .replace(config.contentInputFolder, "")
+          .replace(path.parse(contentFilePath).ext, "");
         // [ content-delivery, en, topics, introduction ]
-        const contentPathParts = contentPath.replace(/\\/g, '/').split('/')
+        const contentPathParts = contentPath.replace(/\\/g, "/").split("/");
         // content-delivery
-        const origin = contentPathParts.shift()
+        const origin = contentPathParts.shift();
         // en
-        const lang = contentPathParts.shift()
+        const lang = contentPathParts.shift();
         // topics/introduction
-        const relativePath = contentPathParts.join('/')
+        const relativePath = contentPathParts.join("/");
 
-        delete Docgen.sections[origin][lang][relativePath]
+        delete Docgen.sections[origin][lang][relativePath];
 
-        Docgen.generate(origin, lang)
-      break
+        Docgen.generate(origin, lang);
+        break;
       default:
-        const section = Docgen.load(contentFilePath)
-        Docgen.generate(section.origin, section.lang)
-        break
+        const section = Docgen.load(contentFilePath);
+        Docgen.generate(section.origin, section.lang);
+        break;
     }
   },
 
@@ -72,22 +82,24 @@ const Docgen = {
    */
   handleMenuEvent: (event, contentFilePath) => {
     switch (event) {
-      case 'remove':
+      case "remove":
         // ignore
-        return
-      break
+        return;
+        break;
       default:
         // [ content-delivery, en, json ]
-        const contentPathParts = contentFilePath.replace(config.contentInputFolder, '').split('.')
+        const contentPathParts = contentFilePath
+          .replace(config.contentInputFolder, "")
+          .split(".");
 
         // content-delivery
-        const origin = contentPathParts.shift()
+        const origin = contentPathParts.shift();
 
         // en
-        const lang = contentPathParts.shift()
+        const lang = contentPathParts.shift();
 
-        Docgen.exportMenu(origin, lang)
-        break
+        Docgen.exportMenu(origin, lang);
+        break;
     }
   },
 
@@ -97,14 +109,14 @@ const Docgen = {
    */
   coldstart: () => {
     glob(`${config.contentInputFolder}**/*.md`, (err, files) => {
-      if (err) throw err
+      if (err) throw err;
 
       files.forEach((contentFilePath) => {
-        Docgen.load(contentFilePath)
-      })
+        Docgen.load(contentFilePath);
+      });
 
-      Docgen.generateAll()
-    })
+      Docgen.generateAll();
+    });
   },
 
   /**
@@ -115,11 +127,13 @@ const Docgen = {
     // content-delivery, ...
     Docgen.listFoldersInFolder(config.contentInputFolder).forEach((origin) => {
       // en, ...
-      Docgen.listFoldersInFolder(config.contentInputFolder + origin).forEach((lang) => {
-        // generate sections json from one language and origin
-        Docgen.generate(origin, lang)
-      })
-    })
+      Docgen.listFoldersInFolder(config.contentInputFolder + origin).forEach(
+        (lang) => {
+          // generate sections json from one language and origin
+          Docgen.generate(origin, lang);
+        }
+      );
+    });
   },
 
   /**
@@ -129,10 +143,10 @@ const Docgen = {
    */
   generate: (origin, lang) => {
     // order sections for one language and origin
-    Docgen.exportSections(Docgen.sections[origin][lang], origin, lang)
+    Docgen.exportSections(Docgen.sections[origin][lang], origin, lang);
 
     // copies menu to static
-    Docgen.exportMenu(origin, lang)
+    Docgen.exportMenu(origin, lang);
   },
 
   /**
@@ -141,9 +155,11 @@ const Docgen = {
    * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
    */
   exportMenu: (origin, lang) => {
-    fs.copySync(config.menuInputFile.replace('{origin}', origin).replace('{lang}', lang), config.menuOutputFile.replace('{origin}', origin).replace('{lang}', lang))
+    fs.copySync(
+      config.menuInputFile.replace("{origin}", origin).replace("{lang}", lang),
+      config.menuOutputFile.replace("{origin}", origin).replace("{lang}", lang)
+    );
   },
-
 
   /**
    * Exports the sections as JSON depending on origin and language
@@ -152,7 +168,12 @@ const Docgen = {
    * @param {string} lang - second level of content folder, eg.: en, de, es, it, ...
    */
   exportSections: (sections, origin, lang) => {
-    return fs.writeFileSync(config.sectionsOutputFile.replace('{origin}', origin).replace('{lang}', lang), JSON.stringify(sections))
+    return fs.writeFileSync(
+      config.sectionsOutputFile
+        .replace("{origin}", origin)
+        .replace("{lang}", lang),
+      JSON.stringify(sections)
+    );
   },
 
   /**
@@ -161,30 +182,34 @@ const Docgen = {
    * @returns {Object} section - Object containing parsed markdown and additional information
    */
   load: (contentFilePath) => {
-    const content = fs.readFileSync(contentFilePath, { encoding: 'utf8' })
+    const content = fs.readFileSync(contentFilePath, { encoding: "utf8" });
 
-    const frontmatterContent = frontmatter(content)
-    const title = marked(frontmatterContent.attributes.title || '').replace('<p>', '').replace('</p>\n', '')
-    const areas = frontmatterContent.body.split(config.splitString)
-    const methodContent = Docgen.prepareTemplate(marked(areas[0] || ''))
-    const methodExample = Docgen.prepareTemplate(marked(areas[1] || ''))
+    const frontmatterContent = frontmatter(content);
+    const title = marked(frontmatterContent.attributes.title || "")
+      .replace("<p>", "")
+      .replace("</p>\n", "");
+    const areas = frontmatterContent.body.split(config.splitString);
+    const methodContent = Docgen.prepareTemplate(marked(areas[0] || ""));
+    const methodExample = Docgen.prepareTemplate(marked(areas[1] || ""));
 
     // contentFilePath = /my_absolute_file/content/content-delivery/en/topics/introduction.md
 
     // contentPath = content-delivery/en/topics/introduction
-    const contentPath = contentFilePath.replace(config.contentInputFolder, '').replace(path.parse(contentFilePath).ext, '')
+    const contentPath = contentFilePath
+      .replace(config.contentInputFolder, "")
+      .replace(path.parse(contentFilePath).ext, "");
 
     // [ content-delivery, en, topics, introduction ]
-    const contentPathParts = contentPath.replace(/\\/g, '/').split('/')
+    const contentPathParts = contentPath.replace(/\\/g, "/").split("/");
 
     // content-delivery
-    const origin = contentPathParts.shift()
+    const origin = contentPathParts.shift();
 
     // en
-    const lang = contentPathParts.shift()
+    const lang = contentPathParts.shift();
 
     // topics/introduction
-    const relativePath = contentPathParts.join('/')
+    const relativePath = contentPathParts.join("/");
 
     // prepare data for json
     let section = {
@@ -195,40 +220,42 @@ const Docgen = {
       title: title, // title from frontmatter
       attributes: frontmatterContent.attributes, // all attributes from frontmatter
       content: methodContent, // Markdown Content for left part of method section already as HTML
-      example: methodExample // Markdown Content for right part of method section already as HTML
-    }
+      example: methodExample, // Markdown Content for right part of method section already as HTML
+    };
 
     // check if origin already exists in sections object
-    if (typeof Docgen.sections[origin] === 'undefined') {
-      Docgen.sections[origin] = {}
+    if (typeof Docgen.sections[origin] === "undefined") {
+      Docgen.sections[origin] = {};
     }
 
     // check if language already exists in section origin
-    if (typeof Docgen.sections[origin][lang] === 'undefined') {
-      Docgen.sections[origin][lang] = {}
+    if (typeof Docgen.sections[origin][lang] === "undefined") {
+      Docgen.sections[origin][lang] = {};
     }
 
     // assign data to origin, lang and relativePath combination
-    Docgen.sections[origin][lang][relativePath] = section
+    Docgen.sections[origin][lang][relativePath] = section;
 
-    return section
+    return section;
   },
 
   /**
    * Generate and export a routes.json which will be used by Nuxt during "nuxt generate"
    */
   generateRoutes: () => {
-    const routes = []
+    const routes = [];
     Docgen.listFoldersInFolder(config.contentInputFolder).forEach((origin) => {
-      routes.push(`/docs/api/${origin}/`)
-      Docgen.listFoldersInFolder(config.contentInputFolder + origin).forEach((lang) => {
-        routes.push(`/docs/api/${origin}/${lang}/`)
-      })
-    })
+      routes.push(`/docs/api/${origin}/`);
+      Docgen.listFoldersInFolder(config.contentInputFolder + origin).forEach(
+        (lang) => {
+          routes.push(`/docs/api/${origin}/${lang}/`);
+        }
+      );
+    });
 
     fs.writeFile(config.availableRoutesFile, JSON.stringify(routes), (err) => {
-      if (err) throw err
-    })
+      if (err) throw err;
+    });
   },
 
   /**
@@ -240,11 +267,20 @@ const Docgen = {
    * @returns {string} html
    */
   prepareTemplate(html) {
-    html = html.replace(new RegExp('<p><RequestExample', 'g'), '<RequestExample')
-    html = html.replace(new RegExp('</RequestExample></p>', 'g'), '</RequestExample>')
-    html = html.replace(new RegExp('<table>', 'g'), '<div class="table"><table>')
-    html = html.replace(new RegExp('</table>', 'g'), '</table></div>')
-    return html
+    html = html.replace(
+      new RegExp("<p><RequestExample", "g"),
+      "<RequestExample"
+    );
+    html = html.replace(
+      new RegExp("</RequestExample></p>", "g"),
+      "</RequestExample>"
+    );
+    html = html.replace(
+      new RegExp("<table>", "g"),
+      '<div class="table"><table>'
+    );
+    html = html.replace(new RegExp("</table>", "g"), "</table></div>");
+    return html;
   },
 
   /**
@@ -254,9 +290,9 @@ const Docgen = {
    */
   listFoldersInFolder: (folder) => {
     return fs.readdirSync(folder).filter((file) => {
-      return fs.statSync(path.join(folder, file)).isDirectory()
-    })
+      return fs.statSync(path.join(folder, file)).isDirectory();
+    });
   },
-}
+};
 
-Docgen.init()
+Docgen.init();
