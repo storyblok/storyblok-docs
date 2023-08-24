@@ -19,7 +19,7 @@
     "lodash.throttle": "^4.1.1",
     "marked": "^3.0.8",
     "node-sass": "^8.0.0",
-    "nuxt": "^2.17.1",
+    "nuxt": "^3.6.5",
     "prismjs": "^1.29.0"
   },
   "devDependencies": {
@@ -32,7 +32,7 @@
     "prismjs-components-loader": "^3.0.1",
     "sass-loader": "^10.4.1",
     "storyblok-js-client": "^4.5.8",
-    "webpack": "^4.46.0"
+    "webpack": "^5.88.2"
   },
   "browserslist": [
     "last 2 version",
