@@ -46,7 +46,7 @@ export default {
       menu = payload.menu
       sections = payload.sections
     } else {
-      const base = process.client ? window.location.origin : 'http://localhost:3000'
+      const base = process.client ? window.location.host === "www.storyblok.com" ? "https://storyblok-docs.vercel.app" : window.location.origin : 'http://localhost:3000'
       const [menuRes, sectionsRes] = await Promise.all([
         axios.get(base + `/${origin}.menu.${lang}.json`),
         axios.get(base + `/${origin}.methods.${lang}.json`)])

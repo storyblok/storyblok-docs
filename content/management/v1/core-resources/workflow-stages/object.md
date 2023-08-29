@@ -16,6 +16,7 @@ title: The Workflow Stage Object
 | `user_ids` | User ids that are allowed to change the stage |
 | `space_role_ids` | Space role ids that are allowed to change the stage |
 | `workflow_stage_ids` | Workflow stage ids the user can change the stage to |
+| `workflow_id` | Numeric ID of connected workflow |
 
 ;examplearea
 
@@ -35,7 +36,8 @@ Example Object
     "allow_all_stages": false,
     "allow_all_users": false,
     "position": 1,
-    "after_publish_id": null
+    "after_publish_id": null,
+    "workflow_id": 14780
   }
 }
 ```
