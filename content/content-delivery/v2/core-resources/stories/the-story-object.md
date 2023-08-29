@@ -23,7 +23,7 @@ This is an object representing your content entry. One Story object can be of a 
 | `parent_id`           | Parent folder id | 
 | `group_id`            | Alternates group id (uuid string) | 
 | `alternates`          | Array of alternate objects | 
-| `translated_slugs`    | Array of translated slugs. Only gets included if the translatable slug app is installed | 
+| `translated_slugs`    | Array of translated slugs. Only gets included if the translatable slug app is installed and `true` if the slug is published | 
 | `links`               | Array of all resolved links if the `resolve_links` parameter is in use | 
 | `rels`                | Array of all resolved stories if the `resolve_relations` parameter is in use |
 | `sort_by_date`        | The date defined in the field "Sort by date" (Format: `YYYY-mm-dd HH:MM`) | 
@@ -62,7 +62,8 @@ Example Object
       {
         "path": "mein-beitrag",
         "name": "Mein Beitrag",
-        "lang": "de"
+        "lang": "de",
+        "published": true
       }
       // only gets included if the translatable slug app is installed
     ],
