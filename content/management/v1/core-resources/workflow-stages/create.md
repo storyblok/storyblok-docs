@@ -22,7 +22,7 @@ title: Create a Workflow Stage
 
 Example Request
 
-<RequestExample url="https://mapi.storyblok.com/v1/spaces/656/workflow_stages/" httpMethod="POST" :requestObject='{"workflow_stage":{
+<RequestExample url="https://mapi.storyblok.com/v1/spaces/656/workflow_stages" httpMethod="POST" :requestObject='{"workflow_stage":{
   "after_publish_id":[],
   "allow_publish":[],
   "is_default":false,
@@ -38,3 +38,4 @@ Example Request
 }}'></RequestExample>
 
 You will receive a [workflow stage object](#core-resources/workflow-stage-changes/object) as response.
+
