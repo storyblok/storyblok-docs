@@ -417,6 +417,20 @@
       {
         "children": [
           {
+            "contentPath": "management/v1/core-resources/workflow-stage-changes/object"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stage-changes/get-all"
+          },
+          {
+            "contentPath": "management/v1/core-resources/workflow-stage-changes/create"
+          }
+        ],
+        "contentPath": "management/v1/core-resources/workflow-stage-changes/intro"
+      },
+      {
+        "children": [
+          {
             "contentPath": "management/v1/core-resources/workflows/object"
           },
           {
@@ -442,20 +456,6 @@
           }
         ],
         "contentPath": "management/v1/core-resources/workflows/intro"
-      },
-      {
-        "children": [
-          {
-            "contentPath": "management/v1/core-resources/workflow-stage-changes/object"
-          },
-          {
-            "contentPath": "management/v1/core-resources/workflow-stage-changes/get-all"
-          },
-          {
-            "contentPath": "management/v1/core-resources/workflow-stage-changes/create"
-          }
-        ],
-        "contentPath": "management/v1/core-resources/workflow-stage-changes/intro"
       },
       {
         "children": [

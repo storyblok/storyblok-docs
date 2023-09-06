@@ -1,5 +1,5 @@
 ---
-title: Custom Workflow 
+title: Custom Workflows
 ---
 
 Custom workflows enable enterprises to create a tailored content production process that can cater to their specific needs. By defining custom workflows, teams can ensure that content creation and approval follow precise stages and guidelines.
