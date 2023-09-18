@@ -9,5 +9,5 @@ The stories endpoint will let you manage all content entries of your Storyblok s
 Endpoint
 
 ```bash
-GET /v1/spaces/:space_id/stories/:story_id
+GET /spaces/:space_id/stories/:story_id
 ```
