@@ -2,7 +2,7 @@
 title: Load latest CV timestamp
 ---
 
-With the cache invalidation provided by Storyblok utilizing the `cv` (cache version) query paramter you're able to always hit the latest version of your content. This can either be a server side generated timestmap that receives an update if our webhook triggers a publish event or you fetch it every time you boot up your application.
+With the cache invalidation provided by Storyblok utilizing the `cv` (cache version) query parameter you're able to always hit the latest version of your content. This can either be a server-side generated timestamp that receives an update if our webhook triggers a publish event or you fetch it every time you boot up your application.
 
 ;examplearea
 
