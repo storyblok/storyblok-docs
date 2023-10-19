@@ -16,7 +16,7 @@ title: The Component Object
 | `real_name` | Duplicated technical name, used for internal tasks |
 | `component_group_uuid` | The component group uuid of the component |
 
-The name that will be shown to the user. When the `display_name` is `null`, the `real_name` is set to `name,` but when the `display_name` is a string, the `real_name` is set to `display_name.` This field is used internally by Storyblok; use `name` and `display_name` instead.
+It's important to note that the name will be shown to the user. When the `display_name` is `null,` the `real_name` is set to `name,` but when the `display_name` is a string, the `real_name` is set to `display_name.` This field is used internally by Storyblok; use `name` and `display_name` instead.
 
 ;examplearea
 
