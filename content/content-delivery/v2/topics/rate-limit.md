@@ -14,4 +14,4 @@ The content delivery api has a rate limit of 50 requests per second for uncached
 | Listings with page size below and with 25 | 50 per second |
 | Listings with page size between 25 and 50 | 15 per second |
 | Listings with page size between 50 and 75 | 10 per second |
-| Listings with page size between 75 and 100 | 5 per second |
+| Listings with page size between 75 and 100 | 6 per second |
