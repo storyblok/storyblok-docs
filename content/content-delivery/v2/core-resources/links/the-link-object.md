@@ -2,7 +2,9 @@
 title: The Link Object
 ---
 
-You can access a draft or published version of your links by providing the `version` parameter and the correct token type (eg. preview for draft, public for published).
+The Link Object has various details pertaining to a story or folder (generally, a content entry). These details include the story or folder's unique identifier (`uuid`), the `slug` representing the full path of the content entry (e.g., `folder1/folder2/story`), a flag indicating whether the content entry is a folder or a story (`is_folder`), the numeric identifier of its parent folder (`parent_id`), and additional information outlined in the table below. These details prove invaluable for constructing lists of links, such as for generating a sitemap, or for retrieving the hierarchical structure of links, particularly when building a static site using the Static Site Generator approach.
+
+The significance of the `version` field lies in its ability to denote whether a story associated with the link has been published at least once. A `true` value indicates that the story has been published, even if it is currently in draft status. In other words, a story in draft with a published history will have the `version` field set to `published` in the link object.
 
 | Property            | Description          |
 |---------------------|----------------------|
@@ -14,7 +16,7 @@ You can access a draft or published version of your links by providing the `vers
 | `published`     | Is this story published (true/false) |
 | `position`      | Numeric position value of the content entry |
 | `uuid`          | The `uuid` of the content entry |
-| `is_startpage`  | IS this story a startpage (true/false) |
+| `is_startpage`  | Is this story a startpage (true/false) |
 
 ;examplearea
 
