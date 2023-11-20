@@ -13,7 +13,7 @@ title: The Asset Object
 | `file` | File Object |
 | `asset_folder_id` | Id of the folder containing this asset |
 | `short_filename` | The file name of the asset |
-| `metadata` | Add custom metadata fields for an asset |
+| `metadata` | Includes custom metadata fields for an asset |
 | `content_type` | The MIME type of the asset |
 | `content_length` | The content length in bytes |
 | `is_private` | Defines if the asset should be inaccessable to the public |
@@ -34,7 +34,7 @@ Example Object
   },
   "asset_folder_id": null,
   "meta_data": {
-        "asset_category": "name"
+    "asset_category": "name"
   },
   "deleted_at": null,
   "short_filename": "your_filename.jpg",
