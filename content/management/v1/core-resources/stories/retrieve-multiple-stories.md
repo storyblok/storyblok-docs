@@ -18,7 +18,7 @@ Returns an array of story objects *without* `content`. Can be filtered with the 
 | `folder_only` | Filter by folders only |
 | `story_only` | Filter by stories only |
 | `with_parent` | Filter by parent id |
-| `with_slug` | Filter by exact slug |
+| `full_slug` | Filter by the property [`full_slug`](https://www.storyblok.com/docs/api/management#core-resources/stories/the-story-object) |
 | `starts_with` | Filter stories starting with a specific slug |
 | `in_trash` | Filter by items in the trash folder |
 | `search` | Filter by search term |
