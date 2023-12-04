@@ -10,6 +10,9 @@ You can use the `starts_with` parameter to load entries that are in a specific f
 | `?starts_with=de/products/` | all entries with `de` values in translatable fields in folder `products` |
 | `?starts_with=articles/` | all entries in folder `articles` |
 
+* If you have a nested folder you can use **UnderLine** to go through the path for example
+  ?starts_with=products_cloths| all entries in folder cloths child of products
+
 ;examplearea
 
 Example Request
