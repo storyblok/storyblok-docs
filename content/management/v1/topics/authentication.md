@@ -9,7 +9,7 @@ Your personal access token will grant anyone who obtains it with access to all a
 Using an OAuth2 token, a username and password doesn’t need to be permanently stored and you can revoke access at any time.
 
 ### Authorization for Apps
-In order to	Authenticate your Apps, make sure to add an "Authorization" header with your OAuth2 token.
+In order to Authenticate your Apps, make sure to add an "Authorization" header with your OAuth2 token.
 
 Examples
 ```bash
@@ -50,4 +50,4 @@ const Storyblok = new StoryblokClient({
 })
 ```
 
-</div> 
+</div>

@@ -16,7 +16,7 @@ title: The Asset Object
 | `metadata` | Includes custom metadata fields for an asset |
 | `content_type` | The MIME type of the asset |
 | `content_length` | The content length in bytes |
-| `is_private` | Defines if the asset should be inaccessable to the public |
+| `is_private` | Defines if the asset should be inaccessible to the public |
 
 ;examplearea
 

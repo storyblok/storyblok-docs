@@ -63,7 +63,7 @@ Example Object
     "api_requests": 1000,
     "exceeded_requests": 0,
     "billing_address": { 
-      // billing infromation
+      // billing information
     },
     "routes": [ ],
     "euid": null,
