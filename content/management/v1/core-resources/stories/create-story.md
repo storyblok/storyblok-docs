@@ -2,7 +2,7 @@
 title: Create a Story
 ---
 
-You can set most of the fields that are available in the story object, below we only list the properties in the example and the possible required fields. Stories are not published by default. If you want to create a published Story add the parameter `publish` with the value `1`. 
+You can set most of the fields that are available in the story object, below we only list the properties in the example and the possible required fields. Stories are not published by default. If you want to create a published Story add the parameter `publish` with the value `1`.
 
 | Property | Description |
 |---|---|
