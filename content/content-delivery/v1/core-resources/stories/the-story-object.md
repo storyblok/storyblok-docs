@@ -20,7 +20,7 @@ This is an object representing your content entry. One Story object can be of a 
 | `content`             | Your defined custom content body object | 
 | `position`            | Position in folder | 
 | `is_startpage`        | Is startpage of current folder (true/false) | 
-| `parent_id`           | Parent folder id (Set to 0 in Storyblok v1) | 
+| `parent_id`           | Parent folder id (default: 0 on Storyblok v1) | 
 | `group_id`            | Alternates group id (uuid string) | 
 | `alternates`          | Array of alternate objects | 
 | `translated_slugs`    | Array of translated slugs. Only gets included if the translatable slug app is installed | 
