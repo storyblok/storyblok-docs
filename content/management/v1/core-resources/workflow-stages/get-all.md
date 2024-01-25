@@ -10,4 +10,4 @@ Example Request
 
 <RequestExample url="https://mapi.storyblok.com/v1/spaces/606/workflow_stages/" httpMethod="GETOAUTH"></RequestExample>
 
-You will an array of [workflow stages](#core-resources/workflow-stage-changes/object) as response.
+You will receive an array of [workflow stages](#core-resources/workflow-stage-changes/object) as response.
