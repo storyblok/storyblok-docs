@@ -13,8 +13,6 @@ Returns the links object containing all links of one space including the `draft`
 | `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
 | `with_parent` | Filter links by `parent_id`, can be set to 0 for returning links with no `parent_id` and `with_parent=parent_id` to fetch story links with the `parent_id` |
 
-Attention: This API endpoint is paged by default. 
-
 ;examplearea
 
 Endpoint
