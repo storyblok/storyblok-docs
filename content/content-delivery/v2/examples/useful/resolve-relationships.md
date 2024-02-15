@@ -18,46 +18,73 @@ Example Response
 {
   "stories": [
     {
-      "name": "My third post",
-      "created_at": "2018-04-24T11:57:29.302Z",
-      "published_at": "2018-12-10T13:39:31.999Z",
       "id": 107350,
       "uuid": "ac0d2ed0-e323-43ca-ae59-5cd7d38683cb",
-      "content": {
-        "_uid": "98cccd01-f807-4494-996d-c6b0de2045a5",
-        "image": "//a.storyblok.com/f/44162/1500x500/68b522b06d/1500x500.jpeg",
-        "title": "My second title",
-        "author": "n4a2123-e323-43ca-ae59-5cd7d38683cb",
-        "content": "Lorem ipsum dolor sit amet, *consectetur* adipisicing elit, sed do eiusmod\ntempor incididunt ut **labore et dolore magna aliqua**.",
-        "schedule": "2018-08-31 21:59",
-        "component": "post",
-        // resolved relationship by including the story 
-        // object of the reference entry
-        "categories": [
-          {
-            "name": "Design",
-            "created_at": "2018-04-24T11:59:26.578Z",
-            "published_at": "2018-04-24T12:07:46.278Z",
-            "id": 107357,
-            "uuid": "9aa72a2f-04ae-48df-b71f-25f53044dc97",
-            "content": {
-              "_uid": "6fc4a8e1-52a1-46b3-85b2-a1a93452c97a",
-              "name": "Design",
-              "image": "//a.storyblok.com/f/44203/1177x841/8c69867d6e/undraw_lighthouse2_1ebd.png",
-              "component": "category"
-            },
-            "slug": "design",
-            "full_slug": "categories/design",
-            ...
-          }
-        ],
-        "description": "Description of the third"
-      },
+      "name": "My third post",
       "slug": "my-third-post",
       "full_slug": "posts/my-third-post",
-      ...
+      "created_at": "2018-04-24T11:57:29.302Z",
+      "published_at": "2018-12-07T01:31:36.134Z",
+      "first_published_at": "2018-08-07T09:40:13.000Z",
+      "content": {
+        "component": "post",
+        // fields you define yourself are here
+        // those below we defined for the examples
+        "image": "//a.storyblok.com/f/44162/1500x500/68b522b06d/1500x500.jpeg",
+        "title": "My second title",
+        "author": "22f4fb1b-50b3-4bf2-816e-7d589e307421",
+        "content": "Lorem ipsum dolor sit amet, *consectetur* adipisicing elit, sed do eiusmod",
+        "schedule": "2018-08-31 21:59",
+        "description": "Description of the third",
+        "categories": [
+          "9aa72a2f-04ae-48df-b71f-25f53044dc97"
+        ]
+      },
+      "position": -20,
+      "tag_list": [ ],
+      "is_startpage": false,
+      "parent_id": 107348,
+      "group_id": "d5ea8520-1296-40b7-8360-894461fdc5b6",
+      "alternates": [ ],
+      "translated_slugs": [ ],
+      "release_id": null,
+      "lang": "default"
     },
-    { ... }
-  ]
+    {
+      "id": 107349,
+      "uuid": "a91440ee-fd57-4ee3-83cf-d49d217ae919",
+      "name": "My second post",
+      "slug": "my-second-post",
+      "full_slug": "posts/my-second-post",
+      "created_at": "2018-04-24T11:57:29.283Z",
+      "published_at": "2018-07-26T12:38:17.025Z",
+      "first_published_at": "2018-07-26T12:38:17.025Z",
+      "content": {
+        "component": "post",
+        "image": "//a.storyblok.com/f/44162/1500x500/68b522b06d/1500x500.jpeg",
+        "title": "My second title",
+        "author": "c47be9f0-47c3-4315-a95a-550f0c560eb5",
+        "content": "Lorem ipsum dolor sit amet, *consectetur* adipisicing elit, sed do...",
+        "categories": [
+          "5db2e929-6d3d-4564-982e-fa8513b0e5de"
+        ],
+        "description": "Description of the second"
+      },
+      "sort_by_date": null,
+      "position": -10,
+      "tag_list": [ ],
+      "is_startpage": false,
+      "parent_id": 107348,
+      "group_id": "854c3d1f-5d7f-4785-92ee-620a7c6ca7ee",
+      "alternates": [ ],
+      "translated_slugs": [ ],
+      "release_id": null,
+      "lang": "default"
+    },
+    ...
+  ],
+  "cv": 1560257296,
+  "rels": [],
+  "links": []
 }
 ```
