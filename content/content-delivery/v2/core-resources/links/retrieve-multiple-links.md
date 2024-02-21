@@ -9,11 +9,12 @@ Returns the links object containing all links of one space including the `draft`
 | `token` (required) | Your public or preview token |
 | `starts_with` | Filter by `full_slug`. Can be used to retrieve all links form a specific folder. Examples: `starts_with=de/beitraege`, `starts_with=en/posts` | 
 | `version` | Possible values: `draft`, `published` |
-| `paginated` | Set this to `1` if you want to retrieve the paginated results. With the parameters `per_page` and `page` you can define the page size and page number |
 | `cv` | Read more about cache version at [Cache invalidation](#topics/cache-invalidation) |
 | `with_parent` | Filter links by `parent_id`, can be set to 0 for returning links with no `parent_id` and `with_parent=parent_id` to fetch story links with the `parent_id` |
+| `page` | Default: `1`. Increase to receive the next page of link entries. |
+| `per_page` | Default: `25`, Max: `1000` . Defines the number of link entries received per request. |
+| `paginated` | For spaces created before May 9th, 2023, the links endpointed is not paginated by default. Setting this parameter to `1` enables pagination. This parameter has no impact on spaces created after May 9th, 2023, i.e. pagination cannot be disabled for these spaces. |
 
-Attention: This API endpoint is not paged by default. Activate it using `paginated=1`.
 
 ;examplearea
 
