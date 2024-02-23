@@ -4,7 +4,7 @@ title: Approvals
 
 Triggers an approval message for a specific content entry. It allows you to send an approval request to another collaborator of the space.
 
-NOTE: The Approval feature mentioned is exclusive to Storyblok v1 and has been discontinued in v2. 
+NOTE: The Approval feature mentioned is exclusive to Storyblok v1 and has been discontinued in Storyblok v2. 
 
 ;examplearea
 
