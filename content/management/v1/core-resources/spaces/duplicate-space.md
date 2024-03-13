@@ -12,6 +12,7 @@ Duplicate a space and all it's content entries and components; Assets will not b
 | `space[searchblok_id]` | Searchblok id, if available |
 | `space[environments]` | Array of `name` and `location` (url) objects |
 | `dup_id` | The numeric id of the original space |
+| `assign_partner` | Boolean. Whether to create this new space in your partner space, if you are part of one |
 
 ;examplearea
 
