@@ -17,6 +17,7 @@ title: The Asset Object
 | `content_type` | The MIME type of the asset |
 | `content_length` | The content length in bytes |
 | `is_private` | Defines if the asset should be inaccessable to the public |
+| `publish_at` | Used to schedule publishing date and time for private assets (Format: `YYYY-mm-dd HH:MM`). Can be `null` if the publishing date hasn’t been scheduled |
 
 ;examplearea
 
@@ -40,6 +41,7 @@ Example Object
   "short_filename": "your_filename.jpg",
   "content_type": "image/jpeg",
   "content_length": 12303,
-  "is_private": false
+  "is_private": false,
+  "publish_at": "null"
 }
 ```
