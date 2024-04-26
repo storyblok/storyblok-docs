@@ -1,57 +1,12 @@
-<h1>Storyblok API Documentation<a href='https://app.netlify.com/sites/storyblok-docs/deploys'><img align="right" src='https://api.netlify.com/api/v1/badges/bd9ea974-391c-4937-bc20-d626afd9a6e1/deploy-status'/></a></h1>
+# ⛔️ DEPRECATED: Storyblok API Documentation
 
-> A Nuxt.js setup to generate an intuitive, readable and collaborative API documentation with copy and paste able examples
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
-## The Docs
+This project has been deprecated in favor of the new and improved [Storyblok Documentation Hub](https://www.storyblok.com/docs/home/introduction) built with Astro, Algolia, and Storyblok itself.
 
-[![Storyblok Documentation setup](https://a.storyblok.com/f/39898/3356x1830/d57a561cb5/storyblok-documentation.jpg)](https://www.storyblok.com/docs/api/content-delivery)
+If you have any questions about Storyblok's APIs or if you want to report a mistake in Storyblok's documentation, please reach out to the [Storyblok Helpdesk](https://storyblok.atlassian.net/servicedesk/customer/portals) or [Storyblok's Discord Community](https://discord.com/invite/jKrbAMz).
 
-## Why?
-
-We at Storyblok highly value your feedback and your desire to know more about our API and possible use-cases, examples and hidden features. To support that this project allows you to run our API documentation for the content delivery and management API completely offline and contribute to it.
-
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-# and generates doc jsons
-$ npm run dev
-
-# generate static project
-$ npm run generate
-```
-
-## The Folder Structure
-
-```
-- content
-  - {origin}.{version}.json
-  - {origin} (content delivery or management)
-    - {version} (v1, v2, ...)
-      - categories
-        - method/section.md
-```
-
-## How should the method/section.md look like:
-
-```
----
-title: The Sidebar Title & Headline
-sidebarTitle: optional: This overrides the title
----
-
-This is the method written content; the left area of a section.
-
-;examplearea
-
-This is the method example; the right area of a section.
-```
-
-
-## Licence
+## License
 
 ```
 Copyright 2019 Storyblok GmbH
