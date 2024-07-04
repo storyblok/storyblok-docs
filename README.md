@@ -4,7 +4,7 @@
 
 This project has been deprecated in favor of the new and improved [Storyblok Documentation Hub](https://www.storyblok.com/docs/home/introduction) built with Astro, Algolia, and Storyblok itself.
 
-If you have any questions about Storyblok's APIs or if you want to report a mistake in Storyblok's documentation, please reach out to the [Storyblok Helpdesk](https://storyblok.atlassian.net/servicedesk/customer/portals) or [Storyblok's Discord Community](https://discord.com/invite/jKrbAMz).
+If you have any questions about Storyblok's APIs or if you want to report a mistake in Storyblok's documentation, please reach out to the [Storyblok Helpdesk](https://support.storyblok.com) or [Storyblok's Discord Community](https://discord.com/invite/jKrbAMz).
 
 ## License
 
