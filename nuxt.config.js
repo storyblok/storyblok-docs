@@ -17,6 +17,10 @@ module.exports = {
         name: "viewport",
         content: "width=device-width, initial-scale=1",
       },
+      {
+        name: "robots",
+        content: "noindex",
+      },
     ],
     script: [
       // needed to stop Prism to automatically highlight everything that is already highlighted:
